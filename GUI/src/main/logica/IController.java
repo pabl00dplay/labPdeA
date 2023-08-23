@@ -16,5 +16,6 @@ public interface IController {
     public abstract HashMap<String, Usuario> getUsr();
     public abstract HashMap<String, Actividad> getAct();
     public abstract HashMap<String, Paquete> getPaq();
+    public abstract HashMap<String, Departamento> getDep();
     
 }
