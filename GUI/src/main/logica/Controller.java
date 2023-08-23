@@ -15,13 +15,13 @@ public class Controller implements IController {
 	private HashMap<String, Usuario> usr;
 	private HashMap<String, Actividad> act;
         private HashMap<String, Paquete> paq;
-        private HashSet<String> departamento;
+        private HashMap<String, Departamento> dep;
     
         public Controller(){
             usr=new HashMap<String, Usuario>();
             act=new HashMap<String, Actividad>();
             paq=new HashMap<String, Paquete>();
-            departamento=new HashSet<String>();
+            dep=new HashMap<String, Departamento>();
         }
         public HashMap<String, Usuario> getUsr(){
             return usr;
@@ -31,6 +31,9 @@ public class Controller implements IController {
         }
         public HashMap<String, Paquete> getPaq(){
             return paq;
+        }
+        public HashMap<String, Departamento> getDep(){
+            return dep;
         }
     
     
