@@ -65,29 +65,29 @@ public class AltaUsuario extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setText("nickname");
+        jLabel1.setText("Nickname");
 
-        jLabel2.setText("nombre");
+        jLabel2.setText("Nombre");
 
         nombre.setText(" ");
 
-        jLabel3.setText("apellido");
+        jLabel3.setText("Apellido");
 
         apellido.setText(" ");
 
-        jLabel4.setText("correo electrónico");
+        jLabel4.setText("Correo Electrónico");
 
         correoElectrónico.setText(" ");
 
-        jLabel5.setText("fecha de nacimiento");
+        jLabel5.setText("Fecha de Nacimiento");
 
-        jLabelnacionalidad.setText("nacionalidad");
+        jLabelnacionalidad.setText("Nacionalidad");
 
         txtnacionalidad.setText(" ");
 
-        jLabelDescripcionGeneral.setText("descripción general");
+        jLabelDescripcionGeneral.setText("Descripción General");
 
-        jLabellink.setText("link a su sitio web");
+        jLabellink.setText("Link a su sitio web");
 
         jTextFieldlink.setText(" ");
 
@@ -144,7 +144,7 @@ public class AltaUsuario extends javax.swing.JPanel {
                         .addGap(17, 17, 17)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabelnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabelDescripcionGeneral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))

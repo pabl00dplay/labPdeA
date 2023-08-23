@@ -66,7 +66,7 @@
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel5" alignment="0" pref="138" max="32767" attributes="0"/>
+                                  <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabelnacionalidad" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
                                   <Component id="jLabelDescripcionGeneral" alignment="1" max="32767" attributes="0"/>
@@ -195,12 +195,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="nickname"/>
+            <Property name="text" type="java.lang.String" value="Nickname"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="nombre"/>
+            <Property name="text" type="java.lang.String" value="Nombre"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="nombre">
@@ -210,7 +210,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="apellido"/>
+            <Property name="text" type="java.lang.String" value="Apellido"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="apellido">
@@ -220,7 +220,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="correo electr&#xf3;nico"/>
+            <Property name="text" type="java.lang.String" value="Correo Electr&#xf3;nico"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="correoElectr&#xf3;nico">
@@ -230,12 +230,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="fecha de nacimiento"/>
+            <Property name="text" type="java.lang.String" value="Fecha de Nacimiento"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelnacionalidad">
           <Properties>
-            <Property name="text" type="java.lang.String" value="nacionalidad"/>
+            <Property name="text" type="java.lang.String" value="Nacionalidad"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtnacionalidad">
@@ -245,12 +245,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelDescripcionGeneral">
           <Properties>
-            <Property name="text" type="java.lang.String" value="descripci&#xf3;n general"/>
+            <Property name="text" type="java.lang.String" value="Descripci&#xf3;n General"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabellink">
           <Properties>
-            <Property name="text" type="java.lang.String" value="link a su sitio web"/>
+            <Property name="text" type="java.lang.String" value="Link a su sitio web"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldlink">
