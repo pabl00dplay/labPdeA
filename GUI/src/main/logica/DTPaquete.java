@@ -4,7 +4,6 @@
  */
 package logica;
 
-import java.lang.String;
 import java.time.*;
 import java.util.*;
 
@@ -12,19 +11,17 @@ import java.util.*;
  *
  * @author francisco
  */
-public class Paquete {
+public class DTPaquete {
     private String nom, desc;
     private int Pvalidez;
     private float descuento;
     private Date fAlta;
-    private HashSet<Actividad> acts;
     
-    public Paquete(String n, String d, float de, int v, Date f){
+    public DTPaquete(String n, String d, float de, int v, Date f){
         this.nom=n;
         this.desc=d;
         this.descuento=de;
         this.Pvalidez=v;
-        this.acts=new HashSet<Actividad>();
         this.fAlta=f;
     }
     
@@ -41,6 +38,9 @@ public class Paquete {
     public float getDescu(){
         return descuento;
     }
+    public Date getFalta(){
+        return fAlta;
+    }
     
     //setters
     public void setNom(String s){
@@ -55,4 +55,8 @@ public class Paquete {
     public void setDescu(float f){
         this.descuento=f;
     }
+    public void setFalta(Date f){
+        this.fAlta=f;
+    }
+    
 }

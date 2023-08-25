@@ -1,13 +1,24 @@
 package com.mycompany.paplicaciones;
 
+import logica.*;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
 public class Laboratorio1 extends javax.swing.JFrame {
     public Laboratorio1() {
         initComponents();
-        AltaUsuario au=new AltaUsuario(); 
+        Fabrica fab=Fabrica.getInstance();
+        IController cont=fab.getIController();
+        AltaUsuario au=new AltaUsuario();
         PonerContenedorDentroContenedor(au,jPanelAltaUsuario);
+        ConsultaUsuario cu=new ConsultaUsuario(); 
+        PonerContenedorDentroContenedor(cu,jPanelConsultaUsuario);
+        CrearPaquete cp=new CrearPaquete(cont);
+        PonerContenedorDentroContenedor(cp,jPanelCrearPaqueteActTuristicas);
+        AgregarActividadPaquete ap=new AgregarActividadPaquete(cont);
+        PonerContenedorDentroContenedor(ap,jPanelAgregarActTuríPaquete);
+        ConsultaPaquete cpa=new ConsultaPaquete(cont);
+        PonerContenedorDentroContenedor(cpa,jPanelConsultaPaquetesActsTurs);
         
     }
     

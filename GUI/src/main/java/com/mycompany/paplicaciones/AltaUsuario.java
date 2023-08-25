@@ -92,6 +92,11 @@ public class AltaUsuario extends javax.swing.JPanel {
         jTextFieldlink.setText(" ");
 
         jButtonEnviar.setText("Enviar");
+        jButtonEnviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEnviarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelDescripcionGeneralLayout = new javax.swing.GroupLayout(jPanelDescripcionGeneral);
         jPanelDescripcionGeneral.setLayout(jPanelDescripcionGeneralLayout);
@@ -275,6 +280,10 @@ public class AltaUsuario extends javax.swing.JPanel {
             jButtonEnviar.setVisible(false);
         }
     }//GEN-LAST:event_cmbTuristaProveedorActionPerformed
+
+    private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEnviarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
