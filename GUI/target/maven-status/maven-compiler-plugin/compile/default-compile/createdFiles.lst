@@ -1,5 +1,6 @@
 com/mycompany/paplicaciones/CrearPaquete$1.class
 com/mycompany/paplicaciones/AgregarActividadPaquete.class
+com/mycompany/paplicaciones/AltaSalidaTuristica$1.class
 logica/DTPaquete.class
 logica/Fabrica.class
 com/mycompany/paplicaciones/DatosSal.class
@@ -8,12 +9,14 @@ com/mycompany/paplicaciones/ConsultaPaquete$1.class
 com/mycompany/paplicaciones/ConsultaUsuario.class
 logica/Controller.class
 logica/Salida.class
+com/mycompany/paplicaciones/ConsultaSalidaTuristica$1.class
 com/mycompany/paplicaciones/AltaUsuario$3.class
 logica/Inscripcion.class
 com/mycompany/paplicaciones/AgregarActividadPaquete$1.class
 com/mycompany/paplicaciones/CrearPaquete$2.class
 com/mycompany/paplicaciones/ConsultaPaquete.class
 logica/IController.class
+com/mycompany/paplicaciones/ConsultaSalidaTuristica.class
 com/mycompany/paplicaciones/CrearPaquete.class
 com/mycompany/paplicaciones/AltaUsuario$1.class
 logica/Paquete.class
@@ -28,3 +31,4 @@ com/mycompany/paplicaciones/DatosAct.class
 com/mycompany/paplicaciones/AltaUsuario$2.class
 com/mycompany/paplicaciones/Laboratorio1.class
 com/mycompany/paplicaciones/AltaUsuario.class
+com/mycompany/paplicaciones/AltaSalidaTuristica.class

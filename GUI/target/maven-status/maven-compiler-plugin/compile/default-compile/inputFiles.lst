@@ -7,6 +7,7 @@
 /home/francisco/Documents/GitHub/labPdeA/GUI/src/main/java/logica/Paquete.java
 /home/francisco/Documents/GitHub/labPdeA/GUI/src/main/java/logica/Compra.java
 /home/francisco/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/AltaUsuario.java
+/home/francisco/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/AltaSalidaTuristica.java
 /home/francisco/Documents/GitHub/labPdeA/GUI/src/main/java/logica/Fabrica.java
 /home/francisco/Documents/GitHub/labPdeA/GUI/src/main/java/logica/DTPaquete.java
 /home/francisco/Documents/GitHub/labPdeA/GUI/src/main/java/logica/Salida.java
@@ -18,4 +19,5 @@
 /home/francisco/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/CrearPaquete.java
 /home/francisco/Documents/GitHub/labPdeA/GUI/src/main/java/logica/Inscripcion.java
 /home/francisco/Documents/GitHub/labPdeA/GUI/src/main/java/logica/Turista.java
+/home/francisco/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/ConsultaSalidaTuristica.java
 /home/francisco/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/ConsultaUsuario.java
