@@ -8,12 +8,12 @@ package com.mycompany.paplicaciones;
  *
  * @author capo_
  */
-public class AltaActividadTuristica extends javax.swing.JPanel {
+public class AltaSalidaTuristica extends javax.swing.JPanel {
 
     /**
      * Creates new form AltaActividadTuristica
      */
-    public AltaActividadTuristica() {
+    public AltaSalidaTuristica() {
         initComponents();
     }
 

@@ -1,21 +1,25 @@
 package com.mycompany.paplicaciones;
 
+import logica.*;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
 public class Laboratorio1 extends javax.swing.JFrame {
     public Laboratorio1() {
         initComponents();
-        AltaUsuario au=new AltaUsuario(); 
+        Fabrica fab=Fabrica.getInstance();
+        IController cont=fab.getIController();
+        AltaUsuario au=new AltaUsuario();
         PonerContenedorDentroContenedor(au,jPanelAltaUsuario);
-        AltaActividadTuristica aat=new AltaActividadTuristica();
-        PonerContenedorDentroContenedor(aat,jPanelAltaActividadTuristica);
-        ConsultaActividadTuristica cat=new ConsultaActividadTuristica();
-        PonerContenedorDentroContenedor(cat,jPanelConsultaActividadTuristica);
-        ModificarDatosDeUsuario mddu=new ModificarDatosDeUsuario();
-        PonerContenedorDentroContenedor(mddu, jPanelModificarDatosUsuario);
-        AltaDeDepartamento add=new AltaDeDepartamento ();
-        PonerContenedorDentroContenedor(add, jPanelAltaDepartamento);
+        ConsultaUsuario cu=new ConsultaUsuario(); 
+        PonerContenedorDentroContenedor(cu,jPanelConsultaUsuario);
+        CrearPaquete cp=new CrearPaquete(cont);
+        PonerContenedorDentroContenedor(cp,jPanelCrearPaqueteActTuristicas);
+        AgregarActividadPaquete ap=new AgregarActividadPaquete(cont);
+        PonerContenedorDentroContenedor(ap,jPanelAgregarActTuríPaquete);
+        ConsultaPaquete cpa=new ConsultaPaquete(cont);
+        PonerContenedorDentroContenedor(cpa,jPanelConsultaPaquetesActsTurs);
+        
     }
     
     private void PonerContenedorDentroContenedor(JPanel contenido,JPanel contenedor) {
@@ -35,6 +39,8 @@ public class Laboratorio1 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPanelConsultaUsuario = new javax.swing.JPanel();
         jPanelModificarDatosUsuario = new javax.swing.JPanel();
+        jPanelAltaActividadTuristica = new javax.swing.JPanel();
+        jPanelConsultaActividadTuristica = new javax.swing.JPanel();
         jPanelAltaSalidaTuristica = new javax.swing.JPanel();
         jPanelConsultaSalidaTuristica = new javax.swing.JPanel();
         jPanelInscripcionSalidaTuristica = new javax.swing.JPanel();
@@ -42,8 +48,6 @@ public class Laboratorio1 extends javax.swing.JFrame {
         jPanelAgregarActTuríPaquete = new javax.swing.JPanel();
         jPanelConsultaPaquetesActsTurs = new javax.swing.JPanel();
         jPanelAltaDepartamento = new javax.swing.JPanel();
-        jPanelAltaActividadTuristica = new javax.swing.JPanel();
-        jPanelConsultaActividadTuristica = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,7 +63,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
             .addGroup(jPanelAltaUsuarioLayout.createSequentialGroup()
                 .addGap(236, 236, 236)
                 .addComponent(jLabel7)
-                .addContainerGap(390, Short.MAX_VALUE))
+                .addContainerGap(2573, Short.MAX_VALUE))
         );
         jPanelAltaUsuarioLayout.setVerticalGroup(
             jPanelAltaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,7 +79,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         jPanelConsultaUsuario.setLayout(jPanelConsultaUsuarioLayout);
         jPanelConsultaUsuarioLayout.setHorizontalGroup(
             jPanelConsultaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 634, Short.MAX_VALUE)
+            .addGap(0, 2809, Short.MAX_VALUE)
         );
         jPanelConsultaUsuarioLayout.setVerticalGroup(
             jPanelConsultaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,7 +92,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         jPanelModificarDatosUsuario.setLayout(jPanelModificarDatosUsuarioLayout);
         jPanelModificarDatosUsuarioLayout.setHorizontalGroup(
             jPanelModificarDatosUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 626, Short.MAX_VALUE)
+            .addGap(0, 2809, Short.MAX_VALUE)
         );
         jPanelModificarDatosUsuarioLayout.setVerticalGroup(
             jPanelModificarDatosUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,102 +101,11 @@ public class Laboratorio1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("ModificarDatosUsuario", jPanelModificarDatosUsuario);
 
-        javax.swing.GroupLayout jPanelAltaSalidaTuristicaLayout = new javax.swing.GroupLayout(jPanelAltaSalidaTuristica);
-        jPanelAltaSalidaTuristica.setLayout(jPanelAltaSalidaTuristicaLayout);
-        jPanelAltaSalidaTuristicaLayout.setHorizontalGroup(
-            jPanelAltaSalidaTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 626, Short.MAX_VALUE)
-        );
-        jPanelAltaSalidaTuristicaLayout.setVerticalGroup(
-            jPanelAltaSalidaTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("AltaSalidaTuristica", jPanelAltaSalidaTuristica);
-
-        javax.swing.GroupLayout jPanelConsultaSalidaTuristicaLayout = new javax.swing.GroupLayout(jPanelConsultaSalidaTuristica);
-        jPanelConsultaSalidaTuristica.setLayout(jPanelConsultaSalidaTuristicaLayout);
-        jPanelConsultaSalidaTuristicaLayout.setHorizontalGroup(
-            jPanelConsultaSalidaTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 626, Short.MAX_VALUE)
-        );
-        jPanelConsultaSalidaTuristicaLayout.setVerticalGroup(
-            jPanelConsultaSalidaTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("ConsultaSalidaTuristica", jPanelConsultaSalidaTuristica);
-
-        javax.swing.GroupLayout jPanelInscripcionSalidaTuristicaLayout = new javax.swing.GroupLayout(jPanelInscripcionSalidaTuristica);
-        jPanelInscripcionSalidaTuristica.setLayout(jPanelInscripcionSalidaTuristicaLayout);
-        jPanelInscripcionSalidaTuristicaLayout.setHorizontalGroup(
-            jPanelInscripcionSalidaTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 626, Short.MAX_VALUE)
-        );
-        jPanelInscripcionSalidaTuristicaLayout.setVerticalGroup(
-            jPanelInscripcionSalidaTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("InscripcionSalidaTuristica", jPanelInscripcionSalidaTuristica);
-
-        javax.swing.GroupLayout jPanelCrearPaqueteActTuristicasLayout = new javax.swing.GroupLayout(jPanelCrearPaqueteActTuristicas);
-        jPanelCrearPaqueteActTuristicas.setLayout(jPanelCrearPaqueteActTuristicasLayout);
-        jPanelCrearPaqueteActTuristicasLayout.setHorizontalGroup(
-            jPanelCrearPaqueteActTuristicasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 626, Short.MAX_VALUE)
-        );
-        jPanelCrearPaqueteActTuristicasLayout.setVerticalGroup(
-            jPanelCrearPaqueteActTuristicasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("CrearPaqueteActTuristicas", jPanelCrearPaqueteActTuristicas);
-
-        javax.swing.GroupLayout jPanelAgregarActTuríPaqueteLayout = new javax.swing.GroupLayout(jPanelAgregarActTuríPaquete);
-        jPanelAgregarActTuríPaquete.setLayout(jPanelAgregarActTuríPaqueteLayout);
-        jPanelAgregarActTuríPaqueteLayout.setHorizontalGroup(
-            jPanelAgregarActTuríPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 626, Short.MAX_VALUE)
-        );
-        jPanelAgregarActTuríPaqueteLayout.setVerticalGroup(
-            jPanelAgregarActTuríPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("AgregarActTuríPaquete", jPanelAgregarActTuríPaquete);
-
-        javax.swing.GroupLayout jPanelConsultaPaquetesActsTursLayout = new javax.swing.GroupLayout(jPanelConsultaPaquetesActsTurs);
-        jPanelConsultaPaquetesActsTurs.setLayout(jPanelConsultaPaquetesActsTursLayout);
-        jPanelConsultaPaquetesActsTursLayout.setHorizontalGroup(
-            jPanelConsultaPaquetesActsTursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 626, Short.MAX_VALUE)
-        );
-        jPanelConsultaPaquetesActsTursLayout.setVerticalGroup(
-            jPanelConsultaPaquetesActsTursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("ConsultaPaquetesActsTurs", jPanelConsultaPaquetesActsTurs);
-
-        javax.swing.GroupLayout jPanelAltaDepartamentoLayout = new javax.swing.GroupLayout(jPanelAltaDepartamento);
-        jPanelAltaDepartamento.setLayout(jPanelAltaDepartamentoLayout);
-        jPanelAltaDepartamentoLayout.setHorizontalGroup(
-            jPanelAltaDepartamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 626, Short.MAX_VALUE)
-        );
-        jPanelAltaDepartamentoLayout.setVerticalGroup(
-            jPanelAltaDepartamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("AltaDepartamento", jPanelAltaDepartamento);
-
         javax.swing.GroupLayout jPanelAltaActividadTuristicaLayout = new javax.swing.GroupLayout(jPanelAltaActividadTuristica);
         jPanelAltaActividadTuristica.setLayout(jPanelAltaActividadTuristicaLayout);
         jPanelAltaActividadTuristicaLayout.setHorizontalGroup(
             jPanelAltaActividadTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 626, Short.MAX_VALUE)
+            .addGap(0, 2809, Short.MAX_VALUE)
         );
         jPanelAltaActividadTuristicaLayout.setVerticalGroup(
             jPanelAltaActividadTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +118,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         jPanelConsultaActividadTuristica.setLayout(jPanelConsultaActividadTuristicaLayout);
         jPanelConsultaActividadTuristicaLayout.setHorizontalGroup(
             jPanelConsultaActividadTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 626, Short.MAX_VALUE)
+            .addGap(0, 2809, Short.MAX_VALUE)
         );
         jPanelConsultaActividadTuristicaLayout.setVerticalGroup(
             jPanelConsultaActividadTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,11 +127,102 @@ public class Laboratorio1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("ConsultaActividadTuristica", jPanelConsultaActividadTuristica);
 
+        javax.swing.GroupLayout jPanelAltaSalidaTuristicaLayout = new javax.swing.GroupLayout(jPanelAltaSalidaTuristica);
+        jPanelAltaSalidaTuristica.setLayout(jPanelAltaSalidaTuristicaLayout);
+        jPanelAltaSalidaTuristicaLayout.setHorizontalGroup(
+            jPanelAltaSalidaTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2809, Short.MAX_VALUE)
+        );
+        jPanelAltaSalidaTuristicaLayout.setVerticalGroup(
+            jPanelAltaSalidaTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("AltaSalidaTuristica", jPanelAltaSalidaTuristica);
+
+        javax.swing.GroupLayout jPanelConsultaSalidaTuristicaLayout = new javax.swing.GroupLayout(jPanelConsultaSalidaTuristica);
+        jPanelConsultaSalidaTuristica.setLayout(jPanelConsultaSalidaTuristicaLayout);
+        jPanelConsultaSalidaTuristicaLayout.setHorizontalGroup(
+            jPanelConsultaSalidaTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2809, Short.MAX_VALUE)
+        );
+        jPanelConsultaSalidaTuristicaLayout.setVerticalGroup(
+            jPanelConsultaSalidaTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("ConsultaSalidaTuristica", jPanelConsultaSalidaTuristica);
+
+        javax.swing.GroupLayout jPanelInscripcionSalidaTuristicaLayout = new javax.swing.GroupLayout(jPanelInscripcionSalidaTuristica);
+        jPanelInscripcionSalidaTuristica.setLayout(jPanelInscripcionSalidaTuristicaLayout);
+        jPanelInscripcionSalidaTuristicaLayout.setHorizontalGroup(
+            jPanelInscripcionSalidaTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2809, Short.MAX_VALUE)
+        );
+        jPanelInscripcionSalidaTuristicaLayout.setVerticalGroup(
+            jPanelInscripcionSalidaTuristicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("InscripcionSalidaTuristica", jPanelInscripcionSalidaTuristica);
+
+        javax.swing.GroupLayout jPanelCrearPaqueteActTuristicasLayout = new javax.swing.GroupLayout(jPanelCrearPaqueteActTuristicas);
+        jPanelCrearPaqueteActTuristicas.setLayout(jPanelCrearPaqueteActTuristicasLayout);
+        jPanelCrearPaqueteActTuristicasLayout.setHorizontalGroup(
+            jPanelCrearPaqueteActTuristicasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2809, Short.MAX_VALUE)
+        );
+        jPanelCrearPaqueteActTuristicasLayout.setVerticalGroup(
+            jPanelCrearPaqueteActTuristicasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("CrearPaqueteActTuristicas", jPanelCrearPaqueteActTuristicas);
+
+        javax.swing.GroupLayout jPanelAgregarActTuríPaqueteLayout = new javax.swing.GroupLayout(jPanelAgregarActTuríPaquete);
+        jPanelAgregarActTuríPaquete.setLayout(jPanelAgregarActTuríPaqueteLayout);
+        jPanelAgregarActTuríPaqueteLayout.setHorizontalGroup(
+            jPanelAgregarActTuríPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2809, Short.MAX_VALUE)
+        );
+        jPanelAgregarActTuríPaqueteLayout.setVerticalGroup(
+            jPanelAgregarActTuríPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("AgregarActTuríPaquete", jPanelAgregarActTuríPaquete);
+
+        javax.swing.GroupLayout jPanelConsultaPaquetesActsTursLayout = new javax.swing.GroupLayout(jPanelConsultaPaquetesActsTurs);
+        jPanelConsultaPaquetesActsTurs.setLayout(jPanelConsultaPaquetesActsTursLayout);
+        jPanelConsultaPaquetesActsTursLayout.setHorizontalGroup(
+            jPanelConsultaPaquetesActsTursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2809, Short.MAX_VALUE)
+        );
+        jPanelConsultaPaquetesActsTursLayout.setVerticalGroup(
+            jPanelConsultaPaquetesActsTursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("ConsultaPaquetesActsTurs", jPanelConsultaPaquetesActsTurs);
+
+        javax.swing.GroupLayout jPanelAltaDepartamentoLayout = new javax.swing.GroupLayout(jPanelAltaDepartamento);
+        jPanelAltaDepartamento.setLayout(jPanelAltaDepartamentoLayout);
+        jPanelAltaDepartamentoLayout.setHorizontalGroup(
+            jPanelAltaDepartamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2809, Short.MAX_VALUE)
+        );
+        jPanelAltaDepartamentoLayout.setVerticalGroup(
+            jPanelAltaDepartamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("AltaDepartamento", jPanelAltaDepartamento);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -228,7 +232,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(215, 215, 215))
+                .addContainerGap())
         );
 
         pack();
