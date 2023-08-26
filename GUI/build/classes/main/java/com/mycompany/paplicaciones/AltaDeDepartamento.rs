@@ -1,0 +1,3 @@
+com.mycompany.paplicaciones.AltaDeDepartamento$2
+com.mycompany.paplicaciones.AltaDeDepartamento$1
+com.mycompany.paplicaciones.AltaDeDepartamento
