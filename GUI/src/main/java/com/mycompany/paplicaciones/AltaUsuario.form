@@ -16,9 +16,9 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" pref="834" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Component id="jPanel1" pref="846" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -26,9 +26,8 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -42,58 +41,63 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel1" alignment="1" pref="94" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="apellido" alignment="0" pref="132" max="32767" attributes="0"/>
-                                      <Component id="nombre" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="nickname" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="cmbTuristaProveedor" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel5" alignment="0" pref="138" max="32767" attributes="0"/>
-                                  <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabelFechNac" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabelCorreoElectronico" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabelnacionalidad" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
                                   <Component id="jLabelDescripcionGeneral" alignment="1" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jLabellink" min="-2" pref="139" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtnacionalidad" min="-2" pref="165" max="-2" attributes="0"/>
+                              <Component id="jTextFieldnacionalidad" min="-2" pref="165" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jTextFieldlink" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jScrollPane1" alignment="0" pref="407" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="jDateChooser1" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldcorreoElectrónico" alignment="0" pref="193" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jTextFieldnickname" min="-2" pref="132" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jLabelApellido" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jPanelDescripcionGeneral" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldapellido" min="-2" pref="132" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jDateChooser1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="correoElectrónico" alignment="0" pref="193" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                                  <Component id="cmbTuristaProveedor" min="-2" pref="121" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jTextFieldnombre" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Component id="jTextFieldlink" min="-2" pref="332" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" min="-2" pref="332" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="266" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="581" max="-2" attributes="0"/>
+                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jPanelDescripcionGeneral" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelAltaUsuario" min="-2" pref="248" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabelnickname" min="-2" pref="94" max="-2" attributes="0"/>
+                                  <Component id="jLabelNombre" min="-2" pref="94" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
                           <Component id="jButtonEnviar" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -104,65 +108,70 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="cmbTuristaProveedor" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="nickname" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelAltaUsuario" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
+                              <Component id="cmbTuristaProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldnickname" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelnickname" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldapellido" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="apellido" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jTextFieldnombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="correoElectrónico" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldcorreoElectrónico" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelCorreoElectronico" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelFechNac" min="-2" max="-2" attributes="0"/>
                               <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabelnacionalidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldnacionalidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPanel2" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="jLabelDescripcionGeneral" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabelnacionalidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtnacionalidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                          <Component id="jLabelDescripcionGeneral" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane1" min="-2" pref="142" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" min="-2" pref="142" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <Component id="jPanelDescripcionGeneral" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanelDescripcionGeneral" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="8" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jTextFieldlink" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabellink" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   <Component id="jButtonEnviar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <EmptySpace pref="109" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -185,72 +194,72 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="nickname">
+        <Component class="javax.swing.JTextField" name="jTextFieldnickname">
           <Properties>
             <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nicknameActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldnicknameActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="jLabelnickname">
           <Properties>
-            <Property name="text" type="java.lang.String" value="nickname"/>
+            <Property name="text" type="java.lang.String" value="Nickname"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="jLabelNombre">
           <Properties>
-            <Property name="text" type="java.lang.String" value="nombre"/>
+            <Property name="text" type="java.lang.String" value="Nombre"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="nombre">
+        <Component class="javax.swing.JTextField" name="jTextFieldnombre">
           <Properties>
             <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="jLabelApellido">
           <Properties>
-            <Property name="text" type="java.lang.String" value="apellido"/>
+            <Property name="text" type="java.lang.String" value="Apellido"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="apellido">
+        <Component class="javax.swing.JTextField" name="jTextFieldapellido">
           <Properties>
             <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="jLabelCorreoElectronico">
           <Properties>
-            <Property name="text" type="java.lang.String" value="correo electr&#xf3;nico"/>
+            <Property name="text" type="java.lang.String" value="Correo Electr&#xf3;nico"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="correoElectr&#xf3;nico">
+        <Component class="javax.swing.JTextField" name="jTextFieldcorreoElectr&#xf3;nico">
           <Properties>
             <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
+        <Component class="javax.swing.JLabel" name="jLabelFechNac">
           <Properties>
-            <Property name="text" type="java.lang.String" value="fecha de nacimiento"/>
+            <Property name="text" type="java.lang.String" value="Fecha de Nacimiento"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelnacionalidad">
           <Properties>
-            <Property name="text" type="java.lang.String" value="nacionalidad"/>
+            <Property name="text" type="java.lang.String" value="Nacionalidad"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtnacionalidad">
+        <Component class="javax.swing.JTextField" name="jTextFieldnacionalidad">
           <Properties>
             <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelDescripcionGeneral">
           <Properties>
-            <Property name="text" type="java.lang.String" value="descripci&#xf3;n general"/>
+            <Property name="text" type="java.lang.String" value="Descripci&#xf3;n General"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabellink">
           <Properties>
-            <Property name="text" type="java.lang.String" value="link a su sitio web"/>
+            <Property name="text" type="java.lang.String" value="Link a su sitio web"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldlink">
@@ -312,6 +321,11 @@
           </SubComponents>
         </Container>
         <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelAltaUsuario">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Alta de Usuario"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
