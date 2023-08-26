@@ -122,6 +122,8 @@ public class AltaUsuario extends javax.swing.JPanel {
 
         jTextArealDescripcionGeneral.setColumns(20);
         jTextArealDescripcionGeneral.setRows(5);
+        jTextArealDescripcionGeneral.setBorder(null);
+        jTextArealDescripcionGeneral.setOpaque(false);
         jScrollPane1.setViewportView(jTextArealDescripcionGeneral);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

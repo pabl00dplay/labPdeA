@@ -14,7 +14,8 @@ public class Laboratorio1 extends javax.swing.JFrame {
         PonerContenedorDentroContenedor(cat,jPanelConsultaActividadTuristica);
         ModificarDatosDeUsuario mddu=new ModificarDatosDeUsuario();
         PonerContenedorDentroContenedor(mddu, jPanelModificarDatosUsuario);
-        
+        AltaDeDepartamento add=new AltaDeDepartamento ();
+        PonerContenedorDentroContenedor(add, jPanelAltaDepartamento);
     }
     
     private void PonerContenedorDentroContenedor(JPanel contenido,JPanel contenedor) {
