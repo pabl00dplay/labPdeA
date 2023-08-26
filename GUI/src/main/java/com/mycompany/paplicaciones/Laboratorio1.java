@@ -1,4 +1,4 @@
-package com.mycompany.paplicaciones;
+package main.java.com.mycompany.paplicaciones;
 
 import logica.*;
 import java.awt.BorderLayout;
