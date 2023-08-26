@@ -60,8 +60,8 @@
         <Container class="javax.swing.JPanel" name="jPanelAltaUsuario">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="AltaUsuario">
-                <Property name="tabTitle" type="java.lang.String" value="AltaUsuario"/>
+              <JTabbedPaneConstraints tabName="Alta de Usuario">
+                <Property name="tabTitle" type="java.lang.String" value="Alta de Usuario"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -72,7 +72,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="236" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="390" max="32767" attributes="0"/>
+                      <EmptySpace pref="272" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -94,8 +94,8 @@
         <Container class="javax.swing.JPanel" name="jPanelConsultaUsuario">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="ConsultaUsuario">
-                <Property name="tabTitle" type="java.lang.String" value="ConsultaUsuario"/>
+              <JTabbedPaneConstraints tabName="Consulta de Usuario">
+                <Property name="tabTitle" type="java.lang.String" value="Consulta de Usuario"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -103,7 +103,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="626" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="508" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -116,8 +116,8 @@
         <Container class="javax.swing.JPanel" name="jPanelModificarDatosUsuario">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="ModificarDatosUsuario">
-                <Property name="tabTitle" type="java.lang.String" value="ModificarDatosUsuario"/>
+              <JTabbedPaneConstraints tabName="Modificar Datos del Usuario">
+                <Property name="tabTitle" type="java.lang.String" value="Modificar Datos del Usuario"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -125,7 +125,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="626" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="508" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -138,8 +138,8 @@
         <Container class="javax.swing.JPanel" name="jPanelAltaSalidaTuristica">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="AltaSalidaTuristica">
-                <Property name="tabTitle" type="java.lang.String" value="AltaSalidaTuristica"/>
+              <JTabbedPaneConstraints tabName="Alta de Salida Turistica">
+                <Property name="tabTitle" type="java.lang.String" value="Alta de Salida Turistica"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -147,7 +147,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="626" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="508" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -160,8 +160,8 @@
         <Container class="javax.swing.JPanel" name="jPanelConsultaSalidaTuristica">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="ConsultaSalidaTuristica">
-                <Property name="tabTitle" type="java.lang.String" value="ConsultaSalidaTuristica"/>
+              <JTabbedPaneConstraints tabName="Consulta de SalidaTuristica">
+                <Property name="tabTitle" type="java.lang.String" value="Consulta de SalidaTuristica"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -169,7 +169,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="626" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="508" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -182,8 +182,8 @@
         <Container class="javax.swing.JPanel" name="jPanelInscripcionSalidaTuristica">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="InscripcionSalidaTuristica">
-                <Property name="tabTitle" type="java.lang.String" value="InscripcionSalidaTuristica"/>
+              <JTabbedPaneConstraints tabName="Inscripcion a SalidaTuristica">
+                <Property name="tabTitle" type="java.lang.String" value="Inscripcion a SalidaTuristica"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -191,7 +191,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="626" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="508" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -204,8 +204,8 @@
         <Container class="javax.swing.JPanel" name="jPanelCrearPaqueteActTuristicas">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="CrearPaqueteActTuristicas">
-                <Property name="tabTitle" type="java.lang.String" value="CrearPaqueteActTuristicas"/>
+              <JTabbedPaneConstraints tabName="Crear Paquete de Actividades Turisticas">
+                <Property name="tabTitle" type="java.lang.String" value="Crear Paquete de Actividades Turisticas"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -213,7 +213,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="626" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="508" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -226,8 +226,8 @@
         <Container class="javax.swing.JPanel" name="jPanelAgregarActTur&#xed;Paquete">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="AgregarActTur&#xed;Paquete">
-                <Property name="tabTitle" type="java.lang.String" value="AgregarActTur&#xed;Paquete"/>
+              <JTabbedPaneConstraints tabName="Agregar Actividad Turistica a &#xed;Paquete">
+                <Property name="tabTitle" type="java.lang.String" value="Agregar Actividad Turistica a &#xed;Paquete"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -235,7 +235,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="626" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="508" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -248,8 +248,8 @@
         <Container class="javax.swing.JPanel" name="jPanelConsultaPaquetesActsTurs">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="ConsultaPaquetesActsTurs">
-                <Property name="tabTitle" type="java.lang.String" value="ConsultaPaquetesActsTurs"/>
+              <JTabbedPaneConstraints tabName="Consulta Paquetes ActividadesTurisricas">
+                <Property name="tabTitle" type="java.lang.String" value="Consulta Paquetes ActividadesTurisricas"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -257,7 +257,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="626" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="508" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -270,8 +270,8 @@
         <Container class="javax.swing.JPanel" name="jPanelAltaDepartamento">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="AltaDepartamento">
-                <Property name="tabTitle" type="java.lang.String" value="AltaDepartamento"/>
+              <JTabbedPaneConstraints tabName="Alta de Departamento">
+                <Property name="tabTitle" type="java.lang.String" value="Alta de Departamento"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -279,7 +279,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="626" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="508" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -292,8 +292,8 @@
         <Container class="javax.swing.JPanel" name="jPanelAltaActividadTuristica">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="AltaActividadTuristica">
-                <Property name="tabTitle" type="java.lang.String" value="AltaActividadTuristica"/>
+              <JTabbedPaneConstraints tabName="Alta de Actividad Turistica">
+                <Property name="tabTitle" type="java.lang.String" value="Alta de Actividad Turistica"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -614,8 +614,8 @@
         <Container class="javax.swing.JPanel" name="jPanelConsultaActividadTuristica">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="ConsultaActividadTuristica">
-                <Property name="tabTitle" type="java.lang.String" value="ConsultaActividadTuristica"/>
+              <JTabbedPaneConstraints tabName="Consulta de Actividad Turistica">
+                <Property name="tabTitle" type="java.lang.String" value="Consulta de Actividad Turistica"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -645,7 +645,7 @@
                           <Component id="jScrollPane3" max="32767" attributes="0"/>
                           <Component id="jLabel18" pref="94" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="46" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel13" min="-2" pref="320" max="-2" attributes="0"/>
