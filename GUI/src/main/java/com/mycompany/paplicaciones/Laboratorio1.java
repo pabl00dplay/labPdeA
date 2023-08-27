@@ -1,4 +1,4 @@
-package main.java.com.mycompany.paplicaciones;
+package com.mycompany.paplicaciones;
 
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -13,7 +13,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         
     }
     
-    public void PonerConsultaActividadTur√≠sticaDentroConsultaUsuario() {
+    public void PonerConsultaActividadTurÌsticaDentroConsultaUsuario() {
      ConsultaActividadTuristica ca= new ConsultaActividadTuristica();
         PonerContenedorDentroContenedor(ca,jPanelConsultaUsuario);
     }
@@ -43,7 +43,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         jPanelConsultaSalidaTuristica = new javax.swing.JPanel();
         jPanelInscripcionSalidaTuristica = new javax.swing.JPanel();
         jPanelCrearPaqueteActTuristicas = new javax.swing.JPanel();
-        jPanelAgregarActTur√≠Paquete = new javax.swing.JPanel();
+        jPanelAgregarActTurÌPaquete = new javax.swing.JPanel();
         jPanelConsultaPaquetesActsTurs = new javax.swing.JPanel();
         jPanelAltaDepartamento = new javax.swing.JPanel();
         jPanelAltaActividadTuristica = new javax.swing.JPanel();
@@ -189,18 +189,18 @@ public class Laboratorio1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear Paquete de Actividades Turisticas", jPanelCrearPaqueteActTuristicas);
 
-        javax.swing.GroupLayout jPanelAgregarActTur√≠PaqueteLayout = new javax.swing.GroupLayout(jPanelAgregarActTur√≠Paquete);
-        jPanelAgregarActTur√≠Paquete.setLayout(jPanelAgregarActTur√≠PaqueteLayout);
-        jPanelAgregarActTur√≠PaqueteLayout.setHorizontalGroup(
-            jPanelAgregarActTur√≠PaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelAgregarActTurÌPaqueteLayout = new javax.swing.GroupLayout(jPanelAgregarActTurÌPaquete);
+        jPanelAgregarActTurÌPaquete.setLayout(jPanelAgregarActTurÌPaqueteLayout);
+        jPanelAgregarActTurÌPaqueteLayout.setHorizontalGroup(
+            jPanelAgregarActTurÌPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 508, Short.MAX_VALUE)
         );
-        jPanelAgregarActTur√≠PaqueteLayout.setVerticalGroup(
-            jPanelAgregarActTur√≠PaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelAgregarActTurÌPaqueteLayout.setVerticalGroup(
+            jPanelAgregarActTurÌPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Agregar Actividad Turistica a √≠Paquete", jPanelAgregarActTur√≠Paquete);
+        jTabbedPane1.addTab("Agregar Actividad Turistica a ÌPaquete", jPanelAgregarActTurÌPaquete);
 
         javax.swing.GroupLayout jPanelConsultaPaquetesActsTursLayout = new javax.swing.GroupLayout(jPanelConsultaPaquetesActsTurs);
         jPanelConsultaPaquetesActsTurs.setLayout(jPanelConsultaPaquetesActsTursLayout);
@@ -255,9 +255,9 @@ public class Laboratorio1 extends javax.swing.JFrame {
 
         jLabel5.setText("Nombre Actividad");
 
-        jLabel6.setText("Descripci√≥n");
+        jLabel6.setText("DescripciÛn");
 
-        jLabel8.setText("Duraci√≥n");
+        jLabel8.setText("DuraciÛn");
 
         jLabel9.setText("Costo");
 
@@ -283,7 +283,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("ALTA ACTIVIDAD TUR√çSTICA");
+        jLabel12.setText("ALTA ACTIVIDAD TURÕSTICA");
         jLabel12.setBorder(new javax.swing.border.MatteBorder(null));
 
         jButton1.setText("Registrar Actividad");
@@ -608,7 +608,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
     private javax.swing.JList<String> jList3;
     private javax.swing.JList<String> jList4;
     private javax.swing.JList<String> jList5;
-    private javax.swing.JPanel jPanelAgregarActTur√≠Paquete;
+    private javax.swing.JPanel jPanelAgregarActTurÌPaquete;
     private javax.swing.JPanel jPanelAltaActividadTuristica;
     private javax.swing.JPanel jPanelAltaDepartamento;
     private javax.swing.JPanel jPanelAltaSalidaTuristica;

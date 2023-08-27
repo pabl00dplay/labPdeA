@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package main.java.com.mycompany.paplicaciones;
+package com.mycompany.paplicaciones;
 
 /**
  *
@@ -62,7 +62,7 @@ public class ConsultaSalidaTuristica extends javax.swing.JPanel {
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("CONSULTA SALIDA TUR√çSTICA");
+        jLabel12.setText("CONSULTA SALIDA TUR√?STICA");
         jLabel12.setBorder(new javax.swing.border.MatteBorder(null));
 
         jButton1.setText("Registrar salida");
