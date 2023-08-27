@@ -1,4 +1,4 @@
-package com.mycompany.paplicaciones;
+package main.java.com.mycompany.paplicaciones;
 
 
 public class AltaUsuario extends javax.swing.JPanel {

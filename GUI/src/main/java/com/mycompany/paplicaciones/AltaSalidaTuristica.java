@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.mycompany.paplicaciones;
+package main.java.com.mycompany.paplicaciones;
 
 
 /**
@@ -73,7 +73,7 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("ALTA SALIDA TURÃ?STICA");
+        jLabel12.setText("ALTA SALIDA TURï¿½?STICA");
         jLabel12.setBorder(new javax.swing.border.MatteBorder(null));
 
         jButton1.setText("Registrar salida");

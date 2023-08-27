@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.mycompany.paplicaciones;
+package main.java.com.mycompany.paplicaciones;
 
 import javax.swing.JTabbedPane;
 
@@ -30,7 +30,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jTextFieldnickname.setVisible(false);
         jTextFieldnombre.setVisible(false);
         jTextFieldapellido.setVisible(false);
-        jTextFieldcorreoElectrónico.setVisible(false);
+        jTextFieldcorreoElectr�nico.setVisible(false);
         jDateChooser1.setVisible(false);
         
         jLabelDescripcionGeneral.setVisible(false);
@@ -71,7 +71,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jLabelApellido = new javax.swing.JLabel();
         jTextFieldapellido = new javax.swing.JTextField();
         jLabelCorreoElectronico = new javax.swing.JLabel();
-        jTextFieldcorreoElectrónico = new javax.swing.JTextField();
+        jTextFieldcorreoElectr�nico = new javax.swing.JTextField();
         jLabelFechNac = new javax.swing.JLabel();
         jLabelnacionalidad = new javax.swing.JLabel();
         jTextFieldnacionalidad = new javax.swing.JTextField();
@@ -82,7 +82,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArealDescripcionGeneral = new javax.swing.JTextArea();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabelAltaUsuario = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jListActividadesTuristicas = new javax.swing.JList<>();
@@ -123,9 +122,9 @@ public class ConsultaUsuario extends javax.swing.JPanel {
 
         jTextFieldapellido.setText(" ");
 
-        jLabelCorreoElectronico.setText("Correo Electrónico");
+        jLabelCorreoElectronico.setText("Correo Electr�nico");
 
-        jTextFieldcorreoElectrónico.setText(" ");
+        jTextFieldcorreoElectr�nico.setText(" ");
 
         jLabelFechNac.setText("Fecha de Nacimiento");
 
@@ -133,7 +132,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
 
         jTextFieldnacionalidad.setText(" ");
 
-        jLabelDescripcionGeneral.setText("Descripción General");
+        jLabelDescripcionGeneral.setText("Descripci�n General");
 
         jLabellink.setText("Link a su sitio web");
 
@@ -253,7 +252,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jTextFieldnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(170, 170, 170))
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jTextFieldnickname, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
@@ -261,7 +259,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextFieldnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jTextFieldcorreoElectrónico, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextFieldcorreoElectr�nico, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabelApellido)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -303,13 +301,11 @@ public class ConsultaUsuario extends javax.swing.JPanel {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabelApellido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jTextFieldcorreoElectrónico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextFieldcorreoElectr�nico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabelCorreoElectronico))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabelFechNac)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabelFechNac)
                                 .addGap(13, 13, 13)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabelnacionalidad)
@@ -494,7 +490,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbTuristaProveedor;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabelActividadesTuristicas;
     private javax.swing.JLabel jLabelAltaUsuario;
     private javax.swing.JLabel jLabelApellido;
@@ -519,7 +514,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArealDescripcionGeneral;
     private javax.swing.JTextField jTextFieldapellido;
-    private javax.swing.JTextField jTextFieldcorreoElectrónico;
+    private javax.swing.JTextField jTextFieldcorreoElectr�nico;
     private javax.swing.JTextField jTextFieldlink;
     private javax.swing.JTextField jTextFieldnacionalidad;
     private javax.swing.JTextField jTextFieldnickname;
