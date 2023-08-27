@@ -14,7 +14,7 @@ public class DatosAct extends javax.swing.JFrame {
     /**
      * Creates new form DatosAct
      */
-    public DatosAct(IController cont) {
+    public DatosAct(IController cont, String nom) {
         initComponents(cont);
     }
 
@@ -73,7 +73,8 @@ public class DatosAct extends javax.swing.JFrame {
     }// </editor-fold>//
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt, IController cont) {//GEN-FIRST:event_jButton1ActionPerformed
-        new DatosSal(cont).setVisible(true);
+        String nom="nombre";
+        new DatosSal(cont,nom).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

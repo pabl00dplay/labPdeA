@@ -5,6 +5,8 @@
 package main.java.com.mycompany.paplicaciones;
 
 import javax.swing.JTabbedPane;
+import logica.*;
+
 
 /**
  *
@@ -15,8 +17,8 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     /**
      * Creates new form ConsultaUsuario
      */
-    public ConsultaUsuario() {
-        initComponents();
+    public ConsultaUsuario(IController cont) {
+        initComponents(cont);
         jLabelnickname.setVisible(false);
         jLabelAltaUsuario.setVisible(true);
         jLabelApellido.setVisible(false);
@@ -31,7 +33,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jTextFieldnombre.setVisible(false);
         jTextFieldapellido.setVisible(false);
         jTextFieldcorreoElectrónico.setVisible(false);
-        jDateChooser1.setVisible(false);
+        //jDateChooser1.setVisible(false);
         
         jLabelDescripcionGeneral.setVisible(false);
         jTextArealDescripcionGeneral.setVisible(false);
@@ -60,7 +62,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents(IController cont) {
 
         jPanel1 = new javax.swing.JPanel();
         cmbTuristaProveedor = new javax.swing.JComboBox<>();
@@ -82,7 +84,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArealDescripcionGeneral = new javax.swing.JTextArea();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabelAltaUsuario = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jListActividadesTuristicas = new javax.swing.JList<>();
@@ -174,7 +175,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jListActividadesTuristicas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListActividadesTuristicasMouseClicked(evt);
+                jListActividadesTuristicasMouseClicked(evt, cont);
             }
         });
         jScrollPane2.setViewportView(jListActividadesTuristicas);
@@ -186,7 +187,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jListSalidas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListSalidasMouseClicked(evt);
+                jListSalidasMouseClicked(evt, cont);
             }
         });
         jScrollPane3.setViewportView(jListSalidas);
@@ -202,7 +203,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jListSalidasTuristicas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListSalidasTuristicasMouseClicked(evt);
+                jListSalidasTuristicasMouseClicked(evt, cont);
             }
         });
         jScrollPane4.setViewportView(jListSalidasTuristicas);
@@ -253,7 +254,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jTextFieldnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(170, 170, 170))
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jTextFieldnickname, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
@@ -306,10 +306,8 @@ public class ConsultaUsuario extends javax.swing.JPanel {
                                         .addComponent(jTextFieldcorreoElectrónico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabelCorreoElectronico))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabelFechNac)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabelFechNac)
                                 .addGap(13, 13, 13)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabelnacionalidad)
@@ -374,7 +372,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(true);
             jTextFieldapellido.setVisible(true);
             jTextFieldcorreoElectrónico.setVisible(false);
-            jDateChooser1.setVisible(true);
+            //jDateChooser1.setVisible(true);
         
             jLabelDescripcionGeneral.setVisible(false);
             jTextArealDescripcionGeneral.setVisible(false);
@@ -409,7 +407,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(true);
             jTextFieldapellido.setVisible(true);
             jTextFieldcorreoElectrónico.setVisible(true);
-            jDateChooser1.setVisible(true);
+            //jDateChooser1.setVisible(true);
             
             
             
@@ -446,7 +444,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(false);
             jTextFieldapellido.setVisible(false);
             jTextFieldcorreoElectrónico.setVisible(false);
-            jDateChooser1.setVisible(false);
+           // jDateChooser1.setVisible(false);
             jLabelDescripcionGeneral.setVisible(false);
             jTextArealDescripcionGeneral.setVisible(false);
             jPanelDescripcionGeneral.setVisible(true);
@@ -472,19 +470,25 @@ public class ConsultaUsuario extends javax.swing.JPanel {
            
     }//GEN-LAST:event_jTextFieldnicknameActionPerformed
 
-    private void jListActividadesTuristicasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListActividadesTuristicasMouseClicked
-        Laboratorio1 lab=Laboratorio1.getInstance();
-        lab.PonerConsultaActividadTurísticaDentroConsultaUsuario();
+    private void jListActividadesTuristicasMouseClicked(java.awt.event.MouseEvent evt, IController cont) {//GEN-FIRST:event_jListActividadesTuristicasMouseClicked
+        /*Laboratorio1 lab=Laboratorio1.getInstance();
+        lab.PonerConsultaActividadTurísticaDentroConsultaUsuario();*/
+        String nom="nombre";
+        new DatosAct(cont,nom).setVisible(true);
     }//GEN-LAST:event_jListActividadesTuristicasMouseClicked
 
-    private void jListSalidasTuristicasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSalidasTuristicasMouseClicked
-        Laboratorio1 lab=Laboratorio1.getInstance();
-        lab.PonerSalidasTuristicasDentroConsultaUsuario();
+    private void jListSalidasTuristicasMouseClicked(java.awt.event.MouseEvent evt, IController cont) {//GEN-FIRST:event_jListSalidasTuristicasMouseClicked
+        /*Laboratorio1 lab=Laboratorio1.getInstance();
+        lab.PonerSalidasTuristicasDentroConsultaUsuario();*/
+        String nom="nombre";
+        new DatosAct(cont,nom).setVisible(true);
     }//GEN-LAST:event_jListSalidasTuristicasMouseClicked
 
-    private void jListSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSalidasMouseClicked
-        Laboratorio1 lab=Laboratorio1.getInstance();
-        lab.PonerSalidasTuristicasDentroConsultaUsuario();
+    private void jListSalidasMouseClicked(java.awt.event.MouseEvent evt, IController cont) {//GEN-FIRST:event_jListSalidasMouseClicked
+        /*Laboratorio1 lab=Laboratorio1.getInstance();
+        lab.PonerSalidasTuristicasDentroConsultaUsuario();*/
+        String nom="nombre";
+        new DatosAct(cont,nom).setVisible(true);
     }//GEN-LAST:event_jListSalidasMouseClicked
 
     private void jTextFieldnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldnombreActionPerformed
@@ -494,7 +498,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbTuristaProveedor;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabelActividadesTuristicas;
     private javax.swing.JLabel jLabelAltaUsuario;
     private javax.swing.JLabel jLabelApellido;

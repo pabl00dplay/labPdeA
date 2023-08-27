@@ -96,8 +96,9 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt, IController cont) {                                                                                        
-        new DatosAct(cont).setVisible(true);
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt, IController cont) {
+        String nom="nombre";
+        new DatosAct(cont,nom).setVisible(true);
     }                                        
 
 
