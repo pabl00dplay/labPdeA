@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/logica/Compra.java</file>
-            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/logica/Actividad.java</file>
-            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/ConsultaSalidaTuristica.java</file>
-            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/logica/DTPaquete.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/AltaActividadTuristica.java</file>
             <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/ModificarDatosDeUsuario.java</file>
-            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/Laboratorio1.java</file>
             <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/ConsultaUsuario.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/Laboratorio_1.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/ConsultaActividadTuristica.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/AltaDeDepartamento.java</file>
         </group>
     </open-files>
 </project-private>

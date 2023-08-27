@@ -259,13 +259,16 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelCorreoElectronico">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Correo Electr&#xf3;nico"/>
+            <Property name="text" type="java.lang.String" value="Correo Electronico"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldcorreoElectr&#xf3;nico">
           <Properties>
             <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldcorreoElectr&#xf3;nicoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelFechNac">
           <Properties>

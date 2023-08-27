@@ -3,8 +3,8 @@ package main.java.com.mycompany.paplicaciones;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
-public class Laboratorio1 extends javax.swing.JFrame {
-    private Laboratorio1() {
+public class Laboratorio_1 extends javax.swing.JFrame {
+    private Laboratorio_1() {
         initComponents();
         AltaUsuario au=new AltaUsuario(); 
         PonerContenedorDentroContenedor(au,jPanelAltaUsuario);
@@ -13,7 +13,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         
     }
     
-    public void PonerConsultaActividadTur�sticaDentroConsultaUsuario() {
+    public void PonerConsultaActividadTuristicaDentroConsultaUsuario() {
      ConsultaActividadTuristica ca= new ConsultaActividadTuristica();
         PonerContenedorDentroContenedor(ca,jPanelConsultaUsuario);
     }
@@ -31,7 +31,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         contenedor.repaint();
     }
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -43,7 +43,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         jPanelConsultaSalidaTuristica = new javax.swing.JPanel();
         jPanelInscripcionSalidaTuristica = new javax.swing.JPanel();
         jPanelCrearPaqueteActTuristicas = new javax.swing.JPanel();
-        jPanelAgregarActTur�Paquete = new javax.swing.JPanel();
+        jPanelAgregarActTurPaquete = new javax.swing.JPanel();
         jPanelConsultaPaquetesActsTurs = new javax.swing.JPanel();
         jPanelAltaDepartamento = new javax.swing.JPanel();
         jPanelAltaActividadTuristica = new javax.swing.JPanel();
@@ -189,18 +189,17 @@ public class Laboratorio1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear Paquete de Actividades Turisticas", jPanelCrearPaqueteActTuristicas);
 
-        javax.swing.GroupLayout jPanelAgregarActTur�PaqueteLayout = new javax.swing.GroupLayout(jPanelAgregarActTur�Paquete);
-        jPanelAgregarActTur�Paquete.setLayout(jPanelAgregarActTur�PaqueteLayout);
-        jPanelAgregarActTur�PaqueteLayout.setHorizontalGroup(
-            jPanelAgregarActTur�PaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 508, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanelAgregarActTurPaqueteLayout = new javax.swing.GroupLayout(jPanelAgregarActTurPaquete);
+        jPanelAgregarActTurPaquete.setLayout(jPanelAgregarActTurPaqueteLayout);
+        jPanelAgregarActTurPaqueteLayout.setHorizontalGroup(
+            jPanelAgregarActTurPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 508, Short.MAX_VALUE)
         );
-        jPanelAgregarActTur�PaqueteLayout.setVerticalGroup(
-            jPanelAgregarActTur�PaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelAgregarActTurPaqueteLayout.setVerticalGroup(
+            jPanelAgregarActTurPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Agregar Actividad Turistica a �Paquete", jPanelAgregarActTur�Paquete);
+        jTabbedPane1.addTab("Agregar Actividad Turistica a Paquete", jPanelAgregarActTurPaquete);
 
         javax.swing.GroupLayout jPanelConsultaPaquetesActsTursLayout = new javax.swing.GroupLayout(jPanelConsultaPaquetesActsTurs);
         jPanelConsultaPaquetesActsTurs.setLayout(jPanelConsultaPaquetesActsTursLayout);
@@ -527,7 +526,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -536,9 +535,9 @@ public class Laboratorio1 extends javax.swing.JFrame {
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
-     public static Laboratorio1 getInstance() {
+     public static Laboratorio_1 getInstance() {
         if (instance == null) {
-            instance = new Laboratorio1();
+            instance = new Laboratorio_1();
         }
         return instance;
     }
@@ -559,29 +558,31 @@ public class Laboratorio1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Laboratorio1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Laboratorio_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Laboratorio1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Laboratorio_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Laboratorio1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Laboratorio_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Laboratorio1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Laboratorio_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Laboratorio1 lab=Laboratorio1.getInstance();
+                Laboratorio_1 lab=Laboratorio_1.getInstance();
                 lab.setVisible(true);
             }
         });
     };
     
    
-    private static Laboratorio1 instance;
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private static Laboratorio_1 instance;
+    // Variables declaration - do not modify//
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -590,7 +591,6 @@ public class Laboratorio1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
@@ -608,7 +608,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
     private javax.swing.JList<String> jList3;
     private javax.swing.JList<String> jList4;
     private javax.swing.JList<String> jList5;
-    private javax.swing.JPanel jPanelAgregarActTur�Paquete;
+    private javax.swing.JPanel jPanelAgregarActTurPaquete;
     private javax.swing.JPanel jPanelAltaActividadTuristica;
     private javax.swing.JPanel jPanelAltaDepartamento;
     private javax.swing.JPanel jPanelAltaSalidaTuristica;
@@ -632,5 +632,5 @@ public class Laboratorio1 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
