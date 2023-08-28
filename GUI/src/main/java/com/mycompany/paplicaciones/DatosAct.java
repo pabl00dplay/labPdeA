@@ -4,7 +4,7 @@
  */
 package main.java.com.mycompany.paplicaciones;
 
-import logica.*;
+import main.java.logica.*;
 /**
  *
  * @author francisco
