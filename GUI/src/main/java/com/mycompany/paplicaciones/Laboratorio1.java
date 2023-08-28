@@ -2,7 +2,7 @@ package main.java.com.mycompany.paplicaciones;
 
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
-import logica.*;
+import main.java.logica.*;
 
 public class Laboratorio1 extends javax.swing.JFrame {
     private Laboratorio1() {

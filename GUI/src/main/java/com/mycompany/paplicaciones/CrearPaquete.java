@@ -6,7 +6,7 @@ package main.java.com.mycompany.paplicaciones;
 
 import java.util.*;
 import javax.swing.*;
-import logica.*;
+import main.java.logica.*;
 
 /**
  *
@@ -62,7 +62,7 @@ public class CrearPaquete extends javax.swing.JPanel {
         btnOk.setText("OK");
         btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOkActionPerformed(evt);
+                
             }
         });
 
@@ -120,7 +120,7 @@ public class CrearPaquete extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt, IController cont) {//GEN-FIRST:event_btnOkActionPerformed
-        String nom = txtNom.getText();
+     /*   String nom = txtNom.getText();
         if (!cont.existePaq(nom)) {
             String desc = txtDesc.getText();
             int descu = (int) txtDescu.getValue();
@@ -132,7 +132,7 @@ public class CrearPaquete extends javax.swing.JPanel {
         } else {
             JFrame f = new JFrame();
             JOptionPane.showMessageDialog(f, "Un paquete con ese Nombre ya existe, por favor ingrese otro.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
+            }  */
     }//GEN-LAST:event_btnOkActionPerformed
 
 

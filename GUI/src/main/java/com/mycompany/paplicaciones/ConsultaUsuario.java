@@ -4,8 +4,7 @@
  */
 package main.java.com.mycompany.paplicaciones;
 
-import javax.swing.JTabbedPane;
-import logica.*;
+import main.java.logica.*;
 
 
 /**
