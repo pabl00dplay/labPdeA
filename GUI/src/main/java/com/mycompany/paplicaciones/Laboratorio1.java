@@ -11,7 +11,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         initComponents();
         AltaUsuario au=new AltaUsuario(); 
         PonerContenedorDentroContenedor(au,jPanelAltaUsuario);
-        ConsultaUsuario cu=new ConsultaUsuario(cont); 
+        ConsultaUsuario cu=new ConsultaUsuario(); 
         PonerContenedorDentroContenedor(cu,jPanelConsultaUsuario);
         AltaActividadTuristica aat = new AltaActividadTuristica();
         PonerContenedorDentroContenedor(aat,jPanelAltaActividadTuristica);
