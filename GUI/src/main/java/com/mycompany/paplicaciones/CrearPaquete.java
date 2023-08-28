@@ -41,6 +41,8 @@ public class CrearPaquete extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         btnOk = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(620, 600));
+
         jLabel1.setText("Nombre");
 
         txtNom.setText("jTextField1");
@@ -62,7 +64,7 @@ public class CrearPaquete extends javax.swing.JPanel {
         btnOk.setText("OK");
         btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                
+                btnOkActionPerformed(evt);
             }
         });
 
