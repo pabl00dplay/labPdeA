@@ -16,8 +16,8 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     /**
      * Creates new form ConsultaUsuario
      */
-    public ConsultaUsuario() {
-        initComponents();
+    public ConsultaUsuario(IController cont) {
+        initComponents(cont);
         jLabelnickname.setVisible(false);
         jLabelAltaUsuario.setVisible(true);
         jLabelApellido.setVisible(false);
@@ -61,7 +61,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents(IController cont) {
 
         jPanel1 = new javax.swing.JPanel();
         cmbTuristaProveedor = new javax.swing.JComboBox<>();
@@ -166,7 +166,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jListActividadesTuristicas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListActividadesTuristicasMouseClicked(evt);
+                jListActividadesTuristicasMouseClicked(evt,cont);
             }
         });
         jScrollPane2.setViewportView(jListActividadesTuristicas);
@@ -178,7 +178,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jListSalidas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListSalidasMouseClicked(evt);
+                jListSalidasMouseClicked(evt,cont);
             }
         });
         jScrollPane3.setViewportView(jListSalidas);
@@ -194,7 +194,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jListSalidasTuristicas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListSalidasTuristicasMouseClicked(evt);
+                jListSalidasTuristicasMouseClicked(evt,cont);
             }
         });
         jScrollPane4.setViewportView(jListSalidasTuristicas);

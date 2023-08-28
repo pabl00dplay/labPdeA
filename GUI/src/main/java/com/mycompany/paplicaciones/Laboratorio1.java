@@ -11,7 +11,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         initComponents();
         AltaUsuario au=new AltaUsuario(); 
         PonerContenedorDentroContenedor(au,jPanelAltaUsuario);
-        ConsultaUsuario cu=new ConsultaUsuario(); 
+        ConsultaUsuario cu=new ConsultaUsuario(cont); 
         PonerContenedorDentroContenedor(cu,jPanelConsultaUsuario);
         AltaActividadTuristica aat = new AltaActividadTuristica();
         PonerContenedorDentroContenedor(aat,jPanelAltaActividadTuristica);
@@ -23,7 +23,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         PonerContenedorDentroContenedor(ast,jPanelAltaSalidaTuristica);
         ConsultaPaquete cp = new ConsultaPaquete();
         PonerContenedorDentroContenedor(cp,jPanelConsultaPaquetesActsTurs);
-        CrearPaquete cpqt = new CrearPaquete();
+        CrearPaquete cpqt = new CrearPaquete(cont);
         PonerContenedorDentroContenedor(cpqt,jPanelCrearPaqueteActTuristicas);
         ModificarDatosDeUsuario mdu = new ModificarDatosDeUsuario();
         PonerContenedorDentroContenedor(mdu,jPanelModificarDatosUsuario); 
