@@ -88,7 +88,6 @@
                                           <Component id="jTextFieldnacionalidad" min="-2" pref="165" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jDateChooser1" alignment="0" min="-2" pref="193" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jTextFieldnickname" min="-2" pref="132" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -158,11 +157,8 @@
                                       </Group>
                                       <Component id="jLabelCorreoElectronico" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabelFechNac" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jDateChooser1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="jLabelFechNac" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabelnacionalidad" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -346,8 +342,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabelAltaUsuario">
           <Properties>
             <Property name="text" type="java.lang.String" value="Consulta de Usuario"/>

@@ -15,7 +15,7 @@ public class DatosSal extends javax.swing.JFrame {
     /**
      * Creates new form DatosSal
      */
-    public DatosSal(IController cont) {
+    public DatosSal(IController cont, String nom) {
         initComponents(cont);
     }
 
