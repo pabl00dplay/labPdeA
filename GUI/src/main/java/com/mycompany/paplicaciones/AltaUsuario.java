@@ -1,6 +1,8 @@
 package main.java.com.mycompany.paplicaciones;
 
 
+
+
 public class AltaUsuario extends javax.swing.JPanel {
 
     /**
@@ -32,15 +34,6 @@ public class AltaUsuario extends javax.swing.JPanel {
         jTextFieldnacionalidad.setVisible(false);
         jLabelnacionalidad.setVisible(false);
         jButtonEnviar.setVisible(false);
-        
-        jLabelDia.setVisible(false);
-        jLabelMes.setVisible(false);
-        jLabelAnio.setVisible(false);
-        jTextFieldDia.setVisible(false);
-        jTextFieldMes.setVisible(false);
-        jTextFieldAnio.setVisible(false);
-        
-        
         
     }
 
@@ -75,12 +68,8 @@ public class AltaUsuario extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArealDescripcionGeneral = new javax.swing.JTextArea();
         jLabelAltaUsuario = new javax.swing.JLabel();
-        jLabelDia = new javax.swing.JLabel();
-        jTextFieldDia = new javax.swing.JTextField();
-        jLabelMes = new javax.swing.JLabel();
-        jTextFieldMes = new javax.swing.JTextField();
-        jLabelAnio = new javax.swing.JLabel();
-        jTextFieldAnio = new javax.swing.JTextField();
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(620, 600));
 
         cmbTuristaProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Turista", "Proveedor" }));
         cmbTuristaProveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +107,7 @@ public class AltaUsuario extends javax.swing.JPanel {
 
         jLabelDescripcionGeneral.setText("Descripción General");
 
-        jLabellink.setText("Link a su sitio web");
+        jLabellink.setText("Sitio Web");
 
         jTextFieldlink.setText(" ");
 
@@ -153,84 +142,60 @@ public class AltaUsuario extends javax.swing.JPanel {
 
         jTextArealDescripcionGeneral.setColumns(20);
         jTextArealDescripcionGeneral.setRows(5);
-        jTextArealDescripcionGeneral.setBorder(null);
         jScrollPane1.setViewportView(jTextArealDescripcionGeneral);
 
         jLabelAltaUsuario.setText("Alta de Usuario");
-
-        jLabelDia.setText("D");
-
-        jTextFieldDia.setText(" ");
-
-        jLabelMes.setText(" M");
-
-        jTextFieldMes.setText(" ");
-
-        jLabelAnio.setText("A");
-
-        jTextFieldAnio.setText(" ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabelAltaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(jButtonEnviar))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelAltaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabelnickname, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(207, 207, 207)
-                        .addComponent(jButtonEnviar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
+                        .addGap(39, 39, 39)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabelFechNac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabelCorreoElectronico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelDescripcionGeneral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabellink, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabelDescripcionGeneral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelnacionalidad, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabellink, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabelnickname)
+                            .addComponent(jLabelNombre))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextFieldcorreoElectrónico, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextFieldcorreoElectrónico, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jTextFieldnickname, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabelApellido)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(144, 144, 144)
-                                .addComponent(cmbTuristaProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextFieldnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextFieldlink, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabelDia)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldDia, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldnickname, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabelMes)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldMes, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelAnio)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jPanelDescripcionGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabelApellido)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(cmbTuristaProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jTextFieldlink, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(512, 512, 512)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanelDescripcionGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,26 +220,16 @@ public class AltaUsuario extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldcorreoElectrónico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelCorreoElectronico))
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelFechNac)
-                            .addComponent(jLabelDia)
-                            .addComponent(jTextFieldDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelMes)
-                            .addComponent(jTextFieldMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelAnio)
-                            .addComponent(jTextFieldAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabelFechNac)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelnacionalidad)
                             .addComponent(jTextFieldnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabelDescripcionGeneral))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelDescripcionGeneral)))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                             .addGap(91, 91, 91)
@@ -288,23 +243,21 @@ public class AltaUsuario extends javax.swing.JPanel {
                     .addComponent(jLabellink))
                 .addGap(42, 42, 42)
                 .addComponent(jButtonEnviar)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 846, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -329,7 +282,6 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(true);
             jTextFieldapellido.setVisible(true);
             jTextFieldcorreoElectrónico.setVisible(true);
-            
         
             jLabelDescripcionGeneral.setVisible(false);
             jTextArealDescripcionGeneral.setVisible(false);
@@ -339,13 +291,7 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldnacionalidad.setVisible(true);
             jLabelnacionalidad.setVisible(true);
             jButtonEnviar.setVisible(true);
-            
-            jLabelDia.setVisible(true);
-            jLabelMes.setVisible(true);
-            jLabelAnio.setVisible(true);
-            jTextFieldDia.setVisible(true);
-            jTextFieldMes.setVisible(true);
-            jTextFieldAnio.setVisible(true);
+
         }
         if(opcion.equals("Proveedor")){
             jLabelnickname.setVisible(true);
@@ -362,7 +308,9 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(true);
             jTextFieldapellido.setVisible(true);
             jTextFieldcorreoElectrónico.setVisible(true);
-     
+            
+            
+            
             jLabelDescripcionGeneral.setVisible(true);
             jTextArealDescripcionGeneral.setVisible(true);
             jPanelDescripcionGeneral.setVisible(false);
@@ -372,13 +320,6 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldnacionalidad.setVisible(false);
             jLabelnacionalidad.setVisible(false);
             jButtonEnviar.setVisible(true);
-            
-            jLabelDia.setVisible(true);
-            jLabelMes.setVisible(true);
-            jLabelAnio.setVisible(true);
-            jTextFieldDia.setVisible(true);
-            jTextFieldMes.setVisible(true);
-            jTextFieldAnio.setVisible(true);
         }
         if(opcion.equals("Usuario")){
             jLabelnickname.setVisible(false);
@@ -403,13 +344,6 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldnacionalidad.setVisible(false);
             jLabelnacionalidad.setVisible(false);
             jButtonEnviar.setVisible(false);
-            
-            jLabelDia.setVisible(false);
-            jLabelMes.setVisible(false);
-            jLabelAnio.setVisible(false);
-            jTextFieldDia.setVisible(false);
-            jTextFieldMes.setVisible(false);
-            jTextFieldAnio.setVisible(false);
         }
     }//GEN-LAST:event_cmbTuristaProveedorActionPerformed
 
@@ -422,13 +356,10 @@ public class AltaUsuario extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cmbTuristaProveedor;
     private javax.swing.JButton jButtonEnviar;
     private javax.swing.JLabel jLabelAltaUsuario;
-    private javax.swing.JLabel jLabelAnio;
     private javax.swing.JLabel jLabelApellido;
     private javax.swing.JLabel jLabelCorreoElectronico;
     private javax.swing.JLabel jLabelDescripcionGeneral;
-    private javax.swing.JLabel jLabelDia;
     private javax.swing.JLabel jLabelFechNac;
-    private javax.swing.JLabel jLabelMes;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabellink;
     private javax.swing.JLabel jLabelnacionalidad;
@@ -438,9 +369,6 @@ public class AltaUsuario extends javax.swing.JPanel {
     private javax.swing.JPanel jPanelDescripcionGeneral;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArealDescripcionGeneral;
-    private javax.swing.JTextField jTextFieldAnio;
-    private javax.swing.JTextField jTextFieldDia;
-    private javax.swing.JTextField jTextFieldMes;
     private javax.swing.JTextField jTextFieldapellido;
     private javax.swing.JTextField jTextFieldcorreoElectrónico;
     private javax.swing.JTextField jTextFieldlink;

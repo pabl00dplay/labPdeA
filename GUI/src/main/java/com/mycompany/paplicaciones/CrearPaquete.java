@@ -4,11 +4,13 @@
  */
 package main.java.com.mycompany.paplicaciones;
 
-import logica.IController;
+import java.util.*;
+import javax.swing.*;
+import main.java.logica.*;
 
 /**
  *
- * @author usuario
+ * @author francisco
  */
 public class CrearPaquete extends javax.swing.JPanel {
 
@@ -16,7 +18,7 @@ public class CrearPaquete extends javax.swing.JPanel {
      * Creates new form CrearPaquete
      */
     public CrearPaquete(IController cont) {
-        initComponents();
+        initComponents(cont);
     }
 
     /**
@@ -26,21 +28,142 @@ public class CrearPaquete extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents(IController cont) {
+
+        jLabel1 = new javax.swing.JLabel();
+        txtNom = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtDesc = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        btnOk = new javax.swing.JButton();
+        txtDescu = new javax.swing.JFormattedTextField();
+        txtVali = new javax.swing.JFormattedTextField();
+
+        setPreferredSize(new java.awt.Dimension(620, 600));
+
+        jLabel1.setText("Nombre");
+
+        txtNom.setText("jTextField1");
+
+        jLabel2.setText("Descripcion");
+
+        txtDesc.setText("jTextField2");
+
+        jLabel3.setText("Descuento");
+
+        jLabel4.setText("%");
+
+        jLabel5.setText("Validez");
+
+        jLabel6.setText("dias");
+
+        jLabel7.setText("Fecha de Alta");
+
+        btnOk.setText("OK");
+        btnOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOkActionPerformed(evt,cont);
+            }
+        });
+
+        txtDescu.setText("jFormattedTextField1");
+
+        txtVali.setText("jFormattedTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtDescu, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(btnOk)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtVali, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                .addGap(21, 21, 21)))
+                        .addComponent(jLabel6)))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(txtDescu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(txtVali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 318, Short.MAX_VALUE)
+                .addComponent(btnOk)
+                .addGap(19, 19, 19))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt, IController cont) {//GEN-FIRST:event_btnOkActionPerformed
+        String nom = txtNom.getText();
+        if (!cont.existePaq(nom)) {
+            String desc = txtDesc.getText();
+            int descu = (int) txtDescu.getValue();
+            int val = (int) txtVali.getValue();
+            Date f = null;
+            //Date f = txtFecha.getDate();
+            DTPaquete dt = new DTPaquete(nom, desc, descu, val, f);
+            cont.AltaPaquete(dt);
+        } else {
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f, "Un paquete con ese Nombre ya existe, por favor ingrese otro.", "Error", JOptionPane.ERROR_MESSAGE);
+            } 
+    }//GEN-LAST:event_btnOkActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnOk;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField txtDesc;
+    private javax.swing.JFormattedTextField txtDescu;
+    private javax.swing.JTextField txtNom;
+    private javax.swing.JFormattedTextField txtVali;
     // End of variables declaration//GEN-END:variables
 }

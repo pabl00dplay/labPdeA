@@ -4,8 +4,8 @@
  */
 package main.java.com.mycompany.paplicaciones;
 
-import java.awt.BorderLayout;
-import javax.swing.JDialog;
+import main.java.logica.*;
+
 
 /**
  *
@@ -16,8 +16,8 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     /**
      * Creates new form ConsultaUsuario
      */
-    public ConsultaUsuario() {
-        initComponents();
+    public ConsultaUsuario(IController cont) {
+        initComponents(cont);
         jLabelnickname.setVisible(false);
         jLabelAltaUsuario.setVisible(true);
         jLabelApellido.setVisible(false);
@@ -32,30 +32,26 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jTextFieldnombre.setVisible(false);
         jTextFieldapellido.setVisible(false);
         jTextFieldcorreoElectrónico.setVisible(false);
-        
+        //jDateChooser1.setVisible(false);
         
         jLabelDescripcionGeneral.setVisible(false);
         jTextArealDescripcionGeneral.setVisible(false);
-        jPanel2.setVisible(true);
+        jPanel1.setVisible(true);
         jLabellink.setVisible(false);
         jTextFieldlink.setVisible(false);
         jTextFieldnacionalidad.setVisible(false);
         jLabelnacionalidad.setVisible(false);
-        jButtonEnviar.setVisible(false);
         
-        jLabelDia.setVisible(false);
-        jLabelMes.setVisible(false);
-        jLabelAnio.setVisible(false);
-        jTextFieldDia.setVisible(false);
-        jTextFieldMes.setVisible(false);
-        jTextFieldAnio.setVisible(false);
+        
         
         jLabelActividadesTuristicas.setVisible(false);
-        jListjLabelActividadesTuristicas.setVisible(false);
+        jListActividadesTuristicas.setVisible(false);
         jLabelSalidas.setVisible(false);
         jListSalidas.setVisible(false);
-        jLabelSalidasinscriptas.setVisible(false);
-        jListSalidasinscriptas.setVisible(false);
+        
+        
+        jLabelSalidasTuristicas.setVisible(false);
+        jListSalidasTuristicas.setVisible(false);
     }
 
     /**
@@ -65,7 +61,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents(IController cont) {
 
         jPanel1 = new javax.swing.JPanel();
         cmbTuristaProveedor = new javax.swing.JComboBox<>();
@@ -84,26 +80,22 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jLabellink = new javax.swing.JLabel();
         jTextFieldlink = new javax.swing.JTextField();
         jPanelDescripcionGeneral = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArealDescripcionGeneral = new javax.swing.JTextArea();
         jLabelAltaUsuario = new javax.swing.JLabel();
-        jLabelDia = new javax.swing.JLabel();
-        jTextFieldDia = new javax.swing.JTextField();
-        jLabelMes = new javax.swing.JLabel();
-        jTextFieldMes = new javax.swing.JTextField();
-        jLabelAnio = new javax.swing.JLabel();
-        jTextFieldAnio = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jListjLabelActividadesTuristicas = new javax.swing.JList<>();
+        jListActividadesTuristicas = new javax.swing.JList<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         jListSalidas = new javax.swing.JList<>();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jListSalidasinscriptas = new javax.swing.JList<>();
         jLabelActividadesTuristicas = new javax.swing.JLabel();
         jLabelSalidas = new javax.swing.JLabel();
-        jLabelSalidasinscriptas = new javax.swing.JLabel();
-        jButtonEnviar = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jListSalidasTuristicas = new javax.swing.JList<>();
+        jLabelSalidasTuristicas = new javax.swing.JLabel();
+
+        setPreferredSize(new java.awt.Dimension(620, 600));
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(620, 600));
 
         cmbTuristaProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Turista", "Proveedor" }));
         cmbTuristaProveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +116,11 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jLabelNombre.setText("Nombre");
 
         jTextFieldnombre.setText(" ");
+        jTextFieldnombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldnombreActionPerformed(evt);
+            }
+        });
 
         jLabelApellido.setText("Apellido");
 
@@ -156,47 +153,23 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 427, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 154, Short.MAX_VALUE)
-        );
-
         jTextArealDescripcionGeneral.setColumns(20);
         jTextArealDescripcionGeneral.setRows(5);
-        jTextArealDescripcionGeneral.setBorder(null);
         jScrollPane1.setViewportView(jTextArealDescripcionGeneral);
 
-        jLabelAltaUsuario.setText("Alta de Usuario");
+        jLabelAltaUsuario.setText("Consulta de Usuario");
 
-        jLabelDia.setText("D");
-
-        jTextFieldDia.setText(" ");
-
-        jLabelMes.setText(" M");
-
-        jTextFieldMes.setText(" ");
-
-        jLabelAnio.setText("A");
-
-        jTextFieldAnio.setText(" ");
-
-        jListjLabelActividadesTuristicas.setModel(new javax.swing.AbstractListModel<String>() {
+        jListActividadesTuristicas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jListjLabelActividadesTuristicas.addMouseListener(new java.awt.event.MouseAdapter() {
+        jListActividadesTuristicas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListjLabelActividadesTuristicasMouseClicked(evt);
+                jListActividadesTuristicasMouseClicked(evt,cont);
             }
         });
-        jScrollPane2.setViewportView(jListjLabelActividadesTuristicas);
+        jScrollPane2.setViewportView(jListActividadesTuristicas);
 
         jListSalidas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -205,30 +178,28 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jListSalidas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListSalidasMouseClicked(evt);
+                jListSalidasMouseClicked(evt,cont);
             }
         });
         jScrollPane3.setViewportView(jListSalidas);
-
-        jListSalidasinscriptas.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jListSalidasinscriptas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListSalidasinscriptasMouseClicked(evt);
-            }
-        });
-        jScrollPane4.setViewportView(jListSalidasinscriptas);
 
         jLabelActividadesTuristicas.setText("Actividades Turisticas");
 
         jLabelSalidas.setText("Salidas");
 
-        jLabelSalidasinscriptas.setText("Salidas inscriptas");
+        jListSalidasTuristicas.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jListSalidasTuristicas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListSalidasTuristicasMouseClicked(evt,cont);
+            }
+        });
+        jScrollPane4.setViewportView(jListSalidasTuristicas);
 
-        jButtonEnviar.setText("Enviar");
+        jLabelSalidasTuristicas.setText("Salidas Turisticas");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -237,112 +208,91 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelAltaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabelnickname, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(17, 17, 17)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabellink, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldlink, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabelFechNac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabelCorreoElectronico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabelnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelDescripcionGeneral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jTextFieldcorreoElectrónico, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jTextFieldnickname, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabelApellido)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(144, 144, 144)
-                                        .addComponent(cmbTuristaProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextFieldnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabelDia)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldDia, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabelMes)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldMes, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabelAnio)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jTextFieldAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jPanelDescripcionGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGap(471, 471, 471)
+                                .addComponent(jLabelSalidas))
                             .addComponent(jLabelActividadesTuristicas)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(145, 145, 145)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jTextFieldlink, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(5, 5, 5)
+                                        .addComponent(jLabelAltaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cmbTuristaProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(391, 391, 391)
+                                .addComponent(jPanelDescripcionGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabelSalidas)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabellink, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabelnickname, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabelFechNac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabelCorreoElectronico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabelnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabelDescripcionGeneral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jTextFieldnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(170, 170, 170))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jTextFieldnickname, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextFieldnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jTextFieldcorreoElectrónico, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabelApellido)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelSalidasinscriptas)
+                            .addComponent(jLabelSalidasTuristicas)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButtonEnviar)))))
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelDescripcionGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelAltaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbTuristaProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldnickname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelnickname)
-                            .addComponent(jLabelApellido)
-                            .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbTuristaProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelAltaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextFieldnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelNombre))
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldcorreoElectrónico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelCorreoElectronico))
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelFechNac)
-                            .addComponent(jLabelDia)
-                            .addComponent(jTextFieldDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelMes)
-                            .addComponent(jTextFieldMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelAnio)
-                            .addComponent(jTextFieldAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabelNombre)
+                            .addComponent(jTextFieldnickname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelnickname))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelApellido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextFieldcorreoElectrónico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabelCorreoElectronico))
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabelFechNac)
+                        .addGap(13, 13, 13)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelnacionalidad)
                             .addComponent(jTextFieldnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -352,33 +302,24 @@ public class ConsultaUsuario extends javax.swing.JPanel {
                                 .addComponent(jLabelDescripcionGeneral))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldlink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabellink)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGap(91, 91, 91)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jPanelDescripcionGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabellink))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelSalidasTuristicas)
+                    .addComponent(jLabelActividadesTuristicas)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabelActividadesTuristicas)
-                                .addComponent(jLabelSalidas))
-                            .addComponent(jLabelSalidasinscriptas))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButtonEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabelSalidas)))
+                .addGap(2, 2, 2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -386,15 +327,12 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 846, Short.MAX_VALUE)
-                .addGap(26, 26, 26))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -414,8 +352,9 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldnickname.setVisible(true);
             jTextFieldnombre.setVisible(true);
             jTextFieldapellido.setVisible(true);
-            jTextFieldcorreoElectrónico.setVisible(true);
-
+            jTextFieldcorreoElectrónico.setVisible(false);
+            //jDateChooser1.setVisible(true);
+        
             jLabelDescripcionGeneral.setVisible(false);
             jTextArealDescripcionGeneral.setVisible(false);
             jPanelDescripcionGeneral.setVisible(true);
@@ -423,21 +362,16 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldlink.setVisible(false);
             jTextFieldnacionalidad.setVisible(true);
             jLabelnacionalidad.setVisible(true);
-            jButtonEnviar.setVisible(true);
-
-            jLabelDia.setVisible(true);
-            jLabelMes.setVisible(true);
-            jLabelAnio.setVisible(true);
-            jTextFieldDia.setVisible(true);
-            jTextFieldMes.setVisible(true);
-            jTextFieldAnio.setVisible(true);
+            
             
             jLabelActividadesTuristicas.setVisible(false);
-            jListjLabelActividadesTuristicas.setVisible(false);
+            jListActividadesTuristicas.setVisible(false);
             jLabelSalidas.setVisible(false);
             jListSalidas.setVisible(false);
-            jLabelSalidasinscriptas.setVisible(true);
-            jListSalidasinscriptas.setVisible(true);
+            
+            jLabelSalidasTuristicas.setVisible(true);
+            jListSalidasTuristicas.setVisible(true);
+
         }
         if(opcion.equals("Proveedor")){
             jLabelnickname.setVisible(true);
@@ -454,7 +388,10 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(true);
             jTextFieldapellido.setVisible(true);
             jTextFieldcorreoElectrónico.setVisible(true);
-
+            //jDateChooser1.setVisible(true);
+            
+            
+            
             jLabelDescripcionGeneral.setVisible(true);
             jTextArealDescripcionGeneral.setVisible(true);
             jPanelDescripcionGeneral.setVisible(false);
@@ -463,21 +400,15 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldlink.setVisible(true);
             jTextFieldnacionalidad.setVisible(false);
             jLabelnacionalidad.setVisible(false);
-            jButtonEnviar.setVisible(true);
-
-            jLabelDia.setVisible(true);
-            jLabelMes.setVisible(true);
-            jLabelAnio.setVisible(true);
-            jTextFieldDia.setVisible(true);
-            jTextFieldMes.setVisible(true);
-            jTextFieldAnio.setVisible(true);
+        
             
             jLabelActividadesTuristicas.setVisible(true);
-            jListjLabelActividadesTuristicas.setVisible(true);
+            jListActividadesTuristicas.setVisible(true);
             jLabelSalidas.setVisible(true);
             jListSalidas.setVisible(true);
-            jLabelSalidasinscriptas.setVisible(false);
-            jListSalidasinscriptas.setVisible(false);
+            
+            jLabelSalidasTuristicas.setVisible(false);
+            jListSalidasTuristicas.setVisible(false);
         }
         if(opcion.equals("Usuario")){
             jLabelnickname.setVisible(false);
@@ -494,6 +425,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(false);
             jTextFieldapellido.setVisible(false);
             jTextFieldcorreoElectrónico.setVisible(false);
+           // jDateChooser1.setVisible(false);
             jLabelDescripcionGeneral.setVisible(false);
             jTextArealDescripcionGeneral.setVisible(false);
             jPanelDescripcionGeneral.setVisible(true);
@@ -501,101 +433,74 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldlink.setVisible(false);
             jTextFieldnacionalidad.setVisible(false);
             jLabelnacionalidad.setVisible(false);
-            jButtonEnviar.setVisible(false);
-
-            jLabelDia.setVisible(false);
-            jLabelMes.setVisible(false);
-            jLabelAnio.setVisible(false);
-            jTextFieldDia.setVisible(false);
-            jTextFieldMes.setVisible(false);
-            jTextFieldAnio.setVisible(false);
+            
+            
             
             jLabelActividadesTuristicas.setVisible(false);
-            jListjLabelActividadesTuristicas.setVisible(false);
+            jListActividadesTuristicas.setVisible(false);
             jLabelSalidas.setVisible(false);
             jListSalidas.setVisible(false);
-            jLabelSalidasinscriptas.setVisible(false);
-            jListSalidasinscriptas.setVisible(false);
+            
+            
+            jLabelSalidasTuristicas.setVisible(false);
+            jListSalidasTuristicas.setVisible(false);
         }
     }//GEN-LAST:event_cmbTuristaProveedorActionPerformed
 
     private void jTextFieldnicknameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldnicknameActionPerformed
-        // TODO add your handling code here:
+           
     }//GEN-LAST:event_jTextFieldnicknameActionPerformed
 
-    private void jListjLabelActividadesTuristicasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListjLabelActividadesTuristicasMouseClicked
-        AltaActividadTuristica contenido=new AltaActividadTuristica();
-        contenido.setSize(800,600);
-        contenido.setLocation(0,0);
-        JDialog contenedor=new JDialog();
-        contenedor.setSize(800,600);
-        contenedor.setLocation(0,0);
-        contenedor.add(contenido,BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();
-        contenedor.setVisible(true);
-                
-    }//GEN-LAST:event_jListjLabelActividadesTuristicasMouseClicked
+    private void jListActividadesTuristicasMouseClicked(java.awt.event.MouseEvent evt, IController cont) {//GEN-FIRST:event_jListActividadesTuristicasMouseClicked
+        /*Laboratorio1 lab=Laboratorio1.getInstance();
+        lab.PonerConsultaActividadTurísticaDentroConsultaUsuario();*/
+        String nom="nombre";
+        new DatosAct(cont,nom).setVisible(true);
+    }//GEN-LAST:event_jListActividadesTuristicasMouseClicked
 
-    private void jListSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSalidasMouseClicked
-        AltaSalidaTuristica contenido=new AltaSalidaTuristica();
-        contenido.setSize(800,600);
-        contenido.setLocation(0,0);
-        JDialog contenedor=new JDialog();
-        contenedor.setSize(800,600);
-        contenedor.setLocation(0,0);
-        contenedor.add(contenido,BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();
-        contenedor.setVisible(true);
+    private void jListSalidasTuristicasMouseClicked(java.awt.event.MouseEvent evt, IController cont) {//GEN-FIRST:event_jListSalidasTuristicasMouseClicked
+        /*Laboratorio1 lab=Laboratorio1.getInstance();
+        lab.PonerSalidasTuristicasDentroConsultaUsuario();*/
+        String nom="nombre";
+        new DatosAct(cont,nom).setVisible(true);
+    }//GEN-LAST:event_jListSalidasTuristicasMouseClicked
+
+    private void jListSalidasMouseClicked(java.awt.event.MouseEvent evt, IController cont) {//GEN-FIRST:event_jListSalidasMouseClicked
+        /*Laboratorio1 lab=Laboratorio1.getInstance();
+        lab.PonerSalidasTuristicasDentroConsultaUsuario();*/
+        String nom="nombre";
+        new DatosAct(cont,nom).setVisible(true);
     }//GEN-LAST:event_jListSalidasMouseClicked
 
-    private void jListSalidasinscriptasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSalidasinscriptasMouseClicked
-        AltaSalidaTuristica contenido=new AltaSalidaTuristica();
-        contenido.setSize(800,600);
-        contenido.setLocation(0,0);
-        JDialog contenedor=new JDialog();
-        contenedor.setSize(800,600);
-        contenedor.setLocation(0,0);
-        contenedor.add(contenido,BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();
-        contenedor.setVisible(true);
-    }//GEN-LAST:event_jListSalidasinscriptasMouseClicked
-
+    private void jTextFieldnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldnombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldnombreActionPerformed
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbTuristaProveedor;
-    private javax.swing.JButton jButtonEnviar;
     private javax.swing.JLabel jLabelActividadesTuristicas;
     private javax.swing.JLabel jLabelAltaUsuario;
-    private javax.swing.JLabel jLabelAnio;
     private javax.swing.JLabel jLabelApellido;
     private javax.swing.JLabel jLabelCorreoElectronico;
     private javax.swing.JLabel jLabelDescripcionGeneral;
-    private javax.swing.JLabel jLabelDia;
     private javax.swing.JLabel jLabelFechNac;
-    private javax.swing.JLabel jLabelMes;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelSalidas;
-    private javax.swing.JLabel jLabelSalidasinscriptas;
+    private javax.swing.JLabel jLabelSalidasTuristicas;
     private javax.swing.JLabel jLabellink;
     private javax.swing.JLabel jLabelnacionalidad;
     private javax.swing.JLabel jLabelnickname;
+    private javax.swing.JList<String> jListActividadesTuristicas;
     private javax.swing.JList<String> jListSalidas;
-    private javax.swing.JList<String> jListSalidasinscriptas;
-    private javax.swing.JList<String> jListjLabelActividadesTuristicas;
+    private javax.swing.JList<String> jListSalidasTuristicas;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelDescripcionGeneral;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArealDescripcionGeneral;
-    private javax.swing.JTextField jTextFieldAnio;
-    private javax.swing.JTextField jTextFieldDia;
-    private javax.swing.JTextField jTextFieldMes;
     private javax.swing.JTextField jTextFieldapellido;
     private javax.swing.JTextField jTextFieldcorreoElectrónico;
     private javax.swing.JTextField jTextFieldlink;
