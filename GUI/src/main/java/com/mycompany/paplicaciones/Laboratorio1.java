@@ -2,10 +2,12 @@ package main.java.com.mycompany.paplicaciones;
 
 import logica.*;
 import java.awt.BorderLayout;
+import javax.swing.JDialog;
 import javax.swing.JPanel;
 
 public class Laboratorio1 extends javax.swing.JFrame {
-    public Laboratorio1() {
+    private static  Laboratorio1 instancia = null;
+    private Laboratorio1() {
         initComponents();
         Fabrica fab=Fabrica.getInstance();
         IController cont=fab.getIController();
@@ -13,15 +15,44 @@ public class Laboratorio1 extends javax.swing.JFrame {
         PonerContenedorDentroContenedor(au,jPanelAltaUsuario);
         ConsultaUsuario cu=new ConsultaUsuario(); 
         PonerContenedorDentroContenedor(cu,jPanelConsultaUsuario);
-        CrearPaquete cp=new CrearPaquete(cont);
-        PonerContenedorDentroContenedor(cp,jPanelCrearPaqueteActTuristicas);
         AgregarActividadPaquete ap=new AgregarActividadPaquete(cont);
         PonerContenedorDentroContenedor(ap,jPanelAgregarActTuríPaquete);
         ConsultaPaquete cpa=new ConsultaPaquete(cont);
         PonerContenedorDentroContenedor(cpa,jPanelConsultaPaquetesActsTurs);
         
     }
+        
+    public static Laboratorio1 getInstance() {
+        if (instancia == null) {
+            instancia = new Laboratorio1();
+        }
+        return instancia;
+    }
+    public void PonerPanelConsultaActividadTuristica(){
+        ConsultaActividadTuristica at=new ConsultaActividadTuristica();
+        at.setSize(800, 600);
+        at.setVisible(true);
+        dialog.setSize(800,600);
+        dialog.setLocation(0,0);
+        dialog.add(at,BorderLayout.CENTER);
+        dialog.revalidate();
+        dialog.repaint();
+        dialog.setVisible(true);
     
+    };
+    
+    public void PonerPanelConsultaSalidaTuristica(){
+        ConsultaSalidaTuristica cst=new ConsultaSalidaTuristica();
+        cst.setSize(800, 600);
+        cst.setVisible(true);
+        dialog2.setSize(800,600);
+        dialog2.setLocation(0,0);
+        dialog2.add(cst,BorderLayout.CENTER);
+        dialog2.revalidate();
+        dialog2.repaint();
+        dialog2.setVisible(true);
+    
+    };
     private void PonerContenedorDentroContenedor(JPanel contenido,JPanel contenedor) {
         contenido.setSize(800,600);
         contenido.setLocation(0,0);
@@ -273,7 +304,8 @@ public class Laboratorio1 extends javax.swing.JFrame {
             }
         });
     }
-
+    private JDialog dialog=new JDialog();
+    private JDialog dialog2=new JDialog();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanelAgregarActTuríPaquete;
