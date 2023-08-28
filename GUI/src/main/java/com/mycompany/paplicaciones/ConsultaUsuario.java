@@ -4,6 +4,9 @@
  */
 package main.java.com.mycompany.paplicaciones;
 
+import java.awt.BorderLayout;
+import javax.swing.JDialog;
+
 /**
  *
  * @author usuario
@@ -521,18 +524,43 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextFieldnicknameActionPerformed
 
     private void jListjLabelActividadesTuristicasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListjLabelActividadesTuristicasMouseClicked
-        Laboratorio1 lab =Laboratorio1.getInstance();
-        lab.PonerPanelConsultaActividadTuristica();
+        AltaActividadTuristica contenido=new AltaActividadTuristica();
+        contenido.setSize(800,600);
+        contenido.setLocation(0,0);
+        JDialog contenedor=new JDialog();
+        contenedor.setSize(800,600);
+        contenedor.setLocation(0,0);
+        contenedor.add(contenido,BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+        contenedor.setVisible(true);
+                
     }//GEN-LAST:event_jListjLabelActividadesTuristicasMouseClicked
 
     private void jListSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSalidasMouseClicked
-        Laboratorio1 lab =Laboratorio1.getInstance();
-        lab.PonerPanelConsultaSalidaTuristica();
+        AltaSalidaTuristica contenido=new AltaSalidaTuristica();
+        contenido.setSize(800,600);
+        contenido.setLocation(0,0);
+        JDialog contenedor=new JDialog();
+        contenedor.setSize(800,600);
+        contenedor.setLocation(0,0);
+        contenedor.add(contenido,BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+        contenedor.setVisible(true);
     }//GEN-LAST:event_jListSalidasMouseClicked
 
     private void jListSalidasinscriptasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSalidasinscriptasMouseClicked
-         Laboratorio1 lab =Laboratorio1.getInstance();
-        lab.PonerPanelConsultaSalidaTuristica();
+        AltaSalidaTuristica contenido=new AltaSalidaTuristica();
+        contenido.setSize(800,600);
+        contenido.setLocation(0,0);
+        JDialog contenedor=new JDialog();
+        contenedor.setSize(800,600);
+        contenedor.setLocation(0,0);
+        contenedor.add(contenido,BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+        contenedor.setVisible(true);
     }//GEN-LAST:event_jListSalidasinscriptasMouseClicked
 
 
