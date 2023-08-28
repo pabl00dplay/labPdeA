@@ -17,8 +17,8 @@ public class CrearPaquete extends javax.swing.JPanel {
     /**
      * Creates new form CrearPaquete
      */
-    public CrearPaquete(IController cont) {
-        initComponents(cont);
+    public CrearPaquete() {
+        initComponents();
     }
 
     /**
@@ -28,17 +28,15 @@ public class CrearPaquete extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents(IController cont) {
+    private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
         txtNom = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtDesc = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtDescu = (JFormattedTextField) new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtVali = (JFormattedTextField) new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         btnOk = new javax.swing.JButton();
@@ -53,13 +51,9 @@ public class CrearPaquete extends javax.swing.JPanel {
 
         jLabel3.setText("Descuento");
 
-        txtDescu.setText("jTextField3");
-
         jLabel4.setText("%");
 
         jLabel5.setText("Validez");
-
-        txtVali.setText("jTextField4");
 
         jLabel6.setText("dias");
 
@@ -68,7 +62,7 @@ public class CrearPaquete extends javax.swing.JPanel {
         btnOk.setText("OK");
         btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOkActionPerformed(evt, cont);
+                btnOkActionPerformed(evt);
             }
         });
 
@@ -89,13 +83,11 @@ public class CrearPaquete extends javax.swing.JPanel {
                     .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtDescu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(84, 84, 84)
                         .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnOk)
-                            .addComponent(txtVali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addComponent(btnOk)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6)))
                 .addContainerGap(141, Short.MAX_VALUE))
@@ -111,19 +103,17 @@ public class CrearPaquete extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtDescu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtVali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(btnOk)
                 .addGap(19, 19, 19))
         );
@@ -142,6 +132,7 @@ public class CrearPaquete extends javax.swing.JPanel {
         } else {
             JFrame f = new JFrame();
             JOptionPane.showMessageDialog(f, "Un paquete con ese Nombre ya existe, por favor ingrese otro.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
     }//GEN-LAST:event_btnOkActionPerformed
 
 
@@ -155,8 +146,6 @@ public class CrearPaquete extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField txtDesc;
-    private javax.swing.JFormattedTextField txtDescu;
     private javax.swing.JTextField txtNom;
-    private javax.swing.JFormattedTextField txtVali;
     // End of variables declaration//GEN-END:variables
 }
