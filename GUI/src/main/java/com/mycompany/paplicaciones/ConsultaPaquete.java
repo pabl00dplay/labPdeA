@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package main.java.com.mycompany.paplicaciones;
+
 import logica.*;
 
 /**
@@ -95,8 +96,9 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt, IController cont) {                                                                                        
-        new DatosAct(cont).setVisible(true);
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt, IController cont) {
+        String nom="nombre";
+        new DatosAct(cont,nom).setVisible(true);
     }                                        
 
 

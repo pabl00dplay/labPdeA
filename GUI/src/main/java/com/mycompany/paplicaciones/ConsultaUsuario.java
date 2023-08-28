@@ -4,6 +4,10 @@
  */
 package main.java.com.mycompany.paplicaciones;
 
+import javax.swing.JTabbedPane;
+import logica.*;
+
+
 /**
  *
  * @author usuario
@@ -13,8 +17,8 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     /**
      * Creates new form ConsultaUsuario
      */
-    public ConsultaUsuario() {
-        initComponents();
+    public ConsultaUsuario(IController cont) {
+        initComponents(cont);
         jLabelnickname.setVisible(false);
         jLabelAltaUsuario.setVisible(true);
         jLabelApellido.setVisible(false);
@@ -29,6 +33,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jTextFieldnombre.setVisible(false);
         jTextFieldapellido.setVisible(false);
         jTextFieldcorreoElectrónico.setVisible(false);
+        //jDateChooser1.setVisible(false);
         
         jLabelDescripcionGeneral.setVisible(false);
         jTextArealDescripcionGeneral.setVisible(false);
@@ -57,7 +62,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents(IController cont) {
 
         jPanel1 = new javax.swing.JPanel();
         cmbTuristaProveedor = new javax.swing.JComboBox<>();
@@ -119,14 +124,9 @@ public class ConsultaUsuario extends javax.swing.JPanel {
 
         jTextFieldapellido.setText(" ");
 
-        jLabelCorreoElectronico.setText("Correo Electronico");
+        jLabelCorreoElectronico.setText("Correo Electrónico");
 
         jTextFieldcorreoElectrónico.setText(" ");
-        jTextFieldcorreoElectrónico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldcorreoElectrónicoActionPerformed(evt);
-            }
-        });
 
         jLabelFechNac.setText("Fecha de Nacimiento");
 
@@ -175,7 +175,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jListActividadesTuristicas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListActividadesTuristicasMouseClicked(evt);
+                jListActividadesTuristicasMouseClicked(evt, cont);
             }
         });
         jScrollPane2.setViewportView(jListActividadesTuristicas);
@@ -187,7 +187,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jListSalidas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListSalidasMouseClicked(evt);
+                jListSalidasMouseClicked(evt, cont);
             }
         });
         jScrollPane3.setViewportView(jListSalidas);
@@ -203,7 +203,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jListSalidasTuristicas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListSalidasTuristicasMouseClicked(evt);
+                jListSalidasTuristicasMouseClicked(evt, cont);
             }
         });
         jScrollPane4.setViewportView(jListSalidasTuristicas);
@@ -372,6 +372,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(true);
             jTextFieldapellido.setVisible(true);
             jTextFieldcorreoElectrónico.setVisible(false);
+            //jDateChooser1.setVisible(true);
         
             jLabelDescripcionGeneral.setVisible(false);
             jTextArealDescripcionGeneral.setVisible(false);
@@ -406,6 +407,8 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(true);
             jTextFieldapellido.setVisible(true);
             jTextFieldcorreoElectrónico.setVisible(true);
+            //jDateChooser1.setVisible(true);
+            
             
             
             jLabelDescripcionGeneral.setVisible(true);
@@ -441,6 +444,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(false);
             jTextFieldapellido.setVisible(false);
             jTextFieldcorreoElectrónico.setVisible(false);
+           // jDateChooser1.setVisible(false);
             jLabelDescripcionGeneral.setVisible(false);
             jTextArealDescripcionGeneral.setVisible(false);
             jPanelDescripcionGeneral.setVisible(true);
@@ -466,28 +470,30 @@ public class ConsultaUsuario extends javax.swing.JPanel {
            
     }//GEN-LAST:event_jTextFieldnicknameActionPerformed
 
-    private void jListActividadesTuristicasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListActividadesTuristicasMouseClicked
-        Laboratorio_1 lab=Laboratorio_1.getInstance();
-        lab.PonerConsultaActividadTuristicaDentroConsultaUsuario();
+    private void jListActividadesTuristicasMouseClicked(java.awt.event.MouseEvent evt, IController cont) {//GEN-FIRST:event_jListActividadesTuristicasMouseClicked
+        /*Laboratorio1 lab=Laboratorio1.getInstance();
+        lab.PonerConsultaActividadTurísticaDentroConsultaUsuario();*/
+        String nom="nombre";
+        new DatosAct(cont,nom).setVisible(true);
     }//GEN-LAST:event_jListActividadesTuristicasMouseClicked
 
-    private void jListSalidasTuristicasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSalidasTuristicasMouseClicked
-        Laboratorio_1 lab=Laboratorio_1.getInstance();
-        lab.PonerSalidasTuristicasDentroConsultaUsuario();
+    private void jListSalidasTuristicasMouseClicked(java.awt.event.MouseEvent evt, IController cont) {//GEN-FIRST:event_jListSalidasTuristicasMouseClicked
+        /*Laboratorio1 lab=Laboratorio1.getInstance();
+        lab.PonerSalidasTuristicasDentroConsultaUsuario();*/
+        String nom="nombre";
+        new DatosAct(cont,nom).setVisible(true);
     }//GEN-LAST:event_jListSalidasTuristicasMouseClicked
 
-    private void jListSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSalidasMouseClicked
-        Laboratorio_1 lab=Laboratorio_1.getInstance();
-        lab.PonerSalidasTuristicasDentroConsultaUsuario();
+    private void jListSalidasMouseClicked(java.awt.event.MouseEvent evt, IController cont) {//GEN-FIRST:event_jListSalidasMouseClicked
+        /*Laboratorio1 lab=Laboratorio1.getInstance();
+        lab.PonerSalidasTuristicasDentroConsultaUsuario();*/
+        String nom="nombre";
+        new DatosAct(cont,nom).setVisible(true);
     }//GEN-LAST:event_jListSalidasMouseClicked
 
     private void jTextFieldnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldnombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldnombreActionPerformed
-
-    private void jTextFieldcorreoElectrónicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldcorreoElectrónicoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldcorreoElectrónicoActionPerformed
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

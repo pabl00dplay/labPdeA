@@ -62,7 +62,7 @@ public class ConsultaSalidaTuristica extends javax.swing.JPanel {
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("CONSULTA SALIDA TUR�?STICA");
+        jLabel12.setText("CONSULTA SALIDA TURÍSTICA");
         jLabel12.setBorder(new javax.swing.border.MatteBorder(null));
 
         jButton1.setText("Registrar salida");
