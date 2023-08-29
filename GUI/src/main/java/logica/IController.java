@@ -6,6 +6,7 @@ package main.java.logica;
 
 
 
+import main.java.logica.DataTypes.DTPaquete;
 import java.util.HashMap;
 
 /**

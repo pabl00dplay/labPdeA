@@ -4,7 +4,10 @@
  */
 package main.java.logica;
 
+import main.java.logica.DataTypes.DTPaquete;
 import java.util.*;
+import main.java.logica.DataTypes.DTproveedor;
+import main.java.logica.DataTypes.DTturista;
 
 /**
  *
@@ -46,6 +49,22 @@ public class Controller implements IController {
                 return false;
             }
         }
-    
+        //Alta Usuario
+        public void altaTurista(DTturista dt){
+            Usuario t=new Turista(dt.getNic(),dt.getNom(),dt.getApe(),dt.getMail(),dt.getFnac(),dt.getNacionalidad());
+        
+        }
+        public void altaProveedor(DTproveedor dt){
+            Usuario p=new Proveedor(dt.getNic(),dt.getNom(),dt.getApe(),dt.getMail(),dt.getFnac(),dt.getDesc(),dt.getSitio());;
+        
+        }
+        public boolean nickExisteU(String nombre){
+             
+            return true;
+        };
+        public boolean mailExisteU(String correo){
+             
+            return true;
+        };
     
 }

@@ -5,6 +5,7 @@
 package main.java.logica;
 
 import java.lang.String;
+import java.util.Date;
  
 
 /**
@@ -13,12 +14,14 @@ import java.lang.String;
  */
 public class Usuario {
     protected String nick,nom,ape,mail;
+    protected Date fnac;
     
-    public Usuario(String a, String b, String c, String d){
-        this.nick=a;
-        this.nom=b;
-        this.ape=c;
-        this.mail=d;
+    public Usuario(String nick, String nom, String ape, String mail,Date fnac){
+        this.nick=nick;
+        this.nom=nom;
+        this.ape=ape;
+        this.mail=mail;
+        this.fnac=fnac;
     }
     //getters
     public String getNick(){
@@ -32,6 +35,10 @@ public class Usuario {
     }
     public String getMail(){
         return mail;
+    }
+
+    public Date getFnac() {
+        return fnac;
     }
     
     //setters
