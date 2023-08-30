@@ -13,12 +13,19 @@ import main.java.logica.*;
  * @author francisco
  */
 public class CrearPaquete extends javax.swing.JPanel {
-
+    private IController control;
     /**
      * Creates new form CrearPaquete
      */
     public CrearPaquete(IController cont) {
-        initComponents(cont);
+        control=cont;
+        initComponents();
+        
+        btnOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOkActionPerformed(evt,control);
+            }
+        });
     }
 
     /**
@@ -28,7 +35,7 @@ public class CrearPaquete extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents(IController cont) {
+    private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
         txtNom = new javax.swing.JTextField();
@@ -64,11 +71,6 @@ public class CrearPaquete extends javax.swing.JPanel {
         jLabel7.setText("Fecha de Alta");
 
         btnOk.setText("OK");
-        btnOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOkActionPerformed(evt,cont);
-            }
-        });
 
         txtDescu.setText("jFormattedTextField1");
 
@@ -135,7 +137,7 @@ public class CrearPaquete extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnOkActionPerformed(java.awt.event.ActionEvent evt, IController cont) {//GEN-FIRST:event_btnOkActionPerformed
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt, IController cont) {                                      
         String nom = txtNom.getText();
         if (!cont.existePaq(nom)) {
             String desc = txtDesc.getText();
@@ -149,8 +151,7 @@ public class CrearPaquete extends javax.swing.JPanel {
             JFrame f = new JFrame();
             JOptionPane.showMessageDialog(f, "Un paquete con ese Nombre ya existe, por favor ingrese otro.", "Error", JOptionPane.ERROR_MESSAGE);
             } 
-    }//GEN-LAST:event_btnOkActionPerformed
-
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOk;

@@ -5,20 +5,41 @@
 package main.java.com.mycompany.paplicaciones;
 
 import main.java.logica.*;
+import java.util.*;
+
 
 /**
  *
  * @author francisco
  */
 public class AgregarActividadPaquete extends javax.swing.JPanel {
-
     private IController control;
-
     /**
      * Creates new form AgregarActividadPaquete
      */
     public AgregarActividadPaquete(IController cont) {
-        initComponents(cont);
+        control=cont;
+        initComponents();
+        
+        cmbPaq.addItem(" ");
+        HashSet<String> p=control.listarPaquetes();
+        for(String pa:p){
+            cmbPaq.addItem(pa);
+        }
+        
+        cmbDepto.addItem(" ");
+        //listarDeptos
+        cmbDepto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbDeptoActionPerformed(evt, control);
+            }
+        });
+        
+        btnOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOKActionPerformed(evt, control);
+            }
+        });
     }
 
     /**
@@ -28,88 +49,90 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents(IController cont) {
+    private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        cmbPaq = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        cmbDepto = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
+        cmbPaq = new javax.swing.JComboBox<>();
+        cmbDepto = new javax.swing.JComboBox<>();
         cmbAct = new javax.swing.JComboBox<>();
-        btnOk = new javax.swing.JButton();
+        btnOK = new javax.swing.JButton();
 
-        jLabel1.setText("Paquete:");
+        jLabel1.setText("Paquete");
+
+        jLabel2.setText("Departamento");
+
+        jLabel3.setText("Actividad");
 
         cmbPaq.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel2.setText("Departamento:");
-
         cmbDepto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel3.setText("Actividad:");
 
         cmbAct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        btnOk.setText("Ok");
-        btnOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOkActionPerformed(evt,cont);
-            }
-        });
+        btnOK.setText("OK");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cmbPaq, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmbDepto, 0, 120, Short.MAX_VALUE)
-                            .addComponent(cmbAct, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(159, 159, 159))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(147, 147, 147)
-                .addComponent(btnOk)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cmbDepto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbPaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(160, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnOK)
+                .addGap(156, 156, 156))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(cmbPaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(cmbDepto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(cmbAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
-                .addComponent(btnOk)
-                .addGap(46, 46, 46))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(btnOK)
+                .addGap(41, 41, 41))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnOkActionPerformed(java.awt.event.ActionEvent evt, IController cont) {//GEN-FIRST:event_btnOkActionPerformed
-        control=cont;
-    }//GEN-LAST:event_btnOkActionPerformed
+    private void cmbDeptoActionPerformed(java.awt.event.ActionEvent evt, IController cont) {                                         
+        cmbAct.removeAllItems();
+        cmbAct.addItem(" ");
+        HashSet<String> a=cont.listarActividadesFueraPaq((String)cmbPaq.getSelectedItem(),(String)cmbDepto.getSelectedItem());
+        for(String ac:a){
+            cmbAct.addItem(ac);
+        }
+    } 
+
+    private void btnOKActionPerformed(java.awt.event.ActionEvent evt, IController cont) {                                      
+        cont.agregarActPaq((String)cmbPaq.getSelectedItem(),(String)cmbAct.getSelectedItem());
+    }   
+    
+        
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnOk;
+    private javax.swing.JButton btnOK;
     private javax.swing.JComboBox<String> cmbAct;
     private javax.swing.JComboBox<String> cmbDepto;
     private javax.swing.JComboBox<String> cmbPaq;

@@ -6,7 +6,7 @@ package main.java.logica;
 
 
 
-import java.util.HashMap;
+import java.util.*;
 
 /**
  *
@@ -20,5 +20,10 @@ public interface IController {
     
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
+    public abstract HashSet<String> listarPaquetes();
+    public abstract DTPaquete listarDatosPaquete(String nomPaq);
+    public abstract HashSet<String> listarActividadespaquete(String nomPaq);
+    public abstract HashSet<String> listarActividadesFueraPaq(String nomPaq, String nomDpto);
+    public abstract void agregarActPaq(String nomPaq, String nomAct);
     
 }
