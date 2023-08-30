@@ -21,6 +21,7 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         control=cont;
         initComponents();
         
+        cmbPaq.removeAllItems();
         cmbPaq.addItem(" ");
         HashSet<String> p=control.listarPaquetes();
         for(String pa:p){
