@@ -58,13 +58,13 @@ public class Controller implements IController {
             Usuario p=new Proveedor(dt.getNic(),dt.getNom(),dt.getApe(),dt.getMail(),dt.getFnac(),dt.getDesc(),dt.getSitio());;
         
         }
-        public boolean nickExisteU(String nombre){
+        public boolean nickExiste(String nombre){
              
-            return true;
+            return false;
         };
-        public boolean mailExisteU(String correo){
+        public boolean mailExiste(String correo){
              
-            return true;
+            return false;
         };
     
 }

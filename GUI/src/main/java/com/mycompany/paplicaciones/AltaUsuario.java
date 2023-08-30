@@ -1,5 +1,15 @@
 package main.java.com.mycompany.paplicaciones;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import main.java.logica.Controller;
+import main.java.logica.DataTypes.DTproveedor;
+import main.java.logica.DataTypes.DTturista;
+import main.java.logica.Fabrica;
+import main.java.logica.IController;
+
 
 public class AltaUsuario extends javax.swing.JPanel {
 
@@ -410,11 +420,45 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldDia.setVisible(false);
             jTextFieldMes.setVisible(false);
             jTextFieldAnio.setVisible(false);
-        }
+        } 
     }//GEN-LAST:event_cmbTuristaProveedorActionPerformed
 
     private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
-        // TODO add your handling code here:
+        String usuario=(String)cmbTuristaProveedor.getSelectedItem();
+        String nic;
+        String nom;
+        String ape;
+        String mail;
+        Date fnac;
+        int D,M,A;
+        Fabrica f=Fabrica.getInstance();
+        IController I=f.getIController();
+        nic = jTextFieldnickname.getText();
+        nom = jTextFieldnombre.getText();
+        ape = jTextFieldapellido.getText();
+        mail = jTextFieldcorreoElectrónico.getText();
+        D = Integer.parseInt(jTextFieldDia.getText().trim());
+        M = Integer.parseInt(jTextFieldMes.getText().trim());
+        A = Integer.parseInt(jTextFieldAnio.getText().trim());
+        fnac = new Date(A, M, D);    
+        if (I.nickExiste(nom)){
+            JOptionPane.showMessageDialog(null, "El nickname ya existe");
+        }
+        else if (I.mailExiste(mail)){
+             JOptionPane.showMessageDialog(null, "El mail ya existe");
+        }
+        else if(usuario.equalsIgnoreCase("Turista")){
+            String nacionalidad=jTextFieldnacionalidad.getText();
+            DTturista dt=new DTturista(nic,nom,ape,mail,fnac,nacionalidad);
+            I.altaTurista(dt);
+        }
+        else if(usuario.equalsIgnoreCase("Proveedor")){
+            String texto=jTextArealDescripcionGeneral.getText();
+            String link=jTextFieldlink.getText();
+            DTproveedor dt =new DTproveedor(nic,nom,ape,mail,fnac,texto,link);
+            I.altaProveedor(dt);
+        }
+        
     }//GEN-LAST:event_jButtonEnviarActionPerformed
 
 

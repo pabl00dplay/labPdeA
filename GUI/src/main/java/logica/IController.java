@@ -8,6 +8,8 @@ package main.java.logica;
 
 import main.java.logica.DataTypes.DTPaquete;
 import java.util.HashMap;
+import main.java.logica.DataTypes.DTproveedor;
+import main.java.logica.DataTypes.DTturista;
 
 /**
  *
@@ -21,5 +23,9 @@ public interface IController {
     
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
+    public abstract void altaTurista(DTturista dt);
+    public abstract void altaProveedor(DTproveedor dt);
+    public abstract boolean nickExiste(String nombre);
+    public abstract boolean mailExiste(String correo);
     
 }
