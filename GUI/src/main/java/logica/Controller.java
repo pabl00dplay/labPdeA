@@ -82,10 +82,10 @@ public class Controller implements IController {
         public Boolean nombreActividadExiste(String nombreActividad){
             return act.containsKey(nombreActividad);
         }
-        public void AltaActividadTuristica(String nombreProveedor,String nombreActividad,String descripcion,Integer duracion,Integer costo,String ciudad,LocalDate fAlta){
-            Actividad nuevaAct = new Actividad(nombreProveedor,ciudad,de);
+        public void AltaActividadTuristica(String nombreProveedor,String nombreActividad,String descripcion,Integer duracion,Integer costo,String ciudad,LocalDate fAlta, Departamento depto){
+            Actividad nuevaAct = new Actividad(nombreActividad,descripcion,ciudad,depto,duracion,costo,fAlta);
+            act.put(nombreActividad, nuevaAct);
         }
     
-        Actividad(String nom, String desc, String ciudad, Departamento dept, Integer dur, Integer costo, LocalDate Alta)
     
 }
