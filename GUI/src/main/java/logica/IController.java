@@ -1,17 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
+
 package main.java.logica;
 
 
 
+import DataTypes.DTActividad;
+import DataTypes.DTProveedor;
+import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.Set;
 
-/**
- *
- * @author francisco
- */
+
 public interface IController {
     public abstract HashMap<String, Usuario> getUsr();
     public abstract HashMap<String, Actividad> getAct();
@@ -20,5 +18,9 @@ public interface IController {
     
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
-    
+    public abstract HashMap<String,DTProveedor> listarProveedores();
+    public abstract void AltaActividadTuristica(String nombreProveedor,String nombreActividad,String descripcion,Integer duracion,Integer costo,String ciudad,LocalDate fAlta);
+    public abstract DTActividad listarDatosActividad(String nombreActividad);
+    public abstract Set<String> listarDepartamentos();
+    public abstract Boolean nombreActividadExiste(String nombre);
 }

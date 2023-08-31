@@ -4,6 +4,7 @@
  */
 package main.java.logica;
 
+import DataTypes.DTProveedor;
 import java.util.HashSet;
 
 /**
@@ -35,5 +36,14 @@ public class Proveedor extends Usuario {
     }
     public void setDesc(String s){
         this.desc=s;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+    public DTProveedor getData(){
+        DTProveedor DT= new DTProveedor();
+        DT.setNombre(this.nom);
+        return DT;
     }
 }
