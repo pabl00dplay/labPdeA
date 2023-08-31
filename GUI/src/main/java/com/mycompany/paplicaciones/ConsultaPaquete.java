@@ -12,7 +12,7 @@ import main.java.logica.*;
  * @author francisco
  */
 public class ConsultaPaquete extends javax.swing.JPanel {
-    private IController control;
+    private static IController control;
     /**
      * Creates new form ConsultaPaquete
      */
@@ -21,11 +21,6 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         initComponents();
 
         btnDAct.setText("Datos Actividad");
-        btnDAct.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDActActionPerformed(evt,control);
-            }
-        });
 
         cmbPaq.removeAllItems();
         cmbPaq.addItem(" ");
@@ -33,11 +28,6 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         for(String pa:p){
             cmbPaq.addItem(pa);
         }
-        cmbPaq.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbPaqActionPerformed(evt,control);
-            }
-        });
     }
 
     /**
@@ -74,6 +64,11 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         jLabel5.setText("Fecha de Alta");
 
         btnDAct.setText("Datos Actividad");
+        btnDAct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDActActionPerformed(evt);
+            }
+        });
 
         txtDesc.setEditable(false);
 
@@ -89,6 +84,11 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         cmbAct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
 
         cmbPaq.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        cmbPaq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbPaqActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -155,26 +155,30 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmbPaqActionPerformed(java.awt.event.ActionEvent evt, IController cont) {                                       
-        DTPaquete dt=cont.listarDatosPaquete((String)cmbPaq.getSelectedItem());
+    private void cmbPaqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPaqActionPerformed
+        // TODO add your handling code here:                                       
+        DTPaquete dt=control.listarDatosPaquete((String)cmbPaq.getSelectedItem());
         txtDesc.setText(dt.getDesc());
         //txtVal
         txtDescu.setValue(dt.getDescu());
         txtFecha.setValue(dt.getFalta());
         cmbAct.removeAllItems();
         cmbAct.addItem(" ");
-        HashSet<String> acts=cont.listarActividadespaquete((String)cmbPaq.getSelectedItem());
+        HashSet<String> acts=control.listarActividadespaquete((String)cmbPaq.getSelectedItem());
         for(String nom:acts){
             cmbAct.addItem(nom);
         }
-    }                                      
+    }//GEN-LAST:event_cmbPaqActionPerformed
 
-    private void btnDActActionPerformed(java.awt.event.ActionEvent evt, IController cont) {
+    private void btnDActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDActActionPerformed
+        // TODO add your handling code here:
         String nom =(String)cmbAct.getSelectedItem();
         if(nom!=" "){
-            new DatosAct(cont, nom).setVisible(true);
+            new DatosAct(control, nom).setVisible(true);
         }
-    }
+    }//GEN-LAST:event_btnDActActionPerformed
+                                    
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

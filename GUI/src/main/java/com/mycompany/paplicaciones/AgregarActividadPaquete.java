@@ -13,7 +13,7 @@ import java.util.*;
  * @author francisco
  */
 public class AgregarActividadPaquete extends javax.swing.JPanel {
-    private IController control;
+    private static IController control;
     /**
      * Creates new form AgregarActividadPaquete
      */
@@ -30,17 +30,7 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         
         cmbDepto.addItem(" ");
         //listarDeptos
-        cmbDepto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbDeptoActionPerformed(evt, control);
-            }
-        });
         
-        btnOK.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOKActionPerformed(evt, control);
-            }
-        });
     }
 
     /**
@@ -69,10 +59,20 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         cmbPaq.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         cmbDepto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbDepto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbDeptoActionPerformed(evt);
+            }
+        });
 
         cmbAct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btnOK.setText("OK");
+        btnOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOKActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -116,18 +116,21 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmbDeptoActionPerformed(java.awt.event.ActionEvent evt, IController cont) {                                         
+    private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
+        // TODO add your handling code here:                                      
+        control.agregarActPaq((String)cmbPaq.getSelectedItem(),(String)cmbAct.getSelectedItem());
+    }//GEN-LAST:event_btnOKActionPerformed
+
+    private void cmbDeptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbDeptoActionPerformed
+        // TODO add your handling code here:                                         
         cmbAct.removeAllItems();
         cmbAct.addItem(" ");
-        HashSet<String> a=cont.listarActividadesFueraPaq((String)cmbPaq.getSelectedItem(),(String)cmbDepto.getSelectedItem());
+        HashSet<String> a=control.listarActividadesFueraPaq((String)cmbPaq.getSelectedItem(),(String)cmbDepto.getSelectedItem());
         for(String ac:a){
             cmbAct.addItem(ac);
         }
-    } 
+    }//GEN-LAST:event_cmbDeptoActionPerformed
 
-    private void btnOKActionPerformed(java.awt.event.ActionEvent evt, IController cont) {                                      
-        cont.agregarActPaq((String)cmbPaq.getSelectedItem(),(String)cmbAct.getSelectedItem());
-    }   
     
         
 

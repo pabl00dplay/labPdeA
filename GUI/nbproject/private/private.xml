@@ -5,9 +5,8 @@
         <group>
             <file>file:/home/francisco/Documents/GitHub/Lab01/GUI/src/main/java/com/mycompany/paplicaciones/ConsultaPaquete.java</file>
             <file>file:/home/francisco/Documents/GitHub/Lab01/GUI/src/main/java/logica/Controller.java</file>
-            <file>file:/home/francisco/Documents/GitHub/Lab01/GUI/src/main/java/com/mycompany/paplicaciones/Laboratorio1.java</file>
-            <file>file:/home/francisco/Documents/GitHub/Lab01/GUI/src/main/java/logica/Actividad.java</file>
-            <file>file:/home/francisco/Documents/GitHub/Lab01/GUI/src/main/java/com/mycompany/paplicaciones/DatosAct.java</file>
+            <file>file:/home/francisco/Documents/GitHub/Lab01/GUI/src/main/java/logica/Paquete.java</file>
+            <file>file:/home/francisco/Documents/GitHub/Lab01/GUI/src/main/java/logica/DTPaquete.java</file>
         </group>
     </open-files>
 </project-private>

@@ -9,6 +9,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         Fabrica fabrica = Fabrica.getInstance();
         IController cont=fabrica.getIController();
         initComponents();
+        
         AltaUsuario au=new AltaUsuario(); 
         PonerContenedorDentroContenedor(au,jPanelAltaUsuario);
         ConsultaUsuario cu=new ConsultaUsuario(); 

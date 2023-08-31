@@ -56,9 +56,8 @@ public class Controller implements IController {
         }
         
         public DTPaquete listarDatosPaquete(String nomPaq){
-            Paquete paq=getPaq().get(nomPaq);
-            DTPaquete dtp = new DTPaquete(paq.getNom(),paq.getDesc(),paq.getDescu(),paq.getVal(),paq.getFAlta());
-            return dtp;
+            Paquete p=getPaq().get(nomPaq);
+            return new DTPaquete(p.getNom(),p.getDesc(),p.getDescu(),p.getVal(),p.getFAlta());
         }
         
         public HashSet<String> listarActividadespaquete(String nomPaq){
