@@ -1,18 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main.java.logica;
 
 import main.java.logica.DataTypes.DTPaquete;
 import java.util.*;
 import main.java.logica.DataTypes.DTproveedor;
 import main.java.logica.DataTypes.DTturista;
+import main.java.logica.DataTypes.DTusuario;
 
-/**
- *
- * @author francisco
- */
 public class Controller implements IController {
 	private HashMap<String, Usuario> usr;
 	private HashMap<String, Actividad> act;
@@ -58,6 +51,11 @@ public class Controller implements IController {
             Usuario p=new Proveedor(dt.getNic(),dt.getNom(),dt.getApe(),dt.getMail(),dt.getFnac(),dt.getDesc(),dt.getSitio());;
         
         }
+         public DTusuario getUsuario(String nickname){
+             Date fnac= new Date(2022,9,31);
+             DTusuario dt=new DTproveedor("nic","nom","ape","mail",fnac,"desc","sitio");
+            return dt;
+        };
         public boolean nickExiste(String nombre){
              
             return false;
@@ -66,5 +64,17 @@ public class Controller implements IController {
              
             return false;
         };
-    
+        public ArrayList<String> getUsuarios() {
+            return new ArrayList();
+        }
+        public ArrayList<String> listarsalidasinscriptasTurista(String nickname){
+            return new ArrayList();
+        };
+        public ArrayList<String> listarActividadesProveedor(String nickname){
+            return new ArrayList();
+        }; 
+        public ArrayList<String> listarsalidasProveedor(String nickname){
+            return new ArrayList();
+        };   
+
 }

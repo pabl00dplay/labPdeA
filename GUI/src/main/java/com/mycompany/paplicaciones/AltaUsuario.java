@@ -1,6 +1,7 @@
 package main.java.com.mycompany.paplicaciones;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
@@ -49,7 +50,6 @@ public class AltaUsuario extends javax.swing.JPanel {
         jTextFieldDia.setVisible(false);
         jTextFieldMes.setVisible(false);
         jTextFieldAnio.setVisible(false);
-        
         
         
     }
@@ -424,15 +424,13 @@ public class AltaUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_cmbTuristaProveedorActionPerformed
 
     private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
-        String usuario=(String)cmbTuristaProveedor.getSelectedItem();
+        String opcion=(String)cmbTuristaProveedor.getSelectedItem();
         String nic;
         String nom;
         String ape;
         String mail;
         Date fnac;
         int D,M,A;
-        Fabrica f=Fabrica.getInstance();
-        IController I=f.getIController();
         nic = jTextFieldnickname.getText();
         nom = jTextFieldnombre.getText();
         ape = jTextFieldapellido.getText();
@@ -441,18 +439,20 @@ public class AltaUsuario extends javax.swing.JPanel {
         M = Integer.parseInt(jTextFieldMes.getText().trim());
         A = Integer.parseInt(jTextFieldAnio.getText().trim());
         fnac = new Date(A, M, D);    
+        Fabrica f=Fabrica.getInstance();
+        IController I=f.getIController();
         if (I.nickExiste(nom)){
             JOptionPane.showMessageDialog(null, "El nickname ya existe");
         }
         else if (I.mailExiste(mail)){
              JOptionPane.showMessageDialog(null, "El mail ya existe");
         }
-        else if(usuario.equalsIgnoreCase("Turista")){
+        else if(opcion.equals("Turista")){
             String nacionalidad=jTextFieldnacionalidad.getText();
             DTturista dt=new DTturista(nic,nom,ape,mail,fnac,nacionalidad);
             I.altaTurista(dt);
         }
-        else if(usuario.equalsIgnoreCase("Proveedor")){
+        else if(opcion.equals("Proveedor")){
             String texto=jTextArealDescripcionGeneral.getText();
             String link=jTextFieldlink.getText();
             DTproveedor dt =new DTproveedor(nic,nom,ape,mail,fnac,texto,link);

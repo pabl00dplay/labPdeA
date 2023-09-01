@@ -4,6 +4,7 @@
  */
 package main.java.logica.DataTypes;
 
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.logging.Logger;
 
@@ -11,40 +12,11 @@ import java.util.logging.Logger;
  *
  * @author usuario
  */
-public class DTturista {
-    String nic;
-    String nom;
-    String ape;
-    String mail;
-    Date fnac;
+public class DTturista extends DTusuario {
     String nacionalidad;
     public DTturista(String nic, String nom, String ape, String mail, Date fnac,String nacionalidad){
-        this.nic=nic;
-        this.nom=nom;
-        this.ape=ape;
-        this.mail=mail;
-        this.fnac=fnac;
+        super(nic,nom,ape,mail,fnac);
         this.nacionalidad=nacionalidad;
-    }
-
-    public String getNic() {
-        return nic;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public String getApe() {
-        return ape;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public Date getFnac() {
-        return fnac;
     }
 
     public String getNacionalidad() {

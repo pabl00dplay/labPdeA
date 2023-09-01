@@ -1,12 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package main.java.com.mycompany.paplicaciones;
 
 import java.awt.BorderLayout;
+import static java.time.Clock.system;
+import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.DefaultListModel;
 import javax.swing.JDialog;
+import main.java.logica.DataTypes.DTproveedor;
+import main.java.logica.DataTypes.DTturista;
+import main.java.logica.DataTypes.DTusuario;
+import main.java.logica.Fabrica;
+import main.java.logica.IController;
+import main.java.logica.Turista;
 
 /**
  *
@@ -42,7 +47,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jTextFieldlink.setVisible(false);
         jTextFieldnacionalidad.setVisible(false);
         jLabelnacionalidad.setVisible(false);
-        jButtonEnviar.setVisible(false);
+    
         
         jLabelDia.setVisible(false);
         jLabelMes.setVisible(false);
@@ -52,13 +57,31 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jTextFieldAnio.setVisible(false);
         
         jLabelActividadesTuristicas.setVisible(false);
-        jListjLabelActividadesTuristicas.setVisible(false);
+        jListctividadesTuristicas.setVisible(false);
         jLabelSalidas.setVisible(false);
         jListSalidas.setVisible(false);
         jLabelSalidasinscriptas.setVisible(false);
         jListSalidasinscriptas.setVisible(false);
         
-        jListusuarios.setVisible(false);
+        jListusuarios.setVisible(true);
+        jListusuarios.setAutoscrolls(true);
+        
+        Fabrica f=Fabrica.getInstance();
+        IController I= f.getIController();
+        ArrayList<String> usuarios=new ArrayList<String> ();
+        usuarios=I.getUsuarios();
+        usuarios.add("hola");
+        usuarios.add("mundo");
+        //Crear un objeto DefaultListModel
+        DefaultListModel listModel = new DefaultListModel();
+        //Recorrer el contenido del ArrayList
+        for (int i = 0; i < usuarios.size(); i++) {
+            //Añadir cada elemento del ArrayList en el modelo de la lista
+            listModel.add(i, usuarios.get(i));
+        }
+        //Asociar el modelo de lista al JList
+        jListusuarios.setModel(listModel);
+        
     }
 
     /**
@@ -97,7 +120,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jLabelAnio = new javax.swing.JLabel();
         jTextFieldAnio = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jListjLabelActividadesTuristicas = new javax.swing.JList<>();
+        jListctividadesTuristicas = new javax.swing.JList<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         jListSalidas = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -105,7 +128,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jLabelActividadesTuristicas = new javax.swing.JLabel();
         jLabelSalidas = new javax.swing.JLabel();
         jLabelSalidasinscriptas = new javax.swing.JLabel();
-        jButtonEnviar = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jListusuarios = new javax.swing.JList<>();
 
@@ -179,17 +201,17 @@ public class ConsultaUsuario extends javax.swing.JPanel {
 
         jTextFieldAnio.setText(" ");
 
-        jListjLabelActividadesTuristicas.setModel(new javax.swing.AbstractListModel<String>() {
+        jListctividadesTuristicas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jListjLabelActividadesTuristicas.addMouseListener(new java.awt.event.MouseAdapter() {
+        jListctividadesTuristicas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListjLabelActividadesTuristicasMouseClicked(evt);
+                jListctividadesTuristicasMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(jListjLabelActividadesTuristicas);
+        jScrollPane2.setViewportView(jListctividadesTuristicas);
 
         jListSalidas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -221,17 +243,15 @@ public class ConsultaUsuario extends javax.swing.JPanel {
 
         jLabelSalidasinscriptas.setText("Salidas inscriptas");
 
-        jButtonEnviar.setText("Enviar");
-        jButtonEnviar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEnviarActionPerformed(evt);
-            }
-        });
-
         jListusuarios.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jListusuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListusuariosMouseClicked(evt);
+            }
         });
         jScrollPane5.setViewportView(jListusuarios);
 
@@ -311,10 +331,8 @@ public class ConsultaUsuario extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelSalidasinscriptas)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButtonEnviar)))))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(84, 84, 84)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -372,19 +390,16 @@ public class ConsultaUsuario extends javax.swing.JPanel {
                             .addComponent(jLabellink)))
                     .addComponent(jPanelDescripcionGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabelActividadesTuristicas)
-                                .addComponent(jLabelSalidas))
-                            .addComponent(jLabelSalidasinscriptas))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButtonEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabelActividadesTuristicas)
+                        .addComponent(jLabelSalidas))
+                    .addComponent(jLabelSalidasinscriptas))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -431,7 +446,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldlink.setVisible(false);
             jTextFieldnacionalidad.setVisible(true);
             jLabelnacionalidad.setVisible(true);
-            jButtonEnviar.setVisible(true);
+          
 
             jLabelDia.setVisible(true);
             jLabelMes.setVisible(true);
@@ -441,13 +456,23 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldAnio.setVisible(true);
             
             jLabelActividadesTuristicas.setVisible(false);
-            jListjLabelActividadesTuristicas.setVisible(false);
+            jListctividadesTuristicas.setVisible(false);
             jLabelSalidas.setVisible(false);
             jListSalidas.setVisible(false);
             jLabelSalidasinscriptas.setVisible(true);
             jListSalidasinscriptas.setVisible(true);
             
             jListusuarios.setVisible(true);
+            
+            
+            jTextFieldnickname.setText("");
+            jTextFieldnombre.setText("");
+            jTextFieldapellido.setText("");
+            jTextFieldcorreoElectrónico.setText("");
+            jTextFieldnacionalidad.setText("");
+            jTextFieldDia.setText("");
+            jTextFieldMes.setText("");
+            jTextFieldAnio.setText("");
         }
         if(opcion.equals("Proveedor")){
             jLabelnickname.setVisible(true);
@@ -473,7 +498,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldlink.setVisible(true);
             jTextFieldnacionalidad.setVisible(false);
             jLabelnacionalidad.setVisible(false);
-            jButtonEnviar.setVisible(true);
+          
 
             jLabelDia.setVisible(true);
             jLabelMes.setVisible(true);
@@ -483,13 +508,23 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldAnio.setVisible(true);
             
             jLabelActividadesTuristicas.setVisible(true);
-            jListjLabelActividadesTuristicas.setVisible(true);
+            jListctividadesTuristicas.setVisible(true);
             jLabelSalidas.setVisible(true);
             jListSalidas.setVisible(true);
             jLabelSalidasinscriptas.setVisible(false);
             jListSalidasinscriptas.setVisible(false);
             
             jListusuarios.setVisible(true);
+            
+             jTextFieldnickname.setText("");
+            jTextFieldnombre.setText("");
+            jTextFieldapellido.setText("");
+            jTextFieldcorreoElectrónico.setText("");
+            jTextFieldnacionalidad.setText("");
+            jTextFieldDia.setText("");
+            jTextFieldMes.setText("");
+            jTextFieldAnio.setText("");
+            
         }
         if(opcion.equals("Usuario")){
             jLabelnickname.setVisible(false);
@@ -513,7 +548,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldlink.setVisible(false);
             jTextFieldnacionalidad.setVisible(false);
             jLabelnacionalidad.setVisible(false);
-            jButtonEnviar.setVisible(false);
+         
 
             jLabelDia.setVisible(false);
             jLabelMes.setVisible(false);
@@ -523,21 +558,21 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldAnio.setVisible(false);
             
             jLabelActividadesTuristicas.setVisible(false);
-            jListjLabelActividadesTuristicas.setVisible(false);
+            jListctividadesTuristicas.setVisible(false);
             jLabelSalidas.setVisible(false);
             jListSalidas.setVisible(false);
             jLabelSalidasinscriptas.setVisible(false);
             jListSalidasinscriptas.setVisible(false);
             
-            jListusuarios.setVisible(false);
+            jListusuarios.setVisible(true);
         }
     }//GEN-LAST:event_cmbTuristaProveedorActionPerformed
 
     private void jTextFieldnicknameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldnicknameActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldnicknameActionPerformed
 
-    private void jListjLabelActividadesTuristicasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListjLabelActividadesTuristicasMouseClicked
+    private void jListctividadesTuristicasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListctividadesTuristicasMouseClicked
         AltaActividadTuristica contenido=new AltaActividadTuristica();
         contenido.setSize(800,600);
         contenido.setLocation(0,0);
@@ -549,20 +584,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         contenedor.repaint();
         contenedor.setVisible(true);
                 
-    }//GEN-LAST:event_jListjLabelActividadesTuristicasMouseClicked
-
-    private void jListSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSalidasMouseClicked
-        AltaSalidaTuristica contenido=new AltaSalidaTuristica();
-        contenido.setSize(800,600);
-        contenido.setLocation(0,0);
-        JDialog contenedor=new JDialog();
-        contenedor.setSize(800,600);
-        contenedor.setLocation(0,0);
-        contenedor.add(contenido,BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();
-        contenedor.setVisible(true);
-    }//GEN-LAST:event_jListSalidasMouseClicked
+    }//GEN-LAST:event_jListctividadesTuristicasMouseClicked
 
     private void jListSalidasinscriptasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSalidasinscriptasMouseClicked
         AltaSalidaTuristica contenido=new AltaSalidaTuristica();
@@ -577,28 +599,122 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         contenedor.setVisible(true);
     }//GEN-LAST:event_jListSalidasinscriptasMouseClicked
 
-    private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
-        String usuario=(String)cmbTuristaProveedor.getSelectedItem();
-        String nic;
-        String nom;
-        String ape;
-        String mail;
-        Date fnac;
-        int D,M,A;
-        nic = jTextFieldnickname.getText();
-        nom = jTextFieldnombre.getText();
-        ape = jTextFieldapellido.getText();
-        mail = jTextFieldcorreoElectrónico.getText();
-        D = Integer.parseInt(jTextFieldDia.getText().trim());
-        M = Integer.parseInt(jTextFieldMes.getText().trim());
-        A = Integer.parseInt(jTextFieldAnio.getText().trim());
-        fnac = new Date(A, M, D);
-    }//GEN-LAST:event_jButtonEnviarActionPerformed
+    private void jListusuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListusuariosMouseClicked
+        String nickname=jListusuarios.getSelectedValue();
+        Fabrica f=Fabrica.getInstance();
+        IController I= f.getIController();
+        DTusuario dt=I.getUsuario(nickname);
+        String opcion=(String)cmbTuristaProveedor.getSelectedItem();
+        if(dt instanceof DTturista){    
+            cmbTuristaProveedor.setSelectedIndex(1); 
+            jTextFieldnickname.setText(dt.getNic().trim());
+            jTextFieldnombre.setText(dt.getNom().trim());
+            jTextFieldapellido.setText(dt.getApe().trim());
+            jTextFieldcorreoElectrónico.setText(dt.getMail().trim());
+            
+            int dia=dt.getFnac().getDate();
+            String d=Integer.toString(dia).trim();
+            jTextFieldDia.setText(d);
+            
+            int mes=dt.getFnac().getMonth();
+            String m=Integer.toString(mes).trim();
+            jTextFieldMes.setText(m);
+            
+            int anio=dt.getFnac().getYear();
+            String a=Integer.toString(anio).trim();
+            jTextFieldAnio.setText(a);
+            
+            jTextFieldnacionalidad.setText(((DTturista) dt).getNacionalidad().trim());
+            
+            ArrayList<String> salidas = new ArrayList();
+            salidas = I.listarsalidasinscriptasTurista(nickname);;
+            salidas.add("montevido");
+            salidas.add("maldonado");
+            //Crear un objeto DefaultListModel
+            DefaultListModel listModel = new DefaultListModel();
+            //Recorrer el contenido del ArrayList
+            for (int i = 0; i < salidas.size(); i++) {
+                //Añadir cada elemento del ArrayList en el modelo de la lista
+                listModel.add(i, salidas.get(i));
+            }
+            //Asociar el modelo de lista al JList
+            jListSalidasinscriptas.setModel(listModel);
+
+        }
+        if(dt instanceof DTproveedor){    
+            cmbTuristaProveedor.setSelectedIndex(2);
+            jTextFieldnickname.setText(dt.getNic().trim());
+            jTextFieldnombre.setText(dt.getNom().trim());
+            jTextFieldapellido.setText(dt.getApe().trim());
+            jTextFieldcorreoElectrónico.setText(dt.getMail().trim());
+            
+            int dia=dt.getFnac().getDate();
+            String d=Integer.toString(dia).trim();
+            jTextFieldDia.setText(d);
+            
+            int mes=dt.getFnac().getMonth();
+            String m=Integer.toString(mes).trim();
+            jTextFieldMes.setText(m);
+            
+            int anio=dt.getFnac().getYear();
+            String a=Integer.toString(anio).trim();
+            jTextFieldAnio.setText(a);
+            
+            jTextArealDescripcionGeneral.setText(((DTproveedor) dt).getDesc().trim());
+            jTextFieldlink.setText(((DTproveedor) dt).getSitio().trim());
+            
+            ArrayList<String> actividades = new ArrayList();
+            ArrayList<String> salidas = new ArrayList();
+            actividades=I.listarActividadesProveedor(nickname);
+            salidas = I.listarsalidasProveedor(nickname);
+            
+            actividades.add("correr");
+            actividades.add("saltar");
+            salidas.add("*");
+            salidas.add("montevido");
+            salidas.add("maldonado");
+            salidas.add("*");
+            salidas.add("canelones");
+            //Crear un objeto DefaultListModel
+            DefaultListModel listModelsalidas = new DefaultListModel();
+            DefaultListModel listModelActividades = new DefaultListModel();
+            //Recorrer el contenido del ArrayList
+            int cont=0;
+            for (int i = 0; i < salidas.size(); i++) {
+                if( salidas.get(i).equals("*")){
+                    listModelActividades.add(i, actividades.get(cont));
+                     listModelsalidas.add(i, "\n");
+                    cont++;
+                }
+                else{
+                    listModelActividades.add(i,"\n" );
+                     listModelsalidas.add(i, salidas.get(i));
+                }
+                
+               
+            }
+            //Asociar el modelo de lista al JList
+            jListSalidas.setModel(listModelsalidas);
+            jListctividadesTuristicas.setModel(listModelActividades);
+        }
+    }//GEN-LAST:event_jListusuariosMouseClicked
+
+    private void jListSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSalidasMouseClicked
+        AltaSalidaTuristica contenido=new AltaSalidaTuristica();
+        contenido.setSize(800,600);
+        contenido.setLocation(0,0);
+        JDialog contenedor=new JDialog();
+        contenedor.setSize(800,600);
+        contenedor.setLocation(0,0);
+        contenedor.add(contenido,BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+        contenedor.setVisible(true);
+    }//GEN-LAST:event_jListSalidasMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbTuristaProveedor;
-    private javax.swing.JButton jButtonEnviar;
     private javax.swing.JLabel jLabelActividadesTuristicas;
     private javax.swing.JLabel jLabelAltaUsuario;
     private javax.swing.JLabel jLabelAnio;
@@ -616,7 +732,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelnickname;
     private javax.swing.JList<String> jListSalidas;
     private javax.swing.JList<String> jListSalidasinscriptas;
-    private javax.swing.JList<String> jListjLabelActividadesTuristicas;
+    private javax.swing.JList<String> jListctividadesTuristicas;
     private javax.swing.JList<String> jListusuarios;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelDescripcionGeneral;

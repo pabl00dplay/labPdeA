@@ -1,48 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main.java.logica.DataTypes;
 
+import java.time.LocalTime;
 import java.util.Date;
-
-/**
- *
- * @author usuario
- */
-public class DTproveedor {
-    String nic;
-    String nom;
-    String ape;
-    String mail;
-    Date fnac;
+public class DTproveedor extends DTusuario{
     String desc;
     String sitio;
     public DTproveedor(String nic, String nom, String ape, String mail,Date fnac, String desc, String sitio){
-        this.nic=nic;
-        this.nom=nom;
-        this.ape=ape;
-        this.mail=mail;
-        this.fnac=fnac;
+        super(nic,nom,ape,mail,fnac);
         this.desc=desc;
         this.sitio=sitio;
     } 
-
-    public String getNic() {
-        return nic;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public String getApe() {
-        return ape;
-    }
-
-    public String getMail() {
-        return mail;
-    }
 
     public String getDesc() {
         return desc;
@@ -52,8 +19,4 @@ public class DTproveedor {
         return sitio;
     }
 
-    public Date getFnac() {
-        return fnac;
-    }
-    
 }

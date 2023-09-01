@@ -1,15 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package main.java.logica;
 
 
 
+import java.util.ArrayList;
 import main.java.logica.DataTypes.DTPaquete;
 import java.util.HashMap;
 import main.java.logica.DataTypes.DTproveedor;
 import main.java.logica.DataTypes.DTturista;
+import main.java.logica.DataTypes.DTusuario;
 
 /**
  *
@@ -27,5 +25,9 @@ public interface IController {
     public abstract void altaProveedor(DTproveedor dt);
     public abstract boolean nickExiste(String nombre);
     public abstract boolean mailExiste(String correo);
-    
+    public abstract ArrayList<String>getUsuarios();
+    public abstract DTusuario getUsuario(String nickname);
+    public abstract ArrayList<String> listarsalidasinscriptasTurista(String nickname);
+    public abstract ArrayList<String> listarActividadesProveedor(String nickname); 
+    public abstract ArrayList<String> listarsalidasProveedor(String nickname);   
 }
