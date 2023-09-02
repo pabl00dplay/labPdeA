@@ -5,6 +5,7 @@
 package main.java.com.mycompany.paplicaciones;
 
 import java.util.*;
+import javax.swing.*;
 import main.java.logica.*;
 
 /**
@@ -13,21 +14,32 @@ import main.java.logica.*;
  */
 public class ConsultaPaquete extends javax.swing.JPanel {
     private static IController control;
+    
+    private ComboBoxModel getComboBoxModel()
+    {
+        Iterator<String> it=control.listarPaquetes().iterator();
+        String s[] = null;
+        s[0]=" ";
+        int x=1;
+        while (it.hasNext()){
+            s[x]=it.next();
+        }
+    return new DefaultComboBoxModel(control.listarPaquetes().toArray());
+    }
     /**
      * Creates new form ConsultaPaquete
      */
     public ConsultaPaquete(IController cont) {
         control=cont;
         initComponents();
+        cmbPaq.addItem(" ");
+        Iterator<String> it=control.listarPaquetes().iterator();
+        while (it.hasNext()){
+            cmbPaq.addItem(it.next());
+        }
+        
 
         btnDAct.setText("Datos Actividad");
-
-        cmbPaq.removeAllItems();
-        cmbPaq.addItem(" ");
-        HashSet<String> p=control.listarPaquetes();
-        for(String pa:p){
-            cmbPaq.addItem(pa);
-        }
     }
 
     /**
@@ -108,7 +120,7 @@ public class ConsultaPaquete extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(cmbPaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
+                                .addGap(43, 43, 43)
                                 .addComponent(jLabel6))
                             .addComponent(txtVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtDescu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -119,7 +131,7 @@ public class ConsultaPaquete extends javax.swing.JPanel {
                         .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(133, 133, 133)
                         .addComponent(btnDAct)))
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,21 +167,6 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmbPaqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPaqActionPerformed
-        // TODO add your handling code here:                                       
-        DTPaquete dt=control.listarDatosPaquete((String)cmbPaq.getSelectedItem());
-        txtDesc.setText(dt.getDesc());
-        //txtVal
-        txtDescu.setValue(dt.getDescu());
-        txtFecha.setValue(dt.getFalta());
-        cmbAct.removeAllItems();
-        cmbAct.addItem(" ");
-        HashSet<String> acts=control.listarActividadespaquete((String)cmbPaq.getSelectedItem());
-        for(String nom:acts){
-            cmbAct.addItem(nom);
-        }
-    }//GEN-LAST:event_cmbPaqActionPerformed
-
     private void btnDActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDActActionPerformed
         // TODO add your handling code here:
         String nom =(String)cmbAct.getSelectedItem();
@@ -177,6 +174,17 @@ public class ConsultaPaquete extends javax.swing.JPanel {
             new DatosAct(control, nom).setVisible(true);
         }
     }//GEN-LAST:event_btnDActActionPerformed
+
+    private void cmbPaqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPaqActionPerformed
+        Iterator<String> it=control.listarPaquetes().iterator();
+        cmbAct.removeAllItems();
+        cmbAct.addItem(" ");
+        while(it.hasNext()){
+            System. out. println(it.next());
+            cmbAct.addItem("pito");
+        }
+        
+    }//GEN-LAST:event_cmbPaqActionPerformed
                                     
 
 

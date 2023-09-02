@@ -37,7 +37,7 @@ public class Controller implements IController {
         
         public void AltaPaquete(DTPaquete dt){
             Paquete p=new Paquete(dt.getNom(),dt.getDesc(),dt.getDescu(),dt.getVal(), dt.getFalta());
-            getPaq().put(dt.getNom(), p);
+            getPaq().put(p.getNom(), p);
         }
         public boolean existePaq(String s){
             if(getPaq().containsKey(s)){

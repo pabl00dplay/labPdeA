@@ -4,6 +4,7 @@
  */
 package main.java.com.mycompany.paplicaciones;
 
+import static java.lang.Integer.parseInt;
 import java.util.*;
 import javax.swing.*;
 import main.java.logica.*;
@@ -143,8 +144,8 @@ public class CrearPaquete extends javax.swing.JPanel {
         String nom = txtNom.getText();
         if (!control.existePaq(nom)) {
             String desc = txtDesc.getText();
-            int descu = (int) txtDescu.getValue();
-            int val = (int) txtVali.getValue();
+            int descu = parseInt(txtDescu.getText());
+            int val = parseInt(txtVali.getText());
             Date f = (Date)txtFecha.getValue();
             DTPaquete dt = new DTPaquete(nom, desc, descu, val, f);
             control.AltaPaquete(dt);
