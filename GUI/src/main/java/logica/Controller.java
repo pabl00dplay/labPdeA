@@ -42,6 +42,7 @@ public class Controller implements IController {
                 return false;
             }
         }
+<<<<<<< HEAD
         //Alta Usuario
         public void altaTurista(DTturista dt){
             Usuario t=new Turista(dt.getNic(),dt.getNom(),dt.getApe(),dt.getMail(),dt.getFnac(),dt.getNacionalidad());
@@ -124,6 +125,18 @@ public class Controller implements IController {
             Actividad a=getAct().get(nomAct);
             p.getActs().add(a);
         }
+=======
+        public void altaDepto(Departamento nuevoDepto){
+            getDep().put(nuevoDepto.getNom(), nuevoDepto);//Agrego el nuevo depto a la col
+>>>>>>> madi
     
+        }
+        public boolean existeDepto(String nombre){
+            if (getDep().containsKey(nombre)){//si la col tiene un depto con nombre igual
+                return false;
+            }else {
+                return true; //si no existe uno igual, verdadero
+            }
+        }
     
 }
