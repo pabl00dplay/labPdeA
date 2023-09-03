@@ -4,6 +4,8 @@
  */
 package main.java.com.mycompany.paplicaciones;
 
+import java.util.*;
+import javax.swing.*;
 import main.java.logica.*;
 
 /**
@@ -11,12 +13,31 @@ import main.java.logica.*;
  * @author francisco
  */
 public class ConsultaPaquete extends javax.swing.JPanel {
-
+    private static IController control;
+    private static DefaultComboBoxModel<String> model;
+    
     /**
      * Creates new form ConsultaPaquete
      */
-    public ConsultaPaquete() {
+    
+    public ConsultaPaquete(IController cont) {
+        control=cont;
+        
+        model=new DefaultComboBoxModel<String>(control.listarPaquetes().toArray(new String[]{}));
         initComponents();
+        cmbPaq.addItem(" ");
+        /*for(String s:control.listarPaquetes()){
+            //cmbPaq.addItem(s);
+            cmbPaq.addItem("pito");
+        }*/
+        Iterator<String> it=control.listarPaquetes().iterator();
+        while (it.hasNext()){
+            cmbPaq.addItem((String) it.next());
+            cmbPaq.addItem("pito");
+        }
+        
+
+        btnDAct.setText("Datos Actividad");
     }
 
     /**
@@ -33,8 +54,14 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        btnDAct = new javax.swing.JButton();
+        txtDesc = new javax.swing.JTextField();
+        txtVal = new javax.swing.JFormattedTextField();
+        txtDescu = new javax.swing.JFormattedTextField();
+        txtFecha = new javax.swing.JFormattedTextField();
+        jLabel6 = new javax.swing.JLabel();
+        cmbAct = new javax.swing.JComboBox<>();
+        cmbPaq = new javax.swing.JComboBox<String>();
 
         jLabel1.setText("Nombre");
 
@@ -44,14 +71,32 @@ public class ConsultaPaquete extends javax.swing.JPanel {
 
         jLabel4.setText("Descuento");
 
-        jLabel5.setText("FAlta");
+        jLabel5.setText("Fecha de Alta");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jButton1.setText("Datos Actividad");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnDAct.setText("Datos Actividad");
+        btnDAct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                /*jButton1ActionPerformed(evt);*/
+                btnDActActionPerformed(evt);
+            }
+        });
+
+        txtDesc.setEditable(false);
+
+        txtVal.setEditable(false);
+
+        txtDescu.setEditable(false);
+        txtDescu.setText("0");
+
+        txtFecha.setEditable(false);
+
+        jLabel6.setText("Actividades Incluidas");
+
+        cmbAct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+
+        cmbPaq.setModel(model);
+        cmbPaq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbPaqActionPerformed(evt);
             }
         });
 
@@ -60,55 +105,101 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel5)
-                        .addComponent(jLabel4)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel1))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)))
-                .addGap(57, 57, 57)
-                .addComponent(jButton1)
-                .addContainerGap(350, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cmbPaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(43, 43, 43)
+                                .addComponent(jLabel6))
+                            .addComponent(txtVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDescu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(133, 133, 133)
+                        .addComponent(btnDAct)))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel6)
+                            .addComponent(cmbAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbPaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(btnDAct)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtDescu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addContainerGap(367, Short.MAX_VALUE))
+                    .addComponent(jLabel5)
+                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(387, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt, IController cont) {
-        String nom="nombre";
-        new DatosAct(cont,nom).setVisible(true);
-    }                                        
+    private void btnDActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDActActionPerformed
+        // TODO add your handling code here:
+        String nom =(String)cmbAct.getSelectedItem();
+        if(nom!=" "){
+            new DatosAct(control, nom).setVisible(true);
+        }
+    }//GEN-LAST:event_btnDActActionPerformed
+
+    private void cmbPaqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPaqActionPerformed
+        Iterator<String> it=control.listarPaquetes().iterator();
+        cmbAct.removeAllItems();
+        cmbAct.addItem(" ");
+        while(it.hasNext()){
+            System. out. println(it.next());
+            cmbAct.addItem("pito");
+        }
+        
+    }//GEN-LAST:event_cmbPaqActionPerformed
+                                    
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnDAct;
+    private javax.swing.JComboBox<String> cmbAct;
+    private javax.swing.JComboBox<String> cmbPaq;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField txtDesc;
+    private javax.swing.JFormattedTextField txtDescu;
+    private javax.swing.JFormattedTextField txtFecha;
+    private javax.swing.JFormattedTextField txtVal;
     // End of variables declaration//GEN-END:variables
 }

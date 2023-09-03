@@ -9,6 +9,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         Fabrica fabrica = Fabrica.getInstance();
         IController cont=fabrica.getIController();
         initComponents();
+        
         AltaUsuario au=new AltaUsuario(); 
         PonerContenedorDentroContenedor(au,jPanelAltaUsuario);
         ConsultaUsuario cu=new ConsultaUsuario(); 
@@ -21,7 +22,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         PonerContenedorDentroContenedor(cst,jPanelConsultaSalidaTuristica);
         AltaSalidaTuristica ast = new AltaSalidaTuristica();
         PonerContenedorDentroContenedor(ast,jPanelAltaSalidaTuristica);
-        ConsultaPaquete cp = new ConsultaPaquete();
+        ConsultaPaquete cp = new ConsultaPaquete(cont);
         PonerContenedorDentroContenedor(cp,jPanelConsultaPaquetesActsTurs);
         CrearPaquete cpqt = new CrearPaquete(cont);
         PonerContenedorDentroContenedor(cpqt,jPanelCrearPaqueteActTuristicas);

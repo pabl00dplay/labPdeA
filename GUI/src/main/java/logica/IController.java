@@ -30,4 +30,10 @@ public interface IController {
     public abstract ArrayList<String> listarsalidasinscriptasTurista(String nickname);
     public abstract ArrayList<String> listarActividadesProveedor(String nickname); 
     public abstract ArrayList<String> listarsalidasProveedor(String nickname);   
+    public abstract HashSet<String> listarPaquetes();
+    public abstract DTPaquete listarDatosPaquete(String nomPaq);
+    public abstract HashSet<String> listarActividadespaquete(String nomPaq);
+    public abstract HashSet<String> listarActividadesFueraPaq(String nomPaq, String nomDpto);
+    public abstract void agregarActPaq(String nomPaq, String nomAct);
+    
 }

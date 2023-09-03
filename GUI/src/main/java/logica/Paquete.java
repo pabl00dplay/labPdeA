@@ -41,6 +41,12 @@ public class Paquete {
     public float getDescu(){
         return descuento;
     }
+    public Date getFAlta(){
+        return fAlta;
+    }
+    public HashSet<Actividad> getActs(){
+        return acts;
+    }
     
     //setters
     public void setNom(String s){
@@ -54,5 +60,8 @@ public class Paquete {
     }
     public void setDescu(float f){
         this.descuento=f;
+    }
+    public void setFAlta(Date f){
+        this.fAlta=f;
     }
 }

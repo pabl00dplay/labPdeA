@@ -4,7 +4,7 @@
  */
 package main.java.com.mycompany.paplicaciones;
 
-import main.java.logica.DataTypes.DTPaquete;
+import static java.lang.Integer.parseInt;
 import java.util.*;
 import javax.swing.*;
 import main.java.logica.*;
@@ -14,12 +14,15 @@ import main.java.logica.*;
  * @author francisco
  */
 public class CrearPaquete extends javax.swing.JPanel {
-
+    private static IController control;
     /**
      * Creates new form CrearPaquete
      */
     public CrearPaquete(IController cont) {
-        initComponents(cont);
+        control=cont;
+        initComponents();
+        Date d= new Date();
+        txtFecha.setValue(d);
     }
 
     /**
@@ -29,7 +32,7 @@ public class CrearPaquete extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents(IController cont) {
+    private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
         txtNom = new javax.swing.JTextField();
@@ -43,16 +46,17 @@ public class CrearPaquete extends javax.swing.JPanel {
         btnOk = new javax.swing.JButton();
         txtDescu = new javax.swing.JFormattedTextField();
         txtVali = new javax.swing.JFormattedTextField();
+        txtFecha = new javax.swing.JFormattedTextField();
 
         setPreferredSize(new java.awt.Dimension(620, 600));
 
         jLabel1.setText("Nombre");
 
-        txtNom.setText("jTextField1");
+        txtNom.setText("Nombre");
 
         jLabel2.setText("Descripcion");
 
-        txtDesc.setText("jTextField2");
+        txtDesc.setText("Descripcion");
 
         jLabel3.setText("Descuento");
 
@@ -67,13 +71,13 @@ public class CrearPaquete extends javax.swing.JPanel {
         btnOk.setText("OK");
         btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOkActionPerformed(evt,cont);
+                btnOkActionPerformed(evt);
             }
         });
 
-        txtDescu.setText("jFormattedTextField1");
+        txtDescu.setText("0");
 
-        txtVali.setText("jFormattedTextField1");
+        txtVali.setText("0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -95,15 +99,12 @@ public class CrearPaquete extends javax.swing.JPanel {
                         .addComponent(txtDescu, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4))
+                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(btnOk)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtVali, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                .addGap(21, 21, 21)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnOk)
+                            .addComponent(txtVali, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
                         .addComponent(jLabel6)))
                 .addContainerGap(347, Short.MAX_VALUE))
         );
@@ -129,23 +130,25 @@ public class CrearPaquete extends javax.swing.JPanel {
                     .addComponent(jLabel6)
                     .addComponent(txtVali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 318, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
                 .addComponent(btnOk)
-                .addGap(19, 19, 19))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnOkActionPerformed(java.awt.event.ActionEvent evt, IController cont) {//GEN-FIRST:event_btnOkActionPerformed
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
+        // TODO add your handling code here:                                      
         String nom = txtNom.getText();
-        if (!cont.existePaq(nom)) {
+        if (!control.existePaq(nom)) {
             String desc = txtDesc.getText();
-            int descu = (int) txtDescu.getValue();
-            int val = (int) txtVali.getValue();
-            Date f = null;
-            //Date f = txtFecha.getDate();
+            int descu = parseInt(txtDescu.getText());
+            int val = parseInt(txtVali.getText());
+            Date f = (Date)txtFecha.getValue();
             DTPaquete dt = new DTPaquete(nom, desc, descu, val, f);
-            cont.AltaPaquete(dt);
+            control.AltaPaquete(dt);
         } else {
             JFrame f = new JFrame();
             JOptionPane.showMessageDialog(f, "Un paquete con ese Nombre ya existe, por favor ingrese otro.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -164,6 +167,7 @@ public class CrearPaquete extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField txtDesc;
     private javax.swing.JFormattedTextField txtDescu;
+    private javax.swing.JFormattedTextField txtFecha;
     private javax.swing.JTextField txtNom;
     private javax.swing.JFormattedTextField txtVali;
     // End of variables declaration//GEN-END:variables

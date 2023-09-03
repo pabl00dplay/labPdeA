@@ -33,7 +33,7 @@ public class Controller implements IController {
         
         public void AltaPaquete(DTPaquete dt){
             Paquete p=new Paquete(dt.getNom(),dt.getDesc(),dt.getDescu(),dt.getVal(), dt.getFalta());
-            getPaq().put(dt.getNom(), p);
+            getPaq().put(p.getNom(), p);
         }
         public boolean existePaq(String s){
             if(getPaq().containsKey(s)){
@@ -77,4 +77,53 @@ public class Controller implements IController {
             return new ArrayList();
         };   
 
+        
+        public HashSet<String> listarPaquetes(){
+            HashSet<String> llave = new HashSet<String>();
+            for(String key:getPaq().keySet()){
+                llave.add(key);
+            }
+            return llave;
+        }
+        
+        public DTPaquete listarDatosPaquete(String nomPaq){
+            Paquete p=getPaq().get(nomPaq);
+            return new DTPaquete(p.getNom(),p.getDesc(),p.getDescu(),p.getVal(),p.getFAlta());
+        }
+        
+        public HashSet<String> listarActividadespaquete(String nomPaq){
+            HashSet<String> llave = new HashSet<String>();
+            Paquete vpaq=getPaq().get(nomPaq);
+            for(Actividad vact:vpaq.getActs()){
+                llave.add(vact.getNom());
+            }
+            return llave;
+        }
+        
+        public HashSet<String> listarActividadesFueraPaq(String nomPaq, String nomDpto){
+            HashSet<String> lista = listarActividadespaquete(nomPaq);
+            HashSet<String> llave = new HashSet<String>();
+            HashMap<String, Actividad> aux=getAct();
+            boolean existe;
+            for(String key:aux.keySet()){
+                existe=false;
+                for(String v:lista){
+                    if((v==key)){
+                        existe=true;
+                    }
+                }
+                if((!existe)&&(aux.get(key).getDept().getNom().equals(nomDpto))){
+                    llave.add(key);
+                }
+            }
+            return llave;
+        }
+        
+        public void agregarActPaq(String nomPaq, String nomAct){
+            Paquete p=getPaq().get(nomPaq);
+            Actividad a=getAct().get(nomAct);
+            p.getActs().add(a);
+        }
+    
+    
 }
