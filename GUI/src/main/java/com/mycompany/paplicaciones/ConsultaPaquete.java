@@ -14,28 +14,26 @@ import main.java.logica.*;
  */
 public class ConsultaPaquete extends javax.swing.JPanel {
     private static IController control;
+    private static DefaultComboBoxModel<String> model;
     
-    private ComboBoxModel getComboBoxModel()
-    {
-        Iterator<String> it=control.listarPaquetes().iterator();
-        String s[] = null;
-        s[0]=" ";
-        int x=1;
-        while (it.hasNext()){
-            s[x]=it.next();
-        }
-    return new DefaultComboBoxModel(control.listarPaquetes().toArray());
-    }
     /**
      * Creates new form ConsultaPaquete
      */
+    
     public ConsultaPaquete(IController cont) {
         control=cont;
+        
+        model=new DefaultComboBoxModel<String>(control.listarPaquetes().toArray(new String[]{}));
         initComponents();
         cmbPaq.addItem(" ");
+        /*for(String s:control.listarPaquetes()){
+            //cmbPaq.addItem(s);
+            cmbPaq.addItem("pito");
+        }*/
         Iterator<String> it=control.listarPaquetes().iterator();
         while (it.hasNext()){
-            cmbPaq.addItem(it.next());
+            cmbPaq.addItem((String) it.next());
+            cmbPaq.addItem("pito");
         }
         
 
@@ -63,7 +61,7 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         txtFecha = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         cmbAct = new javax.swing.JComboBox<>();
-        cmbPaq = new javax.swing.JComboBox<>();
+        cmbPaq = new javax.swing.JComboBox<String>();
 
         jLabel1.setText("Nombre");
 
@@ -95,7 +93,7 @@ public class ConsultaPaquete extends javax.swing.JPanel {
 
         cmbAct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
 
-        cmbPaq.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        cmbPaq.setModel(model);
         cmbPaq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbPaqActionPerformed(evt);
