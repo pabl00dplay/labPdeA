@@ -1,20 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main.java.logica;
 
+import java.io.Serializable;
 import java.lang.String;
 import java.util.Date;
- 
-
-/**
- *
- * @author francisco
- */
-public class Usuario {
-    protected String nick,nom,ape,mail;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class Usuario implements Serializable {
+    @Id
+    protected String nick;
+    @Basic
+    protected String  nom,ape,mail;
     protected Date fnac;
+
+    public Usuario() {
+    }
     
     public Usuario(String nick, String nom, String ape, String mail,Date fnac){
         this.nick=nick;
