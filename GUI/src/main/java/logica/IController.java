@@ -20,5 +20,6 @@ public interface IController {
     
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
-    
+    public abstract void altaDepto(Departamento nuevoDepto);
+    public abstract boolean existeDepto(String nombre);
 }

@@ -46,6 +46,16 @@ public class Controller implements IController {
                 return false;
             }
         }
+        public void altaDepto(Departamento nuevoDepto){
+            getDep().put(nuevoDepto.getNom(), nuevoDepto);//Agrego el nuevo depto a la col
     
+        }
+        public boolean existeDepto(String nombre){
+            if (getDep().containsKey(nombre)){//si la col tiene un depto con nombre igual
+                return false;
+            }else {
+                return true; //si no existe uno igual, verdadero
+            }
+        }
     
 }
