@@ -87,15 +87,27 @@ public class Controller implements IController {
             act.put(nombreActividad, nuevaAct);
         }
       
-        public void altaSalida(DTSalida dt,String nombreActividad){
+        public void AltaSalida(DTSalida dt,String nombreActividad){
             Salida salida = new Salida(dt.getNom(),dt.getMaxTuristas(),dt.getDuracion(),dt.getFAlta(),dt.getLugat());
         }
-        public DTSalida listarDatosSalida(String nombreActividad){
+        public DTSalida ListarDatosSalida(String nombreActividad){
             LocalDate fecha = LocalDate.of(2023, 9, 3);
             return new DTSalida("",0,0,fecha,"");
         }
-        public Set<String> listarSalidasVigentesActividad(String nombreActividad){
-            return new set <string>;
-        }
+        public ArrayList<String> ListarSalidasVigentesActividad(String nombreActividad){
+            return new ArrayList();
+        };
+        public ArrayList<String> ListarTuristas(){
+            return new ArrayList();
+        };   
         
+        public Boolean ChequearCapacidad(String nombreSalida,Integer cantidadTuristas){
+            return false;
+        }
+        public Boolean ChequearInscripto(String nombreSalida,String nick){
+            return false;
+        }
+        public void InscripcionSalida(DTInscripcion dt,String nombreActividad){
+            Inscripcion inscripcion = new Inscripcion(dt.getFecha(),dt.getCant(),dt.getCosto(),dt.getTur(),dt.getSal());
+        }
 }

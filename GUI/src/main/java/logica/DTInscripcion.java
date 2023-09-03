@@ -11,20 +11,16 @@ import java.time.*;
  *
  * @author francisco
  */
-public class Inscripcion {
+public class DTInscripcion {
     private LocalDate fecha;
     private int cant,costo;
     private Turista tur;
     private Salida sal;
     
-    public Inscripcion(LocalDate fecha, int cant, int costo, Turista tur, Salida sal){
-        this.fecha=fecha;
-        this.cant=cant;
-        this.costo=costo;
-        this.tur=tur;
-        this.sal=sal;
-    }
-    //getters
+    
+    
+
+//getters
     public LocalDate getFecha(){
         return fecha;
     }
@@ -40,6 +36,5 @@ public class Inscripcion {
     public Salida getSal(){
         return sal;
     }
-}
 
-
+}   
