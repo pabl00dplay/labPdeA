@@ -90,8 +90,12 @@ public class Controller implements IController {
         public void altaSalida(DTSalida dt,String nombreActividad){
             Salida salida = new Salida(dt.getNom(),dt.getMaxTuristas(),dt.getDuracion(),dt.getFAlta(),dt.getLugat());
         }
-        public DTActividad listarDatosSalida(String nombreActividad){
-            Fecha fecha = new DTFecha();
-            return new DTSalida("",0,0,);
+        public DTSalida listarDatosSalida(String nombreActividad){
+            LocalDate fecha = LocalDate.of(2023, 9, 3);
+            return new DTSalida("",0,0,fecha,"");
         }
+        public Set<String> listarSalidasVigentesActividad(String nombreActividad){
+            return new set <string>;
+        }
+        
 }
