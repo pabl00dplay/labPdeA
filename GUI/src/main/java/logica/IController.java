@@ -19,7 +19,7 @@ public interface IController {
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
     public abstract HashMap<String,DTProveedor> listarProveedores();
-    public abstract void AltaActividadTuristica(String nombreProveedor,String nombreActividad,String descripcion,Integer duracion,Integer costo,String ciudad,LocalDate fAlta);
+    public abstract void AltaActividadTuristica(String nombreProveedor,String nombreActividad,String descripcion,Integer duracion,Integer costo,String ciudad,LocalDate fAlta, Departamento depto);
     public abstract DTActividad listarDatosActividad(String nombreActividad);
     public abstract Set<String> listarDepartamentos();
     public abstract Boolean nombreActividadExiste(String nombre);

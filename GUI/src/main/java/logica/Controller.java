@@ -86,6 +86,12 @@ public class Controller implements IController {
             Actividad nuevaAct = new Actividad(nombreActividad,descripcion,ciudad,depto,duracion,costo,fAlta);
             act.put(nombreActividad, nuevaAct);
         }
-    
-    
+      
+        public void altaSalida(DTSalida dt,String nombreActividad){
+            Salida salida = new Salida(dt.getNom(),dt.getMaxTuristas(),dt.getDuracion(),dt.getFAlta(),dt.getLugat());
+        }
+        public DTActividad listarDatosSalida(String nombreActividad){
+            Fecha fecha = new DTFecha();
+            return new DTSalida("",0,0,);
+        }
 }
