@@ -4,7 +4,7 @@
  */
 package main.java.com.mycompany.paplicaciones;
 
-import main.java.logica.*;
+import logica.*;
 
 /**
  *
@@ -15,7 +15,7 @@ public class DatosSal extends javax.swing.JFrame {
     /**
      * Creates new form DatosSal
      */
-    public DatosSal(IController cont, String nom) {
+    public DatosSal(IController cont) {
         initComponents(cont);
     }
 

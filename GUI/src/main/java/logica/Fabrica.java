@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package main.java.logica;
+package logica;
 
 /**
  *
@@ -10,7 +10,7 @@ package main.java.logica;
  */
 public class Fabrica {
 
-    private static Fabrica instancia=null;
+    private static Fabrica instancia;
 
     private Fabrica() {
     };
