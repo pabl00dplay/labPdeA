@@ -82,7 +82,7 @@ public class Controller implements IController {
                         existe=true;
                     }
                 }
-                if((!existe)&&(aux.get(key).getDept().getNom().equals(nomDpto))){
+                if((!existe)&&(aux.get(key).getDept().equals(nomDpto))){
                     llave.add(key);
                 }
             }
