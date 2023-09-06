@@ -20,16 +20,8 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
     public AgregarActividadPaquete(IController cont) {
         control=cont;
         initComponents();
-        
-        cmbPaq.removeAllItems();
         cmbPaq.addItem(" ");
-        HashSet<String> p=control.listarPaquetes();
-        for(String pa:p){
-            cmbPaq.addItem(pa);
-        }
-        
         cmbDepto.addItem(" ");
-        //listarDeptos
         
     }
 
@@ -49,6 +41,7 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         cmbDepto = new javax.swing.JComboBox<>();
         cmbAct = new javax.swing.JComboBox<>();
         btnOK = new javax.swing.JButton();
+        btnActu = new javax.swing.JButton();
 
         jLabel1.setText("Paquete");
 
@@ -74,6 +67,13 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
             }
         });
 
+        btnActu.setText("Actualizar");
+        btnActu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActuActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -89,7 +89,9 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
                     .addComponent(cmbDepto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbPaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addComponent(btnActu)
+                .addContainerGap(31, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnOK)
@@ -101,7 +103,8 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(cmbPaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbPaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnActu))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -131,11 +134,23 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_cmbDeptoActionPerformed
 
+    private void btnActuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActuActionPerformed
+        cmbPaq.removeAllItems();
+        cmbDepto.removeAllItems();
+        cmbPaq.addItem(" ");
+        cmbDepto.addItem(" ");
+        for(String s:control.listarPaquetes()){
+            cmbPaq.addItem(s);
+        }
+        //listarDeptos
+    }//GEN-LAST:event_btnActuActionPerformed
+
     
         
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActu;
     private javax.swing.JButton btnOK;
     private javax.swing.JComboBox<String> cmbAct;
     private javax.swing.JComboBox<String> cmbDepto;

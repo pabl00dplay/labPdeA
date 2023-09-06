@@ -15,10 +15,12 @@ import main.java.logica.*;
  */
 public class CrearPaquete extends javax.swing.JPanel {
     private static IController control;
+    private static JFrame j;
     /**
      * Creates new form CrearPaquete
      */
-    public CrearPaquete(IController cont) {
+    public CrearPaquete(IController cont, JFrame f) {
+        j=f;
         control=cont;
         initComponents();
         Date d= new Date();

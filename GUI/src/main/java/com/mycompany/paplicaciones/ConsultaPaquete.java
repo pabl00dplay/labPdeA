@@ -14,7 +14,6 @@ import main.java.logica.*;
  */
 public class ConsultaPaquete extends javax.swing.JPanel {
     private static IController control;
-    private static DefaultComboBoxModel<String> model;
     
     /**
      * Creates new form ConsultaPaquete
@@ -22,19 +21,7 @@ public class ConsultaPaquete extends javax.swing.JPanel {
     
     public ConsultaPaquete(IController cont) {
         control=cont;
-        
-        model=new DefaultComboBoxModel<String>(control.listarPaquetes().toArray(new String[]{}));
         initComponents();
-        cmbPaq.addItem(" ");
-        /*for(String s:control.listarPaquetes()){
-            //cmbPaq.addItem(s);
-            cmbPaq.addItem("pito");
-        }*/
-        Iterator<String> it=control.listarPaquetes().iterator();
-        while (it.hasNext()){
-            cmbPaq.addItem((String) it.next());
-            cmbPaq.addItem("pito");
-        }
         
 
         btnDAct.setText("Datos Actividad");
@@ -62,6 +49,7 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         cmbAct = new javax.swing.JComboBox<>();
         cmbPaq = new javax.swing.JComboBox<String>();
+        btnActu = new javax.swing.JButton();
 
         jLabel1.setText("Nombre");
 
@@ -93,10 +81,16 @@ public class ConsultaPaquete extends javax.swing.JPanel {
 
         cmbAct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
 
-        cmbPaq.setModel(model);
         cmbPaq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbPaqActionPerformed(evt);
+            }
+        });
+
+        btnActu.setText("Actualizar");
+        btnActu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActuActionPerformed(evt);
             }
         });
 
@@ -106,12 +100,14 @@ public class ConsultaPaquete extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnActu)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel5)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel1)))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -129,7 +125,7 @@ public class ConsultaPaquete extends javax.swing.JPanel {
                         .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(133, 133, 133)
                         .addComponent(btnDAct)))
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(138, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,7 +157,9 @@ public class ConsultaPaquete extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(387, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnActu)
+                .addContainerGap(345, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -174,20 +172,26 @@ public class ConsultaPaquete extends javax.swing.JPanel {
     }//GEN-LAST:event_btnDActActionPerformed
 
     private void cmbPaqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPaqActionPerformed
-        Iterator<String> it=control.listarPaquetes().iterator();
         cmbAct.removeAllItems();
         cmbAct.addItem(" ");
-        while(it.hasNext()){
-            System. out. println(it.next());
-            cmbAct.addItem("pito");
+        for(String s:control.listarActividadespaquete(cmbPaq.getSelectedItem().toString())){
+            cmbAct.addItem(s);
         }
-        
     }//GEN-LAST:event_cmbPaqActionPerformed
+
+    private void btnActuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActuActionPerformed
+        cmbPaq.removeAllItems();
+        cmbPaq.addItem(" ");
+        for(String s:control.listarPaquetes()){
+            cmbPaq.addItem(s);
+        }
+    }//GEN-LAST:event_btnActuActionPerformed
                                     
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActu;
     private javax.swing.JButton btnDAct;
     private javax.swing.JComboBox<String> cmbAct;
     private javax.swing.JComboBox<String> cmbPaq;

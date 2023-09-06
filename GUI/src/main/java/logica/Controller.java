@@ -47,10 +47,11 @@ public class Controller implements IController {
             }
         }
         
-        public HashSet<String> listarPaquetes(){
-            HashSet<String> llave = new HashSet<String>();
-            for(String key:getPaq().keySet()){
-                llave.add(key);
+        public String[] listarPaquetes(){
+            String llave[]=new String[getPaq().keySet().size()];
+            int x=0;
+            for(String s:getPaq().keySet()){
+                llave[x++]=s;
             }
             return llave;
         }

@@ -11,12 +11,14 @@ import main.java.logica.*;
  * @author francisco
  */
 public class DatosAct extends javax.swing.JFrame {
-
+    private static IController control;
     /**
      * Creates new form DatosAct
      */
     public DatosAct(IController cont, String nom) {
+        control=cont;
         initComponents();
+        //dta=control.listarDatosAct()
         txtNom.setText(nom);
         txtDesc.setText(" ");
         txtDep.setText(" ");

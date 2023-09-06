@@ -20,7 +20,7 @@ public interface IController {
     
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
-    public abstract HashSet<String> listarPaquetes();
+    public abstract String[] listarPaquetes();
     public abstract DTPaquete listarDatosPaquete(String nomPaq);
     public abstract HashSet<String> listarActividadespaquete(String nomPaq);
     public abstract HashSet<String> listarActividadesFueraPaq(String nomPaq, String nomDpto);
