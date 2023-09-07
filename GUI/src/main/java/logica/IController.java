@@ -5,6 +5,7 @@ package main.java.logica;
 import java.util.ArrayList;
 import main.java.logica.DataTypes.DTPaquete;
 import java.util.HashMap;
+import java.util.HashSet;
 import main.java.logica.DataTypes.DTproveedor;
 import main.java.logica.DataTypes.DTturista;
 import main.java.logica.DataTypes.DTusuario;
@@ -21,7 +22,6 @@ public interface IController {
     
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
-<<<<<<< HEAD
     public abstract void altaTurista(DTturista dt);
     public abstract void altaProveedor(DTproveedor dt);
     public abstract boolean nickExiste(String nombre);
@@ -37,8 +37,6 @@ public interface IController {
     public abstract HashSet<String> listarActividadesFueraPaq(String nomPaq, String nomDpto);
     public abstract void agregarActPaq(String nomPaq, String nomAct);
     
-=======
     public abstract void altaDepto(Departamento nuevoDepto);
     public abstract boolean existeDepto(String nombre);
->>>>>>> madi
 }
