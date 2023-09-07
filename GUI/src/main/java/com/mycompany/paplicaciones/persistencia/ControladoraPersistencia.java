@@ -38,8 +38,8 @@ public class ControladoraPersistencia {
         List<Usuario> lus=ujpa.findUsuarioEntities();
         boolean existe=false;
         Iterator<Usuario> itr = lus.iterator();
-        while (itr.hasNext()) {
-           if(itr.next().getNick().equals(nic) ){
+        for(Usuario u:lus) {
+           if(u.getNick().equals(nic)){
                existe=true;
            }
         }
@@ -50,8 +50,8 @@ public class ControladoraPersistencia {
         List<Usuario> lus=ujpa.findUsuarioEntities();
         boolean existe=false;
         Iterator<Usuario> itr = lus.iterator();
-        while (itr.hasNext()) {
-           if(itr.next().getMail().equals(correo) ){
+        for(Usuario u:lus) {
+           if(u.getMail().equals(correo)){
                existe=true;
            }
         }
