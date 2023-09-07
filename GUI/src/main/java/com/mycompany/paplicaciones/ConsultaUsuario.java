@@ -31,7 +31,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jTextFieldnombre.setVisible(false);
         jTextFieldapellido.setVisible(false);
         jTextFieldcorreoElectrónico.setVisible(false);
-        jDateChooser1.setVisible(false);
         
         jLabelDescripcionGeneral.setVisible(false);
         jTextArealDescripcionGeneral.setVisible(false);
@@ -370,7 +369,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(true);
             jTextFieldapellido.setVisible(true);
             jTextFieldcorreoElectrónico.setVisible(false);
-            jDateChooser1.setVisible(true);
         
             jLabelDescripcionGeneral.setVisible(false);
             jTextArealDescripcionGeneral.setVisible(false);
@@ -405,7 +403,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(true);
             jTextFieldapellido.setVisible(true);
             jTextFieldcorreoElectrónico.setVisible(true);
-            jDateChooser1.setVisible(true);
             
             
             
@@ -442,7 +439,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(false);
             jTextFieldapellido.setVisible(false);
             jTextFieldcorreoElectrónico.setVisible(false);
-            jDateChooser1.setVisible(false);
             jLabelDescripcionGeneral.setVisible(false);
             jTextArealDescripcionGeneral.setVisible(false);
             jPanelDescripcionGeneral.setVisible(true);

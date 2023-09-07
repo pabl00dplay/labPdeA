@@ -8,7 +8,7 @@ import static java.lang.Integer.parseInt;
 import java.util.*;
 import javax.swing.*;
 import main.java.logica.*;
-import main.java.logica.DataTypes.*;
+//import main.java.logica.DataTypes.*;
 
 /**
  *
