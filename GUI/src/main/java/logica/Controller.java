@@ -1,13 +1,15 @@
 
 package main.java.logica;
 
-import DataTypes.DTActividad;
-import DataTypes.DTProveedor;
+import DataTypes.*;
 import java.time.LocalDate;
 import java.util.*;
+import main.java.persistencia.ControladoraPersistencia;
 
 //SINGLETON
 public class Controller implements IController {
+    
+        ControladoraPersistencia contpersis= new  ControladoraPersistencia();
 	private HashMap<String, Usuario> usr;
 	private HashMap<String, Actividad> act;
         private HashMap<String, Paquete> paq;
@@ -50,13 +52,13 @@ public class Controller implements IController {
                 return false;
             }
         }   
-        public  HashMap<String,DTProveedor> listarProveedores(){
-            HashMap<String,DTProveedor> dataTypeMap = new HashMap();
+        public  HashMap<String,DTusuario> listarProveedores(){
+            HashMap<String,DTusuario> dataTypeMap = new HashMap();
             for(HashMap.Entry<String,Usuario> entry : usr.entrySet()){
                 String nombre = entry.getKey();
                 Usuario usuario = entry.getValue();
-                if(usuario instanceof Proveedor){
-                    dataTypeMap.put(nombre,((Proveedor) usuario).getData());
+                if(usuario instanceof Usuario){
+                   // dataTypeMap.put(nombre,usuario.getData());
                 }
             }
             return dataTypeMap;
@@ -169,5 +171,19 @@ public class Controller implements IController {
                 return true; //si no existe uno igual, verdadero
             }
         }
+    public void altaTurista(DTusuario dt){
+         Usuario t=new Usuario(dt);
+         contpersis.altaTurista(t);
+    }
     
+    public void altaProveedor(DTusuario dp){
+        Usuario p=new Usuario(dp);
+        contpersis.altaProveedor(p);
+    }
+    public boolean mailExiste(String mail){
+        return false;
+    }
+    public boolean nickExiste(String nic){
+        return false;
+    }
 }

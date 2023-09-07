@@ -4,19 +4,26 @@
  */
 package main.java.logica;
 
+import java.io.Serializable;
 import java.lang.String;
 import java.time.*;
 import java.util.*;
+import javax.persistence.*;
 
 /**
  *
  * @author francisco
  */
-public class Paquete {
-    private String nom, desc;
+@Entity
+public class Paquete implements Serializable {
+    @Id
+    private String nom;
+    
+    private String desc;
     private int Pvalidez;
     private float descuento;
     private Date fAlta;
+    @ManyToMany
     private HashSet<Actividad> acts;
     
     public Paquete(String n, String d, float de, int v, Date f){

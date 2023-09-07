@@ -1,7 +1,8 @@
 
 package main.java.logica;
 
-import DataTypes.DTActividad;
+import DataTypes.*;
+import java.io.Serializable;
 import java.lang.String;
 import java.time.*;
 import java.util.HashSet;
@@ -10,15 +11,17 @@ import javax.persistence.*;
 
 /**
  *
- * @author francisco
+ * //@author francisco
  */
-@Entity
-public class Actividad {
-    @Id private String nom;
+//@Entity
+public class Actividad implements Serializable {
+    //@Id 
+    private String nom;
     private String desc,ciudad;
     private Departamento dept;
     private Integer dur,costo;
     private LocalDate Alta;
+    //@OneToMany
     private HashMap<String,Salida> salidas;
 
     public Actividad(String nom, String desc, String ciudad, Departamento dept, Integer dur, Integer costo, LocalDate Alta) {

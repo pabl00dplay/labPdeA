@@ -14,39 +14,41 @@ import java.util.Objects;
  */
 public class InscripcionKey implements Serializable {
     private LocalDate fecha;
-    private Turista turista;
-    private Salida salida;
+    private String tur;
+    private String sal;
 
     public LocalDate getFecha() {
         return fecha;
-    }
-
-    public Turista getTurista() {
-        return turista;
-    }
-
-    public Salida getSalida() {
-        return salida;
     }
 
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
-    public void setTurista(Turista turista) {
-        this.turista = turista;
+    public String getTur() {
+        return tur;
     }
 
-    public void setSalida(Salida salida) {
-        this.salida = salida;
+    public void setTur(String tur) {
+        this.tur = tur;
     }
+
+    public String getSal() {
+        return sal;
+    }
+
+    public void setSal(String sal) {
+        this.sal = sal;
+    }
+
+    
 
     @Override
     public int hashCode() {
         int hash = 3;
         hash = 97 * hash + Objects.hashCode(this.fecha);
-        hash = 97 * hash + Objects.hashCode(this.turista);
-        hash = 97 * hash + Objects.hashCode(this.salida);
+        hash = 97 * hash + Objects.hashCode(this.tur);
+        hash = 97 * hash + Objects.hashCode(this.sal);
         return hash;
     }
 
@@ -65,10 +67,10 @@ public class InscripcionKey implements Serializable {
         if (!Objects.equals(this.fecha, other.fecha)) {
             return false;
         }
-        if (!Objects.equals(this.turista, other.turista)) {
+        if (!Objects.equals(this.tur, other.tur)) {
             return false;
         }
-        return Objects.equals(this.salida, other.salida);
+        return Objects.equals(this.sal, other.sal);
     }
     
    

@@ -3,11 +3,9 @@ package main.java.logica;
 
 
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import DataTypes.DTActividad;
-import DataTypes.DTProveedor;
+import DataTypes.*;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -26,12 +24,19 @@ public interface IController {
     public abstract HashSet<String> listarActividadesFueraPaq(String nomPaq, String nomDpto);
     public abstract void agregarActPaq(String nomPaq, String nomAct);
     
+    
+    public abstract void altaProveedor(DTusuario dp);
+    public abstract void altaTurista(DTusuario dt);
     public abstract void altaDepto(Departamento nuevoDepto);
     public abstract boolean existeDepto(String nombre);
 
-    public abstract HashMap<String,DTProveedor> listarProveedores();
+    public abstract HashMap<String,DTusuario> listarProveedores();
     public abstract void AltaActividadTuristica(String nombreProveedor,String nombreActividad,String descripcion,Integer duracion,Integer costo,String ciudad,LocalDate fAlta, Departamento depto);
     public abstract DTActividad listarDatosActividad(String nombreActividad);
     public abstract Set<String> listarDepartamentos();
     public abstract Boolean nombreActividadExiste(String nombre);
+
+    public abstract boolean nickExiste(String nic);
+
+    public abstract boolean mailExiste(String mail);
 }

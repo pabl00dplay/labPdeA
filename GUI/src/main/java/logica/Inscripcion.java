@@ -1,40 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package main.java.logica;
 
 
+import java.io.Serializable;
 import java.time.*;
 import javax.persistence.*;
 
 /**
  *
- * @author francisco
+ * //@author francisco
  */
-@Entity
-@IdClass(InscripcionKey.class)
+//@Entity
+//@IdClass(InscripcionKey.class)
 
-
-
-public class Inscripcion {
+public class Inscripcion implements Serializable {
     
-    @Id 
+    //@Id 
     private LocalDate fecha;
-    @ManyToOne
-    @Id 
-    private Turista tur;
-    @Id 
-    private Salida sal;
+    //@Id 
+    private String tur;
+    //@Id 
+    private String sal;
     
     private int cant,costo;
     
-    public Inscripcion(LocalDate fecha, int cant, int costo, Turista tur, Salida sal){
+    public Inscripcion(LocalDate fecha, int cant, int costo, Usuario tur, Salida sal){
         this.fecha=fecha;
         this.cant=cant;
         this.costo=costo;
-        this.tur=tur;
-        this.sal=sal;
+        this.tur=tur.getNick();
+        this.sal=sal.getNom();
     }
     //getters
     public LocalDate getFecha(){
@@ -46,10 +41,10 @@ public class Inscripcion {
     public int getCosto(){
         return costo;
     }
-    public Turista getTur(){
+    public String getTur(){
         return tur;
     }
-    public Salida getSal(){
+    public String getSal(){
         return sal;
     }
 }

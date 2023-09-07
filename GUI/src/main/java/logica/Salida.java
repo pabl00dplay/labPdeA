@@ -4,17 +4,25 @@
  */
 package main.java.logica;
 
+import java.io.Serializable;
 import java.lang.String;
 import java.time.*;
+import javax.persistence.*;
 
 /**
  *
- * @author francisco
+ * //@author francisco
  */
-public class Salida {
-    private String nom, lugar;
+//@Entity
+public class Salida implements Serializable {
+    
+    //@Id
+    private String nom;
+    
+    private String lugar;
     private int maxTuris, dur;
     private LocalDate fecha,fAlta;
+    //@ManyToOne
     private Actividad act;
     
     public Salida(String n, int cant, int d, LocalDate f, String l){

@@ -2,6 +2,13 @@
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence           http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
   <persistence-unit name="PAplicacionesPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>main.java.logica.Actividad</class>
+    <class>main.java.logica.Departamento</class>
+    <class>main.java.logica.Inscripcion</class>
+    <class>main.java.logica.Paquete</class>
+    <class>main.java.logica.Proveedor</class>
+    <class>main.java.logica.Salida</class>
+    <class>main.java.logica.Turista</class>
     <class>main.java.logica.Usuario</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/baselab?serverTimezone=UTC"/>

@@ -14,7 +14,7 @@ import java.time.*;
 public class DTInscripcion {
     private LocalDate fecha;
     private int cant,costo;
-    private Turista tur;
+    private Usuario tur;
     private Salida sal;
     
     
@@ -30,7 +30,7 @@ public class DTInscripcion {
     public int getCosto(){
         return costo;
     }
-    public Turista getTur(){
+    public Usuario getTur(){
         return tur;
     }
     public Salida getSal(){

@@ -1,5 +1,6 @@
 
 package main.java.logica;
+
 public class Fabrica {
 
     private static Fabrica instancia;

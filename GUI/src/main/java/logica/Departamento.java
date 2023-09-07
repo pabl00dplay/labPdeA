@@ -4,16 +4,18 @@
  */
 package main.java.logica;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
  *
- * @author francisco
+ * //@author francisco
  */
-@Entity
+//@Entity
 
-public class Departamento {
-    @Id private String nom ;
+public class Departamento implements Serializable {
+    //@Id 
+    private String nom ;
     private String desc,url;
     
     //getters
