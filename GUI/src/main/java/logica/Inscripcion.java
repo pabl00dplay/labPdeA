@@ -14,6 +14,6 @@ import java.time.*;
 public class Inscripcion {
     private LocalDate fecha;
     private int cant,costo;
-    private Turista tur;
+    private Usuario tur;
     private Salida sal;
 }

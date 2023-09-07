@@ -14,7 +14,7 @@ import java.time.*;
 public class Compra {
     private LocalDate fecha,venc;
     private int cosTot,cant;
-    private Turista tur;
+    private Usuario tur;
     private Paquete paq;
     
 }

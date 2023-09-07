@@ -1,10 +1,17 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package main.java.logica;
+
+/**
+ *
+ * @author francisco
+ */
 public class Fabrica {
 
     private static Fabrica instancia;
-    private static IController ICtrl=null;
-    
+
     private Fabrica() {
     };
 
@@ -16,11 +23,7 @@ public class Fabrica {
     }
 
     public IController getIController() {
-        if(ICtrl==null)
-        {
-            return Controller.getInstance();
-        }
-        return ICtrl;
-}   
+        return new Controller();
+    }
     
 }

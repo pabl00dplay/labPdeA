@@ -1,19 +1,20 @@
-
 package main.java.logica;
 
-import DataTypes.DTActividad;
-import DataTypes.DTProveedor;
-import java.time.LocalDate;
+import main.java.logica.DataTypes.DTPaquete;
 import java.util.*;
+import main.java.com.mycompany.paplicaciones.persistencia.ControladoraPersistencia;
+import main.java.logica.DataTypes.DTproveedor;
+import main.java.logica.DataTypes.DTturista;
+import main.java.logica.DataTypes.DTusuario;
 
-//SINGLETON
 public class Controller implements IController {
+    ControladoraPersistencia contpersis= new  ControladoraPersistencia();
 	private HashMap<String, Usuario> usr;
 	private HashMap<String, Actividad> act;
         private HashMap<String, Paquete> paq;
         private HashMap<String, Departamento> dep;
-        private static Controller instance=null;
-        private Controller(){
+    
+        public Controller(){
             usr=new HashMap<String, Usuario>();
             act=new HashMap<String, Actividad>();
             paq=new HashMap<String, Paquete>();
@@ -31,14 +32,7 @@ public class Controller implements IController {
         public HashMap<String, Departamento> getDep(){
             return dep;
         }
-        public static Controller getInstance(){
-            if(instance==null)
-            {
-                instance=new Controller();
-                return instance;
-            }
-           return instance;
-        }
+        
         public void AltaPaquete(DTPaquete dt){
             Paquete p=new Paquete(dt.getNom(),dt.getDesc(),dt.getDescu(),dt.getVal(), dt.getFalta());
             getPaq().put(dt.getNom(), p);
@@ -49,43 +43,41 @@ public class Controller implements IController {
             }else{
                 return false;
             }
-        }   
-        public  HashMap<String,DTProveedor> listarProveedores(){
-            HashMap<String,DTProveedor> dataTypeMap = new HashMap();
-            for(HashMap.Entry<String,Usuario> entry : usr.entrySet()){
-                String nombre = entry.getKey();
-                Usuario usuario = entry.getValue();
-                if(usuario instanceof Proveedor){
-                    dataTypeMap.put(nombre,((Proveedor) usuario).getData());
-                }
-            }
-            return dataTypeMap;
-        } 
-        public DTActividad listarDatosActividad(String nombreActividad){
-            if(act.containsKey(nombreActividad)){
-                Actividad actividad = act.get(nombreActividad);
-                return actividad.getData();
-            }
-            else{
-                return null;
-            }
         }
-        public Set<String> listarDepartamentos(){
-            Set<String> nombresDepartamentos= new HashSet<>();
-            for(HashMap.Entry<String,Departamento> entry : dep.entrySet()){
-                String nombre = entry.getKey();
-                Departamento depto = entry.getValue();
-                nombresDepartamentos.add(nombre);
-            }
-            return nombresDepartamentos;
+        //Alta Usuario
+        public void altaTurista(DTturista dt){
+            Usuario t=new Usuario(dt);
+            contpersis.altaTurista(t);
         }
-        public Boolean nombreActividadExiste(String nombreActividad){
-            return act.containsKey(nombreActividad);
+        public void altaProveedor(DTproveedor dp){
+            Usuario p=new Usuario(dp);
+            contpersis.altaProveedor(p);
         }
-        public void AltaActividadTuristica(String nombreProveedor,String nombreActividad,String descripcion,Integer duracion,Integer costo,String ciudad,LocalDate fAlta, Departamento depto){
-            Actividad nuevaAct = new Actividad(nombreActividad,descripcion,ciudad,depto,duracion,costo,fAlta);
-            act.put(nombreActividad, nuevaAct);
+         public DTusuario getUsuario(String nickname){
+             Date fnac= new Date(2022,9,31);
+             DTusuario dt=new DTproveedor("nic","nom","ape","mail",fnac,"desc","sitio");
+            return dt;
+        };
+        public boolean nickExiste(String nic){
+             
+            return contpersis.nicExiste(nic);
+        };
+        public boolean mailExiste(String correo){
+             
+            return contpersis.mailExiste(correo);
+        };
+        public ArrayList<Usuario> getUsuarios() {
+            ArrayList<Usuario> retorno=contpersis.getUsuarios();
+            return retorno;
         }
-    
-    
+        public ArrayList<String> listarsalidasinscriptasTurista(String nickname){
+            return new ArrayList();
+        };
+        public ArrayList<String> listarActividadesProveedor(String nickname){
+            return new ArrayList();
+        }; 
+        public ArrayList<String> listarsalidasProveedor(String nickname){
+            return new ArrayList();
+        };   
+
 }

@@ -1,5 +1,16 @@
 package main.java.com.mycompany.paplicaciones;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import main.java.logica.Controller;
+import main.java.logica.DataTypes.DTproveedor;
+import main.java.logica.DataTypes.DTturista;
+import main.java.logica.Fabrica;
+import main.java.logica.IController;
+
 
 public class AltaUsuario extends javax.swing.JPanel {
 
@@ -39,7 +50,6 @@ public class AltaUsuario extends javax.swing.JPanel {
         jTextFieldDia.setVisible(false);
         jTextFieldMes.setVisible(false);
         jTextFieldAnio.setVisible(false);
-        
         
         
     }
@@ -410,11 +420,64 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldDia.setVisible(false);
             jTextFieldMes.setVisible(false);
             jTextFieldAnio.setVisible(false);
-        }
+        } 
     }//GEN-LAST:event_cmbTuristaProveedorActionPerformed
 
     private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
-        // TODO add your handling code here:
+        String opcion=(String)cmbTuristaProveedor.getSelectedItem();
+        String nic;
+        String nom;
+        String ape;
+        String mail;
+        Date fnac;
+        int D,M,A;
+        nic = jTextFieldnickname.getText();
+        nom = jTextFieldnombre.getText();
+        ape = jTextFieldapellido.getText();
+        mail = jTextFieldcorreoElectrónico.getText();
+        D = Integer.parseInt(jTextFieldDia.getText().trim());
+        M = Integer.parseInt(jTextFieldMes.getText().trim());
+        A = Integer.parseInt(jTextFieldAnio.getText().trim());
+        fnac = new Date(A, M, D);    
+        Fabrica f=Fabrica.getInstance();
+        IController I=f.getIController();
+        if (I.nickExiste(nic)){
+            JOptionPane.showMessageDialog(null, "El nickname ya existe");
+        }
+        else if (I.mailExiste(mail)){
+             JOptionPane.showMessageDialog(null, "El mail ya existe");
+        }
+        else if(opcion.equals("Turista")){
+            String nacionalidad=jTextFieldnacionalidad.getText();
+            DTturista dt=new DTturista(nic,nom,ape,mail,fnac,nacionalidad);
+            I.altaTurista(dt);
+            
+            jTextFieldnickname.setText(null); 
+            jTextFieldapellido.setText(null);
+            jTextFieldnombre.setText(null);
+            jTextFieldcorreoElectrónico.setText(null);
+            jTextFieldDia.setText(null);
+            jTextFieldMes.setText(null);
+            jTextFieldAnio.setText(null);
+            jTextFieldnacionalidad.setText(null);
+        }
+        else if(opcion.equals("Proveedor")){
+            String texto=jTextArealDescripcionGeneral.getText();
+            String link=jTextFieldlink.getText();
+            DTproveedor dt =new DTproveedor(nic,nom,ape,mail,fnac,texto,link);
+            I.altaProveedor(dt);
+            
+            jTextFieldnickname.setText(null); 
+            jTextFieldapellido.setText(null);
+            jTextFieldnombre.setText(null);
+            jTextFieldcorreoElectrónico.setText(null);
+            jTextFieldDia.setText(null);
+            jTextFieldMes.setText(null);
+            jTextFieldAnio.setText(null);
+            jTextArealDescripcionGeneral.setText(null);
+            jTextFieldlink.setText(null);  
+        }
+        
     }//GEN-LAST:event_jButtonEnviarActionPerformed
 
 

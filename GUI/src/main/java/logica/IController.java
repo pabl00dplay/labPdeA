@@ -1,15 +1,18 @@
-
 package main.java.logica;
 
 
 
-import DataTypes.DTActividad;
-import DataTypes.DTProveedor;
-import java.time.LocalDate;
+import java.util.ArrayList;
+import main.java.logica.DataTypes.DTPaquete;
 import java.util.HashMap;
-import java.util.Set;
+import main.java.logica.DataTypes.DTproveedor;
+import main.java.logica.DataTypes.DTturista;
+import main.java.logica.DataTypes.DTusuario;
 
-
+/**
+ *
+ * @author francisco
+ */
 public interface IController {
     public abstract HashMap<String, Usuario> getUsr();
     public abstract HashMap<String, Actividad> getAct();
@@ -18,9 +21,13 @@ public interface IController {
     
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
-    public abstract HashMap<String,DTProveedor> listarProveedores();
-    public abstract void AltaActividadTuristica(String nombreProveedor,String nombreActividad,String descripcion,Integer duracion,Integer costo,String ciudad,LocalDate fAlta);
-    public abstract DTActividad listarDatosActividad(String nombreActividad);
-    public abstract Set<String> listarDepartamentos();
-    public abstract Boolean nombreActividadExiste(String nombre);
+    public abstract void altaTurista(DTturista dt);
+    public abstract void altaProveedor(DTproveedor dp);
+    public abstract boolean nickExiste(String nombre);
+    public abstract boolean mailExiste(String correo);
+    public abstract ArrayList<Usuario> getUsuarios();
+    public abstract DTusuario getUsuario(String nickname);
+    public abstract ArrayList<String> listarsalidasinscriptasTurista(String nickname);
+    public abstract ArrayList<String> listarActividadesProveedor(String nickname); 
+    public abstract ArrayList<String> listarsalidasProveedor(String nickname);   
 }

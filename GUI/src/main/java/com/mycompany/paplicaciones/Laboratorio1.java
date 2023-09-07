@@ -2,7 +2,9 @@ package main.java.com.mycompany.paplicaciones;
 
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+import main.java.com.mycompany.paplicaciones.persistencia.ControladoraPersistencia;
 import main.java.logica.*;
+
 
 public class Laboratorio1 extends javax.swing.JFrame {
     private Laboratorio1() {
@@ -303,6 +305,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
                 lab.setVisible(true);
             }
         });
+        ControladoraPersistencia contpersis=new ControladoraPersistencia(); 
     };
     
    
