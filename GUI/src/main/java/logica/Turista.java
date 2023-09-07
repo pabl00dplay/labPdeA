@@ -1,6 +1,9 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package main.java.logica;
 
-import java.util.Date;
 import java.util.HashSet;
 
 /**
@@ -12,41 +15,17 @@ public class Turista extends Usuario{
     private HashSet<Inscripcion> ins;
     private HashSet<Compra> cmp;
     
-    public Turista(String nic, String nom, String ape, String mail,Date fnac, String nacio){
-        super(nic,nom,ape,mail,fnac);
+    public Turista(String nic, String nom, String ape, String mail, String nacio){
+        super(nic,nom,ape,mail);
         this.nac=nacio;
     }
-
-    public String getNac() {
+    
+    public String getNac(){
         return nac;
     }
-
-    public HashSet<Inscripcion> getIns() {
-        return ins;
-    }
-
-    public HashSet<Compra> getCmp() {
-        return cmp;
-    }
-
-
-    public void setNac(String nac) {
-        this.nac = nac;
-    }
-
-    public void setIns(HashSet<Inscripcion> ins) {
-        this.ins = ins;
-    }
-
-    public void setCmp(HashSet<Compra> cmp) {
-        this.cmp = cmp;
-    }
-
-    public void setFnac(Date fnac) {
-        this.fnac = fnac;
-    }
-
     
-    
+    public void setNac(String s){
+        this.nac=s;
+    }
     
 }

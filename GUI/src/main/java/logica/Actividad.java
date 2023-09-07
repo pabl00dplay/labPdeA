@@ -14,13 +14,12 @@ import java.util.HashMap;
  * @author francisco
  */
 public class Actividad {
-    private String nom,desc,ciudad;
-    private Departamento dept;
+    private String nom,desc,dept,ciudad;
     private int dur,costo;
     private LocalDate fAlta;
     private HashMap<String,Salida> salidas;
     
-    public Actividad(String n, String des, Departamento dep ,String ciu ,int du,int c){
+    public Actividad(String n, String des, String dep ,String ciu ,int du,int c){
         this.ciudad=ciu;
         this.costo=c;
         this.dept=dep;
@@ -37,7 +36,7 @@ public class Actividad {
     public String getDesc(){
         return desc;
     }
-    public Departamento getDept(){
+    public String getDept(){
         return dept;
     }
     public String getCiudad(){
@@ -60,7 +59,7 @@ public class Actividad {
     public void setCiudad(String s){
         this.ciudad=s;
     }
-    public void setDept(Departamento s){
+    public void setDept(String s){
         this.dept=s;
     }
     public void setDur(int i){

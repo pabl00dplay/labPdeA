@@ -1,31 +1,24 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package main.java.logica;
 
-import java.io.Serializable;
 import java.lang.String;
-import java.util.Date;
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-@Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public class Usuario implements Serializable {
-    @Id
-    protected String nick;
-    @Basic
-    protected String  nom,ape,mail;
-    protected Date fnac;
+ 
 
-    public Usuario() {
-    }
+/**
+ *
+ * @author francisco
+ */
+public class Usuario {
+    protected String nick,nom,ape,mail;
     
-    public Usuario(String nick, String nom, String ape, String mail,Date fnac){
-        this.nick=nick;
-        this.nom=nom;
-        this.ape=ape;
-        this.mail=mail;
-        this.fnac=fnac;
+    public Usuario(String a, String b, String c, String d){
+        this.nick=a;
+        this.nom=b;
+        this.ape=c;
+        this.mail=d;
     }
     //getters
     public String getNick(){
@@ -39,10 +32,6 @@ public class Usuario implements Serializable {
     }
     public String getMail(){
         return mail;
-    }
-
-    public Date getFnac() {
-        return fnac;
     }
     
     //setters

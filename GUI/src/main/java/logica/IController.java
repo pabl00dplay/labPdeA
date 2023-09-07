@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
 package main.java.logica;
 
 
@@ -22,16 +26,7 @@ public interface IController {
     
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
-    public abstract void altaTurista(DTturista dt);
-    public abstract void altaProveedor(DTproveedor dt);
-    public abstract boolean nickExiste(String nombre);
-    public abstract boolean mailExiste(String correo);
-    public abstract ArrayList<String>getUsuarios();
-    public abstract DTusuario getUsuario(String nickname);
-    public abstract ArrayList<String> listarsalidasinscriptasTurista(String nickname);
-    public abstract ArrayList<String> listarActividadesProveedor(String nickname); 
-    public abstract ArrayList<String> listarsalidasProveedor(String nickname);   
-    public abstract HashSet<String> listarPaquetes();
+    public abstract String[] listarPaquetes();
     public abstract DTPaquete listarDatosPaquete(String nomPaq);
     public abstract HashSet<String> listarActividadespaquete(String nomPaq);
     public abstract HashSet<String> listarActividadesFueraPaq(String nomPaq, String nomDpto);
