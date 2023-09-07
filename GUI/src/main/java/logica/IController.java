@@ -28,7 +28,7 @@ public interface IController {
     
     public abstract void altaDepto(Departamento nuevoDepto);
     public abstract boolean existeDepto(String nombre);
-}
+
     public abstract HashMap<String,DTProveedor> listarProveedores();
     public abstract void AltaActividadTuristica(String nombreProveedor,String nombreActividad,String descripcion,Integer duracion,Integer costo,String ciudad,LocalDate fAlta, Departamento depto);
     public abstract DTActividad listarDatosActividad(String nombreActividad);
