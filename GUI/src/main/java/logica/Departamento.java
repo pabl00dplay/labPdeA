@@ -4,12 +4,17 @@
  */
 package main.java.logica;
 
+import javax.persistence.*;
+
 /**
  *
  * @author francisco
  */
+@Entity
+
 public class Departamento {
-    private String nom,desc,url;
+    @Id private String nom ;
+    private String desc,url;
     
     //getters
     public String getNom(){

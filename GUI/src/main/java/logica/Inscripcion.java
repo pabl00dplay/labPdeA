@@ -6,16 +6,28 @@ package main.java.logica;
 
 
 import java.time.*;
+import javax.persistence.*;
 
 /**
  *
  * @author francisco
  */
+@Entity
+@IdClass(InscripcionKey.class)
+
+
+
 public class Inscripcion {
+    
+    @Id 
     private LocalDate fecha;
-    private int cant,costo;
+    @ManyToOne
+    @Id 
     private Turista tur;
+    @Id 
     private Salida sal;
+    
+    private int cant,costo;
     
     public Inscripcion(LocalDate fecha, int cant, int costo, Turista tur, Salida sal){
         this.fecha=fecha;

@@ -6,12 +6,15 @@ package main.java.logica;
 
 
 import java.time.*;
+import javax.persistence.*;
 
 /**
  *
  * @author francisco
  */
+@Entity
 public class Compra {
+    
     private LocalDate fecha,venc;
     private int cosTot,cant;
     private Turista tur;

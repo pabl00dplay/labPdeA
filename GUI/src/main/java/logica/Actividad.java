@@ -6,13 +6,16 @@ import java.lang.String;
 import java.time.*;
 import java.util.HashSet;
 import java.util.HashMap;
+import javax.persistence.*;
 
 /**
  *
  * @author francisco
  */
+@Entity
 public class Actividad {
-    private String nom,desc,ciudad;
+    @Id private String nom;
+    private String desc,ciudad;
     private Departamento dept;
     private Integer dur,costo;
     private LocalDate Alta;
