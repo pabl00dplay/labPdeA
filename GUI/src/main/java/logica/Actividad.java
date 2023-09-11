@@ -4,14 +4,11 @@
  */
 package main.java.logica;
 
+import DataTypes.DTActividad;
 import java.io.Serializable;
 import java.lang.String;
-import java.time.*;
-import java.util.HashSet;
-import java.util.HashMap;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
+import java.util.Date;
+import javax.persistence.*;
 /**
  *
  * @author francisco
@@ -20,58 +17,92 @@ import javax.persistence.Id;
 public class Actividad implements Serializable {
     @Id
     private String nom;
-    String desc,dept,ciudad;
-    private int dur,costo;
-   // private LocalDate fAlta;
+    private String descripcion,ciudad;
+    private String dep;
+    //@ManyToOne
+    //private Departamento dep;
+    private Integer dur,costo;
+    @Temporal(TemporalType.DATE)
+    private Date fAlta;
+    
     //private HashMap<String,Salida> salidas;
-    public Actividad(){};
-    public Actividad(String n, String des, String dep ,String ciu ,int du,int c){
+    public Actividad(){
+    }
+    public Actividad(String n, String des,String depto, String ciu ,Integer du,Integer costo,Date fAlta){
         this.ciudad=ciu;
-        this.costo=c;
-        this.dept=dep;
-        this.desc=des;
+        this.costo=costo;
+        this.dep=depto;
+        this.descripcion=des;
         this.dur=du;
         this.nom=n;
+        this.fAlta=fAlta;
       //  salidas=new HashMap<String,Salida>();
     }
-    
-    //getter
-    public String getNom(){
+    public Actividad(DTActividad da){
+        this.ciudad=da.getCiudad();
+        this.costo=da.getCostoXturista();
+        this.dep=da.getDepartamento();
+        this.descripcion=da.getDescripcion();
+        this.dur=da.getDuracion();
+        this.nom=da.getNombre();
+        this.fAlta=da.getfAlta();
+      //  salidas=new HashMap<String,Salida>();
+    }
+
+    public String getNom() {
         return nom;
     }
-    public String getDesc(){
-        return desc;
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
-    public String getDept(){
-        return dept;
+
+    public String getDescripcion() {
+        return descripcion;
     }
-    public String getCiudad(){
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getCiudad() {
         return ciudad;
     }
-    public int getDur(){
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getDep() {
+        return dep;
+    }
+
+    public void setDep(String dep) {
+        this.dep = dep;
+    }
+
+    public Integer getDur() {
         return dur;
     }
-    public int getCosto(){
+
+    public void setDur(Integer dur) {
+        this.dur = dur;
+    }
+
+    public Integer getCosto() {
         return costo;
     }
-    
-    //setter
-    public void setNom(String s){
-        this.nom=s;
+
+    public void setCosto(Integer costo) {
+        this.costo = costo;
     }
-    public void setDesc(String s){
-        this.desc=s;
+
+    public Date getfAlta() {
+        return fAlta;
     }
-    public void setCiudad(String s){
-        this.ciudad=s;
+
+    public void setfAlta(Date fAlta) {
+        this.fAlta = fAlta;
     }
-    public void setDept(String s){
-        this.dept=s;
-    }
-    public void setDur(int i){
-        this.dur=i;
-    }
-    public void setCosto(int i){
-        this.costo=i;
-    }
+  
 }

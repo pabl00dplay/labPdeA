@@ -72,7 +72,7 @@
                                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                       <Component id="jLabelMes" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jTextFieldMes" pref="79" max="32767" attributes="0"/>
+                                                      <Component id="jTextFieldMes" pref="84" max="32767" attributes="0"/>
                                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                       <Component id="jLabelAnio" min="-2" pref="21" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>

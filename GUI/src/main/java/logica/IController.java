@@ -2,12 +2,10 @@ package main.java.logica;
 
 
 
+import DataTypes.*;
 import java.util.ArrayList;
-import main.java.logica.DataTypes.DTPaquete;
+import DataTypes.DTPaquete;
 import java.util.HashMap;
-import main.java.logica.DataTypes.DTproveedor;
-import main.java.logica.DataTypes.DTturista;
-import main.java.logica.DataTypes.DTusuario;
 
 /**
  *
@@ -21,13 +19,18 @@ public interface IController {
     
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
-    public abstract void altaTurista(DTturista dt);
-    public abstract void altaProveedor(DTproveedor dp);
+    public abstract void altaActividadTuristica(DTActividad da);
+    public abstract void altaTurista(DTUsuario dt);
+    public abstract void altaProveedor(DTUsuario dp);
     public abstract boolean nickExiste(String nombre);
     public abstract boolean mailExiste(String correo);
+    public abstract boolean existeDepartamento(String nombreDepartamento);
+    public abstract boolean actividadExiste(String nombreActividad);
     public abstract ArrayList<Usuario> getUsuarios();
-    public abstract DTusuario getUsuario(String nickname);
+    //public abstract ArrayList<Departamento> getDepartamentos();
+    public abstract DTUsuario getUsuario(String nickname);
     public abstract ArrayList<String> listarsalidasinscriptasTurista(String nickname);
     public abstract ArrayList<String> listarActividadesProveedor(String nickname); 
     public abstract ArrayList<String> listarsalidasProveedor(String nickname);   
+    public abstract void altaDepartamento(String depto, String descripcion, String url);
 }

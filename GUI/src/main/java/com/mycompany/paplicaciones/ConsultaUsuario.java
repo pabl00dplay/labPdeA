@@ -4,9 +4,7 @@ import java.awt.BorderLayout;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JDialog;
-import main.java.logica.DataTypes.DTproveedor;
-import main.java.logica.DataTypes.DTturista;
-import main.java.logica.DataTypes.DTusuario;
+import DataTypes.DTUsuario;
 import main.java.logica.Fabrica;
 import main.java.logica.IController;
 import main.java.logica.Usuario;
@@ -600,11 +598,11 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         String nickname=jListusuarios.getSelectedValue();
         Fabrica f=Fabrica.getInstance();
         IController I= f.getIController();
-        DTusuario dt=I.getUsuario(nickname);
+        DTUsuario dt=I.getUsuario(nickname);
         String opcion=(String)cmbTuristaProveedor.getSelectedItem();
-        if(dt instanceof DTturista){    
+        if(dt.getEsTurista()==1){    
             cmbTuristaProveedor.setSelectedIndex(1); 
-            jTextFieldnickname.setText(dt.getNic().trim());
+            jTextFieldnickname.setText(dt.getNick().trim());
             jTextFieldnombre.setText(dt.getNom().trim());
             jTextFieldapellido.setText(dt.getApe().trim());
             jTextFieldcorreoElectrónico.setText(dt.getMail().trim());
@@ -621,7 +619,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             String a=Integer.toString(anio).trim();
             jTextFieldAnio.setText(a);
             
-            jTextFieldnacionalidad.setText(((DTturista) dt).getNacionalidad().trim());
+            jTextFieldnacionalidad.setText(dt.getNacionalidad().trim());
             
             ArrayList<String> salidas = new ArrayList();
             salidas = I.listarsalidasinscriptasTurista(nickname);;
@@ -639,9 +637,9 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             
 
         }
-        if(dt instanceof DTproveedor){    
+        if(dt.getEsTurista()==0){    
             cmbTuristaProveedor.setSelectedIndex(2);
-            jTextFieldnickname.setText(dt.getNic().trim());
+            jTextFieldnickname.setText(dt.getNick().trim());
             jTextFieldnombre.setText(dt.getNom().trim());
             jTextFieldapellido.setText(dt.getApe().trim());
             jTextFieldcorreoElectrónico.setText(dt.getMail().trim());
@@ -658,8 +656,8 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             String a=Integer.toString(anio).trim();
             jTextFieldAnio.setText(a);
             
-            jTextArealDescripcionGeneral.setText(((DTproveedor) dt).getDesc().trim());
-            jTextFieldlink.setText(((DTproveedor) dt).getSitio().trim());
+            jTextArealDescripcionGeneral.setText(dt.getDescripcion().trim());
+            jTextFieldlink.setText(dt.getWeb().trim());
             
             ArrayList<String> actividades = new ArrayList();
             ArrayList<String> salidas = new ArrayList();

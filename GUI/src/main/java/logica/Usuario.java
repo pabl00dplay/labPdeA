@@ -1,18 +1,13 @@
 package main.java.logica;
 
+import DataTypes.DTUsuario;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import main.java.logica.DataTypes.DTproveedor;
-import main.java.logica.DataTypes.DTturista;
  
 
 @Entity
@@ -73,24 +68,26 @@ public class Usuario implements Serializable{
         //actividades=new ArrayList<Actividad>();
     }
      
-    public Usuario(DTturista dt){        
-        this.nick=dt.getNic();
-        this.nom=dt.getNom();
-        this.ape=dt.getApe();
-        this.mail=dt.getMail();
-        this.fnac=dt.getFnac();
-        this.nac=dt.getNacionalidad();
-        this.esTurista=1;
-    };
-    public Usuario(DTproveedor dp){        
-        this.nick=dp.getNic();
-        this.nom=dp.getNom();
-        this.ape=dp.getApe();
-        this.mail=dp.getMail();
-        this.fnac=dp.getFnac();
-        this.descripcion = dp.getDesc();
-        this.web = dp.getSitio();
-        this.esTurista=0;
+    public Usuario(DTUsuario dt,Integer esTurista){   
+        if(esTurista == 0)
+        {
+            this.nick=dt.getNick();
+            this.nom=dt.getNom();
+            this.ape=dt.getApe();
+            this.mail=dt.getMail();
+            this.fnac=dt.getFnac();
+            this.descripcion = dt.getDescripcion();
+            this.web = dt.getWeb();
+            this.esTurista=0;  
+        }else{
+            this.nick=dt.getNick();
+            this.nom=dt.getNom();
+            this.ape=dt.getApe();
+            this.mail=dt.getMail();
+            this.fnac=dt.getFnac();
+            this.nac=dt.getNacionalidad();
+            this.esTurista=1;
+        }
     };
     
     public int esTurista(){

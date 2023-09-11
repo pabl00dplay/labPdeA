@@ -4,7 +4,7 @@
  */
 package main.java.com.mycompany.paplicaciones;
 
-import main.java.logica.DataTypes.DTPaquete;
+import DataTypes.DTPaquete;
 import java.util.*;
 import javax.swing.*;
 import main.java.logica.*;

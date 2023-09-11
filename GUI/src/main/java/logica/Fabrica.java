@@ -10,8 +10,8 @@ package main.java.logica;
  */
 public class Fabrica {
 
-    private static Fabrica instancia;
-
+    private static Fabrica instancia=null;
+    private static Controller instanciaC=null;
     private Fabrica() {
     };
 
@@ -23,7 +23,11 @@ public class Fabrica {
     }
 
     public IController getIController() {
-        return new Controller();
+        if (instanciaC == null) {
+            instanciaC = new Controller();
+        }
+        return instanciaC;
     }
-    
 }
+
+

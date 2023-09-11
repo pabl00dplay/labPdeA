@@ -1,19 +1,21 @@
 
 package DataTypes;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class DTActividad {
     private String nombre;
     private String descripcion;
+    private String ciudad;
+    private String departamento;
     private Integer duracion;
     private Integer costoXturista;
-    private String ciudad;
-    private LocalDate fAlta;
+    private Date fAlta;
 
-    public DTActividad(String nombre, String descripcion, Integer duracion, Integer costoXturista, String ciudad) {
+    public DTActividad(String nombre, String descripcion,String departamento, Integer duracion, Integer costoXturista, String ciudad, Date fAlta) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.departamento=departamento;
         this.duracion = duracion;
         this.costoXturista = costoXturista;
         this.ciudad = ciudad;
@@ -24,25 +26,58 @@ public class DTActividad {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
     }
 
     public Integer getDuracion() {
         return duracion;
     }
 
+    public void setDuracion(Integer duracion) {
+        this.duracion = duracion;
+    }
+
     public Integer getCostoXturista() {
         return costoXturista;
+    }
+
+    public void setCostoXturista(Integer costoXturista) {
+        this.costoXturista = costoXturista;
     }
 
     public String getCiudad() {
         return ciudad;
     }
 
-    public LocalDate getfAlta() {
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public Date getfAlta() {
         return fAlta;
     }
-    
+
+    public void setfAlta(Date fAlta) {
+        this.fAlta = fAlta;
+    }
+    public DTActividad() {
+    }
     
 }
