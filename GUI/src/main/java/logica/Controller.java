@@ -43,10 +43,11 @@ public class Controller implements IController {
         }
         public void AltaPaquete(DTPaquete dt){
             Paquete p=new Paquete(dt.getNom(),dt.getDesc(),dt.getDescu(),dt.getVal(), dt.getFalta());
-            getPaq().put(p.getNom(), p);
+            //getPaq().put(p.getNom(), p);
+            contpersis.altaPaquete(p);
         }
         public boolean existePaq(String s){
-            if(getPaq().containsKey(s)){
+            if(contpersis.existePaq(s)){
                 return true;
             }else{
                 return false;
@@ -114,22 +115,17 @@ public class Controller implements IController {
         }
         
         public String[] listarPaquetes(){
-            String llave[]=new String[getPaq().keySet().size()];
-            int x=0;
-            for(String s:getPaq().keySet()){
-                llave[x++]=s;
-            }
-            return llave;
+            return contpersis.listarPaquetes();
         }
         
         public DTPaquete listarDatosPaquete(String nomPaq){
-            Paquete p=getPaq().get(nomPaq);
+            Paquete p=contpersis.getPaquete(nomPaq);
             return new DTPaquete(p.getNom(),p.getDesc(),p.getDescu(),p.getVal(),p.getFAlta());
         }
         
         public HashSet<String> listarActividadespaquete(String nomPaq){
             HashSet<String> llave = new HashSet<String>();
-            Paquete vpaq=getPaq().get(nomPaq);
+            Paquete vpaq=contpersis.getPaquete(nomPaq);
             for(Actividad vact:vpaq.getActs()){
                 llave.add(vact.getNom());
             }
@@ -139,26 +135,28 @@ public class Controller implements IController {
         public HashSet<String> listarActividadesFueraPaq(String nomPaq, String nomDpto){
             HashSet<String> lista = listarActividadespaquete(nomPaq);
             HashSet<String> llave = new HashSet<String>();
-            HashMap<String, Actividad> aux=getAct();
+            List<Actividad> aux=contpersis.listarActividades();
+            Iterator<Actividad> itr=aux.iterator();
             boolean existe;
-            for(String key:aux.keySet()){
+            while(itr.hasNext()){
                 existe=false;
                 for(String v:lista){
-                    if((v==key)){
+                    if((v==itr.next().getNom())){
                         existe=true;
                     }
                 }
-                if((!existe)&&(aux.get(key).getDept().equals(nomDpto))){
-                    llave.add(key);
+                if((!existe)&&(itr.next().getDept().equals(nomDpto))){
+                    llave.add(itr.next().getNom());
                 }
             }
             return llave;
         }
         
         public void agregarActPaq(String nomPaq, String nomAct){
-            Paquete p=getPaq().get(nomPaq);
-            Actividad a=getAct().get(nomAct);
+            Paquete p=contpersis.getPaquete(nomPaq);
+            Actividad a=getAct().get(nomAct)/*contpersis.getActividad(nomAct)*/;
             p.getActs().add(a);
+            contpersis.agregarActPaq(p);
         }
         public void altaDepto(Departamento nuevoDepto){
             getDep().put(nuevoDepto.getNom(), nuevoDepto);//Agrego el nuevo depto a la col
