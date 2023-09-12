@@ -7,7 +7,9 @@ package main.java.logica;
 import DataTypes.DTActividad;
 import java.io.Serializable;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
 /**
  *
@@ -18,35 +20,25 @@ public class Actividad implements Serializable {
     @Id
     private String nom;
     private String descripcion,ciudad;
-    private String dep;
-    //@ManyToOne
-    //private Departamento dep;
+    
+    @ManyToOne
+    private Departamento dep;
     private Integer dur,costo;
     @Temporal(TemporalType.DATE)
     private Date fAlta;
-    
-    //private HashMap<String,Salida> salidas;
+    @OneToMany
+    private List<Salida> salidas;
     public Actividad(){
     }
-    public Actividad(String n, String des,String depto, String ciu ,Integer du,Integer costo,Date fAlta){
+    public Actividad(String n, String des,Departamento dep, String ciu ,Integer du,Integer costo,Date fAlta){
         this.ciudad=ciu;
         this.costo=costo;
-        this.dep=depto;
+        this.dep=dep;
         this.descripcion=des;
         this.dur=du;
         this.nom=n;
         this.fAlta=fAlta;
-      //  salidas=new HashMap<String,Salida>();
-    }
-    public Actividad(DTActividad da){
-        this.ciudad=da.getCiudad();
-        this.costo=da.getCostoXturista();
-        this.dep=da.getDepartamento();
-        this.descripcion=da.getDescripcion();
-        this.dur=da.getDuracion();
-        this.nom=da.getNombre();
-        this.fAlta=da.getfAlta();
-      //  salidas=new HashMap<String,Salida>();
+        this.salidas=new ArrayList<Salida>();
     }
 
     public String getNom() {
@@ -73,11 +65,11 @@ public class Actividad implements Serializable {
         this.ciudad = ciudad;
     }
 
-    public String getDep() {
+    public Departamento getDep() {
         return dep;
     }
 
-    public void setDep(String dep) {
+    public void setDep(Departamento dep) {
         this.dep = dep;
     }
 

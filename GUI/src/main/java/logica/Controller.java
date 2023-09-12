@@ -42,8 +42,10 @@ public class Controller implements IController {
     }
     //AltaActividad
     public void altaActividadTuristica(DTActividad da){
-        Actividad act = new Actividad(da);
-        contpersis.altaActividadTuristica(act);
+        Departamento departamento = contpersis.getDepartamento(da.getDepartamento());
+        Actividad acttividad = new Actividad(da.getNombre(),da.getDescripcion(),departamento,da.getCiudad(),da.getDuracion(),da.getCostoXturista(),da.getfAlta());
+        departamento.setActividades(acttividad);
+        contpersis.altaActividadTuristica(acttividad);
     }
     //Alta Usuario
     public void altaTurista(DTUsuario dt){
@@ -80,10 +82,9 @@ public class Controller implements IController {
         return new ArrayList();
     };   
 
-    /*public ArrayList<Departamento> getDepartamentos() {
-        ArrayList<Departamento> retorno=contpersis.getDepartamentos();
-        return retorno;
-    }*/
+    public ArrayList<Departamento> getDepartamentos() {
+        return contpersis.getDepartamentos();
+    }
     public boolean actividadExiste(String nombreActividad){
         return contpersis.actividadExiste(nombreActividad);
     }

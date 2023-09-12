@@ -4,27 +4,42 @@
  */
 package main.java.logica;
 
+import java.io.Serializable;
 import java.lang.String;
 import java.time.*;
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
- * @author francisco
- */
-public class Salida {
-    private String nom, lugar;
+ 
+@author francisco*/
+@Entity
+public class Salida implements Serializable {
+    @Id
+    private String nom;
+    private String lugar;
     private int maxTuris, dur;
-    private LocalDate fecha,fAlta;
+    @Temporal(TemporalType.DATE)
+    private Date fecha;
+    @Temporal(TemporalType.DATE)
+    private Date fAlta;
     private Actividad act;
-    
-    public Salida(String n, int cant, int d, LocalDate f, String l){
+
+    public Salida() {
+    }
+
+    public Salida(String n, int cant, int d,Date f, String l){
         this.nom=n;
         this.lugar=l;
         this.maxTuris=cant;
         this.dur=d;
         this.fecha=f;
     }
-    
+
     //getters
     public String getNom(){
         return nom;
@@ -38,13 +53,13 @@ public class Salida {
     public int getDuracion(){
         return dur;
     }
-    public LocalDate getFecha(){
+    public Date getFecha(){
         return fecha;
     }
-    public LocalDate getFAlta(){
+    public Date getFAlta(){
         return fAlta;
     }
-    
+
     //setters
     public void setNom(String s){
         this.nom=s;
@@ -58,8 +73,8 @@ public class Salida {
     public void setDur(int i){
         this.dur=i;
     }
-    public void setFecha(LocalDate f){
+    public void setFecha(Date f){
         this.fecha=f;
     }
-    
+
  }

@@ -71,6 +71,7 @@ public class ControladoraPersistencia {
     public void altaActividadTuristica(Actividad act){
         try{
             ajpa.create(act);
+            djpa.edit(act.getDep());
         } catch(Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -90,10 +91,15 @@ public class ControladoraPersistencia {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    }
-    /*public ArrayList<Departamento> getDepartamentos() {
+    
+    public ArrayList<Departamento> getDepartamentos() {
         List<Departamento> listita=djpa.findDepartamentoEntities();
         ArrayList<Departamento> retorno=new ArrayList<Departamento>(listita);
         return retorno;
-    }*/
+    }
+    public Departamento getDepartamento(String nombreDepartamento){
+    
+        return djpa.findDepartamento(nombreDepartamento);
+    }
+}
 

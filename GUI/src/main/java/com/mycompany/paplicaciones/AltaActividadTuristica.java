@@ -17,10 +17,11 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
         ArrayList<Usuario> listaProveedores = I.getUsuarios();
+        ArrayList<Departamento> listaDepartamentos = I.getDepartamentos();
         initComponents();
         DefaultComboBoxModel modelProveedores = new DefaultComboBoxModel();
         DefaultComboBoxModel modelDepartamentos = new DefaultComboBoxModel();
-        int x=0;
+        
         for(int i=0;i<listaProveedores.size();i++){
             
             if(listaProveedores.get(i).getEsTurista()== 0){
@@ -29,7 +30,10 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
             }
         }
     jComboBoxProveedor.setModel(modelProveedores);
-    
+    for(int i=0;i<listaDepartamentos.size();i++){
+        
+            modelDepartamentos.addElement(listaDepartamentos.get(i).getNom());
+        }
     jComboBoxDepartamento.setModel(modelDepartamentos);
     }
 
@@ -274,7 +278,7 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         Integer duracion,costo;
         int D,M,A;
         nomProveedor=(String)jComboBoxProveedor.getSelectedItem();
-        nomDepartamento="departamentoide";//(String)jComboBoxDepartamento.getSelectedItem();
+        nomDepartamento=(String)jComboBoxDepartamento.getSelectedItem();
         nomActividad=jTextFieldNombreActividad.getText();
         nomCiudad=jTextFieldCiudad.getText();
         descripcion=jTextFieldDescripcion.getText();
@@ -290,7 +294,6 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Existe una actividad con ese nombre, modifíquelo para poder finalizar su ingreso");
         }
         else{
-            JOptionPane.showMessageDialog(null, "llegamos al ELSE");
             DTActividad dt = new DTActividad(nomActividad,descripcion,nomDepartamento,duracion,costo,nomCiudad,fAlta);
             I.altaActividadTuristica(dt);
             jTextFieldNombreActividad.setText(null);
@@ -303,7 +306,6 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
             jTextFieldAño.setText(null);
             
         }
-        JOptionPane.showMessageDialog(null, "nos fuimos");
         
         
         

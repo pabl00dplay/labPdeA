@@ -27,7 +27,7 @@ public interface IController {
     public abstract boolean existeDepartamento(String nombreDepartamento);
     public abstract boolean actividadExiste(String nombreActividad);
     public abstract ArrayList<Usuario> getUsuarios();
-    //public abstract ArrayList<Departamento> getDepartamentos();
+    public abstract ArrayList<Departamento> getDepartamentos();
     public abstract DTUsuario getUsuario(String nickname);
     public abstract ArrayList<String> listarsalidasinscriptasTurista(String nickname);
     public abstract ArrayList<String> listarActividadesProveedor(String nickname); 

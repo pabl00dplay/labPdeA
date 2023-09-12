@@ -2,9 +2,9 @@
 package main.java.logica;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.*;
 
 @Entity
 public class Departamento implements Serializable {
@@ -12,7 +12,8 @@ public class Departamento implements Serializable {
     private String nom;
     @Basic
     private String descripcion,url;
-
+    @OneToMany
+    private List<Actividad>actividades;
     public Departamento() {
     }
 
@@ -20,6 +21,7 @@ public class Departamento implements Serializable {
         this.nom = nom;
         this.descripcion = descripcion;
         this.url = url;
+        this.actividades = new ArrayList<Actividad>();
     }
     
     //getters
@@ -42,5 +44,14 @@ public class Departamento implements Serializable {
     public void setUrl(String s){
         url=s;
     }
+
+    public List<Actividad> getActividades() {
+        return actividades;
+    }
+
+    public void setActividades(Actividad actividad) {
+        actividades.add(actividad);
+    }
     
+
 }
