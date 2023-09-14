@@ -19,7 +19,7 @@ import main.java.logica.Salida;
 
 /**
  *
- * @author pablo
+ * @author capo_
  */
 public class SalidaJpaController implements Serializable {
 
@@ -40,7 +40,7 @@ public class SalidaJpaController implements Serializable {
             em.persist(salida);
             em.getTransaction().commit();
         } catch (Exception ex) {
-            if (findSalida(salida.getNombre()) != null) {
+            if (findSalida(salida.getNom()) != null) {
                 throw new PreexistingEntityException("Salida " + salida + " already exists.", ex);
             }
             throw ex;
@@ -61,7 +61,7 @@ public class SalidaJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                String id = salida.getNombre();
+                String id = salida.getNom();
                 if (findSalida(id) == null) {
                     throw new NonexistentEntityException("The salida with id " + id + " no longer exists.");
                 }
@@ -82,7 +82,7 @@ public class SalidaJpaController implements Serializable {
             Salida salida;
             try {
                 salida = em.getReference(Salida.class, id);
-                salida.getNombre();
+                salida.getNom();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The salida with id " + id + " no longer exists.", enfe);
             }
