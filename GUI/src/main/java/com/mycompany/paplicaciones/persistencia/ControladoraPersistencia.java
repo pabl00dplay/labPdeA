@@ -1,4 +1,4 @@
-package main.java.com.mycompany.paplicaciones.persistencia;
+lopackage main.java.com.mycompany.paplicaciones.persistencia;
 
 import DataTypes.DTActividad;
 import java.util.ArrayList;
@@ -101,5 +101,6 @@ public class ControladoraPersistencia {
     
         return djpa.findDepartamento(nombreDepartamento);
     }
+    public ArrayList<DTActividad>listarActividadDepartamento(String nombreDepartamento
 }
 
