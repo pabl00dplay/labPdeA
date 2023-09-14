@@ -95,8 +95,8 @@ public class Controller implements IController {
         Departamento d=new Departamento(depto,descripcion,url);
         contpersis.altaDepartamento(d);
     };
-    public ArrayList<DTActividad>         listarActividadesProveedor(String nombreProveedor){
-    return contpersis.listarActividadesProveedor(nombreProveedor);
+    public ArrayList<DTActividad>         listarActividadesDepartamento(String nombreDepartamrnto){
+    return contpersis.listarActividadesDepartamento(nombreDepartamento);
 
     }
 }
