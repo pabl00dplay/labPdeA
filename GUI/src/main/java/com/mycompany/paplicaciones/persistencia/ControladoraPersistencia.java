@@ -112,24 +112,5 @@ public class ControladoraPersistencia {
         Actividad act = ajpa.findActividad(nombreActividad);
         return act.getData();
     }
-    
-     public void altaSalida(Salida salida) {
-        try {
-            sjpa.create(salida);
-        } catch (Exception ex) {
-            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    public boolean salidaExiste(String nombre) {
-        List<Salida> lus=sjpa.findSalidaEntities();
-        boolean existe=false;
-        for(Salida salida:lus) {
-           if(salida.getNombre().equals(nombre)){
-               existe=true;
-           }
-        }
-        return existe;  
-    }
 }
 
