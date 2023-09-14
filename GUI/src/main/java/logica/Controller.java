@@ -101,4 +101,12 @@ public class Controller implements IController {
     public DTActividad getActividad(String nombreActividad){
         return contpersis.getActividad(nombreActividad);
     }
+        public void altaSalida(DTSalida dt){
+            Salida s=new Salida(dt);
+            contpersis.altaSalida(s);
+        }
+        
+    public boolean salidaExiste(String s){
+        return contpersis.salidaExiste(s);
+    }
 }
