@@ -6,6 +6,7 @@ import java.util.*;
 import main.java.com.mycompany.paplicaciones.persistencia.ControladoraPersistencia;
 import DataTypes.DTUsuario;
 import javax.swing.JOptionPane;
+import main.java.logica.DataTypes.DTSalida;
 
 public class Controller implements IController {
     ControladoraPersistencia contpersis= new  ControladoraPersistencia();
@@ -101,4 +102,12 @@ public class Controller implements IController {
     public DTActividad getActividad(String nombreActividad){
         return contpersis.getActividad(nombreActividad);
     }
+    public boolean salidaExiste(String s){
+        return contpersis.salidaExiste(s);
+    }
+    
+    public void altaSalida(DTSalida dt){
+            Salida s=new Salida(dt);
+            contpersis.altaSalida(s);
+        }
 }
