@@ -34,4 +34,4 @@ public interface IController {
     public abstract ArrayList<String> listarsalidasProveedor(String nickname);   
     public abstract void altaDepartamento(String depto, String descripcion, String url);
 }
-    public abstract ArrayList<DTActividad> listarActividadesProveedor(String nombreProveedor);
+    public abstract ArrayList<DTActividad> listarActividadesDepartamento(String nombreDepartamento);
