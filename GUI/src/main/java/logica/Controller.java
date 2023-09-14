@@ -1,4 +1,4 @@
-package main.java.logica;
+lopackage main.java.logica;
 
 import DataTypes.DTActividad;
 import DataTypes.DTPaquete;
@@ -96,7 +96,7 @@ public class Controller implements IController {
         contpersis.altaDepartamento(d);
     };
     public ArrayList<DTActividad>         listarActividadesProveedor(String nombreProveedor){
-    
+    return contpersis.listarActividadesProveedor(nombreProveedor);
 
     }
 }
