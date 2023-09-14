@@ -1,4 +1,4 @@
-lopackage main.java.com.mycompany.paplicaciones.persistencia;
+package main.java.com.mycompany.paplicaciones.persistencia;
 
 import DataTypes.DTActividad;
 import java.util.ArrayList;
@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
 import main.java.logica.Actividad;
 import main.java.logica.Departamento;
 import main.java.logica.Usuario;
+
+import main.java.com.mycompany.paplicaciones.persistencia.*;
 
 public class ControladoraPersistencia {
     UsuarioJpaController ujpa=new UsuarioJpaController();
@@ -101,6 +103,14 @@ public class ControladoraPersistencia {
     
         return djpa.findDepartamento(nombreDepartamento);
     }
-    public ArrayList<DTActividad>listarActividadDepartamento(String nombreDepartamento
+    public ArrayList<DTActividad>listarActividadesDepartamento(String nombreDepartamento){
+        Departamento d = djpa.findDepartamento(nombreDepartamento);
+        return d.getActividades();
+    }
+
+    public DTActividad getActividad(String nombreActividad) {
+        Actividad act = ajpa.findActividad(nombreActividad);
+        return act.getData();
+    }
 }
 

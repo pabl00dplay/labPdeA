@@ -97,15 +97,14 @@ public class Actividad implements Serializable {
         this.fAlta = fAlta;
     }
     public DTActividad getData(){
-    DTActividad dt = new DtActividad();
-    dt.setNombre(this.nombre);
+    DTActividad dt = new DTActividad();
+    dt.setNombre(this.nom);
     dt.setDepartamento(this.dep.getNom());
     dt.setDescripcion(this.descripcion);
-    dt.setDuracion(this.duracion);
+    dt.setDuracion(this.dur);
     dt.setCostoXturista(this.costo);
     dt.setCiudad(this.ciudad);
-    dt.setFalta(this.fAlta);
-    
+    dt.setfAlta(this.fAlta);
     return dt;
     }
 }

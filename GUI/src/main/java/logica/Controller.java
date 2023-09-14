@@ -1,4 +1,4 @@
-lopackage main.java.logica;
+package main.java.logica;
 
 import DataTypes.DTActividad;
 import DataTypes.DTPaquete;
@@ -95,8 +95,10 @@ public class Controller implements IController {
         Departamento d=new Departamento(depto,descripcion,url);
         contpersis.altaDepartamento(d);
     };
-    public ArrayList<DTActividad>         listarActividadesDepartamento(String nombreDepartamrnto){
-    return contpersis.listarActividadesDepartamento(nombreDepartamento);
-
+    public ArrayList<DTActividad>listarActividadesDepartamento(String nombreDepartamrnto){
+    return contpersis.listarActividadesDepartamento(nombreDepartamrnto);
+    }
+    public DTActividad getActividad(String nombreActividad){
+        return contpersis.getActividad(nombreActividad);
     }
 }

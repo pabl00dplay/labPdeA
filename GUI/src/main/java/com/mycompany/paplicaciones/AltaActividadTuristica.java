@@ -68,29 +68,43 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel3.setText("Proovedor");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 29, -1, -1));
 
         jLabel4.setText("Departamento");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 73, -1, -1));
 
         jLabel5.setText("Nombre Actividad");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 118, -1, -1));
 
         jLabel6.setText("Descripción");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 158, -1, -1));
 
         jLabel8.setText("Duración");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 285, -1, -1));
 
         jLabel9.setText("Costo");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 337, -1, -1));
 
         jLabel10.setText("Ciudad");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 383, -1, -1));
 
         jLabel11.setText("Fecha de Alta");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 429, -1, -1));
 
         jTextFieldNombreActividad.setText("jTextField3");
+        add(jTextFieldNombreActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 112, 174, -1));
 
         jTextFieldDescripcion.setText("jTextField4");
+        add(jTextFieldDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 158, 174, 115));
 
         jTextFieldDuracion.setText("jTextField5");
+        add(jTextFieldDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 285, 171, -1));
 
         jTextFieldCosto.setText("jTextField6");
+        add(jTextFieldCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 331, 171, -1));
 
         jTextFieldCiudad.setText("jTextField7");
         jTextFieldCiudad.addActionListener(new java.awt.event.ActionListener() {
@@ -98,11 +112,13 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
                 jTextFieldCiudadActionPerformed(evt);
             }
         });
+        add(jTextFieldCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 377, 170, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("ALTA ACTIVIDAD TURÍSTICA");
         jLabel12.setBorder(new javax.swing.border.MatteBorder(null));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 320, 95));
 
         jButtonRegistrarActividad.setText("Registrar Actividad");
         jButtonRegistrarActividad.addActionListener(new java.awt.event.ActionListener() {
@@ -110,8 +126,10 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
                 jButtonRegistrarActividadActionPerformed(evt);
             }
         });
+        add(jButtonRegistrarActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 509, -1, -1));
 
         jButton2.setText("Cancelar");
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(536, 509, -1, -1));
 
         jComboBoxProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxProveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +137,7 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
                 jComboBoxProveedorActionPerformed(evt);
             }
         });
+        add(jComboBoxProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 24, 170, -1));
 
         jComboBoxDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxDepartamento.addActionListener(new java.awt.event.ActionListener() {
@@ -126,150 +145,25 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
                 jComboBoxDepartamentoActionPerformed(evt);
             }
         });
+        add(jComboBoxDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 68, 170, -1));
+        add(jTextFieldDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 30, -1));
+        add(jTextFieldAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 420, 48, -1));
+        add(jTextFieldMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 30, -1));
 
         jLabel1.setText("D");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 426, -1, -1));
 
         jLabel2.setText("M");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 426, -1, -1));
 
         jLabel21.setText("A");
+        add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 426, -1, -1));
 
         jLabel7.setText("$");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 337, -1, -1));
 
         jLabel13.setText("hrs");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(332, 332, 332)
-                .addComponent(jLabel11)
-                .addGap(39, 39, 39)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldDia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(5, 5, 5)
-                .addComponent(jTextFieldMes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldAño)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(332, 332, 332)
-                        .addComponent(jLabel5)
-                        .addGap(12, 12, 12)
-                        .addComponent(jTextFieldNombreActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(332, 332, 332)
-                        .addComponent(jLabel6)
-                        .addGap(42, 42, 42)
-                        .addComponent(jTextFieldDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(332, 332, 332)
-                        .addComponent(jLabel8)
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(332, 332, 332)
-                        .addComponent(jLabel9)
-                        .addGap(63, 63, 63)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(332, 332, 332)
-                        .addComponent(jLabel10)
-                        .addGap(72, 72, 72)
-                        .addComponent(jTextFieldCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(388, 388, 388)
-                        .addComponent(jButtonRegistrarActividad)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel3)
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBoxProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBoxDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel5))
-                    .addComponent(jTextFieldNombreActividad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextFieldDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextFieldDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel13)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel9))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextFieldCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel7)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel10))
-                    .addComponent(jTextFieldCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel11))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextFieldDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextFieldMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextFieldAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel21)))
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonRegistrarActividad)
-                    .addComponent(jButton2)))
-        );
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(417, 291, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonRegistrarActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActividadActionPerformed

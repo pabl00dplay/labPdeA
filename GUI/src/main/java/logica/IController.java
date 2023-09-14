@@ -29,9 +29,10 @@ public interface IController {
     public abstract ArrayList<Usuario> getUsuarios();
     public abstract ArrayList<Departamento> getDepartamentos();
     public abstract DTUsuario getUsuario(String nickname);
+    public abstract DTActividad getActividad(String nombreActividad);
     public abstract ArrayList<String> listarsalidasinscriptasTurista(String nickname);
     public abstract ArrayList<String> listarActividadesProveedor(String nickname); 
     public abstract ArrayList<String> listarsalidasProveedor(String nickname);   
     public abstract void altaDepartamento(String depto, String descripcion, String url);
+    public abstract ArrayList<DTActividad>listarActividadesDepartamento(String nombreDepartamento);
 }
-    public abstract ArrayList<DTActividad> listarActividadesDepartamento(String nombreDepartamento);
