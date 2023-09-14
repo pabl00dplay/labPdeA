@@ -96,5 +96,16 @@ public class Actividad implements Serializable {
     public void setfAlta(Date fAlta) {
         this.fAlta = fAlta;
     }
-  
+    public DTActividad getData(){
+    DTActividad dt = new DtActividad();
+    dt.setNombre(this.nombre);
+    dt.setDepartamento(this.dep.getNom());
+    dt.setDescripcion(this.descripcion);
+    dt.setDuracion(this.duracion);
+    dt.setCostoXturista(this.costo);
+    dt.setCiudad(this.ciudad);
+    dt.setFalta(this.fAlta);
+    
+    return dt;
+    }
 }
