@@ -2,6 +2,7 @@ package main.java.logica;
 
 import DataTypes.DTActividad;
 import DataTypes.DTPaquete;
+import DataTypes.DTSalida;
 import java.util.*;
 import main.java.com.mycompany.paplicaciones.persistencia.ControladoraPersistencia;
 import DataTypes.DTUsuario;
@@ -32,7 +33,7 @@ public class Controller implements IController {
     public HashMap<String, Departamento> getDep(){
         return dep;
     }
-
+    
     public void AltaPaquete(DTPaquete dt){
         Paquete p=new Paquete(dt.getNom(),dt.getDesc(),dt.getDescu(),dt.getVal(), dt.getFalta());
         getPaq().put(dt.getNom(), p);
@@ -40,6 +41,7 @@ public class Controller implements IController {
     public boolean existePaq(String s){
         return getPaq().containsKey(s);
     }
+    
     //AltaActividad
     public void altaActividadTuristica(DTActividad da){
         Departamento departamento = contpersis.getDepartamento(da.getDepartamento());
@@ -96,9 +98,26 @@ public class Controller implements IController {
         contpersis.altaDepartamento(d);
     };
     public ArrayList<DTActividad>listarActividadesDepartamento(String nombreDepartamrnto){
-    return contpersis.listarActividadesDepartamento(nombreDepartamrnto);
+        return contpersis.listarActividadesDepartamento(nombreDepartamrnto);
     }
     public DTActividad getActividad(String nombreActividad){
         return contpersis.getActividad(nombreActividad);
+    }
+    public boolean salidaExiste(String s){
+        return contpersis.salidaExiste(s);
+    }
+    public void altaSalida(DTSalida dt){
+        Salida s=new Salida(dt);
+        contpersis.altaSalida(s);
+    }
+    
+    public  ArrayList<DTSalida> getSalidas(){
+        ArrayList<Salida> salidas=contpersis.getSalidas();
+        
+        ArrayList<DTSalida> retorno = new ArrayList<DTSalida>(); 
+        for (Salida s : salidas){
+            retorno.add( s.getData());
+        }
+        return retorno;
     }
 }

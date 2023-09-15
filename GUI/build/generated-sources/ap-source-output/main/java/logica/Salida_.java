@@ -6,7 +6,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import main.java.logica.Actividad;
 
-@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2023-09-14T03:27:41", comments="EclipseLink-2.7.12.v20230209-rNA")
+@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2023-09-14T23:54:38", comments="EclipseLink-2.7.12.v20230209-rNA")
 @StaticMetamodel(Salida.class)
 public class Salida_ { 
 
@@ -14,6 +14,7 @@ public class Salida_ {
     public static volatile SingularAttribute<Salida, Date> fecha;
     public static volatile SingularAttribute<Salida, Date> fAlta;
     public static volatile SingularAttribute<Salida, Actividad> act;
+    public static volatile SingularAttribute<Salida, String> hora;
     public static volatile SingularAttribute<Salida, String> lugar;
     public static volatile SingularAttribute<Salida, String> nom;
     public static volatile SingularAttribute<Salida, Integer> maxTuris;

@@ -4,7 +4,6 @@ package main.java.logica;
 
 import DataTypes.*;
 import java.util.ArrayList;
-import DataTypes.DTPaquete;
 import java.util.HashMap;
 
 /**
@@ -17,8 +16,15 @@ public interface IController {
     public abstract HashMap<String, Paquete> getPaq();
     public abstract HashMap<String, Departamento> getDep();
     
+    /**
+     *
+     * @param dt
+     */
+    
+    
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
+    
     public abstract void altaActividadTuristica(DTActividad da);
     public abstract void altaTurista(DTUsuario dt);
     public abstract void altaProveedor(DTUsuario dp);
@@ -29,10 +35,15 @@ public interface IController {
     public abstract ArrayList<Usuario> getUsuarios();
     public abstract ArrayList<Departamento> getDepartamentos();
     public abstract DTUsuario getUsuario(String nickname);
+    public abstract void altaSalida(DTSalida dt);
     public abstract DTActividad getActividad(String nombreActividad);
     public abstract ArrayList<String> listarsalidasinscriptasTurista(String nickname);
     public abstract ArrayList<String> listarActividadesProveedor(String nickname); 
     public abstract ArrayList<String> listarsalidasProveedor(String nickname);   
     public abstract void altaDepartamento(String depto, String descripcion, String url);
     public abstract ArrayList<DTActividad>listarActividadesDepartamento(String nombreDepartamento);
+
+    public abstract boolean salidaExiste(String nombre);
+
+    public abstract ArrayList<DTSalida> getSalidas();
 }

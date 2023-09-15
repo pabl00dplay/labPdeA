@@ -4,9 +4,11 @@
  */
 package main.java.logica;
 
+import DataTypes.DTSalida;
 import java.io.Serializable;
 import java.lang.String;
 import java.time.*;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,8 +23,8 @@ import javax.persistence.TemporalType;
 public class Salida implements Serializable {
     @Id
     private String nom;
-    private String lugar;
-    private int maxTuris, dur;
+    private String lugar,hora;
+    private Integer maxTuris, dur;
     @Temporal(TemporalType.DATE)
     private Date fecha;
     @Temporal(TemporalType.DATE)
@@ -31,26 +33,40 @@ public class Salida implements Serializable {
 
     public Salida() {
     }
-
-    public Salida(String n, int cant, int d,Date f, String l){
+    public Salida(DTSalida dt){
+        this.nom=dt.getNombre();
+        this.fecha=dt.getFecha();
+        this.fAlta=dt.getfAlta();
+        this.lugar=dt.getLugar();
+        this.maxTuris=dt.getCapacidad();
+        this.hora=dt.getHora();
+        
+    }
+    public Salida(String n, int cant, int d,Date f,Date fa, String l, String hora){
         this.nom=n;
         this.lugar=l;
         this.maxTuris=cant;
         this.dur=d;
         this.fecha=f;
+        this.fAlta=fa;
+        this.hora = hora;
     }
 
     //getters
+    
     public String getNom(){
         return nom;
+    }
+    public String getHora(){
+        return hora;
     }
     public String getLugat(){
         return lugar;
     }
-    public int getMaxTuristas(){
+    public Integer getMaxTuristas(){
         return maxTuris;
     }
-    public int getDuracion(){
+    public Integer getDuracion(){
         return dur;
     }
     public Date getFecha(){
@@ -58,6 +74,10 @@ public class Salida implements Serializable {
     }
     public Date getFAlta(){
         return fAlta;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
     }
 
     //setters
@@ -75,6 +95,17 @@ public class Salida implements Serializable {
     }
     public void setFecha(Date f){
         this.fecha=f;
+    }
+
+    DTSalida getData() {
+        DTSalida dt= new DTSalida();
+        dt.setNombre(this.nom); 
+        dt.setActividad(this.lugar);
+        dt.setFecha(this.fecha);
+        dt.setHora(nom);
+        dt.setCapacidad(this.maxTuris);
+        dt.setCapacidad(this.maxTuris);
+        return dt;
     }
 
  }

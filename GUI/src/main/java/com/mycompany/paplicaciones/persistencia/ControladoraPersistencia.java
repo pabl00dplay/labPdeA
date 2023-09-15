@@ -12,8 +12,10 @@ import main.java.logica.Departamento;
 import main.java.logica.Usuario;
 
 import main.java.com.mycompany.paplicaciones.persistencia.*;
+import main.java.logica.Salida;
 
 public class ControladoraPersistencia {
+    SalidaJpaController sjpa=new SalidaJpaController();
     UsuarioJpaController ujpa=new UsuarioJpaController();
     ActividadJpaController ajpa=new ActividadJpaController();
     DepartamentoJpaController djpa=new DepartamentoJpaController();
@@ -29,6 +31,13 @@ public class ControladoraPersistencia {
         List<Usuario> listita=ujpa.findUsuarioEntities();
         ArrayList<Usuario> retorno=new ArrayList<Usuario>(listita);
         return retorno;
+    }
+    public void altaSalida(Salida salida) {
+        try {
+            sjpa.create(salida);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void altaProveedor(Usuario p) {
@@ -111,6 +120,22 @@ public class ControladoraPersistencia {
     public DTActividad getActividad(String nombreActividad) {
         Actividad act = ajpa.findActividad(nombreActividad);
         return act.getData();
+    }
+    public boolean salidaExiste(String nombre) {
+        List<Salida> lus=sjpa.findSalidaEntities();
+        boolean existe=false;
+        for(Salida salida:lus) {
+           if(salida.getNom().equals(nombre)){
+               existe=true;
+           }
+        }
+        return existe;  
+    }
+
+    public ArrayList<Salida> getSalidas() {
+        List<Salida> listita=sjpa.findSalidaEntities();
+        ArrayList<Salida> retorno=new ArrayList<Salida>(listita);
+        return retorno;
     }
 }
 

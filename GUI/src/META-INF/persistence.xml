@@ -3,9 +3,9 @@
   <persistence-unit name="PAplicaciones" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>main.java.logica.Usuario</class>
-    <class>main.java.logica.Salida</class>
     <class>main.java.logica.Actividad</class>
     <class>main.java.logica.Departamento</class>
+    <class>main.java.logica.Salida</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/baselab?serverTimezone=UTC"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

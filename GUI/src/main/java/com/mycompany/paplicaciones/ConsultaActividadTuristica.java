@@ -2,6 +2,7 @@
 package main.java.com.mycompany.paplicaciones;
 
 import DataTypes.DTActividad;
+import DataTypes.DTSalida;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import main.java.logica.Departamento;
@@ -55,10 +56,10 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jLabel21 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jComboBoxDepartamento1 = new javax.swing.JComboBox<>();
+        jComboBoxSalidas = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jComboBoxDepartamento2 = new javax.swing.JComboBox<>();
+        jComboBoxPaquetes = new javax.swing.JComboBox<>();
 
         setEnabled(false);
         setPreferredSize(new java.awt.Dimension(620, 590));
@@ -168,9 +169,14 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jLabel16.setText("hrs");
         add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, -1, -1));
 
-        jComboBoxDepartamento1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBoxDepartamento1.setEnabled(false);
-        add(jComboBoxDepartamento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 270, -1));
+        jComboBoxSalidas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxSalidas.setEnabled(false);
+        jComboBoxSalidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxSalidasActionPerformed(evt);
+            }
+        });
+        add(jComboBoxSalidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 270, -1));
 
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Salidas Asociadas");
@@ -180,9 +186,9 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jLabel18.setText("Paquetes Asociados");
         add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 260, -1));
 
-        jComboBoxDepartamento2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBoxDepartamento2.setEnabled(false);
-        add(jComboBoxDepartamento2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 270, -1));
+        jComboBoxPaquetes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxPaquetes.setEnabled(false);
+        add(jComboBoxPaquetes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 270, -1));
 
         getAccessibleContext().setAccessibleDescription("");
     }// </editor-fold>//GEN-END:initComponents
@@ -214,14 +220,16 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
     }//GEN-LAST:event_jComboBoxDepartamentoActionPerformed
 
     private void jComboBoxActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxActividadActionPerformed
-        jTextFieldNombre.setEnabled(true);
-        jTextFieldDescripcion.setEnabled(true);
-        jTextFieldDuracion.setEnabled(true);
-        jTextFieldCosto.setEnabled(true);
-        jTextFieldCiudad.setEnabled(true);
-        jTextFieldDia.setEnabled(true);
-        jTextFieldMes.setEnabled(true);
-        jTextFieldAño.setEnabled(true);
+        jTextFieldNombre        .setEnabled(true);
+        jTextFieldDescripcion   .setEnabled(true);
+        jTextFieldDuracion      .setEnabled(true);
+        jTextFieldCosto         .setEnabled(true);
+        jTextFieldCiudad        .setEnabled(true);
+        jTextFieldDia           .setEnabled(true);
+        jTextFieldMes           .setEnabled(true);
+        jTextFieldAño           .setEnabled(true);
+        jComboBoxSalidas        .setEnabled(true);
+        jComboBoxPaquetes       .setEnabled(true);
         
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
@@ -234,14 +242,30 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jTextFieldDia.setText(Integer.toString((Integer)actividad.getfAlta().getDate()));
         jTextFieldMes.setText(Integer.toString((Integer)actividad.getfAlta().getMonth()));
         jTextFieldAño.setText(Integer.toString((Integer)actividad.getfAlta().getYear()));
+        
+        
+        ArrayList<DTSalida> listaSalidas = I.getSalidas();
+        DefaultComboBoxModel modelSalidas = new DefaultComboBoxModel();
+        for(int i=0;i<listaSalidas.size();i++){
+        
+            modelSalidas.addElement(listaSalidas.get(i).getNombre());
+        }
+    jComboBoxSalidas.setModel(modelSalidas);
+    
+    
+        
     }//GEN-LAST:event_jComboBoxActividadActionPerformed
+
+    private void jComboBoxSalidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSalidasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxSalidasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBoxActividad;
     private javax.swing.JComboBox<String> jComboBoxDepartamento;
-    private javax.swing.JComboBox<String> jComboBoxDepartamento1;
-    private javax.swing.JComboBox<String> jComboBoxDepartamento2;
+    private javax.swing.JComboBox<String> jComboBoxPaquetes;
+    private javax.swing.JComboBox<String> jComboBoxSalidas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
