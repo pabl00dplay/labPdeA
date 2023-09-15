@@ -12,7 +12,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import main.java.logica.DataTypes.DTSalida;
 
 /**
  *
@@ -21,7 +20,7 @@ import main.java.logica.DataTypes.DTSalida;
 @Entity
 public class Salida implements Serializable {
     @Id
-    private String nombre;
+    private String nom;
     private String lugar;
     private int maxTuris, dur;
     @Temporal(TemporalType.DATE)
@@ -33,58 +32,49 @@ public class Salida implements Serializable {
     public Salida() {
     }
 
-    public Salida(String nombre, int capacidad, int d, Date fecha, String l){
-        this.nombre=nombre;
+    public Salida(String n, int cant, int d,Date f, String l){
+        this.nom=n;
         this.lugar=l;
-        this.maxTuris=capacidad;
-        this.fecha=fecha;
-    }
-    public Salida(DTSalida dt){
-        this.nombre=dt.getNombre();
-        this.fecha=dt.getFecha();
-        this.fAlta=dt.getfAlta();
-        this.lugar=dt.getLugar();
-        this.maxTuris=dt.getCapacidad();
+        this.maxTuris=cant;
+        this.dur=d;
+        this.fecha=f;
     }
 
-    public String getNombre() {
-        return nombre;
+    //getters
+    public String getNom(){
+        return nom;
     }
-
-    public String getLugar() {
+    public String getLugat(){
         return lugar;
     }
-
-    public int getMaxTuris() {
+    public int getMaxTuristas(){
         return maxTuris;
     }
-
-    public Date getFecha() {
+    public int getDuracion(){
+        return dur;
+    }
+    public Date getFecha(){
         return fecha;
     }
-
-    public Date getfAlta() {
+    public Date getFAlta(){
         return fAlta;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    //setters
+    public void setNom(String s){
+        this.nom=s;
     }
-
-    public void setLugar(String lugar) {
-        this.lugar = lugar;
+    public void setLugar(String s){
+        this.lugar=s;
     }
-
-    public void setMaxTuris(int maxTuris) {
-        this.maxTuris = maxTuris;
+    public void setTuristas(int i){
+        this.maxTuris=i;
     }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setDur(int i){
+        this.dur=i;
     }
-
-    public void setfAlta(Date fAlta) {
-        this.fAlta = fAlta;
+    public void setFecha(Date f){
+        this.fecha=f;
     }
 
  }

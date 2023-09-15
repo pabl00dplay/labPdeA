@@ -7,15 +7,16 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import main.java.logica.Actividad;
+import main.java.logica.Departamento;
+import main.java.logica.Usuario;
 
 import main.java.com.mycompany.paplicaciones.persistencia.*;
-import main.java.logica.*;
 
 public class ControladoraPersistencia {
     UsuarioJpaController ujpa=new UsuarioJpaController();
     ActividadJpaController ajpa=new ActividadJpaController();
     DepartamentoJpaController djpa=new DepartamentoJpaController();
-    SalidaJpaController sjpa=new SalidaJpaController();
     public void altaTurista(Usuario t) {
         try {
             ujpa.create(t);
@@ -110,25 +111,6 @@ public class ControladoraPersistencia {
     public DTActividad getActividad(String nombreActividad) {
         Actividad act = ajpa.findActividad(nombreActividad);
         return act.getData();
-    }
-    
-     public void altaSalida(Salida salida) {
-        try {
-            sjpa.create(salida);
-        } catch (Exception ex) {
-            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    public boolean salidaExiste(String nombre) {
-        List<Salida> lus=sjpa.findSalidaEntities();
-        boolean existe=false;
-        for(Salida salida:lus) {
-           if(salida.getNombre().equals(nombre)){
-               existe=true;
-           }
-        }
-        return existe;  
     }
 }
 

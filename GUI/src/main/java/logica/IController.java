@@ -6,7 +6,6 @@ import DataTypes.*;
 import java.util.ArrayList;
 import DataTypes.DTPaquete;
 import java.util.HashMap;
-import main.java.logica.DataTypes.DTSalida;
 
 /**
  *
@@ -36,6 +35,4 @@ public interface IController {
     public abstract ArrayList<String> listarsalidasProveedor(String nickname);   
     public abstract void altaDepartamento(String depto, String descripcion, String url);
     public abstract ArrayList<DTActividad>listarActividadesDepartamento(String nombreDepartamento);
-    public abstract void altaSalida(DTSalida dt);
-    public abstract boolean salidaExiste(String s);
 }
