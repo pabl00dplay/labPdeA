@@ -19,7 +19,7 @@ import main.java.logica.Salida;
 
 /**
  *
- * @author pablo
+ * @author capo_
  */
 public class SalidaJpaController implements Serializable {
 

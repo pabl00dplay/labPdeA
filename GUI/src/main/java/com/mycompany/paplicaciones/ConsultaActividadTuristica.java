@@ -2,6 +2,7 @@
 package main.java.com.mycompany.paplicaciones;
 
 import DataTypes.DTActividad;
+import DataTypes.DTPaquete;
 import DataTypes.DTSalida;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
@@ -217,6 +218,7 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
             
         }
     jComboBoxActividad.setModel(modelActividades);
+    
     }//GEN-LAST:event_jComboBoxDepartamentoActionPerformed
 
     private void jComboBoxActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxActividadActionPerformed
@@ -243,15 +245,13 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jTextFieldMes.setText(Integer.toString((Integer)actividad.getfAlta().getMonth()));
         jTextFieldAño.setText(Integer.toString((Integer)actividad.getfAlta().getYear()));
         
+        ArrayList<DTPaquete> listaPaquetes = I.listarPaquetes();
+        DefaultComboBoxModel modelPaquetes = new DefaultComboBoxModel();
+        for(int i=0;i<listaPaquetes.size();i++){
         
-        ArrayList<DTSalida> listaSalidas = I.getSalidas();
-        DefaultComboBoxModel modelSalidas = new DefaultComboBoxModel();
-        for(int i=0;i<listaSalidas.size();i++){
-        
-            modelSalidas.addElement(listaSalidas.get(i).getNombre());
+            modelPaquetes.addElement(listaPaquetes.get(i).getNom());
         }
-    jComboBoxSalidas.setModel(modelSalidas);
-    
+        jComboBoxDepartamento.setModel(modelPaquetes);
     
         
     }//GEN-LAST:event_jComboBoxActividadActionPerformed

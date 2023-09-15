@@ -33,15 +33,6 @@ public class Controller implements IController {
     public HashMap<String, Departamento> getDep(){
         return dep;
     }
-    
-    public void AltaPaquete(DTPaquete dt){
-        Paquete p=new Paquete(dt.getNom(),dt.getDesc(),dt.getDescu(),dt.getVal(), dt.getFalta());
-        getPaq().put(dt.getNom(), p);
-    }
-    public boolean existePaq(String s){
-        return getPaq().containsKey(s);
-    }
-    
     //AltaActividad
     public void altaActividadTuristica(DTActividad da){
         Departamento departamento = contpersis.getDepartamento(da.getDepartamento());
@@ -120,4 +111,63 @@ public class Controller implements IController {
         }
         return retorno;
     }
+    public void AltaPaquete(DTPaquete dt){
+            Paquete p=new Paquete(dt.getNom(),dt.getDesc(),dt.getDescu(),dt.getVal(), dt.getFalta());
+            contpersis.altaPaquete(p);
+        }
+        public boolean existePaq(String s){
+            if(contpersis.existePaq(s)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        
+        public ArrayList<DTPaquete> listarPaquetes(){
+            return contpersis.listarPaquetes();
+        }
+        
+        public DTPaquete listarDatosPaquete(String nomPaq){
+            Paquete p=contpersis.getPaquete(nomPaq);
+            return new DTPaquete(p.getNom(),p.getDesc(),p.getDescu(),p.getVal(),p.getFAlta());
+        }
+        
+        public ArrayList<String> listarActividadespaquete(String nomPaq){
+            ArrayList<String> llave = new ArrayList<String>();
+            Paquete vpaq=contpersis.getPaquete(nomPaq);
+            for(DTActividad vact:vpaq.getActs()){
+                llave.add(vact.getNombre());
+            }
+            return llave;
+        }
+        
+        public ArrayList<String> listarActividadesFueraPaq(String nomPaq, String nomDpto){
+            ArrayList<String> lista = listarActividadespaquete(nomPaq);
+            ArrayList<String> llave = new ArrayList<String>();
+            List<Actividad> aux=contpersis.listarActividades();
+            Iterator<Actividad> itr=aux.iterator();
+            boolean existe;
+            while(itr.hasNext()){
+                existe=false;
+                for(String v:lista){
+                    if((v==itr.next().getNom())){
+                        existe=true;
+                    }
+                }
+                if((!existe)&&(itr.next().getDep().getNom().equals(nomDpto))){
+                    llave.add(itr.next().getNom());
+                }
+            }
+            return llave;
+        }
+        
+        public void agregarActPaq(String nomPaq, String nomAct){
+            Paquete p=contpersis.getPaquete(nomPaq);
+            DTActividad dta=contpersis.getActividad(nomAct);
+            Departamento d = null; 
+            Actividad a=new Actividad(dta.getNombre(),dta.getDescripcion(),d,dta.getCiudad(),dta.getDuracion(),dta.getCostoXturista(),dta.getfAlta());
+            p.getActs().add(a.getData());
+            contpersis.agregarActPaq(p);
+        }
+
 }

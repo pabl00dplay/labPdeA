@@ -25,7 +25,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         PonerContenedorDentroContenedor(ast,jPanelAltaSalidaTuristica);
         ConsultaPaquete cp = new ConsultaPaquete();
         PonerContenedorDentroContenedor(cp,jPanelConsultaPaquetesActsTurs);
-        CrearPaquete cpqt = new CrearPaquete(cont);
+        CrearPaquete cpqt = new CrearPaquete();
         PonerContenedorDentroContenedor(cpqt,jPanelCrearPaqueteActTuristicas);
         ModificarDatosDeUsuario mdu = new ModificarDatosDeUsuario();
         PonerContenedorDentroContenedor(mdu,jPanelModificarDatosUsuario); 

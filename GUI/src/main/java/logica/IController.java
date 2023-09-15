@@ -42,8 +42,11 @@ public interface IController {
     public abstract ArrayList<String> listarsalidasProveedor(String nickname);   
     public abstract void altaDepartamento(String depto, String descripcion, String url);
     public abstract ArrayList<DTActividad>listarActividadesDepartamento(String nombreDepartamento);
-
     public abstract boolean salidaExiste(String nombre);
-
     public abstract ArrayList<DTSalida> getSalidas();
+    public abstract ArrayList<DTPaquete> listarPaquetes();
+    public abstract DTPaquete listarDatosPaquete(String nomPaq);
+    public abstract ArrayList<String> listarActividadesFueraPaq(String nomPaq, String nomDpto);
+    public abstract void agregarActPaq(String nomPaq, String nomAct);
+        
 }

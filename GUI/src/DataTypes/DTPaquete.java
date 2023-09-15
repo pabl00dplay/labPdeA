@@ -13,11 +13,11 @@ import java.util.*;
  */
 public class DTPaquete {
     private String nom, desc;
-    private int Pvalidez;
+    private Integer Pvalidez;
     private float descuento;
     private Date fAlta;
     
-    public DTPaquete(String n, String d, float de, int v, Date f){
+    public DTPaquete(String n, String d, float de, Integer v, Date f){
         this.nom=n;
         this.desc=d;
         this.descuento=de;
@@ -32,7 +32,7 @@ public class DTPaquete {
     public String getDesc(){
         return desc;
     }
-    public int getVal(){
+    public Integer getVal(){
         return Pvalidez;
     }
     public float getDescu(){

@@ -151,13 +151,13 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         add(jTextFieldMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 30, -1));
 
         jLabel1.setText("D");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 426, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, -1, -1));
 
         jLabel2.setText("M");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 426, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, -1, -1));
 
         jLabel21.setText("A");
-        add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 426, -1, -1));
+        add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, -1, -1));
 
         jLabel7.setText("$");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 337, -1, -1));

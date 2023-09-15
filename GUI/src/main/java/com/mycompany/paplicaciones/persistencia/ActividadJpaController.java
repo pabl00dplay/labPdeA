@@ -19,7 +19,7 @@ import main.java.logica.Actividad;
 
 /**
  *
- * @author pablo
+ * @author capo_
  */
 public class ActividadJpaController implements Serializable {
 

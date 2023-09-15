@@ -1,17 +1,18 @@
 package main.java.com.mycompany.paplicaciones.persistencia;
 
 import DataTypes.DTActividad;
+import DataTypes.DTPaquete;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import main.java.logica.Actividad;
 import main.java.logica.Departamento;
 import main.java.logica.Usuario;
 
 import main.java.com.mycompany.paplicaciones.persistencia.*;
+import main.java.logica.Paquete;
 import main.java.logica.Salida;
 
 public class ControladoraPersistencia {
@@ -19,6 +20,7 @@ public class ControladoraPersistencia {
     UsuarioJpaController ujpa=new UsuarioJpaController();
     ActividadJpaController ajpa=new ActividadJpaController();
     DepartamentoJpaController djpa=new DepartamentoJpaController();
+    PaqueteJpaController pjpa=new PaqueteJpaController();
     public void altaTurista(Usuario t) {
         try {
             ujpa.create(t);
@@ -137,5 +139,53 @@ public class ControladoraPersistencia {
         ArrayList<Salida> retorno=new ArrayList<Salida>(listita);
         return retorno;
     }
+       public void altaPaquete(Paquete p){
+        try {
+            pjpa.create(p);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public boolean existePaq(String nom){
+        List<Paquete> lpaq= pjpa.findPaqueteEntities();
+        boolean existe=false;
+        Iterator<Paquete> itr=lpaq.iterator();
+        while(itr.hasNext()){
+            if(nom.equals(itr.next().getNom())){
+                existe=true;
+            }
+        }
+        return existe;
+    }
+    
+    public ArrayList<DTPaquete> listarPaquetes(){
+        List<Paquete> lpaq= pjpa.findPaqueteEntities();
+        ArrayList<DTPaquete> lista=new ArrayList<DTPaquete>();
+        for(Paquete p:lpaq){
+            lista.add(p.getData());
+        }
+        return lista;
+        
+    }
+    
+    public void agregarActPaq(Paquete p){
+        try {
+            pjpa.edit(p);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public List<Actividad> listarActividades(){
+        List<Actividad> lact=ajpa.findActividadEntities();
+        return lact;
+    }
+    
+    public Paquete getPaquete(String nom){
+        Paquete p=pjpa.findPaquete(nom);
+        return p;
+    }
+    
 }
 
