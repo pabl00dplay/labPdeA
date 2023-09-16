@@ -147,8 +147,8 @@ public class Controller implements IController {
             Paquete p=contpersis.getPaquete(nomPaq);
             Actividad a=contpersis.getActividad(nomAct);
             p.setAct(a);
-            
-            contpersis.agregarActPaq(p);
+            a.setPaquete(p);
+            contpersis.agregarActPaq(p,a);
         }
 
         public ArrayList<DTSalida> getSalidasActividad(String nombreActividad){

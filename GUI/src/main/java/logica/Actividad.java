@@ -123,4 +123,13 @@ public class Actividad implements Serializable {
         }
         return retorno;
     }
+
+    public List<Paquete> getPaquetes() {
+        return paquetes;
+    }
+
+    public void setPaquete(Paquete p) {
+        this.paquetes.add(p);
+    }
+    
 }

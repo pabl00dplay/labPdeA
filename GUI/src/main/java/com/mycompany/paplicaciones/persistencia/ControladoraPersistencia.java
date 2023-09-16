@@ -175,9 +175,10 @@ public class ControladoraPersistencia {
         
     }
     
-    public void agregarActPaq(Paquete p){
+    public void agregarActPaq(Paquete p,Actividad a){
         try {
             pjpa.edit(p);
+            ajpa.edit(a);
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
