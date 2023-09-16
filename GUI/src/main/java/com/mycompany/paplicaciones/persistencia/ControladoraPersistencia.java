@@ -14,6 +14,7 @@ import main.java.logica.Departamento;
 import main.java.logica.Usuario;
 
 import main.java.com.mycompany.paplicaciones.persistencia.*;
+import main.java.logica.Inscripcion;
 import main.java.logica.Paquete;
 import main.java.logica.Salida;
 
@@ -23,6 +24,7 @@ public class ControladoraPersistencia {
     ActividadJpaController ajpa=new ActividadJpaController();
     DepartamentoJpaController djpa=new DepartamentoJpaController();
     PaqueteJpaController pjpa=new PaqueteJpaController();
+    InscripcionJpaController ijpa=new InscripcionJpaController();
     public void altaTurista(Usuario t) {
         try {
             ujpa.create(t);
@@ -206,6 +208,85 @@ public class ControladoraPersistencia {
             retorno.add(a.getData());
         }
         return retorno;
+    }
+    public ArrayList<String> listarsalidasinscriptasTurista(String nickname) {
+        Usuario u=ujpa.findUsuario(nickname);
+        List<Inscripcion> inscripciones=u.getIns();
+        ArrayList<String> retorno=new ArrayList<String>();
+        for(Inscripcion i:inscripciones){
+            retorno.add(i.getSal().getNom());
+        }
+        return retorno;
+    }; 
+
+    public ArrayList<String> listarActividadesProveedor(String nickname) {
+        Usuario u=ujpa.findUsuario(nickname);
+        List<Actividad> actividades=u.getActividades();
+        ArrayList<String> retorno=new ArrayList<String>();
+        for(Actividad a :actividades){
+            retorno.add(a.getNom());
+        }
+        return retorno;
+    }
+
+    public ArrayList<String> listarsalidasProveedor(String nickname) {
+        Usuario u=ujpa.findUsuario(nickname);
+        List<Actividad> actividades=u.getActividades();
+        ArrayList<String> retorno=new ArrayList<String>();
+        for(Actividad a :actividades){
+            retorno.add("*");
+            for(DTSalida s:a.getSalidas()){
+                retorno.add(s.getNombre());
+            }
+        }
+        return retorno;
+    }
+       public void altaInscripcion(Inscripcion i) {
+        try {
+            ijpa.create(i);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public Usuario retornoUsuarioSelec(String nick){
+            List<Usuario> us=ujpa.findUsuarioEntities();
+            Usuario uSel = null;
+            Iterator<Usuario> itr = us.iterator();
+            for(Usuario u:us) {
+                if(u.getNick().equals(nick)){
+                    uSel = u;
+                }
+            }
+        return uSel;      
+    }
+    public void editarUsuario (Usuario u){
+        try {
+            ujpa.edit(u); 
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }    
+    }
+    public Salida retornoSalidaSelec(String nombre){
+            List<Salida> sal=sjpa.findSalidaEntities();
+            Salida sSel = null;
+            Iterator<Salida> itr = sal.iterator();
+            for(Salida s:sal) {
+                if(s.getNom().equals(nombre)){
+                    sSel = s;
+                }
+            }
+        return sSel;      
+    }
+     public ArrayList<Usuario> retornoTuristas(){////////////////////////////
+            List<Usuario> us=ujpa.findUsuarioEntities();
+            //reotrnar en arraylist los turistas
+            ArrayList<Usuario> turistas=new ArrayList<Usuario>();
+            for(Usuario u:us) {
+                if(u.getEsTurista() == 1){//si es turista
+                    turistas.add(u);//lista de turistas
+                }
+            }
+        return turistas;      
     }
 }
 

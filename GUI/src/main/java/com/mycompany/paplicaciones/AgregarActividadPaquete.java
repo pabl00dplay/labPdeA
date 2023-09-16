@@ -24,7 +24,16 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
       cmbDepto.setModel(modelDepartamentos);
       
       
-        ArrayList<DTActividad> listaActividades = I.getActividades();
+        ArrayList<DTPaquete> listaPaquetes = I.listarPaquetes();
+        DefaultComboBoxModel modelPaquetes = new DefaultComboBoxModel();
+        for(int i=0;i<listaPaquetes.size();i++){
+            modelPaquetes.addElement(listaPaquetes.get(i).getNom());
+        }
+      cmbPaq.setModel(modelPaquetes);
+      
+      
+      
+        ArrayList<DTActividad> listaActividades = I.listarActividadesFueraPaq((String)cmbPaq.getSelectedItem(), (String)cmbDepto.getSelectedItem());
         DefaultComboBoxModel modelActividades = new DefaultComboBoxModel();
         for(int i=0;i<listaActividades.size();i++){
             
@@ -32,14 +41,6 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
             
         }
       cmbAct.setModel(modelActividades);
-      
-      
-        ArrayList<DTPaquete> listaPaquetes = I.listarPaquetes();
-        DefaultComboBoxModel modelPaquetes = new DefaultComboBoxModel();
-        for(int i=0;i<listaPaquetes.size();i++){
-            modelPaquetes.addElement(listaPaquetes.get(i).getNom());
-        }
-      cmbPaq.setModel(modelPaquetes);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -96,14 +97,10 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
         if((String)cmbPaq.getSelectedItem()==null ||(String)cmbAct.getSelectedItem()==null){
-            
-            JOptionPane.showMessageDialog(null, "ALGUNO ES NULL");
         }
         else{
             
-        I.agregarActPaq((String)cmbPaq.getSelectedItem(),(String)cmbAct.getSelectedItem());
-        
-            JOptionPane.showMessageDialog(null, "LLEGA");
+         I.agregarActPaq((String)cmbPaq.getSelectedItem(),(String)cmbAct.getSelectedItem());
         }
     }//GEN-LAST:event_btnOkActionPerformed
 

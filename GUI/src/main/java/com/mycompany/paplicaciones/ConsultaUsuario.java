@@ -234,7 +234,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
 
         jLabelSalidas.setText("Salidas");
 
-        jLabelSalidasinscriptas.setText("Salidas inscriptas");
+        jLabelSalidasinscriptas.setText("Inscripciones");
 
         jListusuarios.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -282,7 +282,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                     .addComponent(jLabelMes)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextFieldMes, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                                                    .addComponent(jTextFieldMes, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                     .addComponent(jLabelAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)

@@ -33,6 +33,8 @@ public class Laboratorio1 extends javax.swing.JFrame {
         PonerContenedorDentroContenedor(adp,jPanelAltaDepartamento);
         AgregarActividadPaquete aap = new AgregarActividadPaquete();
         PonerContenedorDentroContenedor(aap,jPanelAgregarActTuríPaquete);
+        InscripcionASalidaTuristica isp = new InscripcionASalidaTuristica();
+        PonerContenedorDentroContenedor(isp,jPanelInscripcionSalidaTuristica);
      
         
     }

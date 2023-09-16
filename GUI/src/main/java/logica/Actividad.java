@@ -32,6 +32,8 @@ public class Actividad implements Serializable {
     private List<Salida> salidas;
     @ManyToMany
     private List<Paquete>paquetes;
+    @ManyToOne
+    private Usuario u;
     public Actividad(){
     
     }
@@ -129,6 +131,11 @@ public class Actividad implements Serializable {
         return paquetes;
     }
 
+    public void setPaquetes(List<Paquete> paquetes) {
+        this.paquetes = paquetes;
+    }
+    
+
     public void setPaquete(Paquete p) {
         this.paquetes.add(p);
     }
@@ -139,5 +146,6 @@ public class Actividad implements Serializable {
         }
         return DTpaquetes;
     }
+    
     
 }

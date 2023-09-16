@@ -53,7 +53,7 @@ public class Paquete implements Serializable {
     public Date getFAlta(){
         return fAlta;
     }
-    public ArrayList<DTActividad> getActs(){
+    public ArrayList<DTActividad> getDataActs(){
         ArrayList<DTActividad> retorno = new ArrayList<DTActividad>();
         for(Actividad a:acts){
             retorno.add(a.getData());
@@ -97,4 +97,14 @@ public class Paquete implements Serializable {
         }
         return retorno;
     }
+
+    public void setActs(List<Actividad> acts) {
+        this.acts = acts;
+    }
+
+    public List<Actividad> getActs() {
+        return acts;
+    }
+    
+    
 }

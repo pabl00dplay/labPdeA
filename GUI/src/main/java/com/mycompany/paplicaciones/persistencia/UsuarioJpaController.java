@@ -5,21 +5,23 @@
 package main.java.com.mycompany.paplicaciones.persistencia;
 
 import java.io.Serializable;
+import javax.persistence.Query;
+import javax.persistence.EntityNotFoundException;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import main.java.logica.Inscripcion;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Query;
-import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 import main.java.com.mycompany.paplicaciones.persistencia.exceptions.NonexistentEntityException;
 import main.java.com.mycompany.paplicaciones.persistencia.exceptions.PreexistingEntityException;
 import main.java.logica.Usuario;
 
 /**
  *
- * @author usuario
+ * @author capo_
  */
 public class UsuarioJpaController implements Serializable {
 
@@ -33,11 +35,29 @@ public class UsuarioJpaController implements Serializable {
     }
 
     public void create(Usuario usuario) throws PreexistingEntityException, Exception {
+        if (usuario.getIns() == null) {
+            usuario.setIns(new ArrayList<Inscripcion>());
+        }
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
+            List<Inscripcion> attachedIns = new ArrayList<Inscripcion>();
+            for (Inscripcion insInscripcionToAttach : usuario.getIns()) {
+                insInscripcionToAttach = em.getReference(insInscripcionToAttach.getClass(), insInscripcionToAttach.getFecha());
+                attachedIns.add(insInscripcionToAttach);
+            }
+            usuario.setIns(attachedIns);
             em.persist(usuario);
+            for (Inscripcion insInscripcion : usuario.getIns()) {
+                Usuario oldTurOfInsInscripcion = insInscripcion.getTur();
+                insInscripcion.setTur(usuario);
+                insInscripcion = em.merge(insInscripcion);
+                if (oldTurOfInsInscripcion != null) {
+                    oldTurOfInsInscripcion.getIns().remove(insInscripcion);
+                    oldTurOfInsInscripcion = em.merge(oldTurOfInsInscripcion);
+                }
+            }
             em.getTransaction().commit();
         } catch (Exception ex) {
             if (findUsuario(usuario.getNick()) != null) {
@@ -56,7 +76,34 @@ public class UsuarioJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
+            Usuario persistentUsuario = em.find(Usuario.class, usuario.getNick());
+            List<Inscripcion> insOld = persistentUsuario.getIns();
+            List<Inscripcion> insNew = usuario.getIns();
+            List<Inscripcion> attachedInsNew = new ArrayList<Inscripcion>();
+            for (Inscripcion insNewInscripcionToAttach : insNew) {
+                insNewInscripcionToAttach = em.getReference(insNewInscripcionToAttach.getClass(), insNewInscripcionToAttach.getFecha());
+                attachedInsNew.add(insNewInscripcionToAttach);
+            }
+            insNew = attachedInsNew;
+            usuario.setIns(insNew);
             usuario = em.merge(usuario);
+            for (Inscripcion insOldInscripcion : insOld) {
+                if (!insNew.contains(insOldInscripcion)) {
+                    insOldInscripcion.setTur(null);
+                    insOldInscripcion = em.merge(insOldInscripcion);
+                }
+            }
+            for (Inscripcion insNewInscripcion : insNew) {
+                if (!insOld.contains(insNewInscripcion)) {
+                    Usuario oldTurOfInsNewInscripcion = insNewInscripcion.getTur();
+                    insNewInscripcion.setTur(usuario);
+                    insNewInscripcion = em.merge(insNewInscripcion);
+                    if (oldTurOfInsNewInscripcion != null && !oldTurOfInsNewInscripcion.equals(usuario)) {
+                        oldTurOfInsNewInscripcion.getIns().remove(insNewInscripcion);
+                        oldTurOfInsNewInscripcion = em.merge(oldTurOfInsNewInscripcion);
+                    }
+                }
+            }
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
@@ -85,6 +132,11 @@ public class UsuarioJpaController implements Serializable {
                 usuario.getNick();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The usuario with id " + id + " no longer exists.", enfe);
+            }
+            List<Inscripcion> ins = usuario.getIns();
+            for (Inscripcion insInscripcion : ins) {
+                insInscripcion.setTur(null);
+                insInscripcion = em.merge(insInscripcion);
             }
             em.remove(usuario);
             em.getTransaction().commit();

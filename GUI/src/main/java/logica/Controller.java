@@ -53,13 +53,16 @@ public class Controller implements IController {
         return retorno;
     }
     public ArrayList<String> listarsalidasinscriptasTurista(String nickname){
-        return new ArrayList();
+        ArrayList<String> retorno=contpersis.listarsalidasinscriptasTurista(nickname);
+        return retorno;
     };
     public ArrayList<String> listarActividadesProveedor(String nickname){
-        return new ArrayList();
+        ArrayList<String> retorno=contpersis.listarActividadesProveedor(nickname);
+        return retorno;
     }; 
     public ArrayList<String> listarsalidasProveedor(String nickname){
-        return new ArrayList();
+        ArrayList<String> retorno=contpersis.listarsalidasProveedor(nickname);
+        return retorno;
     };   
 
     public ArrayList<DTDepartamento> getDepartamentos() {
@@ -115,30 +118,22 @@ public class Controller implements IController {
             return new DTPaquete(p.getNom(),p.getDesc(),p.getDescu(),p.getVal(),p.getFAlta());
         }
         
-        public ArrayList<String> listarActividadespaquete(String nomPaq){
-            ArrayList<String> llave = new ArrayList<String>();
-            Paquete vpaq=contpersis.getPaquete(nomPaq);
-            for(DTActividad vact:vpaq.getActs()){
-                llave.add(vact.getNombre());
-            }
-            return llave;
-        }
         
-        public ArrayList<String> listarActividadesFueraPaq(String nomPaq, String nomDpto){
-            ArrayList<String> lista = listarActividadespaquete(nomPaq);
-            ArrayList<String> llave = new ArrayList<String>();
+        public ArrayList<DTActividad> listarActividadesFueraPaq(String nomPaq, String nomDpto){
+            ArrayList<DTActividad> lista = listarActividadesPaquete(nomPaq);
+            ArrayList<DTActividad> llave = new ArrayList<DTActividad>();
             List<Actividad> aux=contpersis.listarActividades();
             Iterator<Actividad> itr=aux.iterator();
             boolean existe;
             while(itr.hasNext()){
                 existe=false;
-                for(String v:lista){
-                    if((v==itr.next().getNom())){
+                for(DTActividad act:lista){
+                    if(act.getNombre().equals(itr.next().getNom())){
                         existe=true;
                     }
                 }
                 if((!existe)&&(itr.next().getDep().getNom().equals(nomDpto))){
-                    llave.add(itr.next().getNom());
+                    llave.add(itr.next().getData());
                 }
             }
             return llave;
@@ -169,5 +164,34 @@ public class Controller implements IController {
     public ArrayList<DTPaquete> listarPaquetesActividad(String nombreActividad){
         Actividad a = contpersis.getActividad(nombreActividad);
         return a.getDataPaquetes();
+    }
+    public ArrayList<DTActividad> listarActividadesPaquete(String nomPaq){
+            ArrayList<DTActividad> llave = new ArrayList<DTActividad>();
+            Paquete vpaq=contpersis.getPaquete(nomPaq);
+            for(Actividad vact:vpaq.getActs()){
+                llave.add(vact.getData());
+            }
+            return llave;
+        }
+    public void altaInscripcion (Date fecha,int cant,int costo, String nick){
+            Inscripcion i = new Inscripcion(fecha, cant, costo);
+            Usuario u = contpersis.retornoUsuarioSelec(nick);
+            //pasar nombre de la salida 
+            //Salida s = contpersis.retornoSalidaSelec(nombre);
+            //i.setSal(s);
+            i.setTur(u);
+            contpersis.altaInscripcion(i);
+        }
+    
+        public Usuario retornoUsuarioSelec(String nick){
+            Usuario u = contpersis.retornoUsuarioSelec(nick);
+            return u;        
+        }
+        public void editarUsuario(Usuario u){
+            contpersis.editarUsuario(u);
+        }
+     public ArrayList<Usuario> getTuristas() {/////////////
+        ArrayList<Usuario> retorno=contpersis.retornoTuristas();
+        return retorno;
     }
 }

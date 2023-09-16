@@ -2,10 +2,13 @@ package main.java.logica;
 
 import DataTypes.DTUsuario;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
  
@@ -25,18 +28,16 @@ public class Usuario implements Serializable{
     @Basic
     private String descripcion;
     private String web;
-   /* @OneToMany
-    private ArrayList<Actividad> actividades =null;
-   */
+    @OneToMany
+    private List<Actividad> actividades =null;
+   
     
     //Turista
      @Basic
     private String nac;
-   /* @OneToMany
-    private List<Inscripcion> ins=null;
     @OneToMany
-    private List<Compra> cmp=null;
-    */
+    private List<Inscripcion> ins=null;
+    
     @Basic
     private int esTurista;
     
@@ -89,56 +90,13 @@ public class Usuario implements Serializable{
             this.esTurista=1;
         }
     };
-    
-    public int esTurista(){
-        return this.esTurista;
-    }
-    public void setNick(String nick) {
-        this.nick = nick;
-    }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public void setApe(String ape) {
-        this.ape = ape;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public void setFnac(Date fnac) {
-        this.fnac = fnac;
-    }
-
- /*   public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public void setWeb(String web) {
-        this.web = web;
-    }
-*/
-  /*  public void setActs(List<Actividad> acts) {
-        this.acts = acts;
-    }
-
-    public void setNac(String nac) {
-        this.nac = nac;
-    }
-
-    public void setIns(List<Inscripcion> ins) {
+    public void setIns(ArrayList<Inscripcion> ins) {
         this.ins = ins;
     }
 
-    public void setCmp(List<Compra> cmp) {
-        this.cmp = cmp;
-    }
-*/
-    public void setEsTurista(int esTurista) {
-        this.esTurista = esTurista;
+    public List<Inscripcion> getIns() {
+        return ins;
     }
 
     public String getNick() {
@@ -161,33 +119,78 @@ public class Usuario implements Serializable{
         return fnac;
     }
 
-  /*  public String getDesc() {
-        return desc;
+    public String getDescripcion() {
+        return descripcion;
     }
 
     public String getWeb() {
         return web;
     }
-*/
-   /* public List<Actividad> getActs() {
-        return acts;
+
+    public List<Actividad> getActividades() {
+        return actividades;
     }
 
     public String getNac() {
         return nac;
     }
 
-    public List<Inscripcion> getIns() {
-        return ins;
-    }
 
-    public List<Compra> getCmp() {
-        return cmp;
-    }
-*/
     public int getEsTurista() {
         return esTurista;
     }
+
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setApe(String ape) {
+        this.ape = ape;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public void setFnac(Date fnac) {
+        this.fnac = fnac;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setWeb(String web) {
+        this.web = web;
+    }
+
+    public void setActividades(ArrayList<Actividad> actividades) {
+        this.actividades = actividades;
+    }
+
+    public void setNac(String nac) {
+        this.nac = nac;
+    }
+
+  
+    public void setEsTurista(int esTurista) {
+        this.esTurista = esTurista;
+    }
+
+
+    public void setActividades(List<Actividad> actividades) {
+        this.actividades = actividades;
+    }
+
+    public void setIns(List<Inscripcion> ins) {
+        this.ins = ins;
+    }
+
+
     
     
     

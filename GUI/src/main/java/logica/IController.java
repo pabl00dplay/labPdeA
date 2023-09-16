@@ -4,6 +4,7 @@ package main.java.logica;
 
 import DataTypes.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -38,9 +39,14 @@ public interface IController {
     public abstract ArrayList<DTSalida> getSalidasActividad(String nombreActividad);
     public abstract ArrayList<DTPaquete> listarPaquetes();
     public abstract DTPaquete listarDatosPaquete(String nomPaq);
-    public abstract ArrayList<String> listarActividadesFueraPaq(String nomPaq, String nomDpto);
+    public abstract ArrayList<DTActividad> listarActividadesFueraPaq(String nomPaq, String nomDpto);
     public abstract void agregarActPaq(String nomPaq, String nomAct);
     public abstract ArrayList<DTActividad> getActividades();
     public abstract ArrayList<DTPaquete> listarPaquetesActividad(String nombreActividad);
-        
+    public abstract ArrayList<DTActividad> listarActividadesPaquete(String nomPaq);
+    public void altaInscripcion (Date fecha,int cant,int costo, String nick);
+    public Usuario retornoUsuarioSelec(String nick);
+    public void editarUsuario(Usuario u);
+    public ArrayList<Usuario> getTuristas();
+    
 }
