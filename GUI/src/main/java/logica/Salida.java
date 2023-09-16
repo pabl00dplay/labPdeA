@@ -10,10 +10,7 @@ import java.lang.String;
 import java.time.*;
 import java.util.ArrayList;
 import java.util.Date;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 /**
  *
@@ -24,12 +21,13 @@ public class Salida implements Serializable {
     @Id
     private String nom;
     private String lugar,hora;
-    private Integer maxTuris, dur;
+    private Integer maxTuris;
     @Temporal(TemporalType.DATE)
     private Date fecha;
     @Temporal(TemporalType.DATE)
     private Date fAlta;
-    private Actividad act;
+    @ManyToOne
+    private Actividad actividad;
 
     public Salida() {
     }
@@ -42,19 +40,28 @@ public class Salida implements Serializable {
         this.hora=dt.getHora();
         
     }
-    public Salida(String n, int cant, int d,Date f,Date fa, String l, String hora){
+    public Salida(String n, Integer cant, Date f, Date fa, String l, String hora, Actividad act){
         this.nom=n;
         this.lugar=l;
         this.maxTuris=cant;
-        this.dur=d;
         this.fecha=f;
         this.fAlta=fa;
         this.hora = hora;
+        this.actividad = act;
     }
 
     //getters
+
+    public Actividad getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(Actividad actividad) {
+        this.actividad = actividad;
+    }
     
-    public String getNom(){
+
+    public String getNom() {
         return nom;
     }
     public String getHora(){
@@ -65,9 +72,6 @@ public class Salida implements Serializable {
     }
     public Integer getMaxTuristas(){
         return maxTuris;
-    }
-    public Integer getDuracion(){
-        return dur;
     }
     public Date getFecha(){
         return fecha;
@@ -90,21 +94,12 @@ public class Salida implements Serializable {
     public void setTuristas(int i){
         this.maxTuris=i;
     }
-    public void setDur(int i){
-        this.dur=i;
-    }
     public void setFecha(Date f){
         this.fecha=f;
     }
 
     DTSalida getData() {
-        DTSalida dt= new DTSalida();
-        dt.setNombre(this.nom); 
-        dt.setActividad(this.lugar);
-        dt.setFecha(this.fecha);
-        dt.setHora(nom);
-        dt.setCapacidad(this.maxTuris);
-        dt.setCapacidad(this.maxTuris);
+        DTSalida dt= new DTSalida(this.fecha,this.fAlta,this.nom,this.lugar,this.hora,this.maxTuris,this.actividad.getNom());
         return dt;
     }
 

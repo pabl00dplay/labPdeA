@@ -2,6 +2,7 @@
 package main.java.com.mycompany.paplicaciones;
 
 import DataTypes.DTActividad;
+import DataTypes.DTDepartamento;
 import DataTypes.DTPaquete;
 import DataTypes.DTSalida;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         initComponents();
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
-        ArrayList<Departamento> listaDepartamentos = I.getDepartamentos();
+        ArrayList<DTDepartamento> listaDepartamentos = I.getDepartamentos();
         DefaultComboBoxModel modelDepartamentos = new DefaultComboBoxModel();
     for(int i=0;i<listaDepartamentos.size();i++){
         
@@ -245,14 +246,15 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jTextFieldMes.setText(Integer.toString((Integer)actividad.getfAlta().getMonth()));
         jTextFieldAño.setText(Integer.toString((Integer)actividad.getfAlta().getYear()));
         
-        ArrayList<DTPaquete> listaPaquetes = I.listarPaquetes();
-        DefaultComboBoxModel modelPaquetes = new DefaultComboBoxModel();
-        for(int i=0;i<listaPaquetes.size();i++){
         
-            modelPaquetes.addElement(listaPaquetes.get(i).getNom());
+        
+        ArrayList<DTSalida> listaSalidas = I.getSalidasActividad(actividad.getNombre());
+        DefaultComboBoxModel modelSalidas = new DefaultComboBoxModel();
+        for(DTSalida dt:listaSalidas){
+            modelSalidas.addElement(dt.getNombre());
         }
-        jComboBoxDepartamento.setModel(modelPaquetes);
     
+        jComboBoxSalidas.setModel(modelSalidas);
         
     }//GEN-LAST:event_jComboBoxActividadActionPerformed
 

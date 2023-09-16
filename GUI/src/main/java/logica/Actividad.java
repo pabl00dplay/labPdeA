@@ -5,6 +5,7 @@
 package main.java.logica;
 
 import DataTypes.DTActividad;
+import DataTypes.DTSalida;
 import java.io.Serializable;
 import java.lang.String;
 import java.util.ArrayList;
@@ -28,7 +29,10 @@ public class Actividad implements Serializable {
     private Date fAlta;
     @OneToMany
     private List<Salida> salidas;
+    @ManyToMany
+    private List<Paquete>paquetes;
     public Actividad(){
+    
     }
     public Actividad(String n, String des,Departamento dep, String ciu ,Integer du,Integer costo,Date fAlta){
         this.ciudad=ciu;
@@ -39,8 +43,9 @@ public class Actividad implements Serializable {
         this.nom=n;
         this.fAlta=fAlta;
         this.salidas=new ArrayList<Salida>();
+        this.paquetes= new ArrayList<Paquete>();
     }
-
+    
     public String getNom() {
         return nom;
     }
@@ -96,15 +101,26 @@ public class Actividad implements Serializable {
     public void setfAlta(Date fAlta) {
         this.fAlta = fAlta;
     }
+    public void setSalidas(Salida s) {
+        this.salidas.add(s);
+    }
+    
     public DTActividad getData(){
-    DTActividad dt = new DTActividad();
-    dt.setNombre(this.nom);
-    dt.setDepartamento(this.dep.getNom());
-    dt.setDescripcion(this.descripcion);
-    dt.setDuracion(this.dur);
-    dt.setCostoXturista(this.costo);
-    dt.setCiudad(this.ciudad);
-    dt.setfAlta(this.fAlta);
-    return dt;
+        DTActividad dt = new DTActividad();
+        dt.setNombre(this.nom);
+        dt.setDepartamento(this.dep.getNom());
+        dt.setDescripcion(this.descripcion);
+        dt.setDuracion(this.dur);
+        dt.setCostoXturista(this.costo);
+        dt.setCiudad(this.ciudad);
+        dt.setfAlta(this.fAlta);
+        return dt;
+    }
+    public ArrayList<DTSalida>getSalidas(){
+        ArrayList<DTSalida> retorno = new ArrayList<DTSalida>();
+        for(Salida s:salidas){
+            retorno.add(s.getData());
+        }
+        return retorno;
     }
 }

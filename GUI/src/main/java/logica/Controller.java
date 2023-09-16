@@ -1,38 +1,16 @@
 package main.java.logica;
 
 import DataTypes.DTActividad;
+import DataTypes.DTDepartamento;
 import DataTypes.DTPaquete;
 import DataTypes.DTSalida;
 import java.util.*;
 import main.java.com.mycompany.paplicaciones.persistencia.ControladoraPersistencia;
 import DataTypes.DTUsuario;
-import javax.swing.JOptionPane;
 
 public class Controller implements IController {
     ControladoraPersistencia contpersis= new  ControladoraPersistencia();
-    private HashMap<String, Usuario> usr;
-    private HashMap<String, Actividad> act;
-    private HashMap<String, Paquete> paq;
-    private HashMap<String, Departamento> dep;
-
-    public Controller(){
-        usr=new HashMap<String, Usuario>();
-        act=new HashMap<String, Actividad>();
-        paq=new HashMap<String, Paquete>();
-        dep=new HashMap<String, Departamento>();
-    }
-    public HashMap<String, Usuario> getUsr(){
-        return usr;
-    }
-    public HashMap<String, Actividad> getAct(){
-        return act;
-    }
-    public HashMap<String, Paquete> getPaq(){
-        return paq;
-    }
-    public HashMap<String, Departamento> getDep(){
-        return dep;
-    }
+    
     //AltaActividad
     public void altaActividadTuristica(DTActividad da){
         Departamento departamento = contpersis.getDepartamento(da.getDepartamento());
@@ -40,11 +18,19 @@ public class Controller implements IController {
         departamento.setActividades(acttividad);
         contpersis.altaActividadTuristica(acttividad);
     }
+    //AltaSalida
+    public void altaSalida(DTSalida dt){
+        Actividad act = contpersis.getActividad(dt.getActividad());
+        Salida s=new Salida(dt.getNombre(),dt.getCapacidad(),dt.getFecha(),dt.getfAlta(),dt.getLugar(),dt.getHora(),act);
+        act.setSalidas(s);
+        contpersis.altaSalida(s);
+    }
     //Alta Usuario
     public void altaTurista(DTUsuario dt){
         Usuario t=new Usuario(dt,1);
         contpersis.altaTurista(t);
     }
+    //Alta Proveedor
     public void altaProveedor(DTUsuario dp){
         Usuario p=new Usuario(dp,0);
         contpersis.altaProveedor(p);
@@ -75,7 +61,7 @@ public class Controller implements IController {
         return new ArrayList();
     };   
 
-    public ArrayList<Departamento> getDepartamentos() {
+    public ArrayList<DTDepartamento> getDepartamentos() {
         return contpersis.getDepartamentos();
     }
     public boolean actividadExiste(String nombreActividad){
@@ -92,14 +78,10 @@ public class Controller implements IController {
         return contpersis.listarActividadesDepartamento(nombreDepartamrnto);
     }
     public DTActividad getActividad(String nombreActividad){
-        return contpersis.getActividad(nombreActividad);
+        return contpersis.getActividad(nombreActividad).getData();
     }
     public boolean salidaExiste(String s){
         return contpersis.salidaExiste(s);
-    }
-    public void altaSalida(DTSalida dt){
-        Salida s=new Salida(dt);
-        contpersis.altaSalida(s);
     }
     
     public  ArrayList<DTSalida> getSalidas(){
@@ -163,11 +145,18 @@ public class Controller implements IController {
         
         public void agregarActPaq(String nomPaq, String nomAct){
             Paquete p=contpersis.getPaquete(nomPaq);
-            DTActividad dta=contpersis.getActividad(nomAct);
-            Departamento d = null; 
-            Actividad a=new Actividad(dta.getNombre(),dta.getDescripcion(),d,dta.getCiudad(),dta.getDuracion(),dta.getCostoXturista(),dta.getfAlta());
-            p.getActs().add(a.getData());
+            Actividad a=contpersis.getActividad(nomAct);
+            p.setAct(a);
+            
             contpersis.agregarActPaq(p);
         }
 
+        public ArrayList<DTSalida> getSalidasActividad(String nombreActividad){
+        return contpersis.getSalidasActividad(nombreActividad);
+        }
+        
+      public ArrayList<DTActividad> getActividades(){
+          return contpersis.getActividades();
+                  
+      }
 }

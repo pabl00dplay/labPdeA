@@ -1,7 +1,9 @@
 package main.java.com.mycompany.paplicaciones.persistencia;
 
 import DataTypes.DTActividad;
+import DataTypes.DTDepartamento;
 import DataTypes.DTPaquete;
+import DataTypes.DTSalida;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -37,6 +39,7 @@ public class ControladoraPersistencia {
     public void altaSalida(Salida salida) {
         try {
             sjpa.create(salida);
+            ajpa.edit(salida.getActividad());
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -105,9 +108,12 @@ public class ControladoraPersistencia {
         }
     }
     
-    public ArrayList<Departamento> getDepartamentos() {
+    public ArrayList<DTDepartamento> getDepartamentos() {
         List<Departamento> listita=djpa.findDepartamentoEntities();
-        ArrayList<Departamento> retorno=new ArrayList<Departamento>(listita);
+        ArrayList<DTDepartamento> retorno=new ArrayList<DTDepartamento>();
+        for(Departamento d:listita){
+            retorno.add(d.getData());
+        }
         return retorno;
     }
     public Departamento getDepartamento(String nombreDepartamento){
@@ -119,9 +125,9 @@ public class ControladoraPersistencia {
         return d.getActividades();
     }
 
-    public DTActividad getActividad(String nombreActividad) {
+    public Actividad getActividad(String nombreActividad) {
         Actividad act = ajpa.findActividad(nombreActividad);
-        return act.getData();
+        return act;
     }
     public boolean salidaExiste(String nombre) {
         List<Salida> lus=sjpa.findSalidaEntities();
@@ -187,5 +193,18 @@ public class ControladoraPersistencia {
         return p;
     }
     
+    public ArrayList<DTSalida> getSalidasActividad(String nombreActividad){
+        Actividad act = ajpa.findActividad(nombreActividad);
+        return act.getSalidas();
+    }
+
+    public ArrayList<DTActividad> getActividades() {
+        List<Actividad> listita=ajpa.findActividadEntities();
+        ArrayList<DTActividad> retorno=new ArrayList<DTActividad>();
+        for(Actividad a:listita){
+            retorno.add(a.getData());
+        }
+        return retorno;
+    }
 }
 

@@ -5,22 +5,13 @@ package main.java.logica;
 import DataTypes.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
  * @author francisco
  */
 public interface IController {
-    public abstract HashMap<String, Usuario> getUsr();
-    public abstract HashMap<String, Actividad> getAct();
-    public abstract HashMap<String, Paquete> getPaq();
-    public abstract HashMap<String, Departamento> getDep();
-    
-    /**
-     *
-     * @param dt
-     */
-    
     
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
@@ -33,7 +24,7 @@ public interface IController {
     public abstract boolean existeDepartamento(String nombreDepartamento);
     public abstract boolean actividadExiste(String nombreActividad);
     public abstract ArrayList<Usuario> getUsuarios();
-    public abstract ArrayList<Departamento> getDepartamentos();
+    public abstract ArrayList<DTDepartamento> getDepartamentos();
     public abstract DTUsuario getUsuario(String nickname);
     public abstract void altaSalida(DTSalida dt);
     public abstract DTActividad getActividad(String nombreActividad);
@@ -44,9 +35,11 @@ public interface IController {
     public abstract ArrayList<DTActividad>listarActividadesDepartamento(String nombreDepartamento);
     public abstract boolean salidaExiste(String nombre);
     public abstract ArrayList<DTSalida> getSalidas();
+    public abstract ArrayList<DTSalida> getSalidasActividad(String nombreActividad);
     public abstract ArrayList<DTPaquete> listarPaquetes();
     public abstract DTPaquete listarDatosPaquete(String nomPaq);
     public abstract ArrayList<String> listarActividadesFueraPaq(String nomPaq, String nomDpto);
     public abstract void agregarActPaq(String nomPaq, String nomAct);
+    public abstract ArrayList<DTActividad> getActividades();
         
 }

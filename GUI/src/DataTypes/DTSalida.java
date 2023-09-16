@@ -15,7 +15,7 @@ public class DTSalida {
     private String nombre, lugar, hora, actividad;
     private Integer capacidad;
     
-    public DTSalida(Date fecha, Date fAlta,String nombre,String lugar, String hora,Integer capacidad, String actividad){
+    public DTSalida(Date fecha, Date fAlta,String nombre,String lugar, String hora,Integer capacidad,String actividad){
         this.fecha     = fecha;
         this.fAlta     = fAlta;
         this.nombre    = nombre;
@@ -24,6 +24,11 @@ public class DTSalida {
         this.capacidad = capacidad;
         this.actividad = actividad;
     }
+
+    public String getActividad() {
+        return actividad;
+    }
+    
     public DTSalida(){
         
     }

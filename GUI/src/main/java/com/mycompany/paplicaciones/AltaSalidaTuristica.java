@@ -5,6 +5,7 @@
 package main.java.com.mycompany.paplicaciones;
 
 import DataTypes.DTActividad;
+import DataTypes.DTDepartamento;
 import DataTypes.DTSalida;
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,7 +27,7 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
     public AltaSalidaTuristica() {      initComponents();
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
-        ArrayList<Departamento> listaDepartamentos = I.getDepartamentos();
+        ArrayList<DTDepartamento> listaDepartamentos = I.getDepartamentos();
         DefaultComboBoxModel modelDepartamentos = new DefaultComboBoxModel();
     for(int i=0;i<listaDepartamentos.size();i++){
         
@@ -120,6 +121,11 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
 
         jComboBoxActividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxActividad.setRequestFocusEnabled(false);
+        jComboBoxActividad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxActividadActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Dia:");
 
@@ -256,6 +262,8 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAltaActionPerformed
+        Fabrica fab = Fabrica.getInstance();
+        IController I = fab.getIController();
         
         String nombre, lugar,hora,depto,actividad;
         Integer dia,mes,anio,diaAlta,mesAlta,anioAlta,capacidad;
@@ -263,7 +271,7 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         
         depto     = (String)jComboBoxDepto    .getSelectedItem();
         actividad = (String)jComboBoxActividad.getSelectedItem();
-
+        
         nombre=jTextFieldNombre.getText();
         lugar= jTextFieldLugar .getText();
         hora=  jTextFieldHora  .getText();
@@ -279,8 +287,6 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         fecha = new Date(anio,mes,dia);
         fAlta = new Date(anioAlta,mesAlta,diaAlta);
         
-        Fabrica f     =Fabrica.getInstance();
-        IController I =f.getIController();
         
         DTSalida dt = new DTSalida(fecha, fAlta,nombre,lugar,hora,capacidad,actividad);
         if (I.salidaExiste(nombre)){
@@ -322,6 +328,10 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         }
     jComboBoxActividad.setModel(modelActividades);
     }//GEN-LAST:event_jComboBoxDeptoActionPerformed
+
+    private void jComboBoxActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxActividadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxActividadActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

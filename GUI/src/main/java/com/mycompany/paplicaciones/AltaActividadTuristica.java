@@ -2,6 +2,7 @@
 package main.java.com.mycompany.paplicaciones;
 
 import DataTypes.DTActividad;
+import DataTypes.DTDepartamento;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
@@ -17,7 +18,7 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
         ArrayList<Usuario> listaProveedores = I.getUsuarios();
-        ArrayList<Departamento> listaDepartamentos = I.getDepartamentos();
+        ArrayList<DTDepartamento> listaDepartamentos = I.getDepartamentos();
         initComponents();
         DefaultComboBoxModel modelProveedores = new DefaultComboBoxModel();
         DefaultComboBoxModel modelDepartamentos = new DefaultComboBoxModel();

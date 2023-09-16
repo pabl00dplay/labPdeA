@@ -2,6 +2,7 @@
 package main.java.logica;
 
 import DataTypes.DTActividad;
+import DataTypes.DTDepartamento;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +55,14 @@ public class Departamento implements Serializable {
                dtActividades.add(act.getData());
            }
         return dtActividades;
+    }
+    public DTDepartamento getData(){
+        ArrayList<String> nombresActividades = new ArrayList<String>();
+        for(Actividad a:actividades){
+            nombresActividades.add(a.getNom());
+        }
+        DTDepartamento dt = new DTDepartamento(this.nom,this.descripcion,this.url,nombresActividades);
+        return dt;
     }
 
 }

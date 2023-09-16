@@ -25,7 +25,7 @@ public class Paquete implements Serializable {
     private float descuento;
     @Temporal(TemporalType.DATE)
     private Date fAlta;
-    @ManyToMany
+    @ManyToMany(mappedBy="paquetes")
     private List<Actividad> acts;
     
     public Paquete(String n, String d, float de, Integer v, Date f){
@@ -63,6 +63,11 @@ public class Paquete implements Serializable {
     public Paquete(){
         
     }
+
+    public void setAct(Actividad a) {
+        this.acts.add(a);
+    }
+    
     //setters
     public void setNom(String s){
         this.nom=s;
