@@ -3,6 +3,7 @@ package main.java.com.mycompany.paplicaciones;
 
 import DataTypes.DTActividad;
 import DataTypes.DTDepartamento;
+import DataTypes.DTSalida;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
@@ -240,6 +241,7 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         int D,M,A,cant,costo;
         //String nombreSal = (String) salidasbox.getSelectedItem();
         String nick = (String) turisbox.getSelectedItem();
+        String sal=(String) salidasbox.getSelectedItem();
         D = Integer.parseInt(diavar.getText().trim());
         M = Integer.parseInt(mesvar.getText().trim());
         A = Integer.parseInt(aniovar.getText().trim());
@@ -248,7 +250,7 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         Date fecha = new Date(A, M, D);    
         Fabrica f=Fabrica.getInstance();
         IController cont=f.getIController();
-        cont.altaInscripcion(fecha, cant, costo, nick);//pasar nombre sal
+        cont.altaInscripcion(sal,fecha, cant, costo, nick);
         
         diavar.setText(null);
         mesvar.setText(null);
@@ -265,6 +267,14 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
 
     private void actboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actboxActionPerformed
         // TODO add your handling code here:
+        Fabrica fab = Fabrica.getInstance();
+        IController I = fab.getIController();
+        ArrayList<DTSalida> listaSalidas= I.getSalidasActividad((String) actbox.getSelectedItem());
+        DefaultComboBoxModel modelSalidas = new DefaultComboBoxModel();
+        for(int i=0;i<listaSalidas.size();i++){
+            modelSalidas.addElement(listaSalidas.get(i).getNombre());
+        }
+        salidasbox.setModel(modelSalidas);
     }//GEN-LAST:event_actboxActionPerformed
 
     private void deptosboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptosboxActionPerformed

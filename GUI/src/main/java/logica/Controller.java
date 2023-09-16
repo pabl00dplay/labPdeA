@@ -173,12 +173,12 @@ public class Controller implements IController {
             }
             return llave;
         }
-    public void altaInscripcion (Date fecha,int cant,int costo, String nick){
+    public void altaInscripcion (String nombre,Date fecha,int cant,int costo, String nick){
             Inscripcion i = new Inscripcion(fecha, cant, costo);
             Usuario u = contpersis.retornoUsuarioSelec(nick);
             //pasar nombre de la salida 
-            //Salida s = contpersis.retornoSalidaSelec(nombre);
-            //i.setSal(s);
+            Salida s = contpersis.retornoSalidaSelec(nombre);
+            i.setSal(s);
             i.setTur(u);
             contpersis.altaInscripcion(i);
         }

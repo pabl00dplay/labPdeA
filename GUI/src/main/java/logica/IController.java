@@ -44,7 +44,7 @@ public interface IController {
     public abstract ArrayList<DTActividad> getActividades();
     public abstract ArrayList<DTPaquete> listarPaquetesActividad(String nombreActividad);
     public abstract ArrayList<DTActividad> listarActividadesPaquete(String nomPaq);
-    public void altaInscripcion (Date fecha,int cant,int costo, String nick);
+    public void altaInscripcion (String nombre,Date fecha,int cant,int costo, String nick);
     public Usuario retornoUsuarioSelec(String nick);
     public void editarUsuario(Usuario u);
     public ArrayList<Usuario> getTuristas();
