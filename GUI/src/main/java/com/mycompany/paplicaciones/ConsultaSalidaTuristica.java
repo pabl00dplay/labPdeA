@@ -4,6 +4,15 @@
  */
 package main.java.com.mycompany.paplicaciones;
 
+import DataTypes.DTActividad;
+import DataTypes.DTDepartamento;
+import DataTypes.DTSalida;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import main.java.logica.Fabrica;
+import main.java.logica.IController;
+
 /**
  *
  * @author capo_
@@ -15,6 +24,16 @@ public class ConsultaSalidaTuristica extends javax.swing.JPanel {
      */
     public ConsultaSalidaTuristica() {
         initComponents();
+        Fabrica fab = Fabrica.getInstance();
+        IController I = fab.getIController();
+        ArrayList<DTDepartamento> listaDepartamentos = I.getDepartamentos();
+        DefaultComboBoxModel modelDepartamentos = new DefaultComboBoxModel();
+        for(int i=0;i<listaDepartamentos.size();i++){
+        
+            modelDepartamentos.addElement(listaDepartamentos.get(i).getNom());
+        }
+        jComboBoxDepartamento.setModel(modelDepartamentos);
+    
     }
 
     /**
@@ -37,16 +56,16 @@ public class ConsultaSalidaTuristica extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        jComboBoxDepartamento = new javax.swing.JComboBox<>();
+        jComboBoxActividad = new javax.swing.JComboBox<>();
+        jLabelNombre = new javax.swing.JLabel();
+        jLabelFecha = new javax.swing.JLabel();
+        jLabelHora = new javax.swing.JLabel();
+        jLabelLugar = new javax.swing.JLabel();
+        jLabelCapacidad = new javax.swing.JLabel();
+        jLabelFAlta = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBoxSalida = new javax.swing.JComboBox<>();
 
         jLabel3.setText("Nombre");
 
@@ -80,28 +99,43 @@ public class ConsultaSalidaTuristica extends javax.swing.JPanel {
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Actividad");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxDepartamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxDepartamentoActionPerformed(evt);
+            }
+        });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox2.setRequestFocusEnabled(false);
+        jComboBoxActividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxActividad.setRequestFocusEnabled(false);
+        jComboBoxActividad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxActividadActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setText(":");
+        jLabelNombre.setText(":");
 
-        jLabel2.setText(":");
+        jLabelFecha.setText(":");
 
-        jLabel6.setText(":");
+        jLabelHora.setText(":");
 
-        jLabel7.setText(":");
+        jLabelLugar.setText(":");
 
-        jLabel11.setText(":");
+        jLabelCapacidad.setText(":");
 
-        jLabel13.setText(":");
+        jLabelFAlta.setText(":");
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Salida");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox3.setRequestFocusEnabled(false);
+        jComboBoxSalida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxSalida.setRequestFocusEnabled(false);
+        jComboBoxSalida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxSalidaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -119,41 +153,40 @@ public class ConsultaSalidaTuristica extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel4)
-                                    .addComponent(jLabel14)
                                     .addComponent(jLabel5))
                                 .addGap(64, 64, 64)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(71, 71, 71)
-                                        .addComponent(jLabel15)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jLabelHora)
+                                    .addComponent(jLabelNombre)
+                                    .addComponent(jLabelFecha)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addGap(56, 56, 56)
-                                .addComponent(jLabel7))
+                                .addComponent(jLabelLugar))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel10))
                                 .addGap(69, 69, 69)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel13))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)))
+                                    .addComponent(jLabelCapacidad)
+                                    .addComponent(jLabelFAlta)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(64, 64, 64)
+                                .addComponent(jComboBoxDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBoxActividad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBoxSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -167,41 +200,42 @@ public class ConsultaSalidaTuristica extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(45, 45, 45)
                                 .addComponent(jLabel14)
-                                .addGap(5, 5, 5))
+                                .addGap(23, 23, 23))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel16))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel15)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(40, 40, 40)
+                                .addComponent(jComboBoxDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBoxActividad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBoxSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16))
+                        .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel1))
+                            .addComponent(jLabelNombre))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel2))
+                            .addComponent(jLabelFecha))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel6))
+                            .addComponent(jLabelHora))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jLabel7))
+                            .addComponent(jLabelLugar))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(jLabel11))
+                            .addComponent(jLabelCapacidad))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(jLabel13)))
+                            .addComponent(jLabelFAlta)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(489, 489, 489)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -215,28 +249,78 @@ public class ConsultaSalidaTuristica extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jComboBoxDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDepartamentoActionPerformed
+        jComboBoxActividad.setEnabled(true);
+        Fabrica fab = Fabrica.getInstance();
+        IController I = fab.getIController();
+        ArrayList<DTActividad> listaActividades = I.listarActividadesDepartamento((String) jComboBoxDepartamento.getSelectedItem());
+        DefaultComboBoxModel modelActividades = new DefaultComboBoxModel();
+        for(int i=0;i<listaActividades.size();i++){
+            
+            modelActividades.addElement(listaActividades.get(i).getNombre());
+            
+        }
+        jComboBoxActividad.setModel(modelActividades);
+    
+    }//GEN-LAST:event_jComboBoxDepartamentoActionPerformed
+
+    private void jComboBoxActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxActividadActionPerformed
+        Fabrica fab = Fabrica.getInstance();
+        IController I = fab.getIController();
+        DTActividad actividad = I.getActividad((String) jComboBoxActividad.getSelectedItem());
+        
+        ArrayList<DTSalida> listaSalidas = I.getSalidasActividad(actividad.getNombre());
+        DefaultComboBoxModel modelSalidas = new DefaultComboBoxModel();
+        for(DTSalida dt:listaSalidas){
+            modelSalidas.addElement(dt.getNombre());
+        }
+    
+        jComboBoxSalida.setModel(modelSalidas);
+        
+    }//GEN-LAST:event_jComboBoxActividadActionPerformed
+
+    private void jComboBoxSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSalidaActionPerformed
+        Fabrica fab = Fabrica.getInstance();
+        IController I = fab.getIController();
+        DTActividad actividad = I.getActividad((String) jComboBoxActividad.getSelectedItem());
+        
+        ArrayList<DTSalida> listaSalidas = I.getSalidasActividad(actividad.getNombre());
+        for (DTSalida dt: listaSalidas){
+            if (dt.getNombre()==jComboBoxSalida.getSelectedItem()){
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+                jLabelNombre.setText(dt.getNombre());
+                jLabelFecha.setText(dateFormat.format(dt.getFecha()));
+                jLabelHora.setText(dt.getHora());
+                jLabelLugar.setText(dt.getLugar());
+                jLabelCapacidad.setText(dt.getCapacidad() + "");
+                jLabelFAlta.setText(dateFormat.format(dt.getfAlta()));
+            }
+        }
+    }//GEN-LAST:event_jComboBoxSalidaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> jComboBoxActividad;
+    private javax.swing.JComboBox<String> jComboBoxDepartamento;
+    private javax.swing.JComboBox<String> jComboBoxSalida;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelCapacidad;
+    private javax.swing.JLabel jLabelFAlta;
+    private javax.swing.JLabel jLabelFecha;
+    private javax.swing.JLabel jLabelHora;
+    private javax.swing.JLabel jLabelLugar;
+    private javax.swing.JLabel jLabelNombre;
     // End of variables declaration//GEN-END:variables
 }

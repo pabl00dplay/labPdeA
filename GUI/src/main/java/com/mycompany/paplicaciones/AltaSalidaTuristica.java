@@ -276,13 +276,13 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         lugar= jTextFieldLugar .getText();
         hora=  jTextFieldHora  .getText();
         
-        dia=        Integer.parseInt(jTextFieldFDia     .getText().trim());
-        mes=        Integer.parseInt(jTextFieldFMes     .getText().trim());
-        anio=       Integer.parseInt(jTextFieldFAnio    .getText().trim());
-        diaAlta=    Integer.parseInt(jTextFieldFAltaDia .getText().trim());
-        mesAlta=    Integer.parseInt(jTextFieldFAltaMes .getText().trim());
-        anioAlta=   Integer.parseInt(jTextFieldFAltaAnio.getText().trim());
-        capacidad=  Integer.parseInt(jTextFieldCapacidad.getText().trim());
+        dia=        Integer.valueOf(jTextFieldFDia     .getText().trim());
+        mes=        Integer.valueOf(jTextFieldFMes     .getText().trim());
+        anio=       Integer.valueOf(jTextFieldFAnio    .getText().trim());
+        diaAlta=    Integer.valueOf(jTextFieldFAltaDia .getText().trim());
+        mesAlta=    Integer.valueOf(jTextFieldFAltaMes .getText().trim());
+        anioAlta=   Integer.valueOf(jTextFieldFAltaAnio.getText().trim());
+        capacidad=  Integer.valueOf(jTextFieldCapacidad.getText().trim());
         
         fecha = new Date(anio,mes,dia);
         fAlta = new Date(anioAlta,mesAlta,diaAlta);
