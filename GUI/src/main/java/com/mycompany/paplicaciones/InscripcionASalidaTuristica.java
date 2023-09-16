@@ -64,33 +64,44 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
 
         jLabel5.setText("jLabel5");
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("INSCRIPCIÓN A SALIDA TURÍSTICA");
         jLabel1.setBorder(new javax.swing.border.MatteBorder(null));
         jLabel1.setPreferredSize(new java.awt.Dimension(258, 28));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 320, 95));
 
         deptotexto.setText("Departamento");
+        add(deptotexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 119, -1, -1));
 
         actividadtexto.setText("Actividad");
+        add(actividadtexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 119, -1, -1));
 
         jLabel2.setText("Fecha");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 273, -1, -1));
 
         jLabel3.setText("Cant Tur");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 217, -1, -1));
 
         jLabel4.setText("Costo");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 217, -1, -1));
+        add(diavar, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 307, 40, -1));
 
         cantvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cantvarActionPerformed(evt);
             }
         });
+        add(cantvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 211, 94, -1));
 
         costovar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 costovarActionPerformed(evt);
             }
         });
+        add(costovar, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 211, 94, -1));
 
         aceptaboton.setText("Aceptar");
         aceptaboton.addActionListener(new java.awt.event.ActionListener() {
@@ -98,134 +109,48 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
                 aceptabotonActionPerformed(evt);
             }
         });
+        add(aceptaboton, new org.netbeans.lib.awtextra.AbsoluteConstraints(356, 416, -1, -1));
+        add(mesvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 307, 40, -1));
 
         aniovar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aniovarActionPerformed(evt);
             }
         });
+        add(aniovar, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 307, 40, -1));
 
         jLabel6.setText("Dia");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 313, -1, -1));
 
         jLabel7.setText("Mes");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 313, -1, -1));
 
         jLabel8.setText("Año");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 313, -1, -1));
 
         deptosbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deptosboxActionPerformed(evt);
             }
         });
+        add(deptosbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 155, 122, -1));
 
         actbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 actboxActionPerformed(evt);
             }
         });
+        add(actbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 155, 122, -1));
 
         jLabel9.setText("Salida");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(281, 119, -1, -1));
+
+        add(salidasbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 155, 122, -1));
 
         jLabel10.setText("Turista");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 119, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(330, 330, 330)
-                        .addComponent(aceptaboton)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(cantvar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(63, 63, 63)
-                                        .addComponent(costovar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(diavar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(37, 37, 37)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(mesvar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(aniovar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deptotexto)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(deptosbox, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(actbox, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(salidasbox, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(actividadtexto)
-                                .addGap(93, 93, 93)
-                                .addComponent(jLabel9)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(turisbox, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(deptotexto)
-                            .addComponent(actividadtexto)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(deptosbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(actbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(salidasbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(turisbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(cantvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(costovar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(diavar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(mesvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(aniovar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(81, 81, 81)
-                .addComponent(aceptaboton)
-                .addGap(129, 129, 129))
-        );
+        add(turisbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 155, 122, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cantvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantvarActionPerformed

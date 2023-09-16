@@ -240,13 +240,13 @@ public class ModificarDatosDeUsuario extends javax.swing.JPanel {
         u.setApe(ap);
         u.setNom(nomb);
         
-        if(u.esTurista()==1){
+        if(u.getEsTurista()==1){
             String nac = nacionalidadvar.getText();
             u.setNac(nac);
         }else {
             String desc = descripvar.getText();
             String web = webvar.getText();
-            u.setDesc(desc);
+            u.setDescripcion(desc);
             u.setWeb(web);
         }
         cont.editarUsuario(u);
@@ -279,7 +279,7 @@ public class ModificarDatosDeUsuario extends javax.swing.JPanel {
         apellidovar.setVisible(true);
         mailtextomostrar.setVisible(true);
         
-        if(u.esTurista()==1){//si es 1 es turista, 0 si no
+        if(u.getEsTurista()==1){//si es 1 es turista, 0 si no
             nactexto.setVisible(true);
             nacionalidadvar.setText(u.getNac().trim());
             nacionalidadvar.setVisible(true);
@@ -294,7 +294,7 @@ public class ModificarDatosDeUsuario extends javax.swing.JPanel {
             webtexto.setVisible(true);
             descripvar.setVisible(true);
             webvar.setVisible(true);
-            descripvar.setText(u.getDesc().trim());
+            descripvar.setText(u.getDescripcion().trim());
             webvar.setText(u.getWeb().trim());
             
             nactexto.setVisible(false);
