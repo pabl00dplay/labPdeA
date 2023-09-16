@@ -17,10 +17,6 @@ import main.java.com.mycompany.paplicaciones.persistencia.exceptions.Nonexistent
 import main.java.com.mycompany.paplicaciones.persistencia.exceptions.PreexistingEntityException;
 import main.java.logica.Paquete;
 
-/**
- *
- * @author capo_
- */
 public class PaqueteJpaController implements Serializable {
 
     public PaqueteJpaController() {

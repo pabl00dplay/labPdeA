@@ -1,4 +1,5 @@
-main/java/logica/Salida_.java
 main/java/logica/Actividad_.java
+main/java/logica/Salida_.java
+main/java/logica/Paquete_.java
 main/java/logica/Departamento_.java
 main/java/logica/Usuario_.java

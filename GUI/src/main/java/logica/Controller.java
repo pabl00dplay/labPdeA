@@ -7,6 +7,7 @@ import DataTypes.DTSalida;
 import java.util.*;
 import main.java.com.mycompany.paplicaciones.persistencia.ControladoraPersistencia;
 import DataTypes.DTUsuario;
+import javax.swing.JOptionPane;
 
 public class Controller implements IController {
     ControladoraPersistencia contpersis= new  ControladoraPersistencia();
@@ -144,11 +145,17 @@ public class Controller implements IController {
         }
         
         public void agregarActPaq(String nomPaq, String nomAct){
+            
+            JOptionPane.showMessageDialog(null, "NO LLEGA");
             Paquete p=contpersis.getPaquete(nomPaq);
             Actividad a=contpersis.getActividad(nomAct);
+            
+            JOptionPane.showMessageDialog(null, a.getNom());
+            
+            JOptionPane.showMessageDialog(null, p.getNom());
             p.setAct(a);
             a.setPaquete(p);
-            contpersis.agregarActPaq(p,a);
+            contpersis.agregarActPaq(p,a.getNom());
         }
 
         public ArrayList<DTSalida> getSalidasActividad(String nombreActividad){
@@ -157,6 +164,10 @@ public class Controller implements IController {
         
       public ArrayList<DTActividad> getActividades(){
           return contpersis.getActividades();
-                  
       }
+      
+    public ArrayList<DTPaquete> listarPaquetesActividad(String nombreActividad){
+        Actividad a = contpersis.getActividad(nombreActividad);
+        return a.getDataPaquetes();
+    }
 }

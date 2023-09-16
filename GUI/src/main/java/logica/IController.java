@@ -41,5 +41,6 @@ public interface IController {
     public abstract ArrayList<String> listarActividadesFueraPaq(String nomPaq, String nomDpto);
     public abstract void agregarActPaq(String nomPaq, String nomAct);
     public abstract ArrayList<DTActividad> getActividades();
+    public abstract ArrayList<DTPaquete> listarPaquetesActividad(String nombreActividad);
         
 }

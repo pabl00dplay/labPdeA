@@ -87,4 +87,14 @@ public class Paquete implements Serializable {
     public DTPaquete getData(){
         return new DTPaquete(this.nom,this.descripcion,this.descuento,this.Pvalidez,this.fAlta);
     }
+
+    public Actividad getActividad(String nombreActividad) {
+        Actividad retorno = new Actividad();
+        for(Actividad a:acts){
+            if(a.getNom().equals(nombreActividad)){
+                retorno = a;
+            }
+        }
+        return retorno;
+    }
 }

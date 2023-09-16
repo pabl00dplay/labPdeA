@@ -252,6 +252,13 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         }
     
         jComboBoxSalidas.setModel(modelSalidas);
+        ArrayList<DTPaquete> listaPaquetes = I.listarPaquetesActividad(actividad.getNombre());
+        DefaultComboBoxModel modelPaquetes = new DefaultComboBoxModel();
+        for(DTPaquete dt:listaPaquetes){
+            modelPaquetes.addElement(dt.getNom());
+        }
+    
+        jComboBoxPaquetes.setModel(modelPaquetes);
         
     }//GEN-LAST:event_jComboBoxActividadActionPerformed
 

@@ -10,9 +10,8 @@ import javax.swing.*;
 
 
 public class AgregarActividadPaquete extends javax.swing.JPanel {
-    private static IController control;
      
-    public AgregarActividadPaquete(IController cont) {
+    public AgregarActividadPaquete() {
         initComponents();
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
@@ -49,11 +48,10 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btnOK = new javax.swing.JButton();
-        btnActu = new javax.swing.JButton();
         cmbPaq = new javax.swing.JComboBox<>();
         cmbDepto = new javax.swing.JComboBox<>();
         cmbAct = new javax.swing.JComboBox<>();
+        btnOk = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -65,22 +63,6 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
 
         jLabel3.setText("Actividad");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 168, -1, -1));
-
-        btnOK.setText("OK");
-        btnOK.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOKActionPerformed(evt);
-            }
-        });
-        add(btnOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 243, -1, -1));
-
-        btnActu.setText("Actualizar");
-        btnActu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActuActionPerformed(evt);
-            }
-        });
-        add(btnActu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 243, -1, -1));
 
         cmbPaq.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbPaq.addActionListener(new java.awt.event.ActionListener() {
@@ -95,29 +77,42 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
 
         cmbAct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(cmbAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 180, -1));
+
+        btnOk.setText("jButton1");
+        btnOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOkActionPerformed(evt);
+            }
+        });
+        add(btnOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
-        // TODO add your handling code here:
-        control.agregarActPaq((String)cmbPaq.getSelectedItem(),(String)cmbAct.getSelectedItem());
-            
-    }//GEN-LAST:event_btnOKActionPerformed
-
-    private void btnActuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActuActionPerformed
-        
-    }//GEN-LAST:event_btnActuActionPerformed
 
     private void cmbPaqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPaqActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbPaqActionPerformed
+
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
+        
+        Fabrica fab = Fabrica.getInstance();
+        IController I = fab.getIController();
+        if((String)cmbPaq.getSelectedItem()==null ||(String)cmbAct.getSelectedItem()==null){
+            
+            JOptionPane.showMessageDialog(null, "ALGUNO ES NULL");
+        }
+        else{
+            
+        I.agregarActPaq((String)cmbPaq.getSelectedItem(),(String)cmbAct.getSelectedItem());
+        
+            JOptionPane.showMessageDialog(null, "LLEGA");
+        }
+    }//GEN-LAST:event_btnOkActionPerformed
 
     
         
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnActu;
-    private javax.swing.JButton btnOK;
+    private javax.swing.JButton btnOk;
     private javax.swing.JComboBox<String> cmbAct;
     private javax.swing.JComboBox<String> cmbDepto;
     private javax.swing.JComboBox<String> cmbPaq;

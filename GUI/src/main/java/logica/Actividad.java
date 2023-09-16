@@ -5,6 +5,7 @@
 package main.java.logica;
 
 import DataTypes.DTActividad;
+import DataTypes.DTPaquete;
 import DataTypes.DTSalida;
 import java.io.Serializable;
 import java.lang.String;
@@ -130,6 +131,13 @@ public class Actividad implements Serializable {
 
     public void setPaquete(Paquete p) {
         this.paquetes.add(p);
+    }
+    public ArrayList<DTPaquete>getDataPaquetes(){
+        ArrayList<DTPaquete> DTpaquetes = new ArrayList<DTPaquete>();
+        for(Paquete p:paquetes){
+            DTpaquetes.add(p.getData());
+        }
+        return DTpaquetes;
     }
     
 }
