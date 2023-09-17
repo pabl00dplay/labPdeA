@@ -189,7 +189,10 @@ public class ConsultaPaquete extends javax.swing.JPanel {
 
     private void btnDActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDActActionPerformed
        
-        
+        String nom =(String)cmbAct.getSelectedItem();
+        if(nom!=" "){
+            new DatosAct(nom).setVisible(true);
+        }
     }//GEN-LAST:event_btnDActActionPerformed
 
     private void cmbPaqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPaqActionPerformed
@@ -198,13 +201,19 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         IController I = fab.getIController();
         ArrayList<DTActividad> listaActs= I.listarActividadesPaquete((String)cmbPaq.getSelectedItem());
         DefaultComboBoxModel modelActs = new DefaultComboBoxModel();
-        
+        DTPaquete dtp = I.listarDatosPaquete((String)cmbPaq.getSelectedItem());
         for(int i=0;i<listaActs.size();i++){
             
                 modelActs.addElement(listaActs.get(i).getNombre());
             
         }
         cmbAct.setModel(modelActs);
+        txtDesc.setText(dtp.getDesc());
+        txtVal.setValue(dtp.getVal());
+        txtDescu.setValue(dtp.getDescu());
+        txtFecha.setValue(dtp.getFalta());
+    
+        
     }//GEN-LAST:event_cmbPaqActionPerformed
 
     private void btnActuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActuActionPerformed

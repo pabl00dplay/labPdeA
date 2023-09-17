@@ -61,14 +61,9 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jComboBoxProveedor = new javax.swing.JComboBox<>();
         jComboBoxDepartamento = new javax.swing.JComboBox<>();
-        jTextFieldDia = new javax.swing.JTextField();
-        jTextFieldAño = new javax.swing.JTextField();
-        jTextFieldMes = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -114,7 +109,7 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
                 jTextFieldCiudadActionPerformed(evt);
             }
         });
-        add(jTextFieldCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 377, 170, -1));
+        add(jTextFieldCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 170, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -148,24 +143,13 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
             }
         });
         add(jComboBoxDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 68, 170, -1));
-        add(jTextFieldDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 30, -1));
-        add(jTextFieldAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 420, 48, -1));
-        add(jTextFieldMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 30, -1));
-
-        jLabel1.setText("D");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, -1, -1));
-
-        jLabel2.setText("M");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, -1, -1));
-
-        jLabel21.setText("A");
-        add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, -1, -1));
 
         jLabel7.setText("$");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 337, -1, -1));
 
         jLabel13.setText("hrs");
         add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(417, 291, -1, -1));
+        add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 180, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonRegistrarActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActividadActionPerformed
@@ -180,10 +164,7 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         descripcion=jTextFieldDescripcion.getText();
         duracion=Integer.parseInt(jTextFieldDuracion.getText());
         costo=Integer.parseInt(jTextFieldCosto.getText());
-        D=Integer.parseInt(jTextFieldDia.getText());
-        M=Integer.parseInt(jTextFieldMes.getText());
-        A=Integer.parseInt(jTextFieldAño.getText());
-        fAlta= new Date(A,M,D);
+        fAlta= jDateChooser1.getDate();
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
         if(I.actividadExiste(nomActividad)==true){
@@ -199,9 +180,6 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
             jTextFieldDescripcion.setText(null);
             jTextFieldDuracion.setText(null);
             jTextFieldCosto.setText(null);
-            jTextFieldDia.setText(null);
-            jTextFieldMes.setText(null);
-            jTextFieldAño.setText(null);
             
         }
         
@@ -227,13 +205,11 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
     private javax.swing.JButton jButtonRegistrarActividad;
     private javax.swing.JComboBox<String> jComboBoxDepartamento;
     private javax.swing.JComboBox<String> jComboBoxProveedor;
-    private javax.swing.JLabel jLabel1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -241,13 +217,10 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextFieldAño;
     private javax.swing.JTextField jTextFieldCiudad;
     private javax.swing.JTextField jTextFieldCosto;
     private javax.swing.JTextField jTextFieldDescripcion;
-    private javax.swing.JTextField jTextFieldDia;
     private javax.swing.JTextField jTextFieldDuracion;
-    private javax.swing.JTextField jTextFieldMes;
     private javax.swing.JTextField jTextFieldNombreActividad;
     // End of variables declaration//GEN-END:variables
 }

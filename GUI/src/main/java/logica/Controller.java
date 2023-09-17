@@ -142,13 +142,8 @@ public class Controller implements IController {
         
         public void agregarActPaq(String nomPaq, String nomAct){
             
-            JOptionPane.showMessageDialog(null, "NO LLEGA");
             Paquete p=contpersis.getPaquete(nomPaq);
             Actividad a=contpersis.getActividad(nomAct);
-            
-            JOptionPane.showMessageDialog(null, a.getNom());
-            
-            JOptionPane.showMessageDialog(null, p.getNom());
             p.setAct(a);
             a.setPaquete(p);
             contpersis.agregarActPaq(p,a.getNom());

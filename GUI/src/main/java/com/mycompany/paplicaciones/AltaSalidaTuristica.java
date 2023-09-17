@@ -54,7 +54,6 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jTextFieldNombre = new javax.swing.JTextField();
-        jTextFieldFMes = new javax.swing.JTextField();
         jTextFieldHora = new javax.swing.JTextField();
         jTextFieldLugar = new javax.swing.JTextField();
         jTextFieldCapacidad = new javax.swing.JTextField();
@@ -64,40 +63,44 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         jLabel15 = new javax.swing.JLabel();
         jComboBoxDepto = new javax.swing.JComboBox<>();
         jComboBoxActividad = new javax.swing.JComboBox<>();
-        jTextFieldFDia = new javax.swing.JTextField();
-        jTextFieldFAnio = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jTextFieldFAltaDia = new javax.swing.JTextField();
-        jTextFieldFAltaAnio = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jTextFieldFAltaMes = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setText("Nombre");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 177, -1, -1));
 
         jLabel4.setText("Fecha");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 223, -1, -1));
 
         jLabel5.setText("Hora");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 269, -1, -1));
 
         jLabel8.setText("Lugar de Salida");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 314, -1, -1));
 
         jLabel9.setText("Capacidad");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 366, -1, -1));
 
         jLabel10.setText("Fecha de Alta");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 406, -1, -1));
 
         jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNombreActionPerformed(evt);
             }
         });
+        add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 171, 465, -1));
+        add(jTextFieldHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 263, 465, -1));
+        add(jTextFieldLugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 314, 465, -1));
+        add(jTextFieldCapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 360, 465, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("ALTA SALIDA TURÍSTICA");
         jLabel12.setBorder(new javax.swing.border.MatteBorder(null));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 608, 121));
 
         jButtonAlta.setText("Registrar salida");
         jButtonAlta.addActionListener(new java.awt.event.ActionListener() {
@@ -105,12 +108,15 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
                 jButtonAltaActionPerformed(evt);
             }
         });
+        add(jButtonAlta, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 452, 465, 62));
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Departamento");
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 132, -1, -1));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Actividad");
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 132, -1, -1));
 
         jComboBoxDepto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxDepto.addActionListener(new java.awt.event.ActionListener() {
@@ -118,6 +124,7 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
                 jComboBoxDeptoActionPerformed(evt);
             }
         });
+        add(jComboBoxDepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 127, -1, -1));
 
         jComboBoxActividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxActividad.setRequestFocusEnabled(false);
@@ -126,139 +133,9 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
                 jComboBoxActividadActionPerformed(evt);
             }
         });
-
-        jLabel6.setText("Dia:");
-
-        jLabel7.setText("Mes");
-
-        jLabel11.setText("Año");
-
-        jLabel13.setText("Dia:");
-
-        jLabel16.setText("Mes");
-
-        jLabel17.setText("Año");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(jComboBoxDepto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(110, 110, 110)
-                        .addComponent(jLabel15)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBoxActividad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel5))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldFDia, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldFMes, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldFAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButtonAlta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldHora, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
-                            .addComponent(jTextFieldLugar, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
-                            .addComponent(jTextFieldNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
-                            .addComponent(jTextFieldCapacidad, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldFAltaDia, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(47, 47, 47)
-                                .addComponent(jLabel16)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldFAltaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel17)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldFAltaAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextFieldCapacidad, jTextFieldHora, jTextFieldLugar, jTextFieldNombre});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel14)
-                        .addGap(5, 5, 5))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBoxActividad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel15)
-                        .addComponent(jComboBoxDepto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldFMes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel4)
-                        .addComponent(jTextFieldFDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextFieldFAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel11)
-                        .addComponent(jLabel7)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextFieldHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jTextFieldLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextFieldCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextFieldFAltaMes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldFAltaDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldFAltaAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel16)))
-                    .addComponent(jLabel10))
-                .addGap(18, 18, 18)
-                .addComponent(jButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
-        );
+        add(jComboBoxActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 127, -1, -1));
+        add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 170, -1));
+        add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 170, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAltaActionPerformed
@@ -276,16 +153,11 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         lugar= jTextFieldLugar .getText();
         hora=  jTextFieldHora  .getText();
         
-        dia=        Integer.valueOf(jTextFieldFDia     .getText().trim());
-        mes=        Integer.valueOf(jTextFieldFMes     .getText().trim());
-        anio=       Integer.valueOf(jTextFieldFAnio    .getText().trim());
-        diaAlta=    Integer.valueOf(jTextFieldFAltaDia .getText().trim());
-        mesAlta=    Integer.valueOf(jTextFieldFAltaMes .getText().trim());
-        anioAlta=   Integer.valueOf(jTextFieldFAltaAnio.getText().trim());
         capacidad=  Integer.valueOf(jTextFieldCapacidad.getText().trim());
         
-        fecha = new Date(anio,mes,dia);
-        fAlta = new Date(anioAlta,mesAlta,diaAlta);
+        fecha = jDateChooser1.getDate();
+        
+        fAlta = jDateChooser2.getDate();
         
         
         DTSalida dt = new DTSalida(fecha, fAlta,nombre,lugar,hora,capacidad,actividad);
@@ -295,12 +167,6 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
 
             I.altaSalida(dt);
 
-            jTextFieldFDia     .setText(null);
-            jTextFieldFMes     .setText(null);
-            jTextFieldFAnio    .setText(null);
-            jTextFieldFAltaDia .setText(null);
-            jTextFieldFAltaMes .setText(null);
-            jTextFieldFAltaAnio.setText(null);
             jTextFieldCapacidad.setText(null);
             jTextFieldNombre   .setText(null);
             jTextFieldLugar    .setText(null);
@@ -338,28 +204,18 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
     private javax.swing.JButton jButtonAlta;
     private javax.swing.JComboBox<String> jComboBoxActividad;
     private javax.swing.JComboBox<String> jComboBoxDepto;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextFieldCapacidad;
-    private javax.swing.JTextField jTextFieldFAltaAnio;
-    private javax.swing.JTextField jTextFieldFAltaDia;
-    private javax.swing.JTextField jTextFieldFAltaMes;
-    private javax.swing.JTextField jTextFieldFAnio;
-    private javax.swing.JTextField jTextFieldFDia;
-    private javax.swing.JTextField jTextFieldFMes;
     private javax.swing.JTextField jTextFieldHora;
     private javax.swing.JTextField jTextFieldLugar;
     private javax.swing.JTextField jTextFieldNombre;

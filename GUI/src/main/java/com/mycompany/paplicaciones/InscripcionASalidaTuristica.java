@@ -46,21 +46,16 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        diavar = new javax.swing.JTextField();
         cantvar = new javax.swing.JTextField();
         costovar = new javax.swing.JTextField();
         aceptaboton = new javax.swing.JButton();
-        mesvar = new javax.swing.JTextField();
-        aniovar = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         deptosbox = new javax.swing.JComboBox<>();
         actbox = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         salidasbox = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         turisbox = new javax.swing.JComboBox<>();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         jLabel5.setText("jLabel5");
 
@@ -87,7 +82,6 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
 
         jLabel4.setText("Costo");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 217, -1, -1));
-        add(diavar, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 307, 40, -1));
 
         cantvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,23 +104,6 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
             }
         });
         add(aceptaboton, new org.netbeans.lib.awtextra.AbsoluteConstraints(356, 416, -1, -1));
-        add(mesvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 307, 40, -1));
-
-        aniovar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aniovarActionPerformed(evt);
-            }
-        });
-        add(aniovar, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 307, 40, -1));
-
-        jLabel6.setText("Dia");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 313, -1, -1));
-
-        jLabel7.setText("Mes");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 313, -1, -1));
-
-        jLabel8.setText("Año");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 313, -1, -1));
 
         deptosbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,6 +128,7 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 119, -1, -1));
 
         add(turisbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 155, 122, -1));
+        add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 210, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cantvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantvarActionPerformed
@@ -167,28 +145,18 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         //String nombreSal = (String) salidasbox.getSelectedItem();
         String nick = (String) turisbox.getSelectedItem();
         String sal=(String) salidasbox.getSelectedItem();
-        D = Integer.parseInt(diavar.getText().trim());
-        M = Integer.parseInt(mesvar.getText().trim());
-        A = Integer.parseInt(aniovar.getText().trim());
         cant = Integer.parseInt(cantvar.getText().trim());
         costo = Integer.parseInt(costovar.getText().trim());
-        Date fecha = new Date(A, M, D);    
+        Date fecha = jDateChooser1.getDate();   
         Fabrica f=Fabrica.getInstance();
         IController cont=f.getIController();
         cont.altaInscripcion(sal,fecha, cant, costo, nick);
         
-        diavar.setText(null);
-        mesvar.setText(null);
-        aniovar.setText(null);
         cantvar.setText(null);
         costovar.setText(null);
 
         
     }//GEN-LAST:event_aceptabotonActionPerformed
-
-    private void aniovarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aniovarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aniovarActionPerformed
 
     private void actboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actboxActionPerformed
         // TODO add your handling code here:
@@ -219,23 +187,18 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
     private javax.swing.JButton aceptaboton;
     private javax.swing.JComboBox<String> actbox;
     private javax.swing.JLabel actividadtexto;
-    private javax.swing.JTextField aniovar;
     private javax.swing.JTextField cantvar;
     private javax.swing.JTextField costovar;
     private javax.swing.JComboBox<String> deptosbox;
     private javax.swing.JLabel deptotexto;
-    private javax.swing.JTextField diavar;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField mesvar;
     private javax.swing.JComboBox<String> salidasbox;
     private javax.swing.JComboBox<String> turisbox;
     // End of variables declaration//GEN-END:variables

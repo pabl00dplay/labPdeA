@@ -29,19 +29,11 @@ public class AltaUsuario extends javax.swing.JPanel {
         
         jLabelDescripcionGeneral.setVisible(false);
         jTextArealDescripcionGeneral.setVisible(false);
-        jPanel2.setVisible(true);
         jLabellink.setVisible(false);
         jTextFieldlink.setVisible(false);
         jTextFieldnacionalidad.setVisible(false);
         jLabelnacionalidad.setVisible(false);
         jButtonEnviar.setVisible(false);
-        
-        jLabelDia.setVisible(false);
-        jLabelMes.setVisible(false);
-        jLabelAnio.setVisible(false);
-        jTextFieldDia.setVisible(false);
-        jTextFieldMes.setVisible(false);
-        jTextFieldAnio.setVisible(false);
         
         
     }
@@ -68,16 +60,12 @@ public class AltaUsuario extends javax.swing.JPanel {
         jTextFieldlink = new javax.swing.JTextField();
         jButtonEnviar = new javax.swing.JButton();
         jPanelDescripcionGeneral = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArealDescripcionGeneral = new javax.swing.JTextArea();
         jLabelAltaUsuario = new javax.swing.JLabel();
-        jLabelDia = new javax.swing.JLabel();
-        jTextFieldDia = new javax.swing.JTextField();
-        jLabelMes = new javax.swing.JLabel();
-        jTextFieldMes = new javax.swing.JTextField();
-        jLabelAnio = new javax.swing.JLabel();
-        jTextFieldAnio = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cmbTuristaProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Turista", "Proveedor" }));
         cmbTuristaProveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +73,7 @@ public class AltaUsuario extends javax.swing.JPanel {
                 cmbTuristaProveedorActionPerformed(evt);
             }
         });
+        jPanel1.add(cmbTuristaProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 29, 121, -1));
 
         jTextFieldnickname.setText(" ");
         jTextFieldnickname.addActionListener(new java.awt.event.ActionListener() {
@@ -92,32 +81,46 @@ public class AltaUsuario extends javax.swing.JPanel {
                 jTextFieldnicknameActionPerformed(evt);
             }
         });
+        jPanel1.add(jTextFieldnickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 132, -1));
 
         jLabelnickname.setText("Nickname");
+        jPanel1.add(jLabelnickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 94, -1));
 
         jLabelNombre.setText("Nombre");
+        jPanel1.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 94, -1));
 
         jTextFieldnombre.setText(" ");
+        jPanel1.add(jTextFieldnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 119, 132, -1));
 
         jLabelApellido.setText("Apellido");
+        jPanel1.add(jLabelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 91, -1, -1));
 
         jTextFieldapellido.setText(" ");
+        jPanel1.add(jTextFieldapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 85, 132, -1));
 
         jLabelCorreoElectronico.setText("Correo Electrónico");
+        jPanel1.add(jLabelCorreoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 164, 117, -1));
 
         jTextFieldcorreoElectrónico.setText(" ");
+        jPanel1.add(jTextFieldcorreoElectrónico, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 164, 193, -1));
 
         jLabelFechNac.setText("Fecha de Nacimiento");
+        jPanel1.add(jLabelFechNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 215, -1, -1));
 
         jLabelnacionalidad.setText("Nacionalidad");
+        jPanel1.add(jLabelnacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 255, 104, -1));
 
         jTextFieldnacionalidad.setText(" ");
+        jPanel1.add(jTextFieldnacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 249, 165, -1));
 
         jLabelDescripcionGeneral.setText("Descripción General");
+        jPanel1.add(jLabelDescripcionGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 304, 117, -1));
 
         jLabellink.setText("Link a su sitio web");
+        jPanel1.add(jLabellink, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 110, -1));
 
         jTextFieldlink.setText(" ");
+        jPanel1.add(jTextFieldlink, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 457, 332, -1));
 
         jButtonEnviar.setText("Enviar");
         jButtonEnviar.addActionListener(new java.awt.event.ActionListener() {
@@ -125,6 +128,7 @@ public class AltaUsuario extends javax.swing.JPanel {
                 jButtonEnviarActionPerformed(evt);
             }
         });
+        jPanel1.add(jButtonEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 527, -1, -1));
 
         javax.swing.GroupLayout jPanelDescripcionGeneralLayout = new javax.swing.GroupLayout(jPanelDescripcionGeneral);
         jPanelDescripcionGeneral.setLayout(jPanelDescripcionGeneralLayout);
@@ -137,164 +141,26 @@ public class AltaUsuario extends javax.swing.JPanel {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 427, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 154, Short.MAX_VALUE)
-        );
+        jPanel1.add(jPanelDescripcionGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(941, 6, -1, -1));
 
         jTextArealDescripcionGeneral.setColumns(20);
         jTextArealDescripcionGeneral.setRows(5);
         jTextArealDescripcionGeneral.setBorder(null);
         jScrollPane1.setViewportView(jTextArealDescripcionGeneral);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 289, 332, 142));
+
         jLabelAltaUsuario.setText("Alta de Usuario");
-
-        jLabelDia.setText("D");
-
-        jTextFieldDia.setText(" ");
-
-        jLabelMes.setText(" M");
-
-        jTextFieldMes.setText(" ");
-
-        jLabelAnio.setText("A");
-
-        jTextFieldAnio.setText(" ");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelAltaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabelnickname, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(207, 207, 207)
-                        .addComponent(jButtonEnviar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabelFechNac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelCorreoElectronico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelDescripcionGeneral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabellink, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextFieldcorreoElectrónico, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jTextFieldnickname, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabelApellido)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(144, 144, 144)
-                                .addComponent(cmbTuristaProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextFieldnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextFieldlink, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabelDia)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldDia, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabelMes)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldMes, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelAnio)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jPanelDescripcionGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelAltaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbTuristaProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldnickname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelnickname)
-                            .addComponent(jLabelApellido)
-                            .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelNombre))
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldcorreoElectrónico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelCorreoElectronico))
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelFechNac)
-                            .addComponent(jLabelDia)
-                            .addComponent(jTextFieldDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelMes)
-                            .addComponent(jTextFieldMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelAnio)
-                            .addComponent(jTextFieldAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelnacionalidad)
-                            .addComponent(jTextFieldnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabelDescripcionGeneral))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGap(91, 91, 91)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jPanelDescripcionGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldlink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabellink))
-                .addGap(42, 42, 42)
-                .addComponent(jButtonEnviar)
-                .addContainerGap(109, Short.MAX_VALUE))
-        );
+        jPanel1.add(jLabelAltaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 6, 248, 73));
+        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 210, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 846, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 866, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -304,6 +170,53 @@ public class AltaUsuario extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
+        String opcion=(String)cmbTuristaProveedor.getSelectedItem();
+        String nic;
+        String nom;
+        String ape;
+        String mail;
+        Date fnac;
+        int D,M,A;
+        nic = jTextFieldnickname.getText();
+        nom = jTextFieldnombre.getText();
+        ape = jTextFieldapellido.getText();
+        mail = jTextFieldcorreoElectrónico.getText();
+        fnac = jDateChooser1.getDate();
+        Fabrica f=Fabrica.getInstance();
+        IController I=f.getIController();
+        if (I.nickExiste(nic)){
+            JOptionPane.showMessageDialog(null, "El nickname ya existe");
+        }
+        else if (I.mailExiste(mail)){
+            JOptionPane.showMessageDialog(null, "El mail ya existe");
+        }
+        else if(opcion.equals("Turista")){
+            String nacionalidad=jTextFieldnacionalidad.getText();
+            DTUsuario dt=new DTUsuario(nic,nom,ape,mail,fnac,nacionalidad);
+            I.altaTurista(dt);
+
+            jTextFieldnickname.setText(null);
+            jTextFieldapellido.setText(null);
+            jTextFieldnombre.setText(null);
+            jTextFieldcorreoElectrónico.setText(null);
+            jTextFieldnacionalidad.setText(null);
+        }
+        else if(opcion.equals("Proveedor")){
+            String texto=jTextArealDescripcionGeneral.getText();
+            String link=jTextFieldlink.getText();
+            DTUsuario dt = new DTUsuario(nic,nom,ape,mail,fnac,link,texto);
+            I.altaProveedor(dt);
+
+            jTextFieldnickname.setText(null);
+            jTextFieldapellido.setText(null);
+            jTextFieldnombre.setText(null);
+            jTextFieldcorreoElectrónico.setText(null);
+            jTextArealDescripcionGeneral.setText(null);
+            jTextFieldlink.setText(null);
+        }
+    }//GEN-LAST:event_jButtonEnviarActionPerformed
 
     private void jTextFieldnicknameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldnicknameActionPerformed
         // TODO add your handling code here:
@@ -326,8 +239,7 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(true);
             jTextFieldapellido.setVisible(true);
             jTextFieldcorreoElectrónico.setVisible(true);
-            
-        
+
             jLabelDescripcionGeneral.setVisible(false);
             jTextArealDescripcionGeneral.setVisible(false);
             jPanelDescripcionGeneral.setVisible(true);
@@ -336,13 +248,6 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldnacionalidad.setVisible(true);
             jLabelnacionalidad.setVisible(true);
             jButtonEnviar.setVisible(true);
-            
-            jLabelDia.setVisible(true);
-            jLabelMes.setVisible(true);
-            jLabelAnio.setVisible(true);
-            jTextFieldDia.setVisible(true);
-            jTextFieldMes.setVisible(true);
-            jTextFieldAnio.setVisible(true);
         }
         if(opcion.equals("Proveedor")){
             jLabelnickname.setVisible(true);
@@ -359,7 +264,7 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setVisible(true);
             jTextFieldapellido.setVisible(true);
             jTextFieldcorreoElectrónico.setVisible(true);
-     
+
             jLabelDescripcionGeneral.setVisible(true);
             jTextArealDescripcionGeneral.setVisible(true);
             jPanelDescripcionGeneral.setVisible(false);
@@ -369,13 +274,6 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldnacionalidad.setVisible(false);
             jLabelnacionalidad.setVisible(false);
             jButtonEnviar.setVisible(true);
-            
-            jLabelDia.setVisible(true);
-            jLabelMes.setVisible(true);
-            jLabelAnio.setVisible(true);
-            jTextFieldDia.setVisible(true);
-            jTextFieldMes.setVisible(true);
-            jTextFieldAnio.setVisible(true);
         }
         if(opcion.equals("Usuario")){
             jLabelnickname.setVisible(false);
@@ -400,97 +298,27 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldnacionalidad.setVisible(false);
             jLabelnacionalidad.setVisible(false);
             jButtonEnviar.setVisible(false);
-            
-            jLabelDia.setVisible(false);
-            jLabelMes.setVisible(false);
-            jLabelAnio.setVisible(false);
-            jTextFieldDia.setVisible(false);
-            jTextFieldMes.setVisible(false);
-            jTextFieldAnio.setVisible(false);
-        } 
+        }
     }//GEN-LAST:event_cmbTuristaProveedorActionPerformed
-
-    private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
-        String opcion=(String)cmbTuristaProveedor.getSelectedItem();
-        String nic;
-        String nom;
-        String ape;
-        String mail;
-        Date fnac;
-        int D,M,A;
-        nic = jTextFieldnickname.getText();
-        nom = jTextFieldnombre.getText();
-        ape = jTextFieldapellido.getText();
-        mail = jTextFieldcorreoElectrónico.getText();
-        D = Integer.parseInt(jTextFieldDia.getText().trim());
-        M = Integer.parseInt(jTextFieldMes.getText().trim());
-        A = Integer.parseInt(jTextFieldAnio.getText().trim());
-        fnac = new Date(A, M, D);    
-        Fabrica f=Fabrica.getInstance();
-        IController I=f.getIController();
-        if (I.nickExiste(nic)){
-            JOptionPane.showMessageDialog(null, "El nickname ya existe");
-        }
-        else if (I.mailExiste(mail)){
-             JOptionPane.showMessageDialog(null, "El mail ya existe");
-        }
-        else if(opcion.equals("Turista")){
-            String nacionalidad=jTextFieldnacionalidad.getText();
-            DTUsuario dt=new DTUsuario(nic,nom,ape,mail,fnac,nacionalidad);
-            I.altaTurista(dt);
-            
-            jTextFieldnickname.setText(null); 
-            jTextFieldapellido.setText(null);
-            jTextFieldnombre.setText(null);
-            jTextFieldcorreoElectrónico.setText(null);
-            jTextFieldDia.setText(null);
-            jTextFieldMes.setText(null);
-            jTextFieldAnio.setText(null);
-            jTextFieldnacionalidad.setText(null);
-        }
-        else if(opcion.equals("Proveedor")){
-            String texto=jTextArealDescripcionGeneral.getText();
-            String link=jTextFieldlink.getText();
-            DTUsuario dt = new DTUsuario(nic,nom,ape,mail,fnac,link,texto);
-            I.altaProveedor(dt);
-            
-            jTextFieldnickname.setText(null); 
-            jTextFieldapellido.setText(null);
-            jTextFieldnombre.setText(null);
-            jTextFieldcorreoElectrónico.setText(null);
-            jTextFieldDia.setText(null);
-            jTextFieldMes.setText(null);
-            jTextFieldAnio.setText(null);
-            jTextArealDescripcionGeneral.setText(null);
-            jTextFieldlink.setText(null);  
-        }
-        
-    }//GEN-LAST:event_jButtonEnviarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbTuristaProveedor;
     private javax.swing.JButton jButtonEnviar;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabelAltaUsuario;
-    private javax.swing.JLabel jLabelAnio;
     private javax.swing.JLabel jLabelApellido;
     private javax.swing.JLabel jLabelCorreoElectronico;
     private javax.swing.JLabel jLabelDescripcionGeneral;
-    private javax.swing.JLabel jLabelDia;
     private javax.swing.JLabel jLabelFechNac;
-    private javax.swing.JLabel jLabelMes;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabellink;
     private javax.swing.JLabel jLabelnacionalidad;
     private javax.swing.JLabel jLabelnickname;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelDescripcionGeneral;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArealDescripcionGeneral;
-    private javax.swing.JTextField jTextFieldAnio;
-    private javax.swing.JTextField jTextFieldDia;
-    private javax.swing.JTextField jTextFieldMes;
     private javax.swing.JTextField jTextFieldapellido;
     private javax.swing.JTextField jTextFieldcorreoElectrónico;
     private javax.swing.JTextField jTextFieldlink;

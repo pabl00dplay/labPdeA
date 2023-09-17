@@ -6,7 +6,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import main.java.logica.Actividad;
 
-@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2023-09-17T20:11:16", comments="EclipseLink-2.7.12.v20230209-rNA")
+@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2023-09-17T20:45:19", comments="EclipseLink-2.7.12.v20230209-rNA")
 @StaticMetamodel(Salida.class)
 public class Salida_ { 
 

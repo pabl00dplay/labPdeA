@@ -25,7 +25,7 @@ public class DatosPaq extends javax.swing.JFrame {
         txtDesc.setText(dtp.getDesc());
         txtVal.setValue(dtp.getVal());
         txtDescu.setValue(dtp.getDescu());
-        txtFAlta.setValue(dtp.getFalta());
+        jDateChooser1.setDate(dtp.getFalta());
     }
 
     /**
@@ -48,9 +48,9 @@ public class DatosPaq extends javax.swing.JFrame {
         txtDesc = new javax.swing.JTextField();
         txtVal = new javax.swing.JFormattedTextField();
         txtDescu = new javax.swing.JFormattedTextField();
-        txtFAlta = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         jTextField1.setText("jTextField1");
 
@@ -85,9 +85,6 @@ public class DatosPaq extends javax.swing.JFrame {
         txtDescu.setEditable(false);
         txtDescu.setText("jFormattedTextField1");
 
-        txtFAlta.setEditable(false);
-        txtFAlta.setText("jFormattedTextField1");
-
         jLabel6.setText("dias");
 
         jLabel7.setText("%");
@@ -101,17 +98,14 @@ public class DatosPaq extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtFAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
-                                .addGap(29, 29, 29)
+                                .addGap(21, 21, 21)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(txtDescu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -122,11 +116,14 @@ public class DatosPaq extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel6))
                                     .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(152, 152, 152)
                         .addComponent(btnCerrar)))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,11 +146,15 @@ public class DatosPaq extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(txtDescu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtFAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel5)
+                        .addGap(13, 13, 13))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(btnCerrar)
                 .addGap(20, 20, 20))
         );
@@ -202,6 +203,7 @@ public class DatosPaq extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -212,7 +214,6 @@ public class DatosPaq extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtDesc;
     private javax.swing.JFormattedTextField txtDescu;
-    private javax.swing.JFormattedTextField txtFAlta;
     private javax.swing.JTextField txtNom;
     private javax.swing.JFormattedTextField txtVal;
     // End of variables declaration//GEN-END:variables

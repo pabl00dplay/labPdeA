@@ -43,14 +43,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jTextFieldlink.setVisible(false);
         jTextFieldnacionalidad.setVisible(false);
         jLabelnacionalidad.setVisible(false);
-    
-        
-        jLabelDia.setVisible(false);
-        jLabelMes.setVisible(false);
-        jLabelAnio.setVisible(false);
-        jTextFieldDia.setVisible(false);
-        jTextFieldMes.setVisible(false);
-        jTextFieldAnio.setVisible(false);
         
         jLabelActividadesTuristicas.setVisible(false);
         jListctividadesTuristicas.setVisible(false);
@@ -106,12 +98,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArealDescripcionGeneral = new javax.swing.JTextArea();
         jLabelAltaUsuario = new javax.swing.JLabel();
-        jLabelDia = new javax.swing.JLabel();
-        jTextFieldDia = new javax.swing.JTextField();
-        jLabelMes = new javax.swing.JLabel();
-        jTextFieldMes = new javax.swing.JTextField();
-        jLabelAnio = new javax.swing.JLabel();
-        jTextFieldAnio = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jListctividadesTuristicas = new javax.swing.JList<>();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -123,6 +109,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jLabelSalidasinscriptas = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jListusuarios = new javax.swing.JList<>();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -204,24 +191,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jLabelAltaUsuario.setText("Alta de Usuario");
         jPanel1.add(jLabelAltaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 6, 132, 73));
 
-        jLabelDia.setText("D");
-        jPanel1.add(jLabelDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 233, -1, -1));
-
-        jTextFieldDia.setText(" ");
-        jPanel1.add(jTextFieldDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 227, 48, -1));
-
-        jLabelMes.setText(" M");
-        jPanel1.add(jLabelMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 233, -1, -1));
-
-        jTextFieldMes.setText(" ");
-        jPanel1.add(jTextFieldMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 227, 84, -1));
-
-        jLabelAnio.setText("A");
-        jPanel1.add(jLabelAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 233, 21, -1));
-
-        jTextFieldAnio.setText(" ");
-        jPanel1.add(jTextFieldAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(357, 227, 82, -1));
-
         jListctividadesTuristicas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -286,6 +255,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jScrollPane5.setViewportView(jListusuarios);
 
         jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 75, 160, 140));
+        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 210, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -330,14 +300,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldlink.setVisible(false);
             jTextFieldnacionalidad.setVisible(true);
             jLabelnacionalidad.setVisible(true);
-          
-
-            jLabelDia.setVisible(true);
-            jLabelMes.setVisible(true);
-            jLabelAnio.setVisible(true);
-            jTextFieldDia.setVisible(true);
-            jTextFieldMes.setVisible(true);
-            jTextFieldAnio.setVisible(true);
             
             jLabelActividadesTuristicas.setVisible(false);
             jListctividadesTuristicas.setVisible(false);
@@ -354,9 +316,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldapellido.setText("");
             jTextFieldcorreoElectrónico.setText("");
             jTextFieldnacionalidad.setText("");
-            jTextFieldDia.setText("");
-            jTextFieldMes.setText("");
-            jTextFieldAnio.setText("");
         }
         if(opcion.equals("Proveedor")){
             jLabelnickname.setVisible(true);
@@ -382,14 +341,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldlink.setVisible(true);
             jTextFieldnacionalidad.setVisible(false);
             jLabelnacionalidad.setVisible(false);
-          
-
-            jLabelDia.setVisible(true);
-            jLabelMes.setVisible(true);
-            jLabelAnio.setVisible(true);
-            jTextFieldDia.setVisible(true);
-            jTextFieldMes.setVisible(true);
-            jTextFieldAnio.setVisible(true);
             
             jLabelActividadesTuristicas.setVisible(true);
             jListctividadesTuristicas.setVisible(true);
@@ -405,9 +356,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldapellido.setText("");
             jTextFieldcorreoElectrónico.setText("");
             jTextFieldnacionalidad.setText("");
-            jTextFieldDia.setText("");
-            jTextFieldMes.setText("");
-            jTextFieldAnio.setText("");
             
         }
         if(opcion.equals("Usuario")){
@@ -432,14 +380,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldlink.setVisible(false);
             jTextFieldnacionalidad.setVisible(false);
             jLabelnacionalidad.setVisible(false);
-         
-
-            jLabelDia.setVisible(false);
-            jLabelMes.setVisible(false);
-            jLabelAnio.setVisible(false);
-            jTextFieldDia.setVisible(false);
-            jTextFieldMes.setVisible(false);
-            jTextFieldAnio.setVisible(false);
             
             jLabelActividadesTuristicas.setVisible(false);
             jListctividadesTuristicas.setVisible(false);
@@ -500,17 +440,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldapellido.setText(dt.getApe().trim());
             jTextFieldcorreoElectrónico.setText(dt.getMail().trim());
             
-            int dia=dt.getFnac().getDate();
-            String d=Integer.toString(dia).trim();
-            jTextFieldDia.setText(d);
-            
-            int mes=dt.getFnac().getMonth();
-            String m=Integer.toString(mes).trim();
-            jTextFieldMes.setText(m);
-            
-            int anio=dt.getFnac().getYear();
-            String a=Integer.toString(anio).trim();
-            jTextFieldAnio.setText(a);
+            jDateChooser1.setDate(dt.getFnac());
             
             jTextFieldnacionalidad.setText(dt.getNacionalidad().trim());
             
@@ -535,17 +465,8 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jTextFieldapellido.setText(dt.getApe().trim());
             jTextFieldcorreoElectrónico.setText(dt.getMail().trim());
             
-            int dia=dt.getFnac().getDate();
-            String d=Integer.toString(dia).trim();
-            jTextFieldDia.setText(d);
             
-            int mes=dt.getFnac().getMonth();
-            String m=Integer.toString(mes).trim();
-            jTextFieldMes.setText(m);
-            
-            int anio=dt.getFnac().getYear();
-            String a=Integer.toString(anio).trim();
-            jTextFieldAnio.setText(a);
+            jDateChooser1.setDate(dt.getFnac());
             
             jTextArealDescripcionGeneral.setText(dt.getDescripcion().trim());
             jTextFieldlink.setText(dt.getWeb().trim());
@@ -594,15 +515,13 @@ public class ConsultaUsuario extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbTuristaProveedor;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabelActividadesTuristicas;
     private javax.swing.JLabel jLabelAltaUsuario;
-    private javax.swing.JLabel jLabelAnio;
     private javax.swing.JLabel jLabelApellido;
     private javax.swing.JLabel jLabelCorreoElectronico;
     private javax.swing.JLabel jLabelDescripcionGeneral;
-    private javax.swing.JLabel jLabelDia;
     private javax.swing.JLabel jLabelFechNac;
-    private javax.swing.JLabel jLabelMes;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelSalidas;
     private javax.swing.JLabel jLabelSalidasinscriptas;
@@ -621,9 +540,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextArea jTextArealDescripcionGeneral;
-    private javax.swing.JTextField jTextFieldAnio;
-    private javax.swing.JTextField jTextFieldDia;
-    private javax.swing.JTextField jTextFieldMes;
     private javax.swing.JTextField jTextFieldapellido;
     private javax.swing.JTextField jTextFieldcorreoElectrónico;
     private javax.swing.JTextField jTextFieldlink;
