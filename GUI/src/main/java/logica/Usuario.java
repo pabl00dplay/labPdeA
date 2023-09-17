@@ -39,7 +39,7 @@ public class Usuario implements Serializable{
     private List<Inscripcion> ins=null;
     
     @Basic
-    private int esTurista;
+    private Integer esTurista;
     
     
     

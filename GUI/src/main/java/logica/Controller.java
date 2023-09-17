@@ -37,8 +37,7 @@ public class Controller implements IController {
         contpersis.altaProveedor(p);
     }
      public DTUsuario getUsuario(String nickname){
-         Date fnac= new Date(2022,9,31);
-         DTUsuario dt=new DTUsuario("nic","nom","ape","mail",fnac,"desc","sitio");
+        DTUsuario dt = contpersis.getUsuario(nickname);
         return dt;
     };
     public boolean nickExiste(String nic){

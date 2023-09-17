@@ -4,6 +4,7 @@ import DataTypes.DTActividad;
 import DataTypes.DTDepartamento;
 import DataTypes.DTPaquete;
 import DataTypes.DTSalida;
+import DataTypes.DTUsuario;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -287,6 +288,12 @@ public class ControladoraPersistencia {
                 }
             }
         return turistas;      
+    }
+
+    public DTUsuario getUsuario(String nickname) {
+        Usuario u = ujpa.findUsuario(nickname);
+        DTUsuario dt = new DTUsuario(u.getNick(),u.getNom(),u.getApe(),u.getMail(),u.getFnac(),u.getNac());
+        return dt;
     }
 }
 
