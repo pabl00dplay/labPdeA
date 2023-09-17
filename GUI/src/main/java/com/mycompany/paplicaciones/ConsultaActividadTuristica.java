@@ -187,6 +187,11 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
 
         jComboBoxPaquetes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxPaquetes.setEnabled(false);
+        jComboBoxPaquetes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxPaquetesActionPerformed(evt);
+            }
+        });
         add(jComboBoxPaquetes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 270, -1));
 
         getAccessibleContext().setAccessibleDescription("");
@@ -264,7 +269,12 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
 
     private void jComboBoxSalidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSalidasActionPerformed
         // TODO add your handling code here:
+        new DatosSal((String) jComboBoxSalidas.getSelectedItem()).setVisible(true);
     }//GEN-LAST:event_jComboBoxSalidasActionPerformed
+
+    private void jComboBoxPaquetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPaquetesActionPerformed
+       new DatosPaq((String) jComboBoxPaquetes.getSelectedItem()).setVisible(true);
+    }//GEN-LAST:event_jComboBoxPaquetesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
