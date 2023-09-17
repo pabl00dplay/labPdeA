@@ -44,7 +44,7 @@ public class UsuarioJpaController implements Serializable {
             em.getTransaction().begin();
             List<Inscripcion> attachedIns = new ArrayList<Inscripcion>();
             for (Inscripcion insInscripcionToAttach : usuario.getIns()) {
-                insInscripcionToAttach = em.getReference(insInscripcionToAttach.getClass(), insInscripcionToAttach.getFecha());
+                insInscripcionToAttach = em.getReference(insInscripcionToAttach.getClass(), insInscripcionToAttach.getId());
                 attachedIns.add(insInscripcionToAttach);
             }
             usuario.setIns(attachedIns);
@@ -81,7 +81,7 @@ public class UsuarioJpaController implements Serializable {
             List<Inscripcion> insNew = usuario.getIns();
             List<Inscripcion> attachedInsNew = new ArrayList<Inscripcion>();
             for (Inscripcion insNewInscripcionToAttach : insNew) {
-                insNewInscripcionToAttach = em.getReference(insNewInscripcionToAttach.getClass(), insNewInscripcionToAttach.getFecha());
+                insNewInscripcionToAttach = em.getReference(insNewInscripcionToAttach.getClass(), insNewInscripcionToAttach.getId());
                 attachedInsNew.add(insNewInscripcionToAttach);
             }
             insNew = attachedInsNew;

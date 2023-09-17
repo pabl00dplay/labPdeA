@@ -5,14 +5,16 @@
 package main.java.com.mycompany.paplicaciones.persistencia;
 
 import java.io.Serializable;
+import javax.persistence.Query;
+import javax.persistence.EntityNotFoundException;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import main.java.logica.Actividad;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Query;
-import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 import main.java.com.mycompany.paplicaciones.persistencia.exceptions.NonexistentEntityException;
 import main.java.com.mycompany.paplicaciones.persistencia.exceptions.PreexistingEntityException;
 import main.java.logica.Paquete;
@@ -25,6 +27,7 @@ public class PaqueteJpaController implements Serializable {
 
     public PaqueteJpaController() {
         this.emf = Persistence.createEntityManagerFactory("PAplicaciones");
+    
     }
     private EntityManagerFactory emf = null;
 
@@ -33,11 +36,24 @@ public class PaqueteJpaController implements Serializable {
     }
 
     public void create(Paquete paquete) throws PreexistingEntityException, Exception {
+        if (paquete.getActs() == null) {
+            paquete.setActs(new ArrayList<Actividad>());
+        }
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
+            List<Actividad> attachedActs = new ArrayList<Actividad>();
+            for (Actividad actsActividadToAttach : paquete.getActs()) {
+                actsActividadToAttach = em.getReference(actsActividadToAttach.getClass(), actsActividadToAttach.getNom());
+                attachedActs.add(actsActividadToAttach);
+            }
+            paquete.setActs(attachedActs);
             em.persist(paquete);
+            for (Actividad actsActividad : paquete.getActs()) {
+                actsActividad.getPaquetes().add(paquete);
+                actsActividad = em.merge(actsActividad);
+            }
             em.getTransaction().commit();
         } catch (Exception ex) {
             if (findPaquete(paquete.getNom()) != null) {
@@ -56,7 +72,29 @@ public class PaqueteJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
+            Paquete persistentPaquete = em.find(Paquete.class, paquete.getNom());
+            List<Actividad> actsOld = persistentPaquete.getActs();
+            List<Actividad> actsNew = paquete.getActs();
+            List<Actividad> attachedActsNew = new ArrayList<Actividad>();
+            for (Actividad actsNewActividadToAttach : actsNew) {
+                actsNewActividadToAttach = em.getReference(actsNewActividadToAttach.getClass(), actsNewActividadToAttach.getNom());
+                attachedActsNew.add(actsNewActividadToAttach);
+            }
+            actsNew = attachedActsNew;
+            paquete.setActs(actsNew);
             paquete = em.merge(paquete);
+            for (Actividad actsOldActividad : actsOld) {
+                if (!actsNew.contains(actsOldActividad)) {
+                    actsOldActividad.getPaquetes().remove(paquete);
+                    actsOldActividad = em.merge(actsOldActividad);
+                }
+            }
+            for (Actividad actsNewActividad : actsNew) {
+                if (!actsOld.contains(actsNewActividad)) {
+                    actsNewActividad.getPaquetes().add(paquete);
+                    actsNewActividad = em.merge(actsNewActividad);
+                }
+            }
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
@@ -85,6 +123,11 @@ public class PaqueteJpaController implements Serializable {
                 paquete.getNom();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The paquete with id " + id + " no longer exists.", enfe);
+            }
+            List<Actividad> acts = paquete.getActs();
+            for (Actividad actsActividad : acts) {
+                actsActividad.getPaquetes().remove(paquete);
+                actsActividad = em.merge(actsActividad);
             }
             em.remove(paquete);
             em.getTransaction().commit();

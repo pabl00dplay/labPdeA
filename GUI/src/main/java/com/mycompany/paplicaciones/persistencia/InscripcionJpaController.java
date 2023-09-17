@@ -5,7 +5,6 @@
 package main.java.com.mycompany.paplicaciones.persistencia;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,7 +14,6 @@ import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import main.java.com.mycompany.paplicaciones.persistencia.exceptions.NonexistentEntityException;
-import main.java.com.mycompany.paplicaciones.persistencia.exceptions.PreexistingEntityException;
 import main.java.logica.Inscripcion;
 import main.java.logica.Usuario;
 
@@ -27,6 +25,7 @@ public class InscripcionJpaController implements Serializable {
 
     public InscripcionJpaController() {
         this.emf = Persistence.createEntityManagerFactory("PAplicaciones");
+    
     }
     private EntityManagerFactory emf = null;
 
@@ -34,7 +33,7 @@ public class InscripcionJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(Inscripcion inscripcion) throws PreexistingEntityException, Exception {
+    public void create(Inscripcion inscripcion) {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -50,11 +49,6 @@ public class InscripcionJpaController implements Serializable {
                 tur = em.merge(tur);
             }
             em.getTransaction().commit();
-        } catch (Exception ex) {
-            if (findInscripcion(inscripcion.getFecha()) != null) {
-                throw new PreexistingEntityException("Inscripcion " + inscripcion + " already exists.", ex);
-            }
-            throw ex;
         } finally {
             if (em != null) {
                 em.close();
@@ -67,7 +61,7 @@ public class InscripcionJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Inscripcion persistentInscripcion = em.find(Inscripcion.class, inscripcion.getFecha());
+            Inscripcion persistentInscripcion = em.find(Inscripcion.class, inscripcion.getId());
             Usuario turOld = persistentInscripcion.getTur();
             Usuario turNew = inscripcion.getTur();
             if (turNew != null) {
@@ -87,7 +81,7 @@ public class InscripcionJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                Date id = inscripcion.getFecha();
+                Integer id = inscripcion.getId();
                 if (findInscripcion(id) == null) {
                     throw new NonexistentEntityException("The inscripcion with id " + id + " no longer exists.");
                 }
@@ -100,7 +94,7 @@ public class InscripcionJpaController implements Serializable {
         }
     }
 
-    public void destroy(Date id) throws NonexistentEntityException {
+    public void destroy(Integer id) throws NonexistentEntityException {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -108,7 +102,7 @@ public class InscripcionJpaController implements Serializable {
             Inscripcion inscripcion;
             try {
                 inscripcion = em.getReference(Inscripcion.class, id);
-                inscripcion.getFecha();
+                inscripcion.getId();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The inscripcion with id " + id + " no longer exists.", enfe);
             }
@@ -150,7 +144,7 @@ public class InscripcionJpaController implements Serializable {
         }
     }
 
-    public Inscripcion findInscripcion(Date id) {
+    public Inscripcion findInscripcion(Integer id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Inscripcion.class, id);

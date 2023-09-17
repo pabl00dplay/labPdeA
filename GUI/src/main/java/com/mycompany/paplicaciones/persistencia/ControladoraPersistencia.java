@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import main.java.logica.Actividad;
 import main.java.logica.Departamento;
 import main.java.logica.Usuario;
@@ -87,10 +88,17 @@ public class ControladoraPersistencia {
         }
     }
     
-    public void altaActividadTuristica(Actividad act){
+    public void altaActividadTuristica(Actividad act, String nom){
         try{
+            Usuario u = ujpa.findUsuario(nom);
+            if(u==null)
+            { 
+            JOptionPane.showMessageDialog(null, "ESNULLELUSUARIO");
+            }
+            u.setActividad(act);
             ajpa.create(act);
             djpa.edit(act.getDep());
+            ujpa.edit(u);
         } catch(Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -120,7 +128,6 @@ public class ControladoraPersistencia {
         return retorno;
     }
     public Departamento getDepartamento(String nombreDepartamento){
-    
         return djpa.findDepartamento(nombreDepartamento);
     }
     public ArrayList<DTActividad>listarActividadesDepartamento(String nombreDepartamento){
@@ -292,8 +299,19 @@ public class ControladoraPersistencia {
 
     public DTUsuario getUsuario(String nickname) {
         Usuario u = ujpa.findUsuario(nickname);
-        DTUsuario dt = new DTUsuario(u.getNick(),u.getNom(),u.getApe(),u.getMail(),u.getFnac(),u.getNac());
-        return dt;
+        if(u != null){
+            
+            if(u.getEsTurista()==1){
+                DTUsuario dt = new DTUsuario(u.getNick(),u.getNom(),u.getApe(),u.getMail(),u.getFnac(),u.getNac());
+                return dt;
+            }
+            else if(u.getEsTurista()==0){
+                DTUsuario dt = new DTUsuario(u.getNick(),u.getNom(),u.getApe(),u.getMail(),u.getFnac(),u.getWeb(),u.getDescripcion());
+                return dt;
+            }
+        }
+        JOptionPane.showMessageDialog(null, "ESNULL");
+        return null;
     }
 }
 

@@ -66,7 +66,7 @@ public class Usuario implements Serializable{
         this.descripcion = descripcion;
         this.web = web;
         this.esTurista=0;
-        //actividades=new ArrayList<Actividad>();
+        this.actividades=new ArrayList<Actividad>();
     }
      
     public Usuario(DTUsuario dt,Integer esTurista){   
@@ -168,8 +168,8 @@ public class Usuario implements Serializable{
         this.web = web;
     }
 
-    public void setActividades(ArrayList<Actividad> actividades) {
-        this.actividades = actividades;
+    public void setActividad(Actividad actividad) {
+        this.actividades.add(actividad);
     }
 
     public void setNac(String nac) {

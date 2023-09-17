@@ -11,10 +11,6 @@ import java.lang.String;
 import java.util.*;
 import javax.persistence.*;
 
-/**
- *
- * @author francisco
- */
 @Entity
 public class Paquete implements Serializable {
     @Id

@@ -272,9 +272,6 @@ public class Laboratorio1 extends javax.swing.JFrame {
         }
         return instance;
     }
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -300,6 +297,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
+        ControladoraPersistencia contpersis=new ControladoraPersistencia(); 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -307,7 +305,6 @@ public class Laboratorio1 extends javax.swing.JFrame {
                 lab.setVisible(true);
             }
         });
-        ControladoraPersistencia contpersis=new ControladoraPersistencia(); 
     };
     
    

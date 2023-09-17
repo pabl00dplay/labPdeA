@@ -5,8 +5,6 @@ package main.java.logica;
 import DataTypes.*;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
 
 /**
  *
@@ -17,7 +15,7 @@ public interface IController {
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
     
-    public abstract void altaActividadTuristica(DTActividad da);
+    public abstract void altaActividadTuristica(DTActividad da, String nom);
     public abstract void altaTurista(DTUsuario dt);
     public abstract void altaProveedor(DTUsuario dp);
     public abstract boolean nickExiste(String nombre);

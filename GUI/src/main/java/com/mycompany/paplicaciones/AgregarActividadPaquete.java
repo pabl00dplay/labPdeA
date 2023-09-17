@@ -31,16 +31,7 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         }
       cmbPaq.setModel(modelPaquetes);
       
-      
-      
-        ArrayList<DTActividad> listaActividades = I.listarActividadesFueraPaq((String)cmbPaq.getSelectedItem(), (String)cmbDepto.getSelectedItem());
-        DefaultComboBoxModel modelActividades = new DefaultComboBoxModel();
-        for(int i=0;i<listaActividades.size();i++){
-            
-                modelActividades.addElement(listaActividades.get(i).getNombre());
-            
-        }
-      cmbAct.setModel(modelActividades);
+        
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -89,7 +80,18 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbPaqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPaqActionPerformed
-        // TODO add your handling code here:
+        
+        Fabrica fab = Fabrica.getInstance();
+        IController I = fab.getIController();
+        
+        ArrayList<DTActividad> listaActividades = I.listarActividadesFueraPaq((String)cmbPaq.getSelectedItem(), (String)cmbDepto.getSelectedItem());
+        DefaultComboBoxModel modelActividades = new DefaultComboBoxModel();
+        for(int i=0;i<listaActividades.size();i++){
+            
+                modelActividades.addElement(listaActividades.get(i).getNombre());
+            
+        }
+      cmbAct.setModel(modelActividades);
     }//GEN-LAST:event_cmbPaqActionPerformed
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
@@ -97,9 +99,9 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
         if((String)cmbPaq.getSelectedItem()==null ||(String)cmbAct.getSelectedItem()==null){
+            
         }
         else{
-            
          I.agregarActPaq((String)cmbPaq.getSelectedItem(),(String)cmbAct.getSelectedItem());
         }
     }//GEN-LAST:event_btnOkActionPerformed

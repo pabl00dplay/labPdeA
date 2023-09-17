@@ -24,8 +24,17 @@ public class ConsultaPaquete extends javax.swing.JPanel {
     public ConsultaPaquete() {
         initComponents();
         
-
-        btnDAct.setText("Datos Actividad");
+        Fabrica fab = Fabrica.getInstance();
+        IController I = fab.getIController();
+        ArrayList<DTPaquete> listaPaquetes= I.listarPaquetes();
+        DefaultComboBoxModel modelPaquetes = new DefaultComboBoxModel();
+        
+        for(int i=0;i<listaPaquetes.size();i++){
+            
+                modelPaquetes.addElement(listaPaquetes.get(i).getNom());
+            
+        }
+        cmbPaq.setModel(modelPaquetes);
     }
 
     /**
@@ -179,35 +188,28 @@ public class ConsultaPaquete extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDActActionPerformed
-        // TODO add your handling code here:
-        String nom =(String)cmbAct.getSelectedItem();
-        if(nom!=" "){
-            new DatosAct(nom).setVisible(true);
-        }
+       
+        
     }//GEN-LAST:event_btnDActActionPerformed
 
     private void cmbPaqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPaqActionPerformed
         
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
-        cmbAct.removeAllItems();
-        cmbAct.addItem(" ");
-        for(DTActividad dtP:I.listarActividadesPaquete(cmbPaq.getSelectedItem().toString())){
-            cmbAct.addItem(dtP.getNombre());
+        ArrayList<DTActividad> listaActs= I.listarActividadesPaquete((String)cmbPaq.getSelectedItem());
+        DefaultComboBoxModel modelActs = new DefaultComboBoxModel();
+        
+        for(int i=0;i<listaActs.size();i++){
+            
+                modelActs.addElement(listaActs.get(i).getNombre());
+            
         }
-        DTPaquete dtp=control.listarDatosPaquete((String) cmbPaq.getSelectedItem());
-        txtDesc.setText(dtp.getDesc());
-        txtVal.setValue(dtp.getVal());
-        txtDescu.setValue(dtp.getDescu());
-        txtFecha.setValue(dtp.getFalta());
+        cmbAct.setModel(modelActs);
     }//GEN-LAST:event_cmbPaqActionPerformed
 
     private void btnActuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActuActionPerformed
-//        cmbPaq.removeAllItems();
-//        cmbPaq.addItem(" ");
-//        for(String s:control.listarPaquetes()){
-//            cmbPaq.addItem(s);
-//        }
+        
+        
     }//GEN-LAST:event_btnActuActionPerformed
                                     
 

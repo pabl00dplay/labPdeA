@@ -2,22 +2,18 @@ package main.java.logica;
 
 
 import java.io.Serializable;
-import java.time.*;
 import java.util.Date;
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 @Entity
 public class Inscripcion implements Serializable {
-   @Temporal(TemporalType.DATE)
+    
     @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    private Integer id;
+    @Temporal(TemporalType.DATE)
     private Date fecha;
-    @Id
-    private int cant,costo;
-   @ManyToOne
+    private Integer cant,costo;
+    @ManyToOne
     private Usuario tur;
     @ManyToOne
     private Salida sal;
@@ -25,51 +21,57 @@ public class Inscripcion implements Serializable {
     public Inscripcion() {
     }
 
-    public Inscripcion(Date fecha, int cant, int costo) {
-        this.fecha = fecha;
-        this.cant = cant;
-        this.costo = costo;
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Date getFecha() {
         return fecha;
     }
 
-    public int getCant() {
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Integer getCant() {
         return cant;
     }
 
-    public int getCosto() {
+    public void setCant(Integer cant) {
+        this.cant = cant;
+    }
+
+    public Integer getCosto() {
         return costo;
+    }
+
+    public void setCosto(Integer costo) {
+        this.costo = costo;
     }
 
     public Usuario getTur() {
         return tur;
     }
 
-    public Salida getSal() {
-        return sal;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public void setCant(int cant) {
-        this.cant = cant;
-    }
-
-    public void setCosto(int costo) {
-        this.costo = costo;
-    }
-
     public void setTur(Usuario tur) {
         this.tur = tur;
+    }
+
+    public Salida getSal() {
+        return sal;
     }
 
     public void setSal(Salida sal) {
         this.sal = sal;
     }
 
-   
+    public Inscripcion(Date fecha, Integer cant, Integer costo) {
+        this.fecha = fecha;
+        this.cant = cant;
+        this.costo = costo;
+    }
 }

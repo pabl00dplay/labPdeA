@@ -3,6 +3,7 @@ package main.java.com.mycompany.paplicaciones;
 
 import DataTypes.DTActividad;
 import DataTypes.DTDepartamento;
+import DataTypes.DTUsuario;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
@@ -27,7 +28,7 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
             
             if(listaProveedores.get(i).getEsTurista()== 0){
                 
-                modelProveedores.addElement(listaProveedores.get(i).getNom());
+                modelProveedores.addElement(listaProveedores.get(i).getNick());
             }
         }
     jComboBoxProveedor.setModel(modelProveedores);
@@ -189,8 +190,10 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Existe una actividad con ese nombre, modifíquelo para poder finalizar su ingreso");
         }
         else{
+            
             DTActividad dt = new DTActividad(nomActividad,descripcion,nomDepartamento,duracion,costo,nomCiudad,fAlta);
-            I.altaActividadTuristica(dt);
+            
+            I.altaActividadTuristica(dt,nomProveedor);
             jTextFieldNombreActividad.setText(null);
             jTextFieldCiudad.setText(null);
             jTextFieldDescripcion.setText(null);

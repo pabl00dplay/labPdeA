@@ -32,8 +32,6 @@ public class Actividad implements Serializable {
     private List<Salida> salidas;
     @ManyToMany
     private List<Paquete>paquetes;
-    @ManyToOne
-    private Usuario u;
     public Actividad(){
     
     }

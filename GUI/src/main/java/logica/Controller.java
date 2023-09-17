@@ -13,11 +13,11 @@ public class Controller implements IController {
     ControladoraPersistencia contpersis= new  ControladoraPersistencia();
     
     //AltaActividad
-    public void altaActividadTuristica(DTActividad da){
+    public void altaActividadTuristica(DTActividad da, String nom){
         Departamento departamento = contpersis.getDepartamento(da.getDepartamento());
         Actividad acttividad = new Actividad(da.getNombre(),da.getDescripcion(),departamento,da.getCiudad(),da.getDuracion(),da.getCostoXturista(),da.getfAlta());
         departamento.setActividades(acttividad);
-        contpersis.altaActividadTuristica(acttividad);
+        contpersis.altaActividadTuristica(acttividad,nom);
     }
     //AltaSalida
     public void altaSalida(DTSalida dt){
@@ -114,6 +114,7 @@ public class Controller implements IController {
         
         public DTPaquete listarDatosPaquete(String nomPaq){
             Paquete p=contpersis.getPaquete(nomPaq);
+            
             return new DTPaquete(p.getNom(),p.getDesc(),p.getDescu(),p.getVal(),p.getFAlta());
         }
         
@@ -121,20 +122,21 @@ public class Controller implements IController {
         public ArrayList<DTActividad> listarActividadesFueraPaq(String nomPaq, String nomDpto){
             ArrayList<DTActividad> lista = listarActividadesPaquete(nomPaq);
             ArrayList<DTActividad> llave = new ArrayList<DTActividad>();
-            List<Actividad> aux=contpersis.listarActividades();
-            Iterator<Actividad> itr=aux.iterator();
-            boolean existe;
-            while(itr.hasNext()){
-                existe=false;
-                for(DTActividad act:lista){
-                    if(act.getNombre().equals(itr.next().getNom())){
-                        existe=true;
+            List<Actividad> aux =contpersis.listarActividades();
+            
+                boolean existe;
+                for(Actividad a:aux){
+                    existe=false;
+                    for(DTActividad act:lista){
+                        if(act.getNombre().equals(a.getNom())){
+                            existe=true;
+                        }
+                    }
+                    if((!existe)&&(a.getDep().getNom().equals(nomDpto))){
+                        llave.add(a.getData());
                     }
                 }
-                if((!existe)&&(itr.next().getDep().getNom().equals(nomDpto))){
-                    llave.add(itr.next().getData());
-                }
-            }
+            
             return llave;
         }
         
