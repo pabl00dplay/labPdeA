@@ -74,9 +74,13 @@ public class Laboratorio1 extends javax.swing.JFrame {
         jPanelAltaDepartamento = new javax.swing.JPanel();
         jPanelAltaActividadTuristica = new javax.swing.JPanel();
         jPanelConsultaActividadTuristica = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         jTabbedPane1.setMaximumSize(new java.awt.Dimension(800, 600));
@@ -249,23 +253,33 @@ public class Laboratorio1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Consulta de Actividad Turistica", jPanelConsultaActividadTuristica);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("CARGAR DATOS DE PRUEBA");
+        jLabel12.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 410, 220));
+
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 450, 260));
+
+        jTabbedPane1.addTab("Cargar Datos de prueba", jPanel1);
+
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 868, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Fabrica fab = Fabrica.getInstance();
+        IController I = fab.getIController();
+        I.inicializar();
+    }//GEN-LAST:event_jButton1ActionPerformed
      public static Laboratorio1 getInstance() {
         if (instance == null) {
             instance = new Laboratorio1();
@@ -310,7 +324,10 @@ public class Laboratorio1 extends javax.swing.JFrame {
    
     private static Laboratorio1 instance;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelAgregarActTuríPaquete;
     private javax.swing.JPanel jPanelAltaActividadTuristica;
     private javax.swing.JPanel jPanelAltaDepartamento;

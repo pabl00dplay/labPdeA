@@ -7,7 +7,7 @@ import DataTypes.DTPaquete;
 import DataTypes.DTSalida;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
-import main.java.logica.Departamento;
+import javax.swing.JOptionPane;
 import main.java.logica.Fabrica;
 import main.java.logica.IController;
 
@@ -216,6 +216,8 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         ArrayList<DTActividad> listaActividades = I.listarActividadesDepartamento((String) jComboBoxDepartamento.getSelectedItem());
         DefaultComboBoxModel modelActividades = new DefaultComboBoxModel();
         for(int i=0;i<listaActividades.size();i++){
+            
+            JOptionPane.showMessageDialog(null, listaActividades.get(i).getNombre());
             
                 modelActividades.addElement(listaActividades.get(i).getNombre());
             

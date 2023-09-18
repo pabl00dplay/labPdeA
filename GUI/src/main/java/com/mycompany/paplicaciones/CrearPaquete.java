@@ -39,31 +39,42 @@ public class CrearPaquete extends javax.swing.JPanel {
 
         jLabel1.setText("Nombre");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
-        add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 220, -1));
+        add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 220, -1));
 
         jLabel2.setText("Descripcion");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
-        add(txtDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 220, 60));
+        add(txtDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 220, 60));
 
         jLabel3.setText("Descuento");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         jLabel4.setText("%");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, -1, -1));
 
         jLabel5.setText("Validez");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, -1, -1));
 
         jLabel6.setText("dias");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
 
         txtDescu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDescuActionPerformed(evt);
             }
         });
-        add(txtDescu, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 30, -1));
-        add(txtVali, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 30, -1));
+        txtDescu.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDescuKeyPressed(evt);
+            }
+        });
+        add(txtDescu, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 30, -1));
+
+        txtVali.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtValiKeyPressed(evt);
+            }
+        });
+        add(txtVali, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 30, -1));
 
         jLabel11.setText("Fecha de Alta");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
@@ -107,9 +118,11 @@ public class CrearPaquete extends javax.swing.JPanel {
             DTPaquete dt = new DTPaquete(nom, desc, descu, val, fAlta);
             I.AltaPaquete(dt);
             
+            txtNom.setText(null);
             txtDesc.setText(null);
             txtDescu.setText(null);
             txtVali.setText(null);
+            jDateChooser1.setDate(null);
         } else {
             JFrame f = new JFrame();
             JOptionPane.showMessageDialog(f, "Un paquete con ese Nombre ya existe, por favor ingrese otro.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -119,6 +132,24 @@ public class CrearPaquete extends javax.swing.JPanel {
     private void jDateChooser1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDateChooser1MouseClicked
         
     }//GEN-LAST:event_jDateChooser1MouseClicked
+
+    private void txtDescuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescuKeyPressed
+    char c = evt.getKeyChar();
+        if(Character.isLetter(c)){
+            txtDescu.setEditable(false);
+        }else{
+            txtDescu.setEditable(true);
+        }    // TODO add your handling code here:
+    }//GEN-LAST:event_txtDescuKeyPressed
+
+    private void txtValiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtValiKeyPressed
+        char c = evt.getKeyChar();
+        if(Character.isLetter(c)){
+            txtVali.setEditable(false);
+        }else{
+            txtVali.setEditable(true);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtValiKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

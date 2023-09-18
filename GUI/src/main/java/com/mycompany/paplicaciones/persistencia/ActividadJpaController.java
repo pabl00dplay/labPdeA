@@ -27,7 +27,6 @@ public class ActividadJpaController implements Serializable {
 
     public ActividadJpaController() {
         this.emf = Persistence.createEntityManagerFactory("PAplicaciones");
-    
     }
     private EntityManagerFactory emf = null;
 

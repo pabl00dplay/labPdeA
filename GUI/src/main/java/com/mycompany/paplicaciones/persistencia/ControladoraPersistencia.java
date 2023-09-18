@@ -313,5 +313,38 @@ public class ControladoraPersistencia {
         JOptionPane.showMessageDialog(null, "ESNULL");
         return null;
     }
+    public void editarSalida (Salida s){
+        try {
+            sjpa.edit(s); 
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }    
+    }
+
+
+    public Actividad retornoActividadSelec(String nombre){
+            List<Actividad> act=ajpa.findActividadEntities();
+            Actividad actSel = null;
+            Iterator<Actividad> itr = act.iterator();
+            for(Actividad a:act) {
+                if(a.getNom().equals(nombre)){
+                    actSel = a;
+                }
+            }
+        return actSel;      
+    }
+    public boolean turiExisteEnInscripcion(String nic, String nombreSal){
+            List<Inscripcion> in=ijpa.findInscripcionEntities();
+            boolean existe=false; //si no existe false
+            Iterator<Inscripcion> itr = in.iterator();
+            for(Inscripcion i:in) {
+                Salida s = i.getSal();
+                Usuario u = i.getTur();
+               if(((s.getNom()).equals(nombreSal)) && ((u.getNick()).equals(nic))){
+                   existe=true;//si ya esta registrado true
+               }
+            }
+            return existe;      
+        }
 }
 

@@ -58,7 +58,6 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         jTextFieldCiudad = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jButtonRegistrarActividad = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jComboBoxProveedor = new javax.swing.JComboBox<>();
         jComboBoxDepartamento = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
@@ -90,20 +89,33 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
 
         jLabel11.setText("Fecha de Alta");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 429, -1, -1));
-
-        jTextFieldNombreActividad.setText("jTextField3");
         add(jTextFieldNombreActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 112, 174, -1));
-
-        jTextFieldDescripcion.setText("jTextField4");
         add(jTextFieldDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 158, 174, 115));
 
-        jTextFieldDuracion.setText("jTextField5");
+        jTextFieldDuracion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDuracionActionPerformed(evt);
+            }
+        });
+        jTextFieldDuracion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldDuracionKeyPressed(evt);
+            }
+        });
         add(jTextFieldDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 285, 171, -1));
 
-        jTextFieldCosto.setText("jTextField6");
+        jTextFieldCosto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCostoActionPerformed(evt);
+            }
+        });
+        jTextFieldCosto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldCostoKeyPressed(evt);
+            }
+        });
         add(jTextFieldCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 331, 171, -1));
 
-        jTextFieldCiudad.setText("jTextField7");
         jTextFieldCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldCiudadActionPerformed(evt);
@@ -124,9 +136,6 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
             }
         });
         add(jButtonRegistrarActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 509, -1, -1));
-
-        jButton2.setText("Cancelar");
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(536, 509, -1, -1));
 
         jComboBoxProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxProveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +165,6 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         String nomProveedor,nomDepartamento,nomActividad,nomCiudad,descripcion;
         Date fAlta;
         Integer duracion,costo;
-        int D,M,A;
         nomProveedor=(String)jComboBoxProveedor.getSelectedItem();
         nomDepartamento=(String)jComboBoxDepartamento.getSelectedItem();
         nomActividad=jTextFieldNombreActividad.getText();
@@ -175,6 +183,7 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
             DTActividad dt = new DTActividad(nomActividad,descripcion,nomDepartamento,duracion,costo,nomCiudad,fAlta);
             
             I.altaActividadTuristica(dt,nomProveedor);
+            jDateChooser1.setDate(null);
             jTextFieldNombreActividad.setText(null);
             jTextFieldCiudad.setText(null);
             jTextFieldDescripcion.setText(null);
@@ -198,10 +207,35 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
     private void jTextFieldCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCiudadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCiudadActionPerformed
+
+    private void jTextFieldDuracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDuracionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDuracionActionPerformed
+
+    private void jTextFieldCostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCostoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCostoActionPerformed
+
+    private void jTextFieldDuracionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldDuracionKeyPressed
+        char c = evt.getKeyChar();
+        if(Character.isLetter(c)){
+            jTextFieldDuracion.setEditable(false);
+        }else{
+            jTextFieldDuracion.setEditable(true);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDuracionKeyPressed
+
+    private void jTextFieldCostoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCostoKeyPressed
+        char c = evt.getKeyChar();
+        if(Character.isLetter(c)){
+            jTextFieldCosto.setEditable(false);
+        }else{
+            jTextFieldCosto.setEditable(true);
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCostoKeyPressed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonRegistrarActividad;
     private javax.swing.JComboBox<String> jComboBoxDepartamento;
     private javax.swing.JComboBox<String> jComboBoxProveedor;

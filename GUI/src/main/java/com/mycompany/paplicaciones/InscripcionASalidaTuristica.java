@@ -4,9 +4,11 @@ package main.java.com.mycompany.paplicaciones;
 import DataTypes.DTActividad;
 import DataTypes.DTDepartamento;
 import DataTypes.DTSalida;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import main.java.logica.*;
 
 public class InscripcionASalidaTuristica extends javax.swing.JPanel {
@@ -15,6 +17,17 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         initComponents();
         Fabrica fabrica = Fabrica.getInstance();
         IController I=fabrica.getIController();
+        
+        cantsalidatexto.setVisible(false);
+        cantidadmostrar.setVisible(false);//
+        durmostrar.setVisible(false);//
+        durtexto.setVisible(false);
+        lugartexto.setVisible(false);//
+        lugmostrar.setVisible(false);
+        fechatexto.setVisible(false);
+        fechamostrar.setVisible(false);
+        horatexto.setVisible(false);
+        horamostrar.setVisible(false);
         
         ArrayList<DTDepartamento> listaDepartamentos = I.getDepartamentos();
         DefaultComboBoxModel modelDepartamentos = new DefaultComboBoxModel();
@@ -47,7 +60,6 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         cantvar = new javax.swing.JTextField();
-        costovar = new javax.swing.JTextField();
         aceptaboton = new javax.swing.JButton();
         deptosbox = new javax.swing.JComboBox<>();
         actbox = new javax.swing.JComboBox<>();
@@ -55,7 +67,20 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         salidasbox = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         turisbox = new javax.swing.JComboBox<>();
+        costotexto = new javax.swing.JLabel();
+        cantsalidatexto = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        cantidadmostrar = new javax.swing.JLabel();
+        durtexto = new javax.swing.JLabel();
+        durmostrar = new javax.swing.JLabel();
+        lugartexto = new javax.swing.JLabel();
+        lugmostrar = new javax.swing.JLabel();
+        fechatexto = new javax.swing.JLabel();
+        fechamostrar = new javax.swing.JLabel();
+        horatexto = new javax.swing.JLabel();
+        horamostrar = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jButton1 = new javax.swing.JButton();
 
         jLabel5.setText("jLabel5");
 
@@ -72,30 +97,35 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         add(deptotexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 119, -1, -1));
 
         actividadtexto.setText("Actividad");
-        add(actividadtexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 119, -1, -1));
+        add(actividadtexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, -1, -1));
 
         jLabel2.setText("Fecha");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 273, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, -1, -1));
 
         jLabel3.setText("Cant Tur");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 217, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
 
         jLabel4.setText("Costo");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 217, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 50, -1));
 
+        cantvar.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                cantvarInputMethodTextChanged(evt);
+            }
+        });
         cantvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cantvarActionPerformed(evt);
             }
         });
-        add(cantvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 211, 94, -1));
-
-        costovar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                costovarActionPerformed(evt);
+        cantvar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cantvarKeyTyped(evt);
             }
         });
-        add(costovar, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 211, 94, -1));
+        add(cantvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 94, -1));
 
         aceptaboton.setText("Aceptar");
         aceptaboton.addActionListener(new java.awt.event.ActionListener() {
@@ -117,45 +147,99 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
                 actboxActionPerformed(evt);
             }
         });
-        add(actbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 155, 122, -1));
+        add(actbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 122, -1));
 
         jLabel9.setText("Salida");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(281, 119, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
 
-        add(salidasbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 155, 122, -1));
+        salidasbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salidasboxActionPerformed(evt);
+            }
+        });
+        add(salidasbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 122, -1));
 
         jLabel10.setText("Turista");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 119, -1, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, -1, -1));
 
-        add(turisbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 155, 122, -1));
-        add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 210, -1));
+        add(turisbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 122, -1));
+
+        costotexto.setText(".........");
+        add(costotexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 50, 20));
+
+        cantsalidatexto.setText("Cantidad maxima de turistas:");
+        add(cantsalidatexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, -1));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, -1, -1));
+
+        cantidadmostrar.setText("cantidad");
+        add(cantidadmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, -1, -1));
+
+        durtexto.setText("Duración:");
+        add(durtexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, -1, -1));
+
+        durmostrar.setText("dur");
+        add(durmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, -1, -1));
+
+        lugartexto.setText("Lugar:");
+        add(lugartexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, -1, -1));
+
+        lugmostrar.setText("lug");
+        add(lugmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, -1, -1));
+
+        fechatexto.setText("Fecha:");
+        add(fechatexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, -1, -1));
+
+        fechamostrar.setText("fecha");
+        add(fechamostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, -1, -1));
+
+        horatexto.setText("Hora:");
+        add(horatexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, -1, -1));
+
+        horamostrar.setText("hora");
+        add(horamostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, -1, -1));
+        add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 180, -1));
+
+        jButton1.setText("Calcular Costo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cantvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantvarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cantvarActionPerformed
 
-    private void costovarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_costovarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_costovarActionPerformed
-
     private void aceptabotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptabotonActionPerformed
         // TODO add your handling code here:
-        int D,M,A,cant,costo;
+        int cant,costo;
         //String nombreSal = (String) salidasbox.getSelectedItem();
+        jButton1ActionPerformed(evt);
         String nick = (String) turisbox.getSelectedItem();
         String sal=(String) salidasbox.getSelectedItem();
         cant = Integer.parseInt(cantvar.getText().trim());
-        costo = Integer.parseInt(costovar.getText().trim());
-        Date fecha = jDateChooser1.getDate();   
+        costo = Integer.parseInt(costotexto.getText().trim());//costo calculado
+        Date fecha = jDateChooser1.getDate();
         Fabrica f=Fabrica.getInstance();
         IController cont=f.getIController();
-        cont.altaInscripcion(sal,fecha, cant, costo, nick);
-        
+        Salida s = cont.retornoSalidaSel(sal);
+        int cantMaxSal = s.getMaxTuristas();
+        if (cantMaxSal >= cant){//si hay mas lugares disponibles
+            if (!(cont.turiInscriptoSalida(nick, sal))){//si es false, se da el alta alta
+                
+                cont.altaInscripcion(sal,fecha, cant, costo, nick);
+                cantvar.setText(null);
+                costotexto.setText(null);
+            }else{
+                JOptionPane.showMessageDialog(null, "El Turista ya está inscripto en la salida.");
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "La cantidad de Turistas debe ser menor");
+        }
         cantvar.setText(null);
-        costovar.setText(null);
-
-        
+        jDateChooser1.setDate(null);
     }//GEN-LAST:event_aceptabotonActionPerformed
 
     private void actboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actboxActionPerformed
@@ -182,23 +266,80 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         actbox.setModel(modelActividades);
     }//GEN-LAST:event_deptosboxActionPerformed
 
+    private void cantvarInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_cantvarInputMethodTextChanged
+        //si cambia el numero de turistas inscriptos
+        
+    }//GEN-LAST:event_cantvarInputMethodTextChanged
+
+    private void salidasboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salidasboxActionPerformed
+        Fabrica f=Fabrica.getInstance();
+        IController cont=f.getIController();
+        Actividad actSel = cont.retornoActividadSelec((String) actbox.getSelectedItem());
+        Salida sSel = cont.retornoSalidaSel((String) salidasbox.getSelectedItem());
+        cantidadmostrar.setText((Integer.toString(sSel.getMaxTuristas())));
+        durmostrar.setText((Integer.toString(actSel.getDur())));
+        lugmostrar.setText((sSel.getLugat()));
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        fechamostrar.setText((String)(formato.format(sSel.getFecha())));
+        horatexto.setText(sSel.getHora());
+        
+        cantsalidatexto.setVisible(true);
+        cantidadmostrar.setVisible(true);//
+        durmostrar.setVisible(true);//
+        durtexto.setVisible(true);
+        lugartexto.setVisible(true);//
+        lugmostrar.setVisible(true);
+        fechatexto.setVisible(true);
+        fechamostrar.setVisible(true);
+        horatexto.setVisible(true);
+        horamostrar.setVisible(true);
+        
+    }//GEN-LAST:event_salidasboxActionPerformed
+
+    private void cantvarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantvarKeyTyped
+               // TODO add your handling code here:
+    }//GEN-LAST:event_cantvarKeyTyped
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Fabrica f=Fabrica.getInstance();
+        IController cont=f.getIController();
+        Actividad actSel = cont.retornoActividadSelec((String) actbox.getSelectedItem());
+        int costoActividad = actSel.getCosto();
+        Integer cantTur = Integer.parseInt(cantvar.getText().trim());
+        int costoCalculado = (costoActividad * cantTur);
+        costotexto.setText((Integer.toString(costoCalculado))); 
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptaboton;
     private javax.swing.JComboBox<String> actbox;
     private javax.swing.JLabel actividadtexto;
+    private javax.swing.JLabel cantidadmostrar;
+    private javax.swing.JLabel cantsalidatexto;
     private javax.swing.JTextField cantvar;
-    private javax.swing.JTextField costovar;
+    private javax.swing.JLabel costotexto;
     private javax.swing.JComboBox<String> deptosbox;
     private javax.swing.JLabel deptotexto;
+    private javax.swing.JLabel durmostrar;
+    private javax.swing.JLabel durtexto;
+    private javax.swing.JLabel fechamostrar;
+    private javax.swing.JLabel fechatexto;
+    private javax.swing.JLabel horamostrar;
+    private javax.swing.JLabel horatexto;
+    private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lugartexto;
+    private javax.swing.JLabel lugmostrar;
     private javax.swing.JComboBox<String> salidasbox;
     private javax.swing.JComboBox<String> turisbox;
     // End of variables declaration//GEN-END:variables

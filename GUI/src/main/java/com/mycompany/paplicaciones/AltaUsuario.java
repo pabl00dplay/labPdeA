@@ -34,6 +34,7 @@ public class AltaUsuario extends javax.swing.JPanel {
         jTextFieldnacionalidad.setVisible(false);
         jLabelnacionalidad.setVisible(false);
         jButtonEnviar.setVisible(false);
+        jDateChooser1.setVisible(false);
         
         
     }
@@ -225,6 +226,7 @@ public class AltaUsuario extends javax.swing.JPanel {
     private void cmbTuristaProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTuristaProveedorActionPerformed
         String opcion=(String)cmbTuristaProveedor.getSelectedItem();
         if(opcion.equals("Turista")){
+            jDateChooser1.setVisible(true);
             jLabelnickname.setVisible(true);
             jLabelAltaUsuario.setVisible(true);
             jLabelApellido.setVisible(true);
@@ -250,6 +252,7 @@ public class AltaUsuario extends javax.swing.JPanel {
             jButtonEnviar.setVisible(true);
         }
         if(opcion.equals("Proveedor")){
+            jDateChooser1.setVisible(true);
             jLabelnickname.setVisible(true);
             jLabelAltaUsuario.setVisible(true);
             jLabelApellido.setVisible(true);

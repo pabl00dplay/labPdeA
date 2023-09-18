@@ -21,7 +21,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     public ConsultaUsuario() {
         initComponents();
         jLabelnickname.setVisible(false);
-        jLabelAltaUsuario.setVisible(true);
         jLabelApellido.setVisible(false);
         jLabelCorreoElectronico.setVisible(false);
         jLabelDescripcionGeneral.setVisible(false);
@@ -78,6 +77,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelDescripcionGeneral = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         cmbTuristaProveedor = new javax.swing.JComboBox<>();
         jTextFieldnickname = new javax.swing.JTextField();
@@ -94,10 +94,8 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jLabelDescripcionGeneral = new javax.swing.JLabel();
         jLabellink = new javax.swing.JLabel();
         jTextFieldlink = new javax.swing.JTextField();
-        jPanelDescripcionGeneral = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArealDescripcionGeneral = new javax.swing.JTextArea();
-        jLabelAltaUsuario = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jListctividadesTuristicas = new javax.swing.JList<>();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -110,63 +108,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jScrollPane5 = new javax.swing.JScrollPane();
         jListusuarios = new javax.swing.JList<>();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
-
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        cmbTuristaProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Turista", "Proveedor" }));
-        cmbTuristaProveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbTuristaProveedorActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cmbTuristaProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 31, 121, -1));
-
-        jTextFieldnickname.setText(" ");
-        jTextFieldnickname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldnicknameActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextFieldnickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 85, 132, -1));
-
-        jLabelnickname.setText("Nickname");
-        jPanel1.add(jLabelnickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 91, 94, -1));
-
-        jLabelNombre.setText("Nombre");
-        jPanel1.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 125, 94, -1));
-
-        jTextFieldnombre.setText(" ");
-        jPanel1.add(jTextFieldnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 119, 132, -1));
-
-        jLabelApellido.setText("Apellido");
-        jPanel1.add(jLabelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 159, -1, -1));
-
-        jTextFieldapellido.setText(" ");
-        jPanel1.add(jTextFieldapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 153, 132, -1));
-
-        jLabelCorreoElectronico.setText("Correo Electrónico");
-        jPanel1.add(jLabelCorreoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 193, 117, -1));
-
-        jTextFieldcorreoElectrónico.setText(" ");
-        jPanel1.add(jTextFieldcorreoElectrónico, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 187, 132, -1));
-
-        jLabelFechNac.setText("Fecha de Nacimiento");
-        jPanel1.add(jLabelFechNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 233, -1, -1));
-
-        jLabelnacionalidad.setText("Nacionalidad");
-        jPanel1.add(jLabelnacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 273, 104, -1));
-
-        jTextFieldnacionalidad.setText(" ");
-        jPanel1.add(jTextFieldnacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 267, 165, -1));
-
-        jLabelDescripcionGeneral.setText("Descripción General");
-        jPanel1.add(jLabelDescripcionGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 322, 117, -1));
-
-        jLabellink.setText("Link a su sitio web");
-        jPanel1.add(jLabellink, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 411, 139, -1));
-
-        jTextFieldlink.setText(" ");
-        jPanel1.add(jTextFieldlink, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 405, 332, -1));
+        jLabelUSU = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanelDescripcionGeneralLayout = new javax.swing.GroupLayout(jPanelDescripcionGeneral);
         jPanelDescripcionGeneral.setLayout(jPanelDescripcionGeneralLayout);
@@ -179,17 +121,76 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanelDescripcionGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 6, -1, -1));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        cmbTuristaProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Turista", "Proveedor" }));
+        cmbTuristaProveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbTuristaProveedorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmbTuristaProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 121, -1));
+
+        jTextFieldnickname.setEditable(false);
+        jTextFieldnickname.setText(" ");
+        jTextFieldnickname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldnicknameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextFieldnickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 85, 140, -1));
+
+        jLabelnickname.setText("Nickname");
+        jPanel1.add(jLabelnickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 91, 94, -1));
+
+        jLabelNombre.setText("Nombre");
+        jPanel1.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 125, 94, -1));
+
+        jTextFieldnombre.setEditable(false);
+        jTextFieldnombre.setText(" ");
+        jPanel1.add(jTextFieldnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 119, 140, -1));
+
+        jLabelApellido.setText("Apellido");
+        jPanel1.add(jLabelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 159, -1, -1));
+
+        jTextFieldapellido.setEditable(false);
+        jTextFieldapellido.setText(" ");
+        jPanel1.add(jTextFieldapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 153, 140, -1));
+
+        jLabelCorreoElectronico.setText("Correo Electrónico");
+        jPanel1.add(jLabelCorreoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 193, 117, -1));
+
+        jTextFieldcorreoElectrónico.setEditable(false);
+        jTextFieldcorreoElectrónico.setText(" ");
+        jPanel1.add(jTextFieldcorreoElectrónico, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 187, 140, -1));
+
+        jLabelFechNac.setText("Fecha de Nacimiento");
+        jPanel1.add(jLabelFechNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 233, -1, -1));
+
+        jLabelnacionalidad.setText("Nacionalidad");
+        jPanel1.add(jLabelnacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 273, 104, -1));
+
+        jTextFieldnacionalidad.setEditable(false);
+        jTextFieldnacionalidad.setText(" ");
+        jPanel1.add(jTextFieldnacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 267, 140, -1));
+
+        jLabelDescripcionGeneral.setText("Descripción General");
+        jPanel1.add(jLabelDescripcionGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 322, 117, -1));
+
+        jLabellink.setText("Link a su sitio web");
+        jPanel1.add(jLabellink, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 411, 139, -1));
+
+        jTextFieldlink.setEditable(false);
+        jTextFieldlink.setText(" ");
+        jPanel1.add(jTextFieldlink, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 332, -1));
+
+        jTextArealDescripcionGeneral.setEditable(false);
         jTextArealDescripcionGeneral.setColumns(20);
         jTextArealDescripcionGeneral.setRows(5);
         jTextArealDescripcionGeneral.setBorder(null);
         jScrollPane1.setViewportView(jTextArealDescripcionGeneral);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 301, 325, 80));
-
-        jLabelAltaUsuario.setText("Alta de Usuario");
-        jPanel1.add(jLabelAltaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 6, 132, 73));
 
         jListctividadesTuristicas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -254,8 +255,14 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jScrollPane5.setViewportView(jListusuarios);
 
-        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 75, 160, 140));
-        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 210, -1));
+        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 160, 140));
+        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 190, -1));
+
+        jLabelUSU.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jLabelUSU.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelUSU.setText("CONSULTA USUARIO");
+        jLabelUSU.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel1.add(jLabelUSU, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -279,7 +286,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         String opcion=(String)cmbTuristaProveedor.getSelectedItem();
         if(opcion.equals("Turista")){
             jLabelnickname.setVisible(true);
-            jLabelAltaUsuario.setVisible(true);
             jLabelApellido.setVisible(true);
             jLabelCorreoElectronico.setVisible(true);
             jLabelDescripcionGeneral.setVisible(false);
@@ -319,7 +325,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         }
         if(opcion.equals("Proveedor")){
             jLabelnickname.setVisible(true);
-            jLabelAltaUsuario.setVisible(true);
             jLabelApellido.setVisible(true);
             jLabelCorreoElectronico.setVisible(true);
             jLabelDescripcionGeneral.setVisible(true);
@@ -360,7 +365,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         }
         if(opcion.equals("Usuario")){
             jLabelnickname.setVisible(false);
-            jLabelAltaUsuario.setVisible(true);
             jLabelApellido.setVisible(false);
             jLabelCorreoElectronico.setVisible(false);
             jLabelDescripcionGeneral.setVisible(false);
@@ -397,30 +401,33 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextFieldnicknameActionPerformed
 
     private void jListctividadesTuristicasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListctividadesTuristicasMouseClicked
-        AltaActividadTuristica contenido=new AltaActividadTuristica();
-        contenido.setSize(800,600);
-        contenido.setLocation(0,0);
-        JDialog contenedor=new JDialog();
-        contenedor.setSize(800,600);
-        contenedor.setLocation(0,0);
-        contenedor.add(contenido,BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();
-        contenedor.setVisible(true);
+        DatosAct da = new DatosAct((String)jListctividadesTuristicas.getSelectedValue());
+          da.setVisible(true);
+//        contenido.setSize(800,600);
+//        contenido.setLocation(0,0);
+//        JDialog contenedor=new JDialog();
+//        contenedor.setSize(800,600);
+//        contenedor.setLocation(0,0);
+//        contenedor.add(contenido,BorderLayout.CENTER);
+//        contenedor.revalidate();
+//        contenedor.repaint();
+//        contenedor.setVisible(true);
                 
     }//GEN-LAST:event_jListctividadesTuristicasMouseClicked
 
     private void jListSalidasinscriptasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSalidasinscriptasMouseClicked
-        AltaSalidaTuristica contenido=new AltaSalidaTuristica();
-        contenido.setSize(800,600);
-        contenido.setLocation(0,0);
-        JDialog contenedor=new JDialog();
-        contenedor.setSize(800,600);
-        contenedor.setLocation(0,0);
-        contenedor.add(contenido,BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();
-        contenedor.setVisible(true);
+          
+        DatosSal ds = new DatosSal((String)jListSalidasinscriptas.getSelectedValue());
+        ds.setVisible(true);
+//        contenido.setSize(800,600);
+//        contenido.setLocation(0,0);
+//        JDialog contenedor=new JDialog();
+//        contenedor.setSize(800,600);
+//        contenedor.setLocation(0,0);
+//        contenedor.add(contenido,BorderLayout.CENTER);
+//        contenedor.revalidate();
+//        contenedor.repaint();
+//        contenedor.setVisible(true);
     }//GEN-LAST:event_jListSalidasinscriptasMouseClicked
 
     private void jListusuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListusuariosMouseClicked
@@ -500,16 +507,16 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_jListusuariosMouseClicked
 
     private void jListSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSalidasMouseClicked
-        AltaSalidaTuristica contenido=new AltaSalidaTuristica();
-        contenido.setSize(800,600);
-        contenido.setLocation(0,0);
-        JDialog contenedor=new JDialog();
-        contenedor.setSize(800,600);
-        contenedor.setLocation(0,0);
-        contenedor.add(contenido,BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();
-        contenedor.setVisible(true);
+        DatosSal ds = new DatosSal((String)jListSalidas.getSelectedValue());
+        ds.setVisible(true);
+//        contenido.setLocation(0,0);
+//        JDialog contenedor=new JDialog();
+//        contenedor.setSize(800,600);
+//        contenedor.setLocation(0,0);
+//        contenedor.add(contenido,BorderLayout.CENTER);
+//        contenedor.revalidate();
+//        contenedor.repaint();
+//        contenedor.setVisible(true);
     }//GEN-LAST:event_jListSalidasMouseClicked
 
 
@@ -517,7 +524,6 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cmbTuristaProveedor;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabelActividadesTuristicas;
-    private javax.swing.JLabel jLabelAltaUsuario;
     private javax.swing.JLabel jLabelApellido;
     private javax.swing.JLabel jLabelCorreoElectronico;
     private javax.swing.JLabel jLabelDescripcionGeneral;
@@ -525,6 +531,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelSalidas;
     private javax.swing.JLabel jLabelSalidasinscriptas;
+    private javax.swing.JLabel jLabelUSU;
     private javax.swing.JLabel jLabellink;
     private javax.swing.JLabel jLabelnacionalidad;
     private javax.swing.JLabel jLabelnickname;

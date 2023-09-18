@@ -92,8 +92,31 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
             }
         });
         add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 171, 465, -1));
+
+        jTextFieldHora.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldHoraKeyPressed(evt);
+            }
+        });
         add(jTextFieldHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 263, 465, -1));
+
+        jTextFieldLugar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldLugarKeyPressed(evt);
+            }
+        });
         add(jTextFieldLugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 314, 465, -1));
+
+        jTextFieldCapacidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCapacidadActionPerformed(evt);
+            }
+        });
+        jTextFieldCapacidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldCapacidadKeyPressed(evt);
+            }
+        });
         add(jTextFieldCapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 360, 465, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
@@ -198,6 +221,32 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
     private void jComboBoxActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxActividadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxActividadActionPerformed
+
+    private void jTextFieldCapacidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCapacidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCapacidadActionPerformed
+
+    private void jTextFieldCapacidadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCapacidadKeyPressed
+        char c = evt.getKeyChar();
+        if(Character.isLetter(c)){
+            jTextFieldCapacidad.setEditable(false);
+        }else{
+            jTextFieldCapacidad.setEditable(true);
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCapacidadKeyPressed
+
+    private void jTextFieldLugarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldLugarKeyPressed
+                // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldLugarKeyPressed
+
+    private void jTextFieldHoraKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldHoraKeyPressed
+        char c = evt.getKeyChar();
+        if(Character.isLetter(c)){
+            jTextFieldHora.setEditable(false);
+        }else{
+            jTextFieldHora.setEditable(true);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldHoraKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

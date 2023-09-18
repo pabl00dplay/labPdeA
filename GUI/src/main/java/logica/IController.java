@@ -42,9 +42,13 @@ public interface IController {
     public abstract ArrayList<DTActividad> getActividades();
     public abstract ArrayList<DTPaquete> listarPaquetesActividad(String nombreActividad);
     public abstract ArrayList<DTActividad> listarActividadesPaquete(String nomPaq);
-    public void altaInscripcion (String nombre,Date fecha,int cant,int costo, String nick);
-    public Usuario retornoUsuarioSelec(String nick);
-    public void editarUsuario(Usuario u);
-    public ArrayList<Usuario> getTuristas();
-    
+    public abstract void altaInscripcion (String nombre,Date fecha,int cant,int costo, String nick);
+    public abstract Usuario retornoUsuarioSelec(String nick);
+    public abstract void editarUsuario(Usuario u);
+    public abstract ArrayList<Usuario> getTuristas();
+    public abstract Salida retornoSalidaSel(String nombre);
+    public abstract Actividad retornoActividadSelec(String nombre);
+    public abstract boolean turiInscriptoSalida(String nick, String nombreSal);
+    public abstract void inicializar();
+            
 }
