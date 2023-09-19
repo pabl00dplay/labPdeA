@@ -255,9 +255,9 @@ public class ConsultaSalidaTuristica extends javax.swing.JPanel {
         IController I = fab.getIController();
         ArrayList<DTActividad> listaActividades = I.listarActividadesDepartamento((String) jComboBoxDepartamento.getSelectedItem());
         DefaultComboBoxModel modelActividades = new DefaultComboBoxModel();
-        for(int i=0;i<listaActividades.size();i++){
+        for(DTActividad dt: listaActividades){
             
-            modelActividades.addElement(listaActividades.get(i).getNombre());
+            modelActividades.addElement(dt.getNombre());
             
         }
         jComboBoxActividad.setModel(modelActividades);

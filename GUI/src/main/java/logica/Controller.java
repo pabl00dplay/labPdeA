@@ -360,46 +360,47 @@ public Salida retornoSalidaSel(String nombre){
         try {
             d=contpersis.getDepartamento("Rocha");
             a=new Actividad("Degusta","Festival gastronómico de productos locales en Rocha",d,"Rocha",3,800,new SimpleDateFormat("yyyy-MM-dd").parse("2022-07-20"));
+            d.setActividades(a);
+            contpersis.altaActividadTuristica(a,"washington");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
-        d.setActividades(a);
-        contpersis.altaActividadTuristica(a,"washington");
         try {
             d=contpersis.getDepartamento("Rocha");
-            a=new Actividad("Teatro con Sabores","En el mes aniversario del Club Deportivo Unión de Rocha te invitamos a una merienda deliciosa.",contpersis.getDepartamento("Rocha"),"Rocha",3,500,new SimpleDateFormat("yyyy-MM-dd").parse("2022-07-21"));
+            a=new Actividad("Teatro con Sabores","En el mes aniversario del Club Deportivo Unión de Rocha te invitamos a una merienda deliciosa.",d,"Rocha",3,500,new SimpleDateFormat("yyyy-MM-dd").parse("2022-07-21"));
+            d.setActividades(a);
+            contpersis.altaActividadTuristica(a,"washington");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
-        d.setActividades(a);
-        contpersis.altaActividadTuristica(a,"washington");
+        
         try {
-            d=contpersis.getDepartamento("Rocha");
-            a=new Actividad("Tour por Colonia del Sacramento","Con guı́a especializado y en varios idiomas. Varios circuitos posibles.",contpersis.getDepartamento("Colonia"),"Colonia del Sacramento",2,400,new SimpleDateFormat("yyyy-MM-dd").parse("2022-08-01"));
+            d=contpersis.getDepartamento("Colonia");
+            a=new Actividad("Tour por Colonia del Sacramento","Con guı́a especializado y en varios idiomas. Varios circuitos posibles.",d,"Colonia del Sacramento",2,400,new SimpleDateFormat("yyyy-MM-dd").parse("2022-08-01"));
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         d.setActividades(a);
         contpersis.altaActividadTuristica(a,"meche");
         try {
-            d=contpersis.getDepartamento("Rocha");
-            a=new Actividad("Almuerzo en el Real de San Carlos","Restaurante en la renovada Plaza de Toros con menú internacional",contpersis.getDepartamento("Colonia"),"Colonia del Sacramento",2,800,new SimpleDateFormat("yyyy-MM-dd").parse("2022-08-01"));
+            d=contpersis.getDepartamento("Colonia");
+            a=new Actividad("Almuerzo en el Real de San Carlos","Restaurante en la renovada Plaza de Toros con menú internacional",d,"Colonia del Sacramento",2,800,new SimpleDateFormat("yyyy-MM-dd").parse("2022-08-01"));
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         d.setActividades(a);
         contpersis.altaActividadTuristica(a,"eldiez");
         try {
-            d=contpersis.getDepartamento("Rocha");
-            a=new Actividad("Almuerzo en Valle del Lunarejo","Restaurante en la renovada Plaza de Toros con menú internacional",contpersis.getDepartamento("Rivera"),"Tranqueras",2,300,new SimpleDateFormat("yyyy-MM-dd").parse("2022-08-01"));
+            d=contpersis.getDepartamento("Rivera");
+            a=new Actividad("Almuerzo en Valle del Lunarejo","Restaurante en la renovada Plaza de Toros con menú internacional",d,"Tranqueras",2,300,new SimpleDateFormat("yyyy-MM-dd").parse("2022-08-01"));
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         d.setActividades(a);
         contpersis.altaActividadTuristica(a,"eldiez");
         try {
-            d=contpersis.getDepartamento("Rocha");
-            a=new Actividad("Cabalgata en Valle del Lunarejo","Cabalgata por el área protegida. Varios recorridos para elegir.",contpersis.getDepartamento("Rivera"),"Tranqueras",2,150,new SimpleDateFormat("yyyy-MM-dd").parse("2022-08-01"));
+            d=contpersis.getDepartamento("Rivera");
+            a=new Actividad("Cabalgata en Valle del Lunarejo","Cabalgata por el área protegida. Varios recorridos para elegir.",d,"Tranqueras",2,150,new SimpleDateFormat("yyyy-MM-dd").parse("2022-08-01"));
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
