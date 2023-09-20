@@ -121,6 +121,12 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        setMinimumSize(new java.awt.Dimension(620, 600));
+
+        jPanel1.setMaximumSize(new java.awt.Dimension(600, 620));
+        jPanel1.setMinimumSize(new java.awt.Dimension(600, 620));
+        jPanel1.setPreferredSize(new java.awt.Dimension(600, 620));
+        jPanel1.setRequestFocusEnabled(false);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cmbTuristaProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Turista", "Proveedor" }));
@@ -172,31 +178,32 @@ public class ConsultaUsuario extends javax.swing.JPanel {
 
         jTextFieldnacionalidad.setEditable(false);
         jTextFieldnacionalidad.setText(" ");
-        jPanel1.add(jTextFieldnacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 267, 140, -1));
+        jTextFieldnacionalidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldnacionalidadActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextFieldnacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 140, -1));
 
         jLabelDescripcionGeneral.setText("Descripción General");
         jPanel1.add(jLabelDescripcionGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 322, 117, -1));
 
         jLabellink.setText("Link a su sitio web");
-        jPanel1.add(jLabellink, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 411, 139, -1));
+        jPanel1.add(jLabellink, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 139, -1));
 
         jTextFieldlink.setEditable(false);
         jTextFieldlink.setText(" ");
-        jPanel1.add(jTextFieldlink, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 332, -1));
+        jPanel1.add(jTextFieldlink, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, 430, -1));
 
         jTextArealDescripcionGeneral.setEditable(false);
         jTextArealDescripcionGeneral.setColumns(20);
+        jTextArealDescripcionGeneral.setLineWrap(true);
         jTextArealDescripcionGeneral.setRows(5);
         jTextArealDescripcionGeneral.setBorder(null);
         jScrollPane1.setViewportView(jTextArealDescripcionGeneral);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 301, 325, 80));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 301, 430, 80));
 
-        jListctividadesTuristicas.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jListctividadesTuristicas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jListctividadesTuristicasMouseClicked(evt);
@@ -204,13 +211,8 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(jListctividadesTuristicas);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 473, 143, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 190, 150));
 
-        jListSalidas.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jListSalidas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jListSalidasMouseClicked(evt);
@@ -218,13 +220,8 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(jListSalidas);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 473, 142, -1));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 150, 150));
 
-        jListSalidasinscriptas.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jListSalidasinscriptas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jListSalidasinscriptasMouseClicked(evt);
@@ -232,22 +229,20 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         });
         jScrollPane4.setViewportView(jListSalidasinscriptas);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 473, 127, -1));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, 170, 150));
 
+        jLabelActividadesTuristicas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelActividadesTuristicas.setText("Actividades Turisticas");
-        jPanel1.add(jLabelActividadesTuristicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 451, -1, -1));
+        jPanel1.add(jLabelActividadesTuristicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 190, -1));
 
+        jLabelSalidas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelSalidas.setText("Salidas Asociadas");
-        jPanel1.add(jLabelSalidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, -1, -1));
+        jPanel1.add(jLabelSalidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 150, -1));
 
+        jLabelSalidasinscriptas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelSalidasinscriptas.setText("Inscripciones");
-        jPanel1.add(jLabelSalidasinscriptas, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, -1, -1));
+        jPanel1.add(jLabelSalidasinscriptas, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 170, -1));
 
-        jListusuarios.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jListusuarios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jListusuariosMouseClicked(evt);
@@ -270,15 +265,14 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -518,6 +512,10 @@ public class ConsultaUsuario extends javax.swing.JPanel {
 //        contenedor.repaint();
 //        contenedor.setVisible(true);
     }//GEN-LAST:event_jListSalidasMouseClicked
+
+    private void jTextFieldnacionalidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldnacionalidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldnacionalidadActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -3,12 +3,10 @@ package main.java.com.mycompany.paplicaciones;
 
 import DataTypes.DTActividad;
 import DataTypes.DTDepartamento;
-import DataTypes.DTUsuario;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import main.java.logica.Departamento;
 import main.java.logica.Fabrica;
 import main.java.logica.IController;
 import main.java.logica.Usuario;
@@ -21,9 +19,12 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         ArrayList<Usuario> listaProveedores = I.getUsuarios();
         ArrayList<DTDepartamento> listaDepartamentos = I.getDepartamentos();
         initComponents();
+        String defaultDepartamentoString="Seleccione un departamento";
+        String defaultProveedorString="Seleccione un proveedor";
         DefaultComboBoxModel modelProveedores = new DefaultComboBoxModel();
+        modelProveedores.addElement(defaultProveedorString);
         DefaultComboBoxModel modelDepartamentos = new DefaultComboBoxModel();
-        
+        modelDepartamentos.addElement(defaultDepartamentoString);
         for(int i=0;i<listaProveedores.size();i++){
             
             if(listaProveedores.get(i).getEsTurista()== 0){
@@ -52,7 +53,6 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jTextFieldNombreActividad = new javax.swing.JTextField();
-        jTextFieldDescripcion = new javax.swing.JTextField();
         jTextFieldDuracion = new javax.swing.JTextField();
         jTextFieldCosto = new javax.swing.JTextField();
         jTextFieldCiudad = new javax.swing.JTextField();
@@ -63,34 +63,35 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextFieldDescripcion = new javax.swing.JTextArea();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setText("Proovedor");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 29, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, 30));
 
         jLabel4.setText("Departamento");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 73, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, -1, 30));
 
         jLabel5.setText("Nombre Actividad");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 118, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 196, -1, 30));
 
         jLabel6.setText("Descripción");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 158, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, 20));
 
         jLabel8.setText("Duración");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 285, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 386, -1, 20));
 
         jLabel9.setText("Costo");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 337, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, -1, 30));
 
         jLabel10.setText("Ciudad");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 383, -1, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 466, -1, 30));
 
         jLabel11.setText("Fecha de Alta");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 429, -1, -1));
-        add(jTextFieldNombreActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 112, 174, -1));
-        add(jTextFieldDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 158, 174, 115));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 516, -1, 20));
+        add(jTextFieldNombreActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 470, -1));
 
         jTextFieldDuracion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +103,7 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
                 jTextFieldDuracionKeyPressed(evt);
             }
         });
-        add(jTextFieldDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 285, 171, -1));
+        add(jTextFieldDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 70, -1));
 
         jTextFieldCosto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,20 +115,20 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
                 jTextFieldCostoKeyPressed(evt);
             }
         });
-        add(jTextFieldCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 331, 171, -1));
+        add(jTextFieldCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 70, -1));
 
         jTextFieldCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldCiudadActionPerformed(evt);
             }
         });
-        add(jTextFieldCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 170, -1));
+        add(jTextFieldCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 180, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("ALTA ACTIVIDAD TURÍSTICA");
         jLabel12.setBorder(new javax.swing.border.MatteBorder(null));
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 320, 95));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 320, 95));
 
         jButtonRegistrarActividad.setText("Registrar Actividad");
         jButtonRegistrarActividad.addActionListener(new java.awt.event.ActionListener() {
@@ -135,36 +136,43 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
                 jButtonRegistrarActividadActionPerformed(evt);
             }
         });
-        add(jButtonRegistrarActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 509, -1, -1));
+        add(jButtonRegistrarActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 570, -1, -1));
 
-        jComboBoxProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxProveedorActionPerformed(evt);
             }
         });
-        add(jComboBoxProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 24, 170, -1));
+        add(jComboBoxProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 470, -1));
 
-        jComboBoxDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxDepartamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxDepartamentoActionPerformed(evt);
             }
         });
-        add(jComboBoxDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 68, 170, -1));
+        add(jComboBoxDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 470, -1));
 
-        jLabel7.setText("$");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 337, -1, -1));
+        jLabel7.setText("U$");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, -1, -1));
 
         jLabel13.setText("hrs");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(417, 291, -1, -1));
-        add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 180, -1));
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, -1, -1));
+        add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 510, 180, -1));
+
+        jTextFieldDescripcion.setColumns(20);
+        jTextFieldDescripcion.setLineWrap(true);
+        jTextFieldDescripcion.setRows(5);
+        jScrollPane1.setViewportView(jTextFieldDescripcion);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 470, 110));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonRegistrarActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActividadActionPerformed
         String nomProveedor,nomDepartamento,nomActividad,nomCiudad,descripcion;
         Date fAlta;
         Integer duracion,costo;
+        String defaultDepartamentoString="Seleccione un departamento";
+        String defaultProveedorString="Seleccione un proveedor";
         nomProveedor=(String)jComboBoxProveedor.getSelectedItem();
         nomDepartamento=(String)jComboBoxDepartamento.getSelectedItem();
         nomActividad=jTextFieldNombreActividad.getText();
@@ -175,7 +183,11 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         fAlta= jDateChooser1.getDate();
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
-        if(I.actividadExiste(nomActividad)==true){
+        if(jComboBoxProveedor.getSelectedItem().equals(defaultProveedorString) || jComboBoxDepartamento.getSelectedItem().equals(defaultDepartamentoString)){
+            
+            JOptionPane.showMessageDialog(null, "Por favor, seleccione las opciones correctamente.");
+        }
+        else if(I.actividadExiste(nomActividad)==true){
             JOptionPane.showMessageDialog(null, "Existe una actividad con ese nombre, modifíquelo para poder finalizar su ingreso");
         }
         else{
@@ -251,9 +263,10 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextFieldCiudad;
     private javax.swing.JTextField jTextFieldCosto;
-    private javax.swing.JTextField jTextFieldDescripcion;
+    private javax.swing.JTextArea jTextFieldDescripcion;
     private javax.swing.JTextField jTextFieldDuracion;
     private javax.swing.JTextField jTextFieldNombreActividad;
     // End of variables declaration//GEN-END:variables

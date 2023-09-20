@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import main.java.logica.Departamento;
 import main.java.logica.Fabrica;
 import main.java.logica.IController;
 
@@ -69,22 +68,22 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setText("Nombre");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 177, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 166, -1, 30));
 
         jLabel4.setText("Fecha");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 223, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, 30));
 
         jLabel5.setText("Hora");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 269, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, 30));
 
         jLabel8.setText("Lugar de Salida");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 314, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, 30));
 
         jLabel9.setText("Capacidad");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 366, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, 30));
 
         jLabel10.setText("Fecha de Alta");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 406, -1, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, -1, 30));
 
         jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,25 +122,24 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("ALTA SALIDA TURÍSTICA");
         jLabel12.setBorder(new javax.swing.border.MatteBorder(null));
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 608, 121));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 320, 100));
 
-        jButtonAlta.setText("Registrar salida");
+        jButtonAlta.setText("Registrar Salida");
         jButtonAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAltaActionPerformed(evt);
             }
         });
-        add(jButtonAlta, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 452, 465, 62));
+        add(jButtonAlta, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 570, 130, 30));
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Departamento");
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 132, -1, -1));
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, 20));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Actividad");
-        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 132, -1, -1));
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, -1, 20));
 
-        jComboBoxDepto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxDepto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxDeptoActionPerformed(evt);
@@ -149,7 +147,6 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         });
         add(jComboBoxDepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 127, -1, -1));
 
-        jComboBoxActividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxActividad.setRequestFocusEnabled(false);
         jComboBoxActividad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,9 +162,16 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
         
+        String defaultPaqueteString="Seleccione un paquete";
+        String defaultDepartamentoString="Seleccione un departamento";
+        String defaultSalidaString="Seleccione un salida";
+        String defaultUsuarioString="Seleccione un usuario";
+        String defaultInscripcionString="Seleccione un inscripcion";
+        
         String nombre, lugar,hora,depto,actividad;
         Integer dia,mes,anio,diaAlta,mesAlta,anioAlta,capacidad;
         Date fecha,fAlta;
+        
         
         depto     = (String)jComboBoxDepto    .getSelectedItem();
         actividad = (String)jComboBoxActividad.getSelectedItem();
@@ -208,12 +212,16 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         jComboBoxActividad.setEnabled(true);
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
+        String defaultActividadString="Seleccione una actividad";
+        
         ArrayList<DTActividad> listaActividades = I.listarActividadesDepartamento((String) jComboBoxDepto.getSelectedItem());
         DefaultComboBoxModel modelActividades = new DefaultComboBoxModel();
+        
+        modelActividades.addElement(defaultActividadString);
+        
         for(int i=0;i<listaActividades.size();i++){
             
                 modelActividades.addElement(listaActividades.get(i).getNombre());
-            
         }
     jComboBoxActividad.setModel(modelActividades);
     }//GEN-LAST:event_jComboBoxDeptoActionPerformed

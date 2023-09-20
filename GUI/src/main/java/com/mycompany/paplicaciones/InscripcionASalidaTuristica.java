@@ -81,9 +81,13 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         horamostrar = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel5.setText("jLabel5");
 
+        setMaximumSize(new java.awt.Dimension(600, 620));
+        setMinimumSize(new java.awt.Dimension(600, 620));
+        setPreferredSize(new java.awt.Dimension(600, 620));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
@@ -93,20 +97,22 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         jLabel1.setPreferredSize(new java.awt.Dimension(258, 28));
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 320, 95));
 
+        deptotexto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         deptotexto.setText("Departamento");
-        add(deptotexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 119, -1, -1));
+        add(deptotexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 120, -1));
 
+        actividadtexto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         actividadtexto.setText("Actividad");
-        add(actividadtexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, -1, -1));
+        add(actividadtexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 120, -1));
 
         jLabel2.setText("Fecha");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, 30));
 
         jLabel3.setText("Cant Tur");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, 30));
 
         jLabel4.setText("Costo");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 50, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 50, -1));
 
         cantvar.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
@@ -127,13 +133,13 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         });
         add(cantvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 94, -1));
 
-        aceptaboton.setText("Aceptar");
+        aceptaboton.setText("Inscribir");
         aceptaboton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aceptabotonActionPerformed(evt);
             }
         });
-        add(aceptaboton, new org.netbeans.lib.awtextra.AbsoluteConstraints(356, 416, -1, -1));
+        add(aceptaboton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 570, -1, -1));
 
         deptosbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,6 +148,7 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         });
         add(deptosbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 155, 122, -1));
 
+        actbox.setEnabled(false);
         actbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 actboxActionPerformed(evt);
@@ -149,9 +156,11 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         });
         add(actbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 122, -1));
 
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Salida");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 120, -1));
 
+        salidasbox.setEnabled(false);
         salidasbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salidasboxActionPerformed(evt);
@@ -159,44 +168,45 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
         });
         add(salidasbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 122, -1));
 
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Turista");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, -1, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 120, -1));
 
         add(turisbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 122, -1));
 
-        costotexto.setText(".........");
-        add(costotexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 50, 20));
+        costotexto.setText(".............");
+        add(costotexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 40, 20));
 
         cantsalidatexto.setText("Cantidad maxima de turistas:");
-        add(cantsalidatexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, -1));
+        add(cantsalidatexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, -1, -1));
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, -1, -1));
 
         cantidadmostrar.setText("cantidad");
-        add(cantidadmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, -1, -1));
+        add(cantidadmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, -1, -1));
 
         durtexto.setText("Duración:");
-        add(durtexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, -1, -1));
+        add(durtexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, -1, -1));
 
         durmostrar.setText("dur");
-        add(durmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, -1, -1));
+        add(durmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, -1, -1));
 
         lugartexto.setText("Lugar:");
-        add(lugartexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, -1, -1));
+        add(lugartexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
 
         lugmostrar.setText("lug");
-        add(lugmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, -1, -1));
+        add(lugmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, -1, -1));
 
         fechatexto.setText("Fecha:");
-        add(fechatexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, -1, -1));
+        add(fechatexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 460, -1, -1));
 
         fechamostrar.setText("fecha");
-        add(fechamostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, -1, -1));
+        add(fechamostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, -1, -1));
 
         horatexto.setText("Hora:");
-        add(horatexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, -1, -1));
+        add(horatexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 510, -1, -1));
 
         horamostrar.setText("hora");
-        add(horamostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, -1, -1));
+        add(horamostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 510, -1, -1));
         add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 180, -1));
 
         jButton1.setText("Calcular Costo");
@@ -205,7 +215,10 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, -1, -1));
+
+        jLabel6.setText("$");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cantvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantvarActionPerformed
@@ -255,7 +268,8 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
     }//GEN-LAST:event_actboxActionPerformed
 
     private void deptosboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptosboxActionPerformed
-        //actbox.setEnabled(true);
+        actbox.setEnabled(true);
+        salidasbox.setEnabled(true);
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
         ArrayList<DTActividad> listaActividades = I.listarActividadesDepartamento((String)deptosbox.getSelectedItem());
@@ -337,6 +351,7 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel lugartexto;
     private javax.swing.JLabel lugmostrar;

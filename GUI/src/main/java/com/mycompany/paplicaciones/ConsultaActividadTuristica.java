@@ -78,7 +78,6 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jLabel15.setText("Actividad");
         add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 300, -1));
 
-        jComboBoxDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxDepartamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxDepartamentoActionPerformed(evt);
@@ -86,7 +85,6 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         });
         add(jComboBoxDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 300, -1));
 
-        jComboBoxActividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxActividad.setEnabled(false);
         jComboBoxActividad.setRequestFocusEnabled(false);
         jComboBoxActividad.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +166,6 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jLabel16.setText("hrs");
         add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, -1, -1));
 
-        jComboBoxSalidas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxSalidas.setEnabled(false);
         jComboBoxSalidas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,7 +182,6 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jLabel18.setText("Paquetes Asociados");
         add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 260, -1));
 
-        jComboBoxPaquetes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxPaquetes.setEnabled(false);
         jComboBoxPaquetes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
