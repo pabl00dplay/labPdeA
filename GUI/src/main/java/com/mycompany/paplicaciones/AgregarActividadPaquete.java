@@ -75,11 +75,6 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         add(cmbDepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 370, -1));
 
         cmbAct.setEnabled(false);
-        cmbAct.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbActActionPerformed(evt);
-            }
-        });
         add(cmbAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 370, -1));
 
         btnOk.setText("Agregar");
@@ -117,10 +112,6 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
          I.agregarActPaq((String)cmbPaq.getSelectedItem(),(String)cmbAct.getSelectedItem());
         }
     }//GEN-LAST:event_btnOkActionPerformed
-
-    private void cmbActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbActActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbActActionPerformed
 
     private void cmbDeptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbDeptoActionPerformed
         Fabrica fab = Fabrica.getInstance();

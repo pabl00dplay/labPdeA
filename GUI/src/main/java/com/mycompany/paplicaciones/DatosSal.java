@@ -87,7 +87,7 @@ public class DatosSal extends javax.swing.JFrame {
                 btnCerrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, -1, -1));
+        getContentPane().add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, -1, -1));
 
         txtNom.setEditable(false);
         getContentPane().add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 15, 130, -1));

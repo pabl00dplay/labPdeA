@@ -78,7 +78,7 @@ public class AltaDeDepartamento extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 570, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 570, -1, -1));
 
         jTextFielddescripcion.setColumns(20);
         jTextFielddescripcion.setLineWrap(true);
@@ -97,10 +97,14 @@ public class AltaDeDepartamento extends javax.swing.JPanel {
             if(i.existeDepartamento(depto)){
                 JOptionPane.showMessageDialog(null, "El departamento ya existe");
             }else{
-                i.altaDepartamento(depto,descripcion,url);
-                jTextFieldURL.setText(null);
-                jTextFielddescripcion.setText(null);
-                jTextFieldnombre.setText(null);
+                if(depto!=" "){
+                    i.altaDepartamento(depto,descripcion,url);
+                    jTextFieldURL.setText(" ");
+                    jTextFielddescripcion.setText(" ");
+                    jTextFieldnombre.setText(" ");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Por favor, ingrese un nombre para el Departamento");
+                }
             }
         
     }//GEN-LAST:event_jButton1ActionPerformed

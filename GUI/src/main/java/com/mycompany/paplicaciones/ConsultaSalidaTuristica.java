@@ -27,7 +27,9 @@ public class ConsultaSalidaTuristica extends javax.swing.JPanel {
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
         ArrayList<DTDepartamento> listaDepartamentos = I.getDepartamentos();
+        String defaultDepartamentoString="Seleccione un departamento";
         DefaultComboBoxModel modelDepartamentos = new DefaultComboBoxModel();
+        modelDepartamentos.addElement(defaultDepartamentoString);
         for(int i=0;i<listaDepartamentos.size();i++){
         
             modelDepartamentos.addElement(listaDepartamentos.get(i).getNom());
@@ -146,51 +148,61 @@ public class ConsultaSalidaTuristica extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBoxDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDepartamentoActionPerformed
-        jComboBoxActividad.setEnabled(true);
-        Fabrica fab = Fabrica.getInstance();
-        IController I = fab.getIController();
-        ArrayList<DTActividad> listaActividades = I.listarActividadesDepartamento((String) jComboBoxDepartamento.getSelectedItem());
-        DefaultComboBoxModel modelActividades = new DefaultComboBoxModel();
-        for(DTActividad dt: listaActividades){
-            
-            modelActividades.addElement(dt.getNombre());
-            
+        if(jComboBoxDepartamento.getSelectedItem()!="Seleccione un departamento"){
+            jComboBoxActividad.setEnabled(true);
+            Fabrica fab = Fabrica.getInstance();
+            IController I = fab.getIController();
+            ArrayList<DTActividad> listaActividades = I.listarActividadesDepartamento((String) jComboBoxDepartamento.getSelectedItem());
+            String defaultActividadString="Seleccione una actividad";
+            DefaultComboBoxModel modelActividades = new DefaultComboBoxModel();
+            modelActividades.addElement(defaultActividadString);
+            for(DTActividad dt: listaActividades){
+
+                modelActividades.addElement(dt.getNombre());
+
+            }
+            jComboBoxActividad.setModel(modelActividades);
         }
-        jComboBoxActividad.setModel(modelActividades);
     
     }//GEN-LAST:event_jComboBoxDepartamentoActionPerformed
 
     private void jComboBoxActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxActividadActionPerformed
-        Fabrica fab = Fabrica.getInstance();
-        IController I = fab.getIController();
-        DTActividad actividad = I.getActividad((String) jComboBoxActividad.getSelectedItem());
-        
-        ArrayList<DTSalida> listaSalidas = I.getSalidasActividad(actividad.getNombre());
-        DefaultComboBoxModel modelSalidas = new DefaultComboBoxModel();
-        for(DTSalida dt:listaSalidas){
-            modelSalidas.addElement(dt.getNombre());
+        if(jComboBoxActividad.getSelectedItem()!="Seleccione una actividad"){
+            Fabrica fab = Fabrica.getInstance();
+            IController I = fab.getIController();
+            DTActividad actividad = I.getActividad((String) jComboBoxActividad.getSelectedItem());
+
+            ArrayList<DTSalida> listaSalidas = I.getSalidasActividad(actividad.getNombre());
+            String defaultSalidaString="Seleccione una salida";
+            DefaultComboBoxModel modelSalidas = new DefaultComboBoxModel();
+            modelSalidas.addElement(defaultSalidaString);
+            for(DTSalida dt:listaSalidas){
+                modelSalidas.addElement(dt.getNombre());
+            }
+
+            jComboBoxSalida.setModel(modelSalidas);
         }
-    
-        jComboBoxSalida.setModel(modelSalidas);
         
     }//GEN-LAST:event_jComboBoxActividadActionPerformed
 
     private void jComboBoxSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSalidaActionPerformed
-        Fabrica fab = Fabrica.getInstance();
-        IController I = fab.getIController();
-        DTActividad actividad = I.getActividad((String) jComboBoxActividad.getSelectedItem());
-        
-        ArrayList<DTSalida> listaSalidas = I.getSalidasActividad(actividad.getNombre());
-        for (DTSalida dt: listaSalidas){
-            if (dt.getNombre()==jComboBoxSalida.getSelectedItem()){
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        if(jComboBoxSalida.getSelectedItem()!="Seleccione una salida"){
+            Fabrica fab = Fabrica.getInstance();
+            IController I = fab.getIController();
+            DTActividad actividad = I.getActividad((String) jComboBoxActividad.getSelectedItem());
 
-                jLabelNombre.setText(dt.getNombre());
-                jLabelFecha.setText(dateFormat.format(dt.getFecha()));
-                jLabelHora.setText(dt.getHora());
-                jLabelLugar.setText(dt.getLugar());
-                jLabelCapacidad.setText(dt.getCapacidad() + "");
-                jLabelFAlta.setText(dateFormat.format(dt.getfAlta()));
+            ArrayList<DTSalida> listaSalidas = I.getSalidasActividad(actividad.getNombre());
+            for (DTSalida dt: listaSalidas){
+                if (dt.getNombre()==jComboBoxSalida.getSelectedItem()){
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+                    jLabelNombre.setText(dt.getNombre());
+                    jLabelFecha.setText(dateFormat.format(dt.getFecha()));
+                    jLabelHora.setText(dt.getHora());
+                    jLabelLugar.setText(dt.getLugar());
+                    jLabelCapacidad.setText(dt.getCapacidad() + "");
+                    jLabelFAlta.setText(dateFormat.format(dt.getfAlta()));
+                }
             }
         }
     }//GEN-LAST:event_jComboBoxSalidaActionPerformed

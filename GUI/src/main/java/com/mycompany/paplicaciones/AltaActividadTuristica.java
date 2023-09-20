@@ -38,6 +38,10 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
             modelDepartamentos.addElement(listaDepartamentos.get(i).getNom());
         }
     jComboBoxDepartamento.setModel(modelDepartamentos);
+    jTextFieldDuracion.setText("0");
+    jTextFieldCosto.setText("0");
+    jTextFieldCiudad.setText("Ciudad");
+    jTextFieldDescripcion.setText("Descripcion");
     }
 
     @SuppressWarnings("unchecked")
@@ -136,7 +140,7 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
                 jButtonRegistrarActividadActionPerformed(evt);
             }
         });
-        add(jButtonRegistrarActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 570, -1, -1));
+        add(jButtonRegistrarActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 570, -1, -1));
 
         jComboBoxProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

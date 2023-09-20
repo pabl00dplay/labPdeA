@@ -40,6 +40,8 @@ public class CrearPaquete extends javax.swing.JPanel {
 
         jLabel1.setText("Nombre");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+
+        txtNom.setText(" ");
         add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 220, -1));
 
         jLabel2.setText("Descripcion");
@@ -57,6 +59,7 @@ public class CrearPaquete extends javax.swing.JPanel {
         jLabel6.setText("dias");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, -1, -1));
 
+        txtDescu.setText("0");
         txtDescu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDescuActionPerformed(evt);
@@ -69,6 +72,7 @@ public class CrearPaquete extends javax.swing.JPanel {
         });
         add(txtDescu, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 30, -1));
 
+        txtVali.setText("0");
         txtVali.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtValiKeyPressed(evt);
@@ -103,6 +107,8 @@ public class CrearPaquete extends javax.swing.JPanel {
         txtDesc.setColumns(20);
         txtDesc.setLineWrap(true);
         txtDesc.setRows(5);
+        txtDesc.setText(" ");
+        txtDesc.setWrapStyleWord(true);
         jScrollPane1.setViewportView(txtDesc);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));

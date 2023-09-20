@@ -142,11 +142,12 @@ public class AltaUsuario extends javax.swing.JPanel {
                 jButtonEnviarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 560, -1, -1));
+        jPanel1.add(jButtonEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 570, -1, -1));
 
         jTextArealDescripcionGeneral.setColumns(20);
         jTextArealDescripcionGeneral.setLineWrap(true);
         jTextArealDescripcionGeneral.setRows(5);
+        jTextArealDescripcionGeneral.setText(" ");
         jScrollPane2.setViewportView(jTextArealDescripcionGeneral);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 400, -1));
@@ -194,7 +195,14 @@ public class AltaUsuario extends javax.swing.JPanel {
         fnac = jDateChooser1.getDate();
         Fabrica f=Fabrica.getInstance();
         IController I=f.getIController();
-        if (I.nickExiste(nic)){
+        if(nic==" "){
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese un nickname");
+        }
+        else 
+        if(mail==" "){
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese una direccion de mail");
+        }
+        else if (I.nickExiste(nic)){
             JOptionPane.showMessageDialog(null, "El nickname ya existe");
         }
         else if (I.mailExiste(mail)){

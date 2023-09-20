@@ -31,7 +31,9 @@ public class DatosAct extends javax.swing.JFrame {
         txtCos.setValue(dta.getCostoXturista());
         txtFec.setValue(dta.getfAlta());
         ArrayList<DTSalida> listaSalidas = I.getSalidasActividad(nom);
+        String defaultSalidaString="Seleccione una salida";
         DefaultComboBoxModel modelSalidas = new DefaultComboBoxModel();
+        modelSalidas.addElement(defaultSalidaString);
         for(DTSalida dt:listaSalidas){
             modelSalidas.addElement(dt.getNombre());
         }
@@ -143,10 +145,9 @@ public class DatosAct extends javax.swing.JFrame {
                 btnCerrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, -1, -1));
+        getContentPane().add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, -1, -1));
 
-        cmbSalidas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(cmbSalidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 347, -1, -1));
+        getContentPane().add(cmbSalidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -157,7 +158,10 @@ public class DatosAct extends javax.swing.JFrame {
 
     private void btnDatosSalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new DatosSal((String) cmbSalidas.getSelectedItem()).setVisible(true);
+        if(cmbSalidas.getSelectedItem()!="Seleccione una salida"){
+            new DatosSal((String) cmbSalidas.getSelectedItem()).setVisible(true);
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescActionPerformed

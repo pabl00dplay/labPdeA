@@ -85,6 +85,7 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         jLabel10.setText("Fecha de Alta");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, -1, 30));
 
+        jTextFieldNombre.setText(" ");
         jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNombreActionPerformed(evt);
@@ -92,6 +93,8 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         });
         add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 171, 465, -1));
 
+        jTextFieldHora.setText(" ");
+        jTextFieldHora.setToolTipText("");
         jTextFieldHora.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldHoraKeyPressed(evt);
@@ -99,6 +102,7 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         });
         add(jTextFieldHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 263, 465, -1));
 
+        jTextFieldLugar.setText(" ");
         jTextFieldLugar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldLugarKeyPressed(evt);
@@ -106,6 +110,7 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         });
         add(jTextFieldLugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 314, 465, -1));
 
+        jTextFieldCapacidad.setText(" ");
         jTextFieldCapacidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldCapacidadActionPerformed(evt);
@@ -130,7 +135,7 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
                 jButtonAltaActionPerformed(evt);
             }
         });
-        add(jButtonAlta, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 570, 130, 30));
+        add(jButtonAlta, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 560, 150, 30));
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Departamento");
@@ -191,8 +196,11 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         if (I.salidaExiste(nombre)){
             JOptionPane.showMessageDialog(null, "Ya existe una salida con ese nombre");
         }else{
-
-            I.altaSalida(dt);
+            if(nombre!=" "){
+                I.altaSalida(dt);
+            }else{
+                JOptionPane.showMessageDialog(null, "Por favor, ingrese un nombre para la salida");
+            }
 
             jTextFieldCapacidad.setText(null);
             jTextFieldNombre   .setText(null);

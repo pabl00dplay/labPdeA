@@ -28,7 +28,7 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         IController I = fab.getIController();
         ArrayList<DTPaquete> listaPaquetes= I.listarPaquetes();
         DefaultComboBoxModel modelPaquetes = new DefaultComboBoxModel();
-        
+        modelPaquetes.addElement("Seleccione un Paquete");
         for(int i=0;i<listaPaquetes.size();i++){
             
                 modelPaquetes.addElement(listaPaquetes.get(i).getNom());
@@ -54,7 +54,6 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         btnDAct = new javax.swing.JButton();
         txtVal = new javax.swing.JFormattedTextField();
         txtDescu = new javax.swing.JFormattedTextField();
-        txtFecha = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         cmbAct = new javax.swing.JComboBox<>();
         cmbPaq = new javax.swing.JComboBox<String>();
@@ -62,6 +61,7 @@ public class ConsultaPaquete extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDesc = new javax.swing.JTextArea();
+        txtFecha = new com.toedter.calendar.JDateChooser();
 
         jLabel1.setText("Nombre");
 
@@ -84,8 +84,6 @@ public class ConsultaPaquete extends javax.swing.JPanel {
 
         txtDescu.setEditable(false);
         txtDescu.setText("0");
-
-        txtFecha.setEditable(false);
 
         jLabel6.setText("Actividades Incluidas");
 
@@ -133,13 +131,13 @@ public class ConsultaPaquete extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txtDescu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel8))
-                            .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel8)))
                         .addGap(18, 18, 18)
                         .addComponent(cmbAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnDAct))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -170,7 +168,7 @@ public class ConsultaPaquete extends javax.swing.JPanel {
                     .addComponent(txtDescu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(54, Short.MAX_VALUE))
@@ -180,28 +178,30 @@ public class ConsultaPaquete extends javax.swing.JPanel {
     private void btnDActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDActActionPerformed
        
         String nom =(String)cmbAct.getSelectedItem();
-        if(nom!=" "){
+        if(nom!="Seleccione una Actividad"){
             new DatosAct(nom).setVisible(true);
         }
     }//GEN-LAST:event_btnDActActionPerformed
 
     private void cmbPaqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPaqActionPerformed
-        
-        Fabrica fab = Fabrica.getInstance();
-        IController I = fab.getIController();
-        ArrayList<DTActividad> listaActs= I.listarActividadesPaquete((String)cmbPaq.getSelectedItem());
-        DefaultComboBoxModel modelActs = new DefaultComboBoxModel();
-        DTPaquete dtp = I.listarDatosPaquete((String)cmbPaq.getSelectedItem());
-        for(int i=0;i<listaActs.size();i++){
-            
-                modelActs.addElement(listaActs.get(i).getNombre());
-            
+        if(cmbPaq.getSelectedItem()!="Seleccione un Paquete"){
+            Fabrica fab = Fabrica.getInstance();
+            IController I = fab.getIController();
+            ArrayList<DTActividad> listaActs= I.listarActividadesPaquete((String)cmbPaq.getSelectedItem());
+            DefaultComboBoxModel modelActs = new DefaultComboBoxModel();
+            modelActs.addElement("Seleccione una Actividad");
+            DTPaquete dtp = I.listarDatosPaquete((String)cmbPaq.getSelectedItem());
+            for(int i=0;i<listaActs.size();i++){
+
+                    modelActs.addElement(listaActs.get(i).getNombre());
+
+            }
+            cmbAct.setModel(modelActs);
+            txtDesc.setText(dtp.getDesc());
+            txtVal.setValue(dtp.getVal());
+            txtDescu.setValue(dtp.getDescu());
+            txtFecha.setDate(dtp.getFalta());
         }
-        cmbAct.setModel(modelActs);
-        txtDesc.setText(dtp.getDesc());
-        txtVal.setValue(dtp.getVal());
-        txtDescu.setValue(dtp.getDescu());
-        txtFecha.setValue(dtp.getFalta());
     
         
     }//GEN-LAST:event_cmbPaqActionPerformed
@@ -224,7 +224,7 @@ public class ConsultaPaquete extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtDesc;
     private javax.swing.JFormattedTextField txtDescu;
-    private javax.swing.JFormattedTextField txtFecha;
+    private com.toedter.calendar.JDateChooser txtFecha;
     private javax.swing.JFormattedTextField txtVal;
     // End of variables declaration//GEN-END:variables
 }

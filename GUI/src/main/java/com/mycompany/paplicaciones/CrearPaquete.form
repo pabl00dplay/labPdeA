@@ -34,6 +34,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNom">
+      <Properties>
+        <Property name="text" type="java.lang.String" value=" "/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="110" y="120" width="220" height="-1"/>
@@ -91,6 +94,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="txtDescu">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDescuActionPerformed"/>
         <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDescuKeyPressed"/>
@@ -102,6 +108,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="txtVali">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtValiKeyPressed"/>
       </Events>
@@ -180,6 +189,8 @@
             <Property name="columns" type="int" value="20"/>
             <Property name="lineWrap" type="boolean" value="true"/>
             <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value=" "/>
+            <Property name="wrapStyleWord" type="boolean" value="true"/>
           </Properties>
         </Component>
       </SubComponents>

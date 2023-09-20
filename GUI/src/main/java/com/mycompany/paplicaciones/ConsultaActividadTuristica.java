@@ -18,7 +18,9 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
         ArrayList<DTDepartamento> listaDepartamentos = I.getDepartamentos();
+        String defaultDepartamentoString="Seleccione un departamento";
         DefaultComboBoxModel modelDepartamentos = new DefaultComboBoxModel();
+        modelDepartamentos.addElement(defaultDepartamentoString);
         for(int i=0;i<listaDepartamentos.size();i++){
         
             modelDepartamentos.addElement(listaDepartamentos.get(i).getNom());
@@ -47,18 +49,13 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jTextFieldDuracion = new javax.swing.JTextField();
         jTextFieldCosto = new javax.swing.JTextField();
         jTextFieldCiudad = new javax.swing.JTextField();
-        jTextFieldDia = new javax.swing.JTextField();
-        jTextFieldAño = new javax.swing.JTextField();
-        jTextFieldMes = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jComboBoxSalidas = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jComboBoxPaquetes = new javax.swing.JComboBox<>();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setEnabled(false);
         setPreferredSize(new java.awt.Dimension(620, 590));
@@ -142,24 +139,6 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         });
         add(jTextFieldCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 530, 170, -1));
 
-        jTextFieldDia.setEnabled(false);
-        add(jTextFieldDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 570, 30, -1));
-
-        jTextFieldAño.setEnabled(false);
-        add(jTextFieldAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 570, 48, -1));
-
-        jTextFieldMes.setEnabled(false);
-        add(jTextFieldMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 570, 30, -1));
-
-        jLabel1.setText("D");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 570, -1, -1));
-
-        jLabel2.setText("M");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 570, -1, -1));
-
-        jLabel21.setText("A");
-        add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 570, -1, -1));
-
         jLabel7.setText("$");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, -1, -1));
 
@@ -189,6 +168,7 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
             }
         });
         add(jComboBoxPaquetes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 270, -1));
+        add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 580, 170, -1));
 
         getAccessibleContext().setAccessibleDescription("");
     }// </editor-fold>//GEN-END:initComponents
@@ -210,7 +190,9 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
         ArrayList<DTActividad> listaActividades = I.listarActividadesDepartamento((String) jComboBoxDepartamento.getSelectedItem());
+        String defaultActividadString="Seleccione una actividad";
         DefaultComboBoxModel modelActividades = new DefaultComboBoxModel();
+        modelActividades.addElement(defaultActividadString);
         for(int i=0;i<listaActividades.size();i++){
             
             JOptionPane.showMessageDialog(null, listaActividades.get(i).getNombre());
@@ -228,9 +210,7 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jTextFieldDuracion      .setEnabled(true);
         jTextFieldCosto         .setEnabled(true);
         jTextFieldCiudad        .setEnabled(true);
-        jTextFieldDia           .setEnabled(true);
-        jTextFieldMes           .setEnabled(true);
-        jTextFieldAño           .setEnabled(true);
+        jDateChooser1           .setEnabled(true);
         jComboBoxSalidas        .setEnabled(true);
         jComboBoxPaquetes       .setEnabled(true);
         
@@ -242,9 +222,7 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jTextFieldDuracion.setText(Integer.toString(actividad.getDuracion()));
         jTextFieldCosto.setText(Integer.toString(actividad.getCostoXturista()));
         jTextFieldCiudad.setText(actividad.getCiudad());
-        jTextFieldDia.setText(Integer.toString((Integer)actividad.getfAlta().getDate()));
-        jTextFieldMes.setText(Integer.toString((Integer)actividad.getfAlta().getMonth()));
-        jTextFieldAño.setText(Integer.toString((Integer)actividad.getfAlta().getYear()));
+        jDateChooser1.setDate(actividad.getfAlta());
         
         
         
@@ -280,7 +258,7 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> jComboBoxDepartamento;
     private javax.swing.JComboBox<String> jComboBoxPaquetes;
     private javax.swing.JComboBox<String> jComboBoxSalidas;
-    private javax.swing.JLabel jLabel1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
@@ -289,20 +267,15 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextFieldAño;
     private javax.swing.JTextField jTextFieldCiudad;
     private javax.swing.JTextField jTextFieldCosto;
     private javax.swing.JTextField jTextFieldDescripcion;
-    private javax.swing.JTextField jTextFieldDia;
     private javax.swing.JTextField jTextFieldDuracion;
-    private javax.swing.JTextField jTextFieldMes;
     private javax.swing.JTextField jTextFieldNombre;
     // End of variables declaration//GEN-END:variables
 }

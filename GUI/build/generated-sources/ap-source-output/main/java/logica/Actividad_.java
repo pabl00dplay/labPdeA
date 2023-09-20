@@ -9,7 +9,7 @@ import main.java.logica.Departamento;
 import main.java.logica.Paquete;
 import main.java.logica.Salida;
 
-@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2023-09-20T05:51:20", comments="EclipseLink-2.7.12.v20230209-rNA")
+@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2023-09-20T17:54:15", comments="EclipseLink-2.7.12.v20230209-rNA")
 @StaticMetamodel(Actividad.class)
 public class Actividad_ { 
 
