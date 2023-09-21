@@ -136,6 +136,9 @@ public class CrearPaquete extends javax.swing.JPanel {
             txtDescu.setText(null);
             txtVali.setText(null);
             jDateChooser1.setDate(null);
+            
+            Laboratorio1 lab = Laboratorio1.getInstance();
+            lab.actualizar();
         } else {
             JFrame f = new JFrame();
             JOptionPane.showMessageDialog(f, "Un paquete con ese Nombre ya existe, por favor ingrese otro.", "Error", JOptionPane.ERROR_MESSAGE);

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import main.java.com.mycompany.paplicaciones.persistencia.exceptions.NonexistentEntityException;
 import main.java.com.mycompany.paplicaciones.persistencia.exceptions.PreexistingEntityException;
 import main.java.logica.Usuario;
@@ -25,10 +26,11 @@ import main.java.logica.Usuario;
 public class UsuarioJpaController implements Serializable {
 
     public UsuarioJpaController() {
-        this.emf = emf;
+        this.emf = Persistence.createEntityManagerFactory("PAplicaciones");
     }
-    private EntityManagerFactory emf = null;
 
+    private EntityManagerFactory emf = null;
+    
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }

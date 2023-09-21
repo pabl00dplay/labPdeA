@@ -110,13 +110,16 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         }
         else{
          I.agregarActPaq((String)cmbPaq.getSelectedItem(),(String)cmbAct.getSelectedItem());
+         
+        Laboratorio1 lab = Laboratorio1.getInstance();
+        lab.actualizar();
         }
     }//GEN-LAST:event_btnOkActionPerformed
 
     private void cmbDeptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbDeptoActionPerformed
+        
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
-        
         String defaultActividadString="Seleccione un actividad";
         cmbAct.setEnabled(true);
         

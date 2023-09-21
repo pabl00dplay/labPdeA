@@ -245,6 +245,9 @@ public class InscripcionASalidaTuristica extends javax.swing.JPanel {
                 cont.altaInscripcion(sal,fecha, cant, costo, nick);
                 cantvar.setText(null);
                 costotexto.setText(null);
+                
+                Laboratorio1 lab = Laboratorio1.getInstance();
+                lab.actualizar();
             }else{
                 JOptionPane.showMessageDialog(null, "El Turista ya está inscripto en la salida.");
             }

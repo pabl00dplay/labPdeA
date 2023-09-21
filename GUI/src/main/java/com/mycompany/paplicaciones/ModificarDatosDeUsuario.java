@@ -249,6 +249,9 @@ public class ModificarDatosDeUsuario extends javax.swing.JPanel {
             u.setDescripcion(desc);
             u.setWeb(web);
         }
+        
+        Laboratorio1 lab = Laboratorio1.getInstance();
+        lab.actualizar();
         cont.editarUsuario(u);
         
     }//GEN-LAST:event_aceptarbotActionPerformed

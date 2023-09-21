@@ -206,6 +206,9 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
             jTextFieldNombre   .setText(null);
             jTextFieldLugar    .setText(null);
             jTextFieldHora     .setText(null);
+            
+            Laboratorio1 lab = Laboratorio1.getInstance();
+            lab.actualizar();
         }
         
         

@@ -102,6 +102,9 @@ public class AltaDeDepartamento extends javax.swing.JPanel {
                     jTextFieldURL.setText(" ");
                     jTextFielddescripcion.setText(" ");
                     jTextFieldnombre.setText(" ");
+                    
+                    Laboratorio1 lab = Laboratorio1.getInstance();
+                    lab.actualizar();
                 }else{
                     JOptionPane.showMessageDialog(null, "Por favor, ingrese un nombre para el Departamento");
                 }

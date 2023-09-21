@@ -218,6 +218,9 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldnombre.setText(null);
             jTextFieldcorreoElectrónico.setText(null);
             jTextFieldnacionalidad.setText(null);
+            
+            Laboratorio1 lab = Laboratorio1.getInstance();
+            lab.actualizar();
         }
         else if(opcion.equals("Proveedor")){
             String texto=jTextArealDescripcionGeneral.getText();
@@ -231,6 +234,9 @@ public class AltaUsuario extends javax.swing.JPanel {
             jTextFieldcorreoElectrónico.setText(null);
             jTextArealDescripcionGeneral.setText(null);
             jTextFieldlink.setText(null);
+            
+            Laboratorio1 lab = Laboratorio1.getInstance();
+            lab.actualizar();
         }
     }//GEN-LAST:event_jButtonEnviarActionPerformed
 

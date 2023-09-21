@@ -206,6 +206,9 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
             jTextFieldDuracion.setText(null);
             jTextFieldCosto.setText(null);
             
+            Laboratorio1 lab = Laboratorio1.getInstance();
+            lab.actualizar();
+            
         }
         
         

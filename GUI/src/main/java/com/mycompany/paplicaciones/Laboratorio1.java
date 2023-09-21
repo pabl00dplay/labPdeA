@@ -95,6 +95,11 @@ public class Laboratorio1 extends javax.swing.JFrame {
         jPanelConsultaUsuario.setMaximumSize(new java.awt.Dimension(600, 620));
         jPanelConsultaUsuario.setMinimumSize(new java.awt.Dimension(600, 620));
         jPanelConsultaUsuario.setPreferredSize(new java.awt.Dimension(600, 620));
+        jPanelConsultaUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelConsultaUsuarioMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelConsultaUsuarioLayout = new javax.swing.GroupLayout(jPanelConsultaUsuario);
         jPanelConsultaUsuario.setLayout(jPanelConsultaUsuarioLayout);
@@ -110,6 +115,11 @@ public class Laboratorio1 extends javax.swing.JFrame {
         jTabbedPane1.addTab("Consulta de Usuario", jPanelConsultaUsuario);
 
         jPanelAltaUsuario.setPreferredSize(new java.awt.Dimension(600, 800));
+        jPanelAltaUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelAltaUsuarioMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelAltaUsuarioLayout = new javax.swing.GroupLayout(jPanelAltaUsuario);
         jPanelAltaUsuario.setLayout(jPanelAltaUsuarioLayout);
@@ -130,6 +140,12 @@ public class Laboratorio1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Alta de Usuario", jPanelAltaUsuario);
 
+        jPanelModificarDatosUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelModificarDatosUsuarioMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelModificarDatosUsuarioLayout = new javax.swing.GroupLayout(jPanelModificarDatosUsuario);
         jPanelModificarDatosUsuario.setLayout(jPanelModificarDatosUsuarioLayout);
         jPanelModificarDatosUsuarioLayout.setHorizontalGroup(
@@ -142,6 +158,12 @@ public class Laboratorio1 extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Modificar Datos del Usuario", jPanelModificarDatosUsuario);
+
+        jPanelAltaSalidaTuristica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelAltaSalidaTuristicaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelAltaSalidaTuristicaLayout = new javax.swing.GroupLayout(jPanelAltaSalidaTuristica);
         jPanelAltaSalidaTuristica.setLayout(jPanelAltaSalidaTuristicaLayout);
@@ -156,6 +178,12 @@ public class Laboratorio1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Alta de Salida Turistica", jPanelAltaSalidaTuristica);
 
+        jPanelConsultaSalidaTuristica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelConsultaSalidaTuristicaMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelConsultaSalidaTuristicaLayout = new javax.swing.GroupLayout(jPanelConsultaSalidaTuristica);
         jPanelConsultaSalidaTuristica.setLayout(jPanelConsultaSalidaTuristicaLayout);
         jPanelConsultaSalidaTuristicaLayout.setHorizontalGroup(
@@ -168,6 +196,12 @@ public class Laboratorio1 extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Consulta de SalidaTuristica", jPanelConsultaSalidaTuristica);
+
+        jPanelInscripcionSalidaTuristica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelInscripcionSalidaTuristicaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelInscripcionSalidaTuristicaLayout = new javax.swing.GroupLayout(jPanelInscripcionSalidaTuristica);
         jPanelInscripcionSalidaTuristica.setLayout(jPanelInscripcionSalidaTuristicaLayout);
@@ -182,6 +216,12 @@ public class Laboratorio1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Inscripcion a SalidaTuristica", jPanelInscripcionSalidaTuristica);
 
+        jPanelCrearPaqueteActTuristicas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelCrearPaqueteActTuristicasMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelCrearPaqueteActTuristicasLayout = new javax.swing.GroupLayout(jPanelCrearPaqueteActTuristicas);
         jPanelCrearPaqueteActTuristicas.setLayout(jPanelCrearPaqueteActTuristicasLayout);
         jPanelCrearPaqueteActTuristicasLayout.setHorizontalGroup(
@@ -194,6 +234,12 @@ public class Laboratorio1 extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Crear Paquete de Actividades Turisticas", jPanelCrearPaqueteActTuristicas);
+
+        jPanelAgregarActTuríPaquete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelAgregarActTuríPaqueteMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelAgregarActTuríPaqueteLayout = new javax.swing.GroupLayout(jPanelAgregarActTuríPaquete);
         jPanelAgregarActTuríPaquete.setLayout(jPanelAgregarActTuríPaqueteLayout);
@@ -208,6 +254,12 @@ public class Laboratorio1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Agregar Actividad Turistica a Paquete", jPanelAgregarActTuríPaquete);
 
+        jPanelConsultaPaquetesActsTurs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelConsultaPaquetesActsTursMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelConsultaPaquetesActsTursLayout = new javax.swing.GroupLayout(jPanelConsultaPaquetesActsTurs);
         jPanelConsultaPaquetesActsTurs.setLayout(jPanelConsultaPaquetesActsTursLayout);
         jPanelConsultaPaquetesActsTursLayout.setHorizontalGroup(
@@ -221,6 +273,12 @@ public class Laboratorio1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Consulta Paquetes ActividadesTurisricas", jPanelConsultaPaquetesActsTurs);
 
+        jPanelAltaActividadTuristica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelAltaActividadTuristicaMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelAltaActividadTuristicaLayout = new javax.swing.GroupLayout(jPanelAltaActividadTuristica);
         jPanelAltaActividadTuristica.setLayout(jPanelAltaActividadTuristicaLayout);
         jPanelAltaActividadTuristicaLayout.setHorizontalGroup(
@@ -233,6 +291,12 @@ public class Laboratorio1 extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Alta de Actividad Turistica", jPanelAltaActividadTuristica);
+
+        jPanelConsultaActividadTuristica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelConsultaActividadTuristicaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelConsultaActividadTuristicaLayout = new javax.swing.GroupLayout(jPanelConsultaActividadTuristica);
         jPanelConsultaActividadTuristica.setLayout(jPanelConsultaActividadTuristicaLayout);
@@ -248,6 +312,11 @@ public class Laboratorio1 extends javax.swing.JFrame {
         jTabbedPane1.addTab("Consulta de Actividad Turistica", jPanelConsultaActividadTuristica);
 
         jPanelAltaDepartamento.setPreferredSize(new java.awt.Dimension(600, 620));
+        jPanelAltaDepartamento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelAltaDepartamentoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelAltaDepartamentoLayout = new javax.swing.GroupLayout(jPanelAltaDepartamento);
         jPanelAltaDepartamento.setLayout(jPanelAltaDepartamentoLayout);
@@ -262,6 +331,11 @@ public class Laboratorio1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Alta de Departamento", jPanelAltaDepartamento);
 
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel1MouseClicked(evt);
+            }
+        });
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
@@ -291,6 +365,9 @@ public class Laboratorio1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        actualizar();
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+    public void actualizar() {                                                   
         AltaUsuario au=new AltaUsuario(); 
         PonerContenedorDentroContenedor(au,jPanelAltaUsuario);
         ConsultaUsuario cu=new ConsultaUsuario(); 
@@ -315,7 +392,60 @@ public class Laboratorio1 extends javax.swing.JFrame {
         PonerContenedorDentroContenedor(aap,jPanelAgregarActTuríPaquete);
         InscripcionASalidaTuristica isp = new InscripcionASalidaTuristica();
         PonerContenedorDentroContenedor(isp,jPanelInscripcionSalidaTuristica);
-    }//GEN-LAST:event_jTabbedPane1MouseClicked
+    }        
+    
+    
+    private void jPanelConsultaUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelConsultaUsuarioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelConsultaUsuarioMouseClicked
+
+    private void jPanelAltaUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAltaUsuarioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelAltaUsuarioMouseClicked
+
+    private void jPanelModificarDatosUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelModificarDatosUsuarioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelModificarDatosUsuarioMouseClicked
+
+    private void jPanelAltaSalidaTuristicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAltaSalidaTuristicaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelAltaSalidaTuristicaMouseClicked
+
+    private void jPanelInscripcionSalidaTuristicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelInscripcionSalidaTuristicaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelInscripcionSalidaTuristicaMouseClicked
+
+    private void jPanelCrearPaqueteActTuristicasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelCrearPaqueteActTuristicasMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelCrearPaqueteActTuristicasMouseClicked
+
+    private void jPanelAgregarActTuríPaqueteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAgregarActTuríPaqueteMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelAgregarActTuríPaqueteMouseClicked
+
+    private void jPanelConsultaPaquetesActsTursMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelConsultaPaquetesActsTursMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelConsultaPaquetesActsTursMouseClicked
+
+    private void jPanelConsultaActividadTuristicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelConsultaActividadTuristicaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelConsultaActividadTuristicaMouseClicked
+
+    private void jPanelAltaDepartamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAltaDepartamentoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelAltaDepartamentoMouseClicked
+
+    private void jPanelConsultaSalidaTuristicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelConsultaSalidaTuristicaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelConsultaSalidaTuristicaMouseClicked
+
+    private void jPanelAltaActividadTuristicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAltaActividadTuristicaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelAltaActividadTuristicaMouseClicked
+
+    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel1MouseClicked
      public static Laboratorio1 getInstance() {
         if (instance == null) {
             instance = new Laboratorio1();
