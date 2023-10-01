@@ -26,7 +26,10 @@ public class Actividad implements Serializable {
     @ManyToOne
     private Departamento dep;
     private Integer dur,costo;
+    
+    @Enumerated(EnumType.STRING)
     private ACTAceptada estado;
+    
     @Temporal(TemporalType.DATE)
     private Date fAlta;
     @OneToMany

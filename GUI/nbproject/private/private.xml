@@ -3,11 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/francisco/Documents/GitHub/Lab01/GUI/src/main/java/logica/Controller.java</file>
-            <file>file:/home/francisco/Documents/GitHub/Lab01/GUI/src/main/java/com/mycompany/paplicaciones/persistencia/ControladoraPersistencia.java</file>
-            <file>file:/home/francisco/Documents/GitHub/Lab01/GUI/src/DataTypes/DTActividad.java</file>
-            <file>file:/home/francisco/Documents/GitHub/Lab01/GUI/src/main/java/logica/Actividad.java</file>
-            <file>file:/home/francisco/Documents/GitHub/Lab01/GUI/src/main/java/logica/IController.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/AceptarActividades.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/AltaUsuario.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/META-INF/persistence.xml</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/persistencia/PaqueteJpaController.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/Laboratorio1.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/persistencia/DepartamentoJpaController.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/persistencia/InscripcionJpaController.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/AgregarActividadPaquete.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/persistencia/ActividadJpaController.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/persistencia/SalidaJpaController.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/persistencia/ControladoraPersistencia.java</file>
+            <file>file:/C:/Users/capo_/Documents/GitHub/labPdeA/GUI/src/main/java/com/mycompany/paplicaciones/persistencia/UsuarioJpaController.java</file>
         </group>
     </open-files>
 </project-private>

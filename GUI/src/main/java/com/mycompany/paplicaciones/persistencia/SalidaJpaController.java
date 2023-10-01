@@ -19,12 +19,12 @@ import main.java.logica.Salida;
 
 /**
  *
- * @author francisco
+ * @author capo_
  */
 public class SalidaJpaController implements Serializable {
 
     public SalidaJpaController() {
-        this.emf =  Persistence.createEntityManagerFactory("PAplicaciones");
+        this.emf = Persistence.createEntityManagerFactory("PAplicaciones");
     }
     private EntityManagerFactory emf = null;
 

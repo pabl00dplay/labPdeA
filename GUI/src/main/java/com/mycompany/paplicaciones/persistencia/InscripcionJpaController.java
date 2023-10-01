@@ -19,12 +19,12 @@ import main.java.logica.Usuario;
 
 /**
  *
- * @author francisco
+ * @author capo_
  */
 public class InscripcionJpaController implements Serializable {
 
     public InscripcionJpaController() {
-        this.emf =  Persistence.createEntityManagerFactory("PAplicaciones");
+        this.emf = Persistence.createEntityManagerFactory("PAplicaciones");
     }
     private EntityManagerFactory emf = null;
 

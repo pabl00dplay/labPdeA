@@ -21,16 +21,15 @@ import main.java.logica.Usuario;
 
 /**
  *
- * @author francisco
+ * @author capo_
  */
 public class UsuarioJpaController implements Serializable {
 
     public UsuarioJpaController() {
         this.emf = Persistence.createEntityManagerFactory("PAplicaciones");
     }
-
     private EntityManagerFactory emf = null;
-    
+
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
