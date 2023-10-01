@@ -214,6 +214,30 @@ public Salida retornoSalidaSel(String nombre){
                 return false;
             }
         }
+
+  public void aceptarAct(String nom){
+      Actividad act=contpersis.getActividad(nom);
+      act.setEstado(ACTAceptada.ACEPTADA);
+      contpersis.editarActividad(act);
+  }
+  public void rechazarAct(String nom){
+      Actividad act=contpersis.getActividad(nom);
+      act.setEstado(ACTAceptada.RECHAZADA);
+      contpersis.editarActividad(act);
+  }
+  
+  public ArrayList<DTActividad> listarActividadesSoloAgregadas(){
+      ArrayList<DTActividad> dta = new ArrayList<DTActividad>();
+      ArrayList<DTActividad> aux=this.getActividades();
+      for(DTActividad d:aux){
+          if(d.getEstado()==ACTAceptada.AGREGADA){
+              dta.add(d);
+          }
+      }
+      
+      return dta;
+  }
+  
   public void inicializar(){
         Departamento d;
         Usuario u = null;
@@ -360,6 +384,7 @@ public Salida retornoSalidaSel(String nombre){
         try {
             d=contpersis.getDepartamento("Rocha");
             a=new Actividad("Degusta","Festival gastronómico de productos locales en Rocha",d,"Rocha",3,800,new SimpleDateFormat("yyyy-MM-dd").parse("2022-07-20"));
+            a.setEstado(ACTAceptada.ACEPTADA);
             d.setActividades(a);
             contpersis.altaActividadTuristica(a,"washington");
         } catch (ParseException ex) {
@@ -368,6 +393,7 @@ public Salida retornoSalidaSel(String nombre){
         try {
             d=contpersis.getDepartamento("Rocha");
             a=new Actividad("Teatro con Sabores","En el mes aniversario del Club Deportivo Unión de Rocha te invitamos a una merienda deliciosa.",d,"Rocha",3,500,new SimpleDateFormat("yyyy-MM-dd").parse("2022-07-21"));
+            a.setEstado(ACTAceptada.ACEPTADA);
             d.setActividades(a);
             contpersis.altaActividadTuristica(a,"washington");
         } catch (ParseException ex) {
@@ -380,6 +406,7 @@ public Salida retornoSalidaSel(String nombre){
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
+        a.setEstado(ACTAceptada.ACEPTADA);
         d.setActividades(a);
         contpersis.altaActividadTuristica(a,"meche");
         try {
@@ -388,6 +415,7 @@ public Salida retornoSalidaSel(String nombre){
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
+        a.setEstado(ACTAceptada.ACEPTADA);
         d.setActividades(a);
         contpersis.altaActividadTuristica(a,"eldiez");
         try {
@@ -396,6 +424,7 @@ public Salida retornoSalidaSel(String nombre){
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
+        a.setEstado(ACTAceptada.ACEPTADA);
         d.setActividades(a);
         contpersis.altaActividadTuristica(a,"eldiez");
         try {
@@ -404,6 +433,7 @@ public Salida retornoSalidaSel(String nombre){
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
+        a.setEstado(ACTAceptada.ACEPTADA);
         d.setActividades(a);
         contpersis.altaActividadTuristica(a,"eldiez");
         

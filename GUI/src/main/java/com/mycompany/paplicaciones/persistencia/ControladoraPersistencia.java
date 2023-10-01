@@ -346,5 +346,13 @@ public class ControladoraPersistencia {
             }
             return existe;      
         }
+    
+    public void editarActividad(Actividad a){
+        try {
+            ajpa.edit(a);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
 

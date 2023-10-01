@@ -26,6 +26,7 @@ public class Actividad implements Serializable {
     @ManyToOne
     private Departamento dep;
     private Integer dur,costo;
+    private ACTAceptada estado;
     @Temporal(TemporalType.DATE)
     private Date fAlta;
     @OneToMany
@@ -45,6 +46,7 @@ public class Actividad implements Serializable {
         this.fAlta=fAlta;
         this.salidas=new ArrayList<Salida>();
         this.paquetes= new ArrayList<Paquete>();
+        this.estado=ACTAceptada.AGREGADA;
     }
     
     public String getNom() {
@@ -106,6 +108,14 @@ public class Actividad implements Serializable {
         this.salidas.add(s);
     }
     
+    public ACTAceptada getEstado(){
+        return estado;
+    }
+    
+    public void setEstado(ACTAceptada est){
+        estado=est;
+    }
+    
     public DTActividad getData(){
         DTActividad dt = new DTActividad();
         dt.setNombre(this.nom);
@@ -115,6 +125,7 @@ public class Actividad implements Serializable {
         dt.setCostoXturista(this.costo);
         dt.setCiudad(this.ciudad);
         dt.setfAlta(this.fAlta);
+        dt.setEstado(this.estado);
         return dt;
     }
     public ArrayList<DTSalida>getSalidas(){

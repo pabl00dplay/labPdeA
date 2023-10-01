@@ -49,6 +49,9 @@ public interface IController {
     public abstract Salida retornoSalidaSel(String nombre);
     public abstract Actividad retornoActividadSelec(String nombre);
     public abstract boolean turiInscriptoSalida(String nick, String nombreSal);
+    public void aceptarAct(String nom);
+    public void rechazarAct(String nom);
+    public ArrayList<DTActividad> listarActividadesSoloAgregadas();
     public abstract void inicializar();
             
 }
