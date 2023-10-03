@@ -14,7 +14,8 @@ public interface IController {
     
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
-    
+
+    public abstract void altaCategoria(String categoria);
     public abstract void altaActividadTuristica(DTActividad da, String nom);
     public abstract void altaTurista(DTUsuario dt);
     public abstract void altaProveedor(DTUsuario dp);
@@ -22,6 +23,7 @@ public interface IController {
     public abstract boolean mailExiste(String correo);
     public abstract boolean existeDepartamento(String nombreDepartamento);
     public abstract boolean actividadExiste(String nombreActividad);
+    public abstract boolean existeCategoria(String categoria);
     public abstract ArrayList<Usuario> getUsuarios();
     public abstract ArrayList<DTDepartamento> getDepartamentos();
     public abstract DTUsuario getUsuario(String nickname);

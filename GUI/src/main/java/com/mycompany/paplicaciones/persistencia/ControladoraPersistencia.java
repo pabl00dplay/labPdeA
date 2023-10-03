@@ -16,6 +16,7 @@ import main.java.logica.Departamento;
 import main.java.logica.Usuario;
 
 import main.java.com.mycompany.paplicaciones.persistencia.*;
+import main.java.logica.Categoria;
 import main.java.logica.Inscripcion;
 import main.java.logica.Paquete;
 import main.java.logica.Salida;
@@ -27,6 +28,7 @@ public class ControladoraPersistencia {
     DepartamentoJpaController djpa=new DepartamentoJpaController();
     PaqueteJpaController pjpa=new PaqueteJpaController();
     InscripcionJpaController ijpa=new InscripcionJpaController();
+    CategoriaJpaController cjpa=new CategoriaJpaController();
     public void altaTurista(Usuario t) {
         try {
             ujpa.create(t);
@@ -91,16 +93,28 @@ public class ControladoraPersistencia {
     public void altaActividadTuristica(Actividad act, String nom){
         try{
             Usuario u = ujpa.findUsuario(nom);
-            if(u==null)
-            { 
-            JOptionPane.showMessageDialog(null, "ESNULLELUSUARIO");
-            }
             u.setActividad(act);
             ajpa.create(act);
             djpa.edit(act.getDep());
             ujpa.edit(u);
         } catch(Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void altaCategoria(String categoria) {
+        Categoria cat=new Categoria(categoria); 
+        try {
+            this.cjpa.create(cat);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public boolean existeCategoria(String categoria) {
+        Categoria cat=cjpa.findCategoria(categoria);
+        if(cat==null){
+            return false;
+        }else{
+            return true;
         }
     }
     public boolean existeDepartamento(String nombreDepartamento){
@@ -111,6 +125,7 @@ public class ControladoraPersistencia {
             return true;
         }
     }
+    
     public void altaDepartamento(Departamento d){
         try {
             djpa.create(d);

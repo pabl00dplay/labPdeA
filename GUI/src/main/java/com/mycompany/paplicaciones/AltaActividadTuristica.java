@@ -95,6 +95,12 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
 
         jLabel11.setText("Fecha de Alta");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 516, -1, 20));
+
+        jTextFieldNombreActividad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNombreActividadActionPerformed(evt);
+            }
+        });
         add(jTextFieldNombreActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 470, -1));
 
         jTextFieldDuracion.addActionListener(new java.awt.event.ActionListener() {
@@ -252,6 +258,10 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
             jTextFieldCosto.setEditable(true);
         }// TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCostoKeyPressed
+
+    private void jTextFieldNombreActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreActividadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNombreActividadActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

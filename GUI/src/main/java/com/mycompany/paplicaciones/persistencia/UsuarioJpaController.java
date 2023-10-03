@@ -9,7 +9,7 @@ import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import main.java.logica.Inscripcion;
+import main.java.logica.Compra;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -17,6 +17,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import main.java.com.mycompany.paplicaciones.persistencia.exceptions.NonexistentEntityException;
 import main.java.com.mycompany.paplicaciones.persistencia.exceptions.PreexistingEntityException;
+import main.java.logica.Inscripcion;
 import main.java.logica.Usuario;
 
 /**
@@ -35,6 +36,9 @@ public class UsuarioJpaController implements Serializable {
     }
 
     public void create(Usuario usuario) throws PreexistingEntityException, Exception {
+        if (usuario.getCompras() == null) {
+            usuario.setCompras(new ArrayList<Compra>());
+        }
         if (usuario.getIns() == null) {
             usuario.setIns(new ArrayList<Inscripcion>());
         }
@@ -42,6 +46,12 @@ public class UsuarioJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
+            List<Compra> attachedCompras = new ArrayList<Compra>();
+            for (Compra comprasCompraToAttach : usuario.getCompras()) {
+                comprasCompraToAttach = em.getReference(comprasCompraToAttach.getClass(), comprasCompraToAttach.getId());
+                attachedCompras.add(comprasCompraToAttach);
+            }
+            usuario.setCompras(attachedCompras);
             List<Inscripcion> attachedIns = new ArrayList<Inscripcion>();
             for (Inscripcion insInscripcionToAttach : usuario.getIns()) {
                 insInscripcionToAttach = em.getReference(insInscripcionToAttach.getClass(), insInscripcionToAttach.getId());
@@ -49,6 +59,15 @@ public class UsuarioJpaController implements Serializable {
             }
             usuario.setIns(attachedIns);
             em.persist(usuario);
+            for (Compra comprasCompra : usuario.getCompras()) {
+                Usuario oldTurOfComprasCompra = comprasCompra.getTur();
+                comprasCompra.setTur(usuario);
+                comprasCompra = em.merge(comprasCompra);
+                if (oldTurOfComprasCompra != null) {
+                    oldTurOfComprasCompra.getCompras().remove(comprasCompra);
+                    oldTurOfComprasCompra = em.merge(oldTurOfComprasCompra);
+                }
+            }
             for (Inscripcion insInscripcion : usuario.getIns()) {
                 Usuario oldTurOfInsInscripcion = insInscripcion.getTur();
                 insInscripcion.setTur(usuario);
@@ -77,8 +96,17 @@ public class UsuarioJpaController implements Serializable {
             em = getEntityManager();
             em.getTransaction().begin();
             Usuario persistentUsuario = em.find(Usuario.class, usuario.getNick());
+            List<Compra> comprasOld = persistentUsuario.getCompras();
+            List<Compra> comprasNew = usuario.getCompras();
             List<Inscripcion> insOld = persistentUsuario.getIns();
             List<Inscripcion> insNew = usuario.getIns();
+            List<Compra> attachedComprasNew = new ArrayList<Compra>();
+            for (Compra comprasNewCompraToAttach : comprasNew) {
+                comprasNewCompraToAttach = em.getReference(comprasNewCompraToAttach.getClass(), comprasNewCompraToAttach.getId());
+                attachedComprasNew.add(comprasNewCompraToAttach);
+            }
+            comprasNew = attachedComprasNew;
+            usuario.setCompras(comprasNew);
             List<Inscripcion> attachedInsNew = new ArrayList<Inscripcion>();
             for (Inscripcion insNewInscripcionToAttach : insNew) {
                 insNewInscripcionToAttach = em.getReference(insNewInscripcionToAttach.getClass(), insNewInscripcionToAttach.getId());
@@ -87,6 +115,23 @@ public class UsuarioJpaController implements Serializable {
             insNew = attachedInsNew;
             usuario.setIns(insNew);
             usuario = em.merge(usuario);
+            for (Compra comprasOldCompra : comprasOld) {
+                if (!comprasNew.contains(comprasOldCompra)) {
+                    comprasOldCompra.setTur(null);
+                    comprasOldCompra = em.merge(comprasOldCompra);
+                }
+            }
+            for (Compra comprasNewCompra : comprasNew) {
+                if (!comprasOld.contains(comprasNewCompra)) {
+                    Usuario oldTurOfComprasNewCompra = comprasNewCompra.getTur();
+                    comprasNewCompra.setTur(usuario);
+                    comprasNewCompra = em.merge(comprasNewCompra);
+                    if (oldTurOfComprasNewCompra != null && !oldTurOfComprasNewCompra.equals(usuario)) {
+                        oldTurOfComprasNewCompra.getCompras().remove(comprasNewCompra);
+                        oldTurOfComprasNewCompra = em.merge(oldTurOfComprasNewCompra);
+                    }
+                }
+            }
             for (Inscripcion insOldInscripcion : insOld) {
                 if (!insNew.contains(insOldInscripcion)) {
                     insOldInscripcion.setTur(null);
@@ -132,6 +177,11 @@ public class UsuarioJpaController implements Serializable {
                 usuario.getNick();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The usuario with id " + id + " no longer exists.", enfe);
+            }
+            List<Compra> compras = usuario.getCompras();
+            for (Compra comprasCompra : compras) {
+                comprasCompra.setTur(null);
+                comprasCompra = em.merge(comprasCompra);
             }
             List<Inscripcion> ins = usuario.getIns();
             for (Inscripcion insInscripcion : ins) {

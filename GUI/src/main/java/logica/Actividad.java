@@ -51,6 +51,14 @@ public class Actividad implements Serializable {
         this.paquetes= new ArrayList<Paquete>();
         this.estado=ACTAceptada.AGREGADA;
     }
+
+    public ACTAceptada getEstado() {
+        return estado;
+    }
+
+    public void setEstado(ACTAceptada estado) {
+        this.estado = estado;
+    }
     
     public String getNom() {
         return nom;
@@ -111,14 +119,7 @@ public class Actividad implements Serializable {
         this.salidas.add(s);
     }
     
-    public ACTAceptada getEstado(){
-        return estado;
-    }
-    
-    public void setEstado(ACTAceptada est){
-        estado=est;
-    }
-    
+   
     public DTActividad getData(){
         DTActividad dt = new DTActividad();
         dt.setNombre(this.nom);

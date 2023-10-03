@@ -21,6 +21,9 @@ public class Usuario implements Serializable{
     protected String nom,ape,mail;
     @Temporal(TemporalType.DATE)
     protected Date fnac;
+    @OneToMany
+    
+    
     
     
 
@@ -41,7 +44,9 @@ public class Usuario implements Serializable{
     @Basic
     private Integer esTurista;
     
-    
+    //Compras
+    @OneToMany
+    private List<Compra> compras=null;
     
     
     public Usuario() {
@@ -91,6 +96,14 @@ public class Usuario implements Serializable{
         }
     };
 
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
+    }
+    
     public void setIns(ArrayList<Inscripcion> ins) {
         this.ins = ins;
     }

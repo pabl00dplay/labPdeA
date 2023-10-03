@@ -11,6 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class Controller implements IController {
     ControladoraPersistencia contpersis= new  ControladoraPersistencia();
@@ -18,9 +19,10 @@ public class Controller implements IController {
     //AltaActividad
     public void altaActividadTuristica(DTActividad da, String nom){
         Departamento departamento = contpersis.getDepartamento(da.getDepartamento());
-        Actividad acttividad = new Actividad(da.getNombre(),da.getDescripcion(),departamento,da.getCiudad(),da.getDuracion(),da.getCostoXturista(),da.getfAlta());
-        departamento.setActividades(acttividad);
-        contpersis.altaActividadTuristica(acttividad,nom);
+        Actividad actividad = new Actividad(da.getNombre(),da.getDescripcion(),departamento,da.getCiudad(),da.getDuracion(),da.getCostoXturista(),da.getfAlta());
+        
+        departamento.setActividades(actividad);
+        contpersis.altaActividadTuristica(actividad,nom);
     }
     //AltaSalida
     public void altaSalida(DTSalida dt){
@@ -38,6 +40,9 @@ public class Controller implements IController {
     public void altaProveedor(DTUsuario dp){
         Usuario p=new Usuario(dp,0);
         contpersis.altaProveedor(p);
+    }
+    public void altaCategoria(String categoria) {
+        contpersis.altaCategoria(categoria);
     }
      public DTUsuario getUsuario(String nickname){
         DTUsuario dt = contpersis.getUsuario(nickname);
@@ -89,6 +94,10 @@ public class Controller implements IController {
     public boolean salidaExiste(String s){
         return contpersis.salidaExiste(s);
     }
+    public boolean existeCategoria(String categoria) {
+        return contpersis.existeCategoria(categoria);
+    }
+    
     
     public  ArrayList<DTSalida> getSalidas(){
         ArrayList<Salida> salidas=contpersis.getSalidas();

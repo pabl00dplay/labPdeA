@@ -93,7 +93,6 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         });
         add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 171, 465, -1));
 
-        jTextFieldHora.setText(" ");
         jTextFieldHora.setToolTipText("");
         jTextFieldHora.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -102,7 +101,6 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
         });
         add(jTextFieldHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 263, 465, -1));
 
-        jTextFieldLugar.setText(" ");
         jTextFieldLugar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldLugarKeyPressed(evt);
