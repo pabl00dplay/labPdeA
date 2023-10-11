@@ -12,7 +12,7 @@ public class Fabrica {
 
     private static Fabrica instancia=null;
     private static Controller instanciaC=null;
-    private Fabrica() {
+    public Fabrica() {
     };
 
     public static Fabrica getInstance() {

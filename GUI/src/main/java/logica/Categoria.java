@@ -24,6 +24,4 @@ public class Categoria implements Serializable {
         this.nombre = nombre;
     }
     
-    
-    
 }

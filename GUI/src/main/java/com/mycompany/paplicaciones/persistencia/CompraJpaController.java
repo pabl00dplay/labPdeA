@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import main.java.com.mycompany.paplicaciones.persistencia.exceptions.NonexistentEntityException;
@@ -22,8 +23,8 @@ import main.java.logica.Usuario;
  */
 public class CompraJpaController implements Serializable {
 
-    public CompraJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+    public CompraJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("PAplicaciones");
     }
     private EntityManagerFactory emf = null;
 
