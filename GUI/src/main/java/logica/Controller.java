@@ -75,9 +75,6 @@ public class Controller implements IController {
     public ArrayList<DTDepartamento> getDepartamentos() {
         return contpersis.getDepartamentos();
     }
-    public ArrayList<String> getCategorias(){
-        return contpersis.getCategorias();
-    }
     public boolean actividadExiste(String nombreActividad){
         return contpersis.actividadExiste(nombreActividad);
     }

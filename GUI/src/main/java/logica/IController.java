@@ -1,6 +1,7 @@
 package main.java.logica;
 
 
+
 import DataTypes.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -54,5 +55,5 @@ public interface IController {
     public void rechazarAct(String nom);
     public ArrayList<DTActividad> listarActividadesSoloAgregadas();
     public abstract void inicializar();
-    public abstract ArrayList<String> getCategorias();
+            
 }

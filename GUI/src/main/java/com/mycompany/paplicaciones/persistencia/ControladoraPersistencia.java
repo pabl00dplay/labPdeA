@@ -164,14 +164,7 @@ public class ControladoraPersistencia {
         }
         return existe;  
     }
-    public ArrayList<String> getCategorias(){
-        List<Categoria> listaCategorias = cjpa.findCategoriaEntities();
-        ArrayList<String> retorno=new ArrayList<>();
-        for(Categoria c:listaCategorias){
-            retorno.add(c.getNombre());
-        }
-        return retorno;
-    }
+
     public ArrayList<Salida> getSalidas() {
         List<Salida> listita=sjpa.findSalidaEntities();
         ArrayList<Salida> retorno=new ArrayList<Salida>(listita);
