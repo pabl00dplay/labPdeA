@@ -4,6 +4,8 @@
  */
 package main.java.com.mycompany.paplicaciones.persistencia;
 
+import DataTypes.exceptions.NonexistentEntityException;
+import DataTypes.exceptions.PreexistingEntityException;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -13,18 +15,16 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import main.java.com.mycompany.paplicaciones.persistencia.exceptions.NonexistentEntityException;
-import main.java.com.mycompany.paplicaciones.persistencia.exceptions.PreexistingEntityException;
 import main.java.logica.Departamento;
 
 /**
  *
- * @author francisco
+ * @author pablo
  */
 public class DepartamentoJpaController implements Serializable {
 
-    public DepartamentoJpaController(){
-        this.emf = Persistence.createEntityManagerFactory("PAplicaciones");
+    public DepartamentoJpaController() {
+        this.emf=Persistence.createEntityManagerFactory("PAplicaciones");
     }
     private EntityManagerFactory emf = null;
 
