@@ -146,7 +146,7 @@ public class Usuario implements Serializable{
             this.img=dt.getImg();
         }
     };
-
+    
     public void setIns(ArrayList<Inscripcion> ins) {
         this.ins = ins;
     }

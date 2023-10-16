@@ -11,7 +11,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 public class Controller implements IController {
     ControladoraPersistencia contpersis= new  ControladoraPersistencia();
@@ -171,7 +170,6 @@ public class Controller implements IController {
       public ArrayList<DTActividad> getActividades(){
           return contpersis.getActividades();
       }
-      
     public ArrayList<DTPaquete> listarPaquetesActividad(String nombreActividad){
         Actividad a = contpersis.getActividad(nombreActividad);
         return a.getDataPaquetes();
@@ -300,79 +298,79 @@ public Salida retornoSalidaSel(String nombre){
         
         //Usuario
         try {
-            u=new Usuario("lachiqui","Rosa Maria","Martinez","mirtha.legrand.ok@hotmail.com.ar",new SimpleDateFormat("yyyy-MM-dd").parse("1927-02-23"),"argentina",new String("1234"),new String("IMG"));
+            u=new Usuario("lachiqui","Rosa Maria","Martinez","mirtha.legrand.ok@hotmail.com.ar",new SimpleDateFormat("yyyy-MM-dd").parse("1927-02-23"),"argentina","1234","IMG");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaTurista(u);
         try {
-            u=new Usuario("isabelita","Elizabeth","Windsor","isabelita@thecrown.co.uk",new SimpleDateFormat("yyyy-MM-dd").parse("1926-04-21"),"inglesa",new String("1234"),new String("IMG"));
+            u=new Usuario("isabelita","Elizabeth","Windsor","isabelita@thecrown.co.uk",new SimpleDateFormat("yyyy-MM-dd").parse("1926-04-21"),"inglesa","1234","IMG");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaTurista(u);
         try {
-            u=new Usuario("anibal","Anibal","Lecter","anibal@fing.edu.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1937-12-31"),"lituana",new String("1234"),new String("IMG"));
+            u=new Usuario("anibal","Anibal","Lecter","anibal@fing.edu.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1937-12-31"),"lituana","1234","IMG");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaTurista(u);
         try {
-            u=new Usuario("watson","Emma","Watson","e.waston@gmail.com",new SimpleDateFormat("yyyy-MM-dd").parse("1990-04-15"),"inglesa",new String("1234"),new String("IMG"));
+            u=new Usuario("watson","Emma","Watson","e.waston@gmail.com",new SimpleDateFormat("yyyy-MM-dd").parse("1990-04-15"),"inglesa","1234","IMG");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaTurista(u);
         try {
-            u=new Usuario("elelvis","Elvis","Lacio","suavemente@hotmail.com",new SimpleDateFormat("yyyy-MM-dd").parse("1971-07-30"),"estadounidense",new String("1234"),new String("IMG"));
+            u=new Usuario("elelvis","Elvis","Lacio","suavemente@hotmail.com",new SimpleDateFormat("yyyy-MM-dd").parse("1971-07-30"),"estadounidense","1234","IMG");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaTurista(u);
         try {
-            u=new Usuario("eleven11","Eleven","Once","eleven11@gmail.com",new SimpleDateFormat("yyyy-MM-dd").parse("2004-02-19"),"espaniola",new String("1234"),new String("IMG"));
+            u=new Usuario("eleven11","Eleven","Once","eleven11@gmail.com",new SimpleDateFormat("yyyy-MM-dd").parse("2004-02-19"),"espaniola","1234","IMG");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaTurista(u);
         try {
-            u=new Usuario("bobesponja","Bob","Esponja","bobesponja@nickelodeon.com",new SimpleDateFormat("yyyy-MM-dd").parse("1999-05-01"),"japonesa",new String("1234"),new String("IMG"));
+            u=new Usuario("bobesponja","Bob","Esponja","bobesponja@nickelodeon.com",new SimpleDateFormat("yyyy-MM-dd").parse("1999-05-01"),"japonesa","1234","IMG");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaTurista(u);
         try {
-            u=new Usuario("tony","Antonio","Pacheco","eltony@manya.org.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1976-04-11"),"uruguaya",new String("1234"),new String("IMG"));
+            u=new Usuario("tony","Antonio","Pacheco","eltony@manya.org.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1976-04-11"),"uruguaya","1234","IMG");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaTurista(u);
         try {
-            u=new Usuario("chino","Albaro","Recoba","chino@trico.org.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1976-03-17"),"uruguaya",new String("1234"),new String("IMG"));
+            u=new Usuario("chino","Albaro","Recoba","chino@trico.org.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1976-03-17"),"uruguaya","1234","IMG");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaTurista(u);
         try {
-            u=new Usuario("mastropiero","Johann Sebastian","Mastropiero","johann.sebastian@gmail.com",new SimpleDateFormat("yyyy-MM-dd").parse("1922-02-07"),"uruguaya",new String("1234"),new String("IMG"));
+            u=new Usuario("mastropiero","Johann Sebastian","Mastropiero","johann.sebastian@gmail.com",new SimpleDateFormat("yyyy-MM-dd").parse("1922-02-07"),"uruguaya","1234","IMG");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaTurista(u);
         try {
-            u=new Usuario("washington","Washington","Rocha","washington@turismorocha.gub.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1970-09-14"),"Hola! me llamo Washington y soy el encargado del portal de turismo del departamento de Rocha - Uruguay","http://turismorocha.gub.uy/");
+            u=new Usuario("washington","Washington","Rocha","washington@turismorocha.gub.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1970-09-14"),"Hola! me llamo Washington y soy el encargado del portal de turismo del departamento de Rocha - Uruguay","http://turismorocha.gub.uy/","1234","IMG");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaProveedor(u);
         try {
-            u=new Usuario("eldiez","Pablo","Bengoechea","eldiez@socfomturriv.org.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1965-06-27"),"Pablo es el presidente de la Sociedad de Fomento Turı́stico de Rivera (conocida como Socfomturriv)","http://wwww.socfomturriv.org.uy");
+            u=new Usuario("eldiez","Pablo","Bengoechea","eldiez@socfomturriv.org.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1965-06-27"),"Pablo es el presidente de la Sociedad de Fomento Turı́stico de Rivera (conocida como Socfomturriv)","http://wwww.socfomturriv.org.uy","1234","IMG");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaProveedor(u);
         try {
-            u=new Usuario("meche","Mercedes","Venn","meche@colonia.gub.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1990-12-31"),"Departamento de Turismo del Departamento de Colonia","https://colonia.gub.uy/turismo/");
+            u=new Usuario("meche","Mercedes","Venn","meche@colonia.gub.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1990-12-31"),"Departamento de Turismo del Departamento de Colonia","https://colonia.gub.uy/turismo/","1234","IMG");
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
