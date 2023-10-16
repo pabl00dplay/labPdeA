@@ -76,7 +76,7 @@ public class AltaDeDepartamento extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 570, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 570, -1, -1));
 
         jTextFielddescripcion.setColumns(20);
         jTextFielddescripcion.setLineWrap(true);

@@ -146,7 +146,7 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
                 jButtonRegistrarActividadActionPerformed(evt);
             }
         });
-        add(jButtonRegistrarActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 570, -1, -1));
+        add(jButtonRegistrarActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 570, -1, -1));
 
         jComboBoxProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

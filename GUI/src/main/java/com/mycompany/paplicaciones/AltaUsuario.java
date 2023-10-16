@@ -131,7 +131,7 @@ public class AltaUsuario extends javax.swing.JPanel {
                 jButtonEnviarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 570, -1, -1));
+        jPanel1.add(jButtonEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 570, -1, -1));
 
         jTextArealDescripcionGeneral.setColumns(20);
         jTextArealDescripcionGeneral.setLineWrap(true);
@@ -181,6 +181,8 @@ public class AltaUsuario extends javax.swing.JPanel {
         ape = jTextFieldapellido.getText();
         mail = jTextFieldcorreoElectrónico.getText();
         fnac = jDateChooser1.getDate();
+        String pass="";
+        String img="";
         Fabrica f=Fabrica.getInstance();
         IController I=f.getIController();
         if(nic==" "){
@@ -198,7 +200,7 @@ public class AltaUsuario extends javax.swing.JPanel {
         }
         else if(opcion.equals("Turista")){
             String nacionalidad=jTextFieldnacionalidad.getText();
-            DTUsuario dt=new DTUsuario(nic,nom,ape,mail,fnac,nacionalidad);
+            DTUsuario dt=new DTUsuario(nic,nom,ape,mail,fnac,nacionalidad,pass,img);
             I.altaTurista(dt);
 
             jTextFieldnickname.setText(null);
@@ -213,7 +215,7 @@ public class AltaUsuario extends javax.swing.JPanel {
         else if(opcion.equals("Proveedor")){
             String texto=jTextArealDescripcionGeneral.getText();
             String link=jTextFieldlink.getText();
-            DTUsuario dt = new DTUsuario(nic,nom,ape,mail,fnac,link,texto);
+            DTUsuario dt = new DTUsuario(nic,nom,ape,mail,fnac,link,texto,pass,img);
             I.altaProveedor(dt);
 
             jTextFieldnickname.setText(null);

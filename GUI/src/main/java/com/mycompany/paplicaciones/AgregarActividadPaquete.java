@@ -85,7 +85,7 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
                 btnOkActionPerformed(evt);
             }
         });
-        add(btnOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 570, -1, -1));
+        add(btnOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 570, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

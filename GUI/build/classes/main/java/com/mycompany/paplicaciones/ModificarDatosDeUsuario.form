@@ -31,46 +31,48 @@
                       <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
                       <Component id="ustexto" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Component id="aceptarbot" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="nicktexto" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="nombretexto" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="mailtexto" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="apellidotexto" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="nicktexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nombretexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mailtexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="apellidotexto" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="desctexto" min="-2" max="-2" attributes="0"/>
-                                      <Component id="nactexto" min="-2" max="-2" attributes="0"/>
-                                      <Component id="webtexto" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="nacionalidadvar" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
-                                      <Component id="nombrevar" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
-                                      <Component id="apellidovar" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
-                                      <Component id="nicktextomostrar" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="mailtextomostrar" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane2" min="-2" pref="149" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="desctexto" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nactexto" min="-2" max="-2" attributes="0"/>
+                                  <Component id="webtexto" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="webvar" alignment="0" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="nacionalidadvar" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
+                                  <Component id="nombrevar" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
+                                  <Component id="apellidovar" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
+                                  <Component id="nicktextomostrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mailtextomostrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="149" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="webvar" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="aceptarbot" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="16" max="32767" attributes="0"/>

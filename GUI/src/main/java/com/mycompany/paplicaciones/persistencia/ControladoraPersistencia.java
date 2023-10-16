@@ -6,6 +6,7 @@ import DataTypes.DTPaquete;
 import DataTypes.DTSalida;
 import DataTypes.DTUsuario;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
@@ -42,6 +43,9 @@ public class ControladoraPersistencia {
         ArrayList<Usuario> retorno=new ArrayList<Usuario>(listita);
         return retorno;
     }
+    public List<Usuario> getUsuariosList() {
+       return ujpa.findUsuarioEntities();
+    }
     public void altaSalida(Salida salida) {
         try {
             sjpa.create(salida);
@@ -59,15 +63,12 @@ public class ControladoraPersistencia {
         }
     }
     public boolean nicExiste(String nic){
-        List<Usuario> lus=ujpa.findUsuarioEntities();
-        boolean existe=false;
-        Iterator<Usuario> itr = lus.iterator();
-        for(Usuario u:lus) {
-           if(u.getNick().equals(nic)){
-               existe=true;
-           }
-        }
-        return existe;      
+        Usuario u = ujpa.findUsuario(nic);
+        if(u==null){
+            return false;
+        }else{
+            return true;
+        }      
     }
 
     public boolean mailExiste(String correo) {
@@ -241,14 +242,14 @@ public class ControladoraPersistencia {
     }
     public ArrayList<String> listarsalidasinscriptasTurista(String nickname) {
         Usuario u=ujpa.findUsuario(nickname);
-        List<Inscripcion> inscripciones=u.getIns();
+        List<Inscripcion> inscripciones=null;
+        inscripciones=u.getIns();
         ArrayList<String> retorno=new ArrayList<String>();
         for(Inscripcion i:inscripciones){
-            retorno.add(i.getSal().getNom());
-        }
+                retorno.add(i.getSal().getNom());
+        } 
         return retorno;
     }; 
-
     public ArrayList<String> listarActividadesProveedor(String nickname) {
         Usuario u=ujpa.findUsuario(nickname);
         List<Actividad> actividades=u.getActividades();
@@ -324,11 +325,14 @@ public class ControladoraPersistencia {
         if(u != null){
             
             if(u.getEsTurista()==1){
-                DTUsuario dt = new DTUsuario(u.getNick(),u.getNom(),u.getApe(),u.getMail(),u.getFnac(),u.getNac());
+                DTUsuario dt = new DTUsuario(u.getNick(),u.getNom(),u.getApe(),u.getMail(),u.getFnac(),u.getNac(),u.getPass(),u.getImg());
                 return dt;
             }
             else if(u.getEsTurista()==0){
-                DTUsuario dt = new DTUsuario(u.getNick(),u.getNom(),u.getApe(),u.getMail(),u.getFnac(),u.getWeb(),u.getDescripcion());
+                DTUsuario dt = new DTUsuario(u.getNick(),u.getNom(),u.getApe(),u.getMail(),u.getFnac(),u.getWeb(),u.getDescripcion(),u.getPass(),u.getImg());
+                return dt;
+            }else if(u.getEsTurista()==2){
+                DTUsuario dt=new DTUsuario(u.getNick(),u.getNom(),u.getApe(),u.getMail(),u.getFnac(),u.getPass(),u.getImg());
                 return dt;
             }
         }
@@ -368,13 +372,16 @@ public class ControladoraPersistencia {
             }
             return existe;      
         }
-    
-    public void editarActividad(Actividad a){
+
+    public void altaVisitante(DTUsuario dv) {
+        Usuario v=new Usuario(dv,2);
         try {
-            ajpa.edit(a);
+            ujpa.create(v);
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
+    
     }
+
 }
 

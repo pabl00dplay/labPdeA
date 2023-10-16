@@ -133,7 +133,7 @@ public class AltaSalidaTuristica extends javax.swing.JPanel {
                 jButtonAltaActionPerformed(evt);
             }
         });
-        add(jButtonAlta, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 560, 150, 30));
+        add(jButtonAlta, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 560, 150, 30));
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Departamento");
