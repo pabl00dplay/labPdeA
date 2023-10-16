@@ -360,19 +360,19 @@ public Salida retornoSalidaSel(String nombre){
         }
         contpersis.altaTurista(u);
         try {
-            u=new Usuario("washington","Washington","Rocha","washington@turismorocha.gub.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1970-09-14"),"Hola! me llamo Washington y soy el encargado del portal de turismo del departamento de Rocha - Uruguay","http://turismorocha.gub.uy/");
+            u=new Usuario("washington","Washington","Rocha","washington@turismorocha.gub.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1970-09-14"),"Hola! me llamo Washington y soy el encargado del portal de turismo del departamento de Rocha - Uruguay","http://turismorocha.gub.uy/",new String("1234"),new String("IMG"));
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaProveedor(u);
         try {
-            u=new Usuario("eldiez","Pablo","Bengoechea","eldiez@socfomturriv.org.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1965-06-27"),"Pablo es el presidente de la Sociedad de Fomento Turı́stico de Rivera (conocida como Socfomturriv)","http://wwww.socfomturriv.org.uy");
+            u=new Usuario("eldiez","Pablo","Bengoechea","eldiez@socfomturriv.org.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1965-06-27"),"Pablo es el presidente de la Sociedad de Fomento Turı́stico de Rivera (conocida como Socfomturriv)","http://wwww.socfomturriv.org.uy",new String("1234"),new String("IMG"));
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         contpersis.altaProveedor(u);
         try {
-            u=new Usuario("meche","Mercedes","Venn","meche@colonia.gub.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1990-12-31"),"Departamento de Turismo del Departamento de Colonia","https://colonia.gub.uy/turismo/");
+            u=new Usuario("meche","Mercedes","Venn","meche@colonia.gub.uy",new SimpleDateFormat("yyyy-MM-dd").parse("1990-12-31"),"Departamento de Turismo del Departamento de Colonia","https://colonia.gub.uy/turismo/",new String("1234"),new String("IMG"));
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
