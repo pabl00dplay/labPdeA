@@ -24,7 +24,7 @@ import main.java.logica.Usuario;
 public class CompraJpaController implements Serializable {
 
     public CompraJpaController() {
-        this.emf = Persistence.createEntityManagerFactory("PAplicaciones");
+        this.emf=Persistence.createEntityManagerFactory("PAplicaciones");
     }
     private EntityManagerFactory emf = null;
 

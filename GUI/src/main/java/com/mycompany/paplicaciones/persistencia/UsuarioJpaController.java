@@ -4,8 +4,6 @@
  */
 package main.java.com.mycompany.paplicaciones.persistencia;
 
-import DataTypes.exceptions.NonexistentEntityException;
-import DataTypes.exceptions.PreexistingEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
@@ -17,11 +15,14 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import main.java.com.mycompany.paplicaciones.persistencia.exceptions.NonexistentEntityException;
+import main.java.com.mycompany.paplicaciones.persistencia.exceptions.PreexistingEntityException;
+import main.java.logica.Compra;
 import main.java.logica.Usuario;
 
 /**
  *
- * @author pablo
+ * @author capo_
  */
 public class UsuarioJpaController implements Serializable {
 
@@ -38,6 +39,9 @@ public class UsuarioJpaController implements Serializable {
         if (usuario.getIns() == null) {
             usuario.setIns(new ArrayList<Inscripcion>());
         }
+        if (usuario.getCompras() == null) {
+            usuario.setCompras(new ArrayList<Compra>());
+        }
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -48,6 +52,12 @@ public class UsuarioJpaController implements Serializable {
                 attachedIns.add(insInscripcionToAttach);
             }
             usuario.setIns(attachedIns);
+            List<Compra> attachedCompras = new ArrayList<Compra>();
+            for (Compra comprasCompraToAttach : usuario.getCompras()) {
+                comprasCompraToAttach = em.getReference(comprasCompraToAttach.getClass(), comprasCompraToAttach.getId());
+                attachedCompras.add(comprasCompraToAttach);
+            }
+            usuario.setCompras(attachedCompras);
             em.persist(usuario);
             for (Inscripcion insInscripcion : usuario.getIns()) {
                 Usuario oldTurOfInsInscripcion = insInscripcion.getTur();
@@ -56,6 +66,15 @@ public class UsuarioJpaController implements Serializable {
                 if (oldTurOfInsInscripcion != null) {
                     oldTurOfInsInscripcion.getIns().remove(insInscripcion);
                     oldTurOfInsInscripcion = em.merge(oldTurOfInsInscripcion);
+                }
+            }
+            for (Compra comprasCompra : usuario.getCompras()) {
+                Usuario oldTurOfComprasCompra = comprasCompra.getTur();
+                comprasCompra.setTur(usuario);
+                comprasCompra = em.merge(comprasCompra);
+                if (oldTurOfComprasCompra != null) {
+                    oldTurOfComprasCompra.getCompras().remove(comprasCompra);
+                    oldTurOfComprasCompra = em.merge(oldTurOfComprasCompra);
                 }
             }
             em.getTransaction().commit();
@@ -79,6 +98,8 @@ public class UsuarioJpaController implements Serializable {
             Usuario persistentUsuario = em.find(Usuario.class, usuario.getNick());
             List<Inscripcion> insOld = persistentUsuario.getIns();
             List<Inscripcion> insNew = usuario.getIns();
+            List<Compra> comprasOld = persistentUsuario.getCompras();
+            List<Compra> comprasNew = usuario.getCompras();
             List<Inscripcion> attachedInsNew = new ArrayList<Inscripcion>();
             for (Inscripcion insNewInscripcionToAttach : insNew) {
                 insNewInscripcionToAttach = em.getReference(insNewInscripcionToAttach.getClass(), insNewInscripcionToAttach.getId());
@@ -86,6 +107,13 @@ public class UsuarioJpaController implements Serializable {
             }
             insNew = attachedInsNew;
             usuario.setIns(insNew);
+            List<Compra> attachedComprasNew = new ArrayList<Compra>();
+            for (Compra comprasNewCompraToAttach : comprasNew) {
+                comprasNewCompraToAttach = em.getReference(comprasNewCompraToAttach.getClass(), comprasNewCompraToAttach.getId());
+                attachedComprasNew.add(comprasNewCompraToAttach);
+            }
+            comprasNew = attachedComprasNew;
+            usuario.setCompras(comprasNew);
             usuario = em.merge(usuario);
             for (Inscripcion insOldInscripcion : insOld) {
                 if (!insNew.contains(insOldInscripcion)) {
@@ -101,6 +129,23 @@ public class UsuarioJpaController implements Serializable {
                     if (oldTurOfInsNewInscripcion != null && !oldTurOfInsNewInscripcion.equals(usuario)) {
                         oldTurOfInsNewInscripcion.getIns().remove(insNewInscripcion);
                         oldTurOfInsNewInscripcion = em.merge(oldTurOfInsNewInscripcion);
+                    }
+                }
+            }
+            for (Compra comprasOldCompra : comprasOld) {
+                if (!comprasNew.contains(comprasOldCompra)) {
+                    comprasOldCompra.setTur(null);
+                    comprasOldCompra = em.merge(comprasOldCompra);
+                }
+            }
+            for (Compra comprasNewCompra : comprasNew) {
+                if (!comprasOld.contains(comprasNewCompra)) {
+                    Usuario oldTurOfComprasNewCompra = comprasNewCompra.getTur();
+                    comprasNewCompra.setTur(usuario);
+                    comprasNewCompra = em.merge(comprasNewCompra);
+                    if (oldTurOfComprasNewCompra != null && !oldTurOfComprasNewCompra.equals(usuario)) {
+                        oldTurOfComprasNewCompra.getCompras().remove(comprasNewCompra);
+                        oldTurOfComprasNewCompra = em.merge(oldTurOfComprasNewCompra);
                     }
                 }
             }
@@ -137,6 +182,11 @@ public class UsuarioJpaController implements Serializable {
             for (Inscripcion insInscripcion : ins) {
                 insInscripcion.setTur(null);
                 insInscripcion = em.merge(insInscripcion);
+            }
+            List<Compra> compras = usuario.getCompras();
+            for (Compra comprasCompra : compras) {
+                comprasCompra.setTur(null);
+                comprasCompra = em.merge(comprasCompra);
             }
             em.remove(usuario);
             em.getTransaction().commit();

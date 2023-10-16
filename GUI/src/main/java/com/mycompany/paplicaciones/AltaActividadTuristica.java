@@ -26,7 +26,7 @@ public class AltaActividadTuristica extends javax.swing.JPanel {
         DefaultComboBoxModel modelDepartamentos = new DefaultComboBoxModel();
         modelDepartamentos.addElement(defaultDepartamentoString);
         for(int i=0;i<listaProveedores.size();i++){
-            
+            System.out.println(listaProveedores.get(i).getEsTurista());
             if(listaProveedores.get(i).getEsTurista()== 0){
                 
                 modelProveedores.addElement(listaProveedores.get(i).getNick());

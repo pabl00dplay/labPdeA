@@ -4,7 +4,6 @@
  */
 package main.java.com.mycompany.paplicaciones.persistencia;
 
-import DataTypes.exceptions.NonexistentEntityException;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -14,12 +13,13 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import main.java.com.mycompany.paplicaciones.persistencia.exceptions.NonexistentEntityException;
 import main.java.logica.Inscripcion;
 import main.java.logica.Usuario;
 
 /**
  *
- * @author pablo
+ * @author capo_
  */
 public class InscripcionJpaController implements Serializable {
 

@@ -297,6 +297,13 @@ public class ControladoraPersistencia {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }    
     }
+    public void editarActividad(Actividad a){
+        try {
+            ajpa.edit(a);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     public Salida retornoSalidaSelec(String nombre){
             List<Salida> sal=sjpa.findSalidaEntities();
             Salida sSel = null;

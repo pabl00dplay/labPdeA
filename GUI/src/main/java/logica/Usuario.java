@@ -42,7 +42,8 @@ public class Usuario implements Serializable{
     private Integer esTurista;//0=proveedor 1=turista 2=visitante 
     private String pass;
     private String img;
-    
+    @OneToMany
+    private List<Compra> compras=null;
     
     public Usuario() {
     }
@@ -194,7 +195,9 @@ public class Usuario implements Serializable{
     public int getEsTurista() {
         return esTurista;
     }
-
+    public List<Compra> getCompras() {
+        return compras;
+    }
     public void setNick(String nick) {
         this.nick = nick;
     }
@@ -245,6 +248,10 @@ public class Usuario implements Serializable{
         this.ins = ins;
     }
 
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
+    }
+    
 
     
     

@@ -24,7 +24,7 @@ import main.java.logica.Categoria;
 public class CategoriaJpaController implements Serializable {
 
     public CategoriaJpaController() {
-        this.emf = Persistence.createEntityManagerFactory("PAplicaciones");
+        this.emf=Persistence.createEntityManagerFactory("PAplicaciones");
     }
     private EntityManagerFactory emf = null;
 

@@ -2,6 +2,7 @@
 package DataTypes;
 
 import java.util.Date;
+import main.java.logica.ACTAceptada;
 
 public class DTActividad {
     private String nombre;
@@ -11,6 +12,7 @@ public class DTActividad {
     private Integer duracion;
     private Integer costoXturista;
     private Date fAlta;
+    private ACTAceptada estado;
 
     public DTActividad(String nombre, String descripcion,String departamento, Integer duracion, Integer costoXturista, String ciudad, Date fAlta) {
         this.nombre = nombre;
@@ -78,6 +80,14 @@ public class DTActividad {
         this.fAlta = fAlta;
     }
     public DTActividad() {
+    }
+    
+    public void setEstado(ACTAceptada est){
+        estado=est;
+    }
+    
+    public ACTAceptada getEstado(){
+        return estado;
     }
     
 }
