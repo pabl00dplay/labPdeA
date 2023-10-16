@@ -76,20 +76,6 @@ public class Usuario implements Serializable{
         this.img=img;
     
     }
-    //Visitante
-    public Usuario(String nick, String nom, String ape, String mail,Date fnac,String pass,String img){ 
-        this.nick=nick;
-        this.nom=nom;
-        this.ape=ape;
-        this.mail=mail;
-        this.fnac=fnac;
-        this.pass=pass;
-        this.img=img;
-        this.esTurista=2;
-        this.pass=pass;
-        this.img=img;
-    };
-
     public String getPass() {
         return pass;
     }
