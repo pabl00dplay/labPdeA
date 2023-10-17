@@ -19,7 +19,8 @@ public class Compra implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fecha,venc;
     @Basic
-    private int cosTotal,cantidadTuristas;
+    private int cantidadTuristas;
+    private float cosTotal;
     @ManyToOne
     private Usuario tur;
     @OneToOne
@@ -28,8 +29,7 @@ public class Compra implements Serializable {
     public Compra() {
     }
 
-    public Compra(int id, Date fecha, Date venc, int cosTotal, int cantidadTuristas, Usuario tur, Paquete paq) {
-        this.id = id;
+    public Compra(Date fecha, Date venc, float cosTotal, int cantidadTuristas, Usuario tur, Paquete paq) {
         this.fecha = fecha;
         this.venc = venc;
         this.cosTotal = cosTotal;
@@ -62,11 +62,11 @@ public class Compra implements Serializable {
         this.venc = venc;
     }
 
-    public int getCosTot() {
+    public float getCosTot() {
         return cosTotal;
     }
 
-    public void setCosTot(int cosTot) {
+    public void setCosTot(float cosTot) {
         this.cosTotal = cosTotal;
     }
 
