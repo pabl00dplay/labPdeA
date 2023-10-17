@@ -128,7 +128,7 @@ public class CrearPaquete extends javax.swing.JPanel {
             Integer descu = Integer.parseInt(txtDescu.getText());
             Integer val = Integer.parseInt(txtVali.getText());
             Date fAlta = jDateChooser1.getDate();
-            DTPaquete dt = new DTPaquete(nom, desc, descu, val, fAlta);
+            DTPaquete dt = new DTPaquete(nom, desc, descu, val, fAlta,0);
             I.AltaPaquete(dt);
             
             txtNom.setText(null);

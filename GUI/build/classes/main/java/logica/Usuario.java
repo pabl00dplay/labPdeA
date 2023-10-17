@@ -42,7 +42,8 @@ public class Usuario implements Serializable{
     private List<Inscripcion> ins=null;
     
     @Basic
-    private Integer esTurista;
+    private Integer esTurista; 
+    private String pass;
     
     //Compras
     @OneToMany
@@ -52,7 +53,7 @@ public class Usuario implements Serializable{
     public Usuario() {
     }
     
-    public Usuario(String nick, String nom, String ape, String mail,Date fnac,String nac){        
+    public Usuario(String nick, String nom, String ape, String mail,Date fnac,String nac,String pass){        
         this.nick=nick;
         this.nom=nom;
         this.ape=ape;
@@ -62,7 +63,7 @@ public class Usuario implements Serializable{
         this.esTurista=1;
     };
 
-    public Usuario(String nick, String nom, String ape, String mail, Date fnac, String descripcion, String web) {
+    public Usuario(String nick, String nom, String ape, String mail, Date fnac, String descripcion, String web,String pass) {
         this.nick = nick;
         this.nom = nom;
         this.ape = ape;
@@ -84,7 +85,8 @@ public class Usuario implements Serializable{
             this.fnac=dt.getFnac();
             this.descripcion = dt.getDescripcion();
             this.web = dt.getWeb();
-            this.esTurista=0;  
+            this.esTurista=0; 
+            this.pass=dt.getPass(); 
         }else{
             this.nick=dt.getNick();
             this.nom=dt.getNom();
@@ -93,8 +95,16 @@ public class Usuario implements Serializable{
             this.fnac=dt.getFnac();
             this.nac=dt.getNacionalidad();
             this.esTurista=1;
+            this.pass=dt.getPass();
         }
     };
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
 
     public List<Compra> getCompras() {
         return compras;

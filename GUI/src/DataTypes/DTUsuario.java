@@ -13,8 +13,9 @@ public class DTUsuario {
     private String web;
     private String descripcion;
     private Integer esTurista;
+    private String pass;
     
-    public DTUsuario(String nick, String nom, String ape, String mail, Date fnac,String nacionalidad) {
+    public DTUsuario(String nick, String nom, String ape, String mail, Date fnac,String nacionalidad,String pass) {
         this.nick = nick;
         this.nom = nom;
         this.ape = ape;
@@ -24,8 +25,9 @@ public class DTUsuario {
         this.esTurista = 1;
         this.web = null;
         this.descripcion = null;
+        this.pass=pass;
     }
-    public DTUsuario(String nick, String nom, String ape, String mail, Date fnac,String web, String descripcion) {
+    public DTUsuario(String nick, String nom, String ape, String mail, Date fnac,String web, String descripcion,String pass) {
         this.nick = nick;
         this.nom = nom;
         this.ape = ape;
@@ -35,6 +37,7 @@ public class DTUsuario {
         this.descripcion = descripcion;
         this.nacionalidad = null;
         this.esTurista = 0;
+        this.pass=pass;
     }
 
     public String getNick() {
@@ -105,8 +108,16 @@ public class DTUsuario {
         return esTurista;
     }
 
+    public String getPass() {
+        return pass;
+    }
+
     public void setEsTurista(Integer esTurista) {
         this.esTurista = esTurista;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
     

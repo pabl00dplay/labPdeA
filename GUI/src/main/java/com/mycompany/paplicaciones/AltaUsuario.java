@@ -198,7 +198,7 @@ public class AltaUsuario extends javax.swing.JPanel {
         }
         else if(opcion.equals("Turista")){
             String nacionalidad=jTextFieldnacionalidad.getText();
-            DTUsuario dt=new DTUsuario(nic,nom,ape,mail,fnac,nacionalidad);
+            DTUsuario dt=new DTUsuario(nic,nom,ape,mail,fnac,nacionalidad,"1234");
             I.altaTurista(dt);
 
             jTextFieldnickname.setText(null);

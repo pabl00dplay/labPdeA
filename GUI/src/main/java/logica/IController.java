@@ -57,6 +57,6 @@ public interface IController {
     public abstract ArrayList<DTPaquete> listarPaquetesConActividades();
     public ArrayList<DTPaquete> listarPaquetesParaComprar(String nickUsuario);
     public void comprarPaquete(String nickUsuario, DTCompra dtc);
-    public abstract void inicializar();
+    //public abstract void inicializar();
             
 }

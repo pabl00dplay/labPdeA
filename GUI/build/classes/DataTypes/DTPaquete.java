@@ -14,15 +14,17 @@ import java.util.*;
 public class DTPaquete {
     private String nom, desc;
     private Integer Pvalidez;
+    private float costoXturista;
     private float descuento;
     private Date fAlta;
     private boolean comprado;
-    public DTPaquete(String n, String d, float de, Integer v, Date f){
+    public DTPaquete(String n, String d, float de, Integer v, Date f, float costo){
         this.nom=n;
         this.desc=d;
         this.descuento=de;
         this.Pvalidez=v;
         this.fAlta=f;
+        this.costoXturista=costo;
     }
     
     public boolean isComprado(){
@@ -66,5 +68,14 @@ public class DTPaquete {
     public void setFalta(Date f){
         this.fAlta=f;
     }
+
+    public float getCostoXturista() {
+        return costoXturista;
+    }
+
+    public void setCostoXturista(float costoXturista) {
+        this.costoXturista = costoXturista;
+    }
+    
     
 }

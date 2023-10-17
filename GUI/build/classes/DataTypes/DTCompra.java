@@ -13,10 +13,11 @@ import java.util.Date;
 
 public class DTCompra {
     private Date fecha,venc;
-    private int cosTotal,cantidadTuristas;
+    private int cantidadTuristas;
+    private float cosTotal;
     private String tur, paq;
 
-    public DTCompra(Date fecha, Date venc, int cosTotal, int cantidadTuristas, String tur, String paq) {
+    public DTCompra(Date fecha, Date venc, float cosTotal, int cantidadTuristas, String tur, String paq) {
         this.fecha = fecha;
         this.venc = venc;
         this.cosTotal = cosTotal;
@@ -41,11 +42,11 @@ public class DTCompra {
         this.venc = venc;
     }
 
-    public int getCosTotal() {
+    public float getCosTotal() {
         return cosTotal;
     }
 
-    public void setCosTotal(int cosTotal) {
+    public void setCosTotal(float cosTotal) {
         this.cosTotal = cosTotal;
     }
 

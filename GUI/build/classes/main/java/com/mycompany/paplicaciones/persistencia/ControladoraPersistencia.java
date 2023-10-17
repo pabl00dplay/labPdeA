@@ -319,7 +319,7 @@ public class ControladoraPersistencia {
         if(u != null){
             
             if(u.getEsTurista()==1){
-                DTUsuario dt = new DTUsuario(u.getNick(),u.getNom(),u.getApe(),u.getMail(),u.getFnac(),u.getNac());
+                DTUsuario dt = new DTUsuario(u.getNick(),u.getNom(),u.getApe(),u.getMail(),u.getFnac(),u.getNac(),u.getPass());
                 return dt;
             }
             else if(u.getEsTurista()==0){

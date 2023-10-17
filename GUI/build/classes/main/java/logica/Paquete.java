@@ -18,6 +18,7 @@ public class Paquete implements Serializable {
     
     private String descripcion;
     private Integer Pvalidez;
+    private float costoXturista;
     private float descuento;
     @Temporal(TemporalType.DATE)
     private Date fAlta;
@@ -32,6 +33,7 @@ public class Paquete implements Serializable {
         this.Pvalidez=v;
         this.acts=new ArrayList<Actividad>();
         this.fAlta=f;
+        this.costoXturista=0;
         this.comprado=false;
     }
     
@@ -72,6 +74,7 @@ public class Paquete implements Serializable {
 
     public void setAct(Actividad a) {
         this.acts.add(a);
+        this.costoXturista=this.costoXturista+(a.getCosto()*(1-(this.costoXturista/100)));
     }
     
     //setters
@@ -91,7 +94,7 @@ public class Paquete implements Serializable {
         this.fAlta=f;
     }
     public DTPaquete getData(){
-        return new DTPaquete(this.nom,this.descripcion,this.descuento,this.Pvalidez,this.fAlta);
+        return new DTPaquete(this.nom,this.descripcion,this.descuento,this.Pvalidez,this.fAlta,this.costoXturista);
     }
 
     public Actividad getActividad(String nombreActividad) {
@@ -111,6 +114,15 @@ public class Paquete implements Serializable {
     public List<Actividad> getActs() {
         return acts;
     }
+
+    public float getCostoXturista() {
+        return costoXturista;
+    }
+
+    public void setCostoXturista(Integer costoXturista) {
+        this.costoXturista = costoXturista;
+    }
+    
     
     
 }

@@ -392,7 +392,7 @@ public class Laboratorio1 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Fabrica fab = Fabrica.getInstance();
         IController I = fab.getIController();
-        I.inicializar();
+        //I.inicializar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
