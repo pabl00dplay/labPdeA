@@ -22,7 +22,7 @@ import main.java.logica.Usuario;
 
 /**
  *
- * @author capo_
+ * @author Usuario
  */
 public class UsuarioJpaController implements Serializable {
 

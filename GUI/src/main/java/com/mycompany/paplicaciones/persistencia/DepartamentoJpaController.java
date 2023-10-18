@@ -19,7 +19,7 @@ import main.java.logica.Departamento;
 
 /**
  *
- * @author capo_
+ * @author Usuario
  */
 public class DepartamentoJpaController implements Serializable {
 

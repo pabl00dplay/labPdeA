@@ -21,7 +21,7 @@ import main.java.logica.Paquete;
 
 /**
  *
- * @author capo_
+ * @author Usuario
  */
 public class PaqueteJpaController implements Serializable {
 
