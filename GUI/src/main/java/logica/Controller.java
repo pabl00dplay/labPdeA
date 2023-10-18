@@ -306,6 +306,13 @@ public Salida retornoSalidaSel(String nombre){
       u.getCompras().add(c);
       contpersis.editarUsuario(u);
   }
+  
+  public void modificarCompra(DTCompra dtc){
+      Paquete p=contpersis.getPaquete(dtc.getPaq());
+      Usuario u=contpersis.retornoUsuarioSelec(dtc.getTur());
+      Compra c=new Compra(dtc.getFecha(),dtc.getVenc(),dtc.getCosTotal(),dtc.getCantidadTuristas(),u,p);
+      contpersis.editarCompra(c);
+  }
 
   /*
   public void inicializar(){

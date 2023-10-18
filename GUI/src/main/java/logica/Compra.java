@@ -5,6 +5,7 @@
 package main.java.logica;
 
 
+import DataTypes.DTCompra;
 import java.io.Serializable;
 import java.time.*;
 import java.util.Date;
@@ -92,6 +93,10 @@ public class Compra implements Serializable {
 
     public void setPaq(Paquete paq) {
         this.paq = paq;
+    }
+    
+    public DTCompra getData(){
+        return new DTCompra(getFecha(),getVenc(),getCosTot(),getCant(),getTur().getNick(),getPaq().getNom());
     }
     
     
