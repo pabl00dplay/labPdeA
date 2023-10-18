@@ -119,6 +119,11 @@ public class ControladoraPersistencia {
             return true;
         }
     }
+    public ArrayList<Categoria> getCategorias(){
+        List<Categoria> lista=cjpa.findCategoriaEntities();
+        ArrayList<Categoria> al=new ArrayList<Categoria>(lista);
+        return al;
+    } 
     public boolean existeDepartamento(String nombreDepartamento){
         Departamento depto=djpa.findDepartamento(nombreDepartamento);
         if(depto==null){

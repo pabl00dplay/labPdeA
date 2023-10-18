@@ -24,6 +24,7 @@ public interface IController {
     public abstract boolean existeDepartamento(String nombreDepartamento);
     public abstract boolean actividadExiste(String nombreActividad);
     public abstract boolean existeCategoria(String categoria);
+    public abstract ArrayList<Categoria> listarCategorias();
     public abstract ArrayList<Usuario> getUsuarios();
     public abstract ArrayList<DTDepartamento> getDepartamentos();
     public abstract DTUsuario getUsuario(String nickname);
@@ -44,19 +45,20 @@ public interface IController {
     public abstract ArrayList<DTActividad> getActividades();
     public abstract ArrayList<DTPaquete> listarPaquetesActividad(String nombreActividad);
     public abstract ArrayList<DTActividad> listarActividadesPaquete(String nomPaq);
-    public abstract void altaInscripcion (String nombre,Date fecha,int cant,int costo, String nick);
+    public abstract ArrayList<DTActividad> listarActividadesCategoria(String cat);
+    public abstract void altaInscripcion (String nombre,Date fecha,int cant,float costo, String nick);
     public abstract Usuario retornoUsuarioSelec(String nick);
     public abstract void editarUsuario(Usuario u);
     public abstract ArrayList<Usuario> getTuristas();
     public abstract Salida retornoSalidaSel(String nombre);
     public abstract Actividad retornoActividadSelec(String nombre);
     public abstract boolean turiInscriptoSalida(String nick, String nombreSal);
-    public void aceptarAct(String nom);
-    public void rechazarAct(String nom);
-    public ArrayList<DTActividad> listarActividadesSoloAgregadas();
+    public abstract void aceptarAct(String nom);
+    public abstract void rechazarAct(String nom);
+    public abstract ArrayList<DTActividad> listarActividadesSoloAgregadas();
     public abstract ArrayList<DTPaquete> listarPaquetesConActividades();
-    public ArrayList<DTPaquete> listarPaquetesParaComprar(String nickUsuario);
-    public void comprarPaquete(String nickUsuario, DTCompra dtc);
+    public abstract ArrayList<DTPaquete> listarPaquetesParaComprar(String nickUsuario);
+    public abstract void comprarPaquete(String nickUsuario, DTCompra dtc);
     //public abstract void inicializar();
             
 }

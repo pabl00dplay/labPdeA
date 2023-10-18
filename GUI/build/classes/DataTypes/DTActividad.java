@@ -3,6 +3,7 @@ package DataTypes;
 
 import java.util.Date;
 import main.java.logica.ACTAceptada;
+import main.java.logica.Categoria;
 
 public class DTActividad {
     private String nombre;
@@ -13,6 +14,7 @@ public class DTActividad {
     private Integer costoXturista;
     private Date fAlta;
     private ACTAceptada estado;
+    private Categoria cat;
 
     public DTActividad(String nombre, String descripcion,String departamento, Integer duracion, Integer costoXturista, String ciudad, Date fAlta) {
         this.nombre = nombre;
@@ -89,5 +91,14 @@ public class DTActividad {
     public ACTAceptada getEstado(){
         return estado;
     }
+
+    public Categoria getCat() {
+        return cat;
+    }
+
+    public void setCat(Categoria cat) {
+        this.cat = cat;
+    }
+    
     
 }

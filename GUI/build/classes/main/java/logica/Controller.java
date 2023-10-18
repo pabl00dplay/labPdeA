@@ -45,6 +45,19 @@ public class Controller implements IController {
     public void altaCategoria(String categoria) {
         contpersis.altaCategoria(categoria);
     }
+    public ArrayList<Categoria> listarCategorias(){
+        return contpersis.getCategorias();
+    }
+    public ArrayList<DTActividad> listarActividadesCategoria(String cat){
+        ArrayList<DTActividad> dts=contpersis.getActividades();
+        ArrayList<DTActividad> ret= new ArrayList<DTActividad>();
+        for(DTActividad dt:dts){
+            if(dt.getCat().getNombre()==cat){
+                ret.add(dt);
+            }
+        }
+        return ret;
+    }
      public DTUsuario getUsuario(String nickname){
         DTUsuario dt = contpersis.getUsuario(nickname);
         return dt;
@@ -193,7 +206,7 @@ public class Controller implements IController {
         ArrayList<Usuario> retorno=contpersis.retornoTuristas();
         return retorno;
     }
-     public void altaInscripcion (String nombre,Date fecha,int cant,int costo, String nick){
+     public void altaInscripcion (String nombre,Date fecha,int cant,float costo, String nick){
             Inscripcion i = new Inscripcion(fecha, cant, costo);
             Usuario u = contpersis.retornoUsuarioSelec(nick);
             //pasar nombre de la salida 
