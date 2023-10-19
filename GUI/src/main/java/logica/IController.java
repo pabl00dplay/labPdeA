@@ -54,7 +54,7 @@ public interface IController {
     public void rechazarAct(String nom);
     public ArrayList<DTActividad> listarActividadesSoloAgregadas();
     public abstract void inicializar();
-    public abstract ArrayList<Categoria> getCategorias();
+    public abstract ArrayList<String> getCategorias();
     public abstract ArrayList<DTPaquete> listarPaquetesParaComprar(String nickUsuario);
     public abstract void comprarPaquete(String nickUsuario, DTCompra dtc);
     public abstract ArrayList<DTActividad> listarActividadesCategoria(String cat);
