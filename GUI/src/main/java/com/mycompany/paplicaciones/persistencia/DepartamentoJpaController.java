@@ -19,12 +19,12 @@ import main.java.logica.Departamento;
 
 /**
  *
- * @author capo_
+ * @author pablo
  */
 public class DepartamentoJpaController implements Serializable {
 
-    public DepartamentoJpaController() {
-        this.emf=Persistence.createEntityManagerFactory("PAplicaciones");
+    public DepartamentoJpaController(){
+        this.emf =  Persistence.createEntityManagerFactory("PAplicaciones");
     }
     private EntityManagerFactory emf = null;
 

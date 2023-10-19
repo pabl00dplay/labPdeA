@@ -22,12 +22,12 @@ import main.java.logica.Usuario;
 
 /**
  *
- * @author capo_
+ * @author pablo
  */
 public class UsuarioJpaController implements Serializable {
 
-    public UsuarioJpaController() {
-        this.emf=Persistence.createEntityManagerFactory("PAplicaciones");
+    public UsuarioJpaController(){
+        this.emf =  Persistence.createEntityManagerFactory("PAplicaciones");
     }
     private EntityManagerFactory emf = null;
 

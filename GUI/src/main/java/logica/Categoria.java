@@ -1,14 +1,18 @@
 package main.java.logica;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
  
 @Entity
+
 public class Categoria implements Serializable {
     @Id
     private String nombre;
-
+    @ManyToMany
+    private ArrayList<Actividad> actividades;
     public Categoria() {
     }
 

@@ -12,19 +12,21 @@ public class Inscripcion implements Serializable {
     private Integer id;
     @Temporal(TemporalType.DATE)
     private Date fecha;
-    private int cant,costo;
+    private int cant;
+    Float costo;
     @ManyToOne
     private Usuario tur;
     @ManyToOne
     private Salida sal;
 
-    public Inscripcion() {
-    }
-
-    public Inscripcion(Date fecha, int cant, int costo) {
+    public Inscripcion(Date fecha, int cant, float costo) {
+        
         this.fecha = fecha;
         this.cant = cant;
         this.costo = costo;
+    }
+
+    public Inscripcion() {
     }
 
     public Integer getId() {
@@ -43,7 +45,7 @@ public class Inscripcion implements Serializable {
         return cant;
     }
 
-    public int getCosto() {
+    public Float getCosto() {
         return costo;
     }
 
@@ -63,7 +65,7 @@ public class Inscripcion implements Serializable {
         this.cant = cant;
     }
 
-    public void setCosto(int costo) {
+    public void setCosto(Float costo) {
         this.costo = costo;
     }
 

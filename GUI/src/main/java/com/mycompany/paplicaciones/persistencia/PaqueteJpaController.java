@@ -21,12 +21,12 @@ import main.java.logica.Paquete;
 
 /**
  *
- * @author capo_
+ * @author pablo
  */
 public class PaqueteJpaController implements Serializable {
 
-    public PaqueteJpaController() {
-        this.emf=Persistence.createEntityManagerFactory("PAplicaciones");
+    public PaqueteJpaController(){
+        this.emf =  Persistence.createEntityManagerFactory("PAplicaciones");
     }
     private EntityManagerFactory emf = null;
 

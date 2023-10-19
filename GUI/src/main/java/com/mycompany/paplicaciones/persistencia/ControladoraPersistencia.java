@@ -18,6 +18,7 @@ import main.java.logica.Usuario;
 
 import main.java.com.mycompany.paplicaciones.persistencia.*;
 import main.java.logica.Categoria;
+import main.java.logica.Compra;
 import main.java.logica.Inscripcion;
 import main.java.logica.Paquete;
 import main.java.logica.Salida;
@@ -30,6 +31,7 @@ public class ControladoraPersistencia {
     PaqueteJpaController pjpa=new PaqueteJpaController();
     InscripcionJpaController ijpa=new InscripcionJpaController();
     CategoriaJpaController cjpa=new CategoriaJpaController();
+    CompraJpaController Comjpa=new CompraJpaController();
     public void altaTurista(Usuario t) {
         try {
             ujpa.create(t);
@@ -110,14 +112,7 @@ public class ControladoraPersistencia {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public boolean existeCategoria(String categoria) {
-        Categoria cat=cjpa.findCategoria(categoria);
-        if(cat==null){
-            return false;
-        }else{
-            return true;
-        }
-    }
+    
     public boolean existeDepartamento(String nombreDepartamento){
         Departamento depto=djpa.findDepartamento(nombreDepartamento);
         if(depto==null){
@@ -165,14 +160,7 @@ public class ControladoraPersistencia {
         }
         return existe;  
     }
-    public ArrayList<String> getCategorias(){
-        List<Categoria> listaCategorias = cjpa.findCategoriaEntities();
-        ArrayList<String> retorno=new ArrayList<>();
-        for(Categoria c:listaCategorias){
-            retorno.add(c.getNombre());
-        }
-        return retorno;
-    }
+    
     public ArrayList<Salida> getSalidas() {
         List<Salida> listita=sjpa.findSalidaEntities();
         ArrayList<Salida> retorno=new ArrayList<Salida>(listita);
@@ -290,13 +278,6 @@ public class ControladoraPersistencia {
             }
         return uSel;      
     }
-    public void editarUsuario (Usuario u){
-        try {
-            ujpa.edit(u); 
-        } catch (Exception ex) {
-            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
-        }    
-    }
     public void editarActividad(Actividad a){
         try {
             ajpa.edit(a);
@@ -379,16 +360,49 @@ public class ControladoraPersistencia {
             }
             return existe;      
         }
-
-    public void altaVisitante(DTUsuario dv) {
-        Usuario v=new Usuario(dv,2);
+    public void altaCompra(Compra c){
         try {
-            ujpa.create(v);
+            Comjpa.create(c);
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
     }
-
+    
+    public void modificarPaquete(Paquete p){
+        try {
+            pjpa.edit(p);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public ArrayList<Categoria> getCategorias(){
+            List<Categoria> lista=cjpa.findCategoriaEntities();
+            ArrayList<Categoria> al=new ArrayList<Categoria>(lista);
+            return al;
+        } 
+    public boolean existeCategoria(String categoria) {
+            Categoria cat=cjpa.findCategoria(categoria);
+            if(cat==null){
+                return false;
+            }else{
+                return true;
+            }
+        }
+    public void editarUsuario (Usuario u){
+            try {
+                ujpa.edit(u); 
+            } catch (Exception ex) {
+                Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+            }    
+        }
+    public void editarCompra(Compra c){         
+            try {             
+            Comjpa.edit(c);         
+            } 
+            catch (Exception ex) {             
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);         
+            }     
+    }
 }
 

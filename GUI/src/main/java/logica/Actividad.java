@@ -22,6 +22,8 @@ public class Actividad implements Serializable {
     @Id
     private String nom;
     private String descripcion,ciudad;
+    @ManyToMany
+    private ArrayList<Categoria> categorias;
     
     @ManyToOne
     private Departamento dep;
@@ -51,6 +53,7 @@ public class Actividad implements Serializable {
         this.paquetes= new ArrayList<Paquete>();
         this.estado=ACTAceptada.AGREGADA;
     }
+   
 
     public ACTAceptada getEstado() {
         return estado;
@@ -130,7 +133,35 @@ public class Actividad implements Serializable {
         dt.setCiudad(this.ciudad);
         dt.setfAlta(this.fAlta);
         dt.setEstado(this.estado);
+        dt.setCategorias(categorias);
         return dt;
+    }
+    
+    
+    
+    public ArrayList<Categoria> getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(ArrayList<Categoria> categorias) {
+        this.categorias=null;
+        for (Categoria categoria : categorias){
+            this.categorias.add(categoria);
+        }
+    }
+    public void addCategorias(ArrayList<Categoria> categorias) {
+        for (Categoria categoria : categorias){
+            this.categorias.add(categoria);
+        }
+    }
+    public void delCategorias(ArrayList<Categoria> categorias) {
+        for (Categoria categoria : categorias){
+            for (Categoria categoria2 : this.categorias){
+                if (categoria.getNombre()==categoria2.getNombre()){
+                    this.categorias.remove(categoria2);
+                }
+            }
+        }
     }
     public ArrayList<DTSalida>getSalidas(){
         ArrayList<DTSalida> retorno = new ArrayList<DTSalida>();

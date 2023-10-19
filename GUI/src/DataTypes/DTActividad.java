@@ -1,8 +1,10 @@
 
 package DataTypes;
 
+import java.util.ArrayList;
 import java.util.Date;
 import main.java.logica.ACTAceptada;
+import main.java.logica.Categoria;
 
 public class DTActividad {
     private String nombre;
@@ -13,6 +15,7 @@ public class DTActividad {
     private Integer costoXturista;
     private Date fAlta;
     private ACTAceptada estado;
+    private ArrayList<String> categorias;
 
     public DTActividad(String nombre, String descripcion,String departamento, Integer duracion, Integer costoXturista, String ciudad, Date fAlta) {
         this.nombre = nombre;
@@ -24,6 +27,30 @@ public class DTActividad {
         this.fAlta = fAlta;
     }
 
+    public ArrayList<String> getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(ArrayList<Categoria> categorias) {
+        this.categorias=null;
+        for (Categoria categoria : categorias){
+            this.categorias.add(categoria.getNombre());
+        }
+    }
+    public void addCategorias(ArrayList<Categoria> categorias) {
+        for (Categoria categoria : categorias){
+            this.categorias.add(categoria.getNombre());
+        }
+    }
+    public void delCategorias(ArrayList<Categoria> categorias) {
+        for (Categoria categoria : categorias){
+            for (String categoria2 : this.categorias){
+                if (categoria.getNombre()==categoria2){
+                    this.categorias.remove(categoria2);
+                }
+            }
+        }
+    }
     public String getNombre() {
         return nombre;
     }
@@ -89,5 +116,6 @@ public class DTActividad {
     public ACTAceptada getEstado(){
         return estado;
     }
+
     
 }

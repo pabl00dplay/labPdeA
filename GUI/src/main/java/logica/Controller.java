@@ -1,6 +1,7 @@
 package main.java.logica;
 
 import DataTypes.DTActividad;
+import DataTypes.DTCompra;
 import DataTypes.DTDepartamento;
 import DataTypes.DTPaquete;
 import DataTypes.DTSalida;
@@ -74,7 +75,7 @@ public class Controller implements IController {
     public ArrayList<DTDepartamento> getDepartamentos() {
         return contpersis.getDepartamentos();
     }
-    public ArrayList<String> getCategorias(){
+    public ArrayList<Categoria> getCategorias(){
         return contpersis.getCategorias();
     }
     public boolean actividadExiste(String nombreActividad){
@@ -247,7 +248,78 @@ public Salida retornoSalidaSel(String nombre){
       
       return dta;
   }
-  
+  public ArrayList<DTPaquete> listarPaquetesConActividades(){
+      ArrayList<DTPaquete> lista=new ArrayList<DTPaquete>();
+      ArrayList<DTPaquete> llave=contpersis.listarPaquetes();
+      Paquete p;
+      for(DTPaquete dt:llave){
+          p=contpersis.getPaquete(dt.getNom());
+          if(!p.getActs().isEmpty()){
+              lista.add(dt);
+          }
+      }
+      return lista;
+  }
+  public ArrayList<DTPaquete> listarPaquetesParaComprar(String nickUsuario){
+      ArrayList<DTPaquete> llave=listarPaquetesConActividades();
+      ArrayList<DTPaquete> lista=new ArrayList<DTPaquete>();
+      Usuario u=contpersis.retornoUsuarioSelec(nickUsuario);
+      boolean existe;
+      for(DTPaquete dt:llave){
+          existe =false;
+          for(Compra c:u.getCompras()){
+              if(dt.getNom()==c.getPaq().getNom()){
+                  existe=true;
+              }
+          }
+          if(!existe){
+              lista.add(dt);
+          }
+      }
+      return lista;
+      
+  }
+public void comprarPaquete(String nickUsuario, DTCompra dtc){
+      Usuario u=contpersis.retornoUsuarioSelec(nickUsuario);
+      Paquete p=contpersis.getPaquete(dtc.getPaq());
+      Compra c=new Compra(dtc.getFecha(),dtc.getVenc(),dtc.getCosTotal(),dtc.getCantidadTuristas(),u,p);
+      contpersis.altaCompra(c);
+      if(!p.isComprado()){
+          p.setComprado(true);
+          contpersis.modificarPaquete(p);
+      }
+      u.getCompras().add(c);
+      contpersis.editarUsuario(u);
+  }
+public ArrayList<Categoria> listarCategorias(){
+        return contpersis.getCategorias();
+    }
+public ArrayList<DTActividad> listarActividadesCategoria(String cat){
+        ArrayList<DTActividad> dts=contpersis.getActividades();
+        ArrayList<DTActividad> ret= new ArrayList<DTActividad>();
+        for(DTActividad dt:dts){
+            for (String categoria: dt.getCategorias()){
+                if(categoria==cat){
+                    ret.add(dt);
+                }
+            }
+            
+        }
+        return ret;
+    }
+public void altaInscripcion (String nombre,Date fecha,int cant,float costo, String nick){
+            Inscripcion i = new Inscripcion(fecha, cant,  costo);
+            Usuario u = contpersis.retornoUsuarioSelec(nick);
+            //pasar nombre de la salida 
+            Salida s = contpersis.retornoSalidaSelec(nombre);
+            int cantidadS = ((s.getMaxTuristas()) - cant );
+            s.setTuristas(cantidadS);//la salida tiene un nuevo maximo disponible
+            contpersis.editarSalida(s);//edito la salida con la nueva cant
+            i.setSal(s);
+            i.setTur(u);
+            contpersis.altaInscripcion(i);
+        }
+
   public void inicializar(){
         Departamento d;
         Usuario u = null;
@@ -518,5 +590,6 @@ public Salida retornoSalidaSel(String nombre){
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+  
 
 }

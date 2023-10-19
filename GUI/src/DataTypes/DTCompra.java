@@ -2,48 +2,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package main.java.logica;
+package DataTypes;
 
-
-import java.io.Serializable;
-import java.time.*;
 import java.util.Date;
-import javax.persistence.*;
 
-@Entity
-public class Compra implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    int id;
-    
-    @Temporal(TemporalType.DATE)
+/**
+ *
+ * @author francisco
+ */
+
+public class DTCompra {
     private Date fecha,venc;
-    @Basic
     private int cantidadTuristas;
     private float cosTotal;
-    @ManyToOne
-    private Usuario tur;
-    @OneToOne
-    private Paquete paq;
+    private String tur, paq;
 
-    public Compra() {
-    }
-
-    public Compra(Date fecha, Date venc, float cosTotal, int cantidadTuristas, Usuario tur, Paquete paq) {
+    public DTCompra(Date fecha, Date venc, float cosTotal, int cantidadTuristas, String tur, String paq) {
         this.fecha = fecha;
         this.venc = venc;
         this.cosTotal = cosTotal;
         this.cantidadTuristas = cantidadTuristas;
         this.tur = tur;
         this.paq = paq;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Date getFecha() {
@@ -62,38 +42,36 @@ public class Compra implements Serializable {
         this.venc = venc;
     }
 
-    public float getCosTot() {
+    public float getCosTotal() {
         return cosTotal;
     }
 
-    public void setCosTot(float cosTot) {
+    public void setCosTotal(float cosTotal) {
         this.cosTotal = cosTotal;
     }
 
-    public int getCant() {
+    public int getCantidadTuristas() {
         return cantidadTuristas;
     }
 
-    public void setCant(int cant) {
-        this.cantidadTuristas = cant;
+    public void setCantidadTuristas(int cantidadTuristas) {
+        this.cantidadTuristas = cantidadTuristas;
     }
 
-    public Usuario getTur() {
+    public String getTur() {
         return tur;
     }
 
-    public void setTur(Usuario tur) {
+    public void setTur(String tur) {
         this.tur = tur;
     }
 
-    public Paquete getPaq() {
+    public String getPaq() {
         return paq;
     }
 
-    public void setPaq(Paquete paq) {
+    public void setPaq(String paq) {
         this.paq = paq;
     }
-    
-    
     
 }
