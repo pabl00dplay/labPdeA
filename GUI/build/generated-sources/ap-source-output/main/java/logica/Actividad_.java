@@ -5,16 +5,18 @@ import javax.annotation.processing.Generated;
 import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
+import main.java.logica.ACTAceptada;
 import main.java.logica.Departamento;
 import main.java.logica.Paquete;
 import main.java.logica.Salida;
 
-@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2023-10-12T20:31:47", comments="EclipseLink-2.7.12.v20230209-rNA")
+@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2024-05-31T16:26:40", comments="EclipseLink-2.7.12.v20230209-rNA")
 @StaticMetamodel(Actividad.class)
 public class Actividad_ { 
 
     public static volatile SingularAttribute<Actividad, String> descripcion;
     public static volatile SingularAttribute<Actividad, Integer> dur;
+    public static volatile SingularAttribute<Actividad, ACTAceptada> estado;
     public static volatile SingularAttribute<Actividad, Date> fAlta;
     public static volatile SingularAttribute<Actividad, Integer> costo;
     public static volatile SingularAttribute<Actividad, String> ciudad;

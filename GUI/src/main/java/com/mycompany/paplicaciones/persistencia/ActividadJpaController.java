@@ -4,8 +4,6 @@
  */
 package main.java.com.mycompany.paplicaciones.persistencia;
 
-import DataTypes.exceptions.NonexistentEntityException;
-import DataTypes.exceptions.PreexistingEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
@@ -17,11 +15,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import main.java.com.mycompany.paplicaciones.persistencia.exceptions.NonexistentEntityException;
+import main.java.com.mycompany.paplicaciones.persistencia.exceptions.PreexistingEntityException;
 import main.java.logica.Actividad;
 
 /**
  *
- * @author pablo
+ * @author capo_
  */
 public class ActividadJpaController implements Serializable {
 

@@ -75,7 +75,6 @@ public class AltaUsuario extends javax.swing.JPanel {
         });
         jPanel1.add(cmbTuristaProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 240, -1));
 
-        jTextFieldnickname.setText(" ");
         jTextFieldnickname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldnicknameActionPerformed(evt);
@@ -88,20 +87,14 @@ public class AltaUsuario extends javax.swing.JPanel {
 
         jLabelNombre.setText("Nombre");
         jPanel1.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 50, 30));
-
-        jTextFieldnombre.setText(" ");
         jPanel1.add(jTextFieldnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 190, -1));
 
         jLabelApellido.setText("Apellido");
         jPanel1.add(jLabelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, 30));
-
-        jTextFieldapellido.setText(" ");
         jPanel1.add(jTextFieldapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 190, -1));
 
         jLabelCorreoElectronico.setText("Correo Electrónico");
         jPanel1.add(jLabelCorreoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 110, 30));
-
-        jTextFieldcorreoElectrónico.setText(" ");
         jPanel1.add(jTextFieldcorreoElectrónico, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 190, -1));
 
         jLabelFechNac.setText("Fecha de Nacimiento");
@@ -109,8 +102,6 @@ public class AltaUsuario extends javax.swing.JPanel {
 
         jLabelnacionalidad.setText("Nacionalidad");
         jPanel1.add(jLabelnacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 80, 30));
-
-        jTextFieldnacionalidad.setText(" ");
         jPanel1.add(jTextFieldnacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 190, -1));
 
         jLabelDescripcionGeneral.setText("Descripción General");
@@ -118,8 +109,6 @@ public class AltaUsuario extends javax.swing.JPanel {
 
         jLabellink.setText("Link a su sitio web");
         jPanel1.add(jLabellink, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 110, 30));
-
-        jTextFieldlink.setText(" ");
         jPanel1.add(jTextFieldlink, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 520, 400, -1));
 
         javax.swing.GroupLayout jPanelDescripcionGeneralLayout = new javax.swing.GroupLayout(jPanelDescripcionGeneral);
@@ -147,7 +136,6 @@ public class AltaUsuario extends javax.swing.JPanel {
         jTextArealDescripcionGeneral.setColumns(20);
         jTextArealDescripcionGeneral.setLineWrap(true);
         jTextArealDescripcionGeneral.setRows(5);
-        jTextArealDescripcionGeneral.setText(" ");
         jScrollPane2.setViewportView(jTextArealDescripcionGeneral);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 400, -1));

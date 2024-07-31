@@ -33,6 +33,7 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         modelPaquetes.addElement(defaultPaqueteString);
         for(int i=0;i<listaPaquetes.size();i++){
             modelPaquetes.addElement(listaPaquetes.get(i).getNom());
+            
         }
         cmbPaq.setModel(modelPaquetes);
     }
@@ -67,6 +68,7 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         });
         add(cmbPaq, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 370, -1));
 
+        cmbDepto.setEnabled(false);
         cmbDepto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbDeptoActionPerformed(evt);
@@ -93,6 +95,8 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbPaqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPaqActionPerformed
+        
+        cmbDepto.setEnabled(true);
         
         
     }//GEN-LAST:event_cmbPaqActionPerformed
@@ -129,7 +133,11 @@ public class AgregarActividadPaquete extends javax.swing.JPanel {
         modelActividades.addElement(defaultActividadString);
         
         for(int i=0;i<listaActividades.size();i++){
+            
+            if(ACTAceptada.ACEPTADA==listaActividades.get(i).getEstado()){
+                
                 modelActividades.addElement(listaActividades.get(i).getNombre());
+            }
         }
       cmbAct.setModel(modelActividades);
     }//GEN-LAST:event_cmbDeptoActionPerformed

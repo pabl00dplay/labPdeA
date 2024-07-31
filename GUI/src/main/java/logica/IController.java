@@ -1,11 +1,9 @@
 package main.java.logica;
 
 
-
 import DataTypes.*;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  *
@@ -15,7 +13,8 @@ public interface IController {
     
     public abstract void AltaPaquete(DTPaquete dt);
     public abstract boolean existePaq(String s);
-    
+
+    public abstract void altaCategoria(String categoria);
     public abstract void altaActividadTuristica(DTActividad da, String nom);
     public abstract void altaTurista(DTUsuario dt);
     public abstract void altaProveedor(DTUsuario dp);
@@ -23,8 +22,8 @@ public interface IController {
     public abstract boolean mailExiste(String correo);
     public abstract boolean existeDepartamento(String nombreDepartamento);
     public abstract boolean actividadExiste(String nombreActividad);
+    public abstract boolean existeCategoria(String categoria);
     public abstract ArrayList<Usuario> getUsuarios();
-    public abstract List<Usuario> getUsuariosList();
     public abstract ArrayList<DTDepartamento> getDepartamentos();
     public abstract DTUsuario getUsuario(String nickname);
     public abstract void altaSalida(DTSalida dt);
@@ -51,8 +50,9 @@ public interface IController {
     public abstract Salida retornoSalidaSel(String nombre);
     public abstract Actividad retornoActividadSelec(String nombre);
     public abstract boolean turiInscriptoSalida(String nick, String nombreSal);
+    public void aceptarAct(String nom);
+    public void rechazarAct(String nom);
+    public ArrayList<DTActividad> listarActividadesSoloAgregadas();
     public abstract void inicializar();
-
-    public abstract void altaVisitante(DTUsuario dt);
-            
+    public abstract ArrayList<String> getCategorias();
 }
