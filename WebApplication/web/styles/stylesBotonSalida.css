@@ -1,0 +1,31 @@
+.icon-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0px;
+                position: relative; /* Necesario para usar top */
+            top: -30px; /* Mueve el botón 10px hacia arriba */
+            /* Otras propiedades de estilo para el botón */
+            margin-left: 80px;
+}
+.icon-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0px;
+                position: relative; /* Necesario para usar top */
+            top: -30px; /* Mueve el botón 10px hacia arriba */
+            /* Otras propiedades de estilo para el botón */
+            margin-left: 80px;
+}        
+#botonSalida {
+    width:45px;
+    height: 45px;
+    
+}
+        
+#btnsal {
+    width:20px;
+    height: 20px;
+    
+}

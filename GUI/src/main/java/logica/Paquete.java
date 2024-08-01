@@ -23,6 +23,7 @@ public class Paquete implements Serializable {
     private Date fAlta;
     @ManyToMany(mappedBy="paquetes")
     private List<Actividad> acts;
+    private boolean comprado;
     
     public Paquete(String n, String d, float de, Integer v, Date f){
         this.nom=n;
@@ -31,10 +32,19 @@ public class Paquete implements Serializable {
         this.Pvalidez=v;
         this.acts=new ArrayList<Actividad>();
         this.fAlta=f;
+        this.comprado=false;
     }
     
+    public boolean isComprado(){
+        return comprado;
+    }
+
     //getters
-    public String getNom(){
+    public void setComprado(boolean comprado) {
+        this.comprado = comprado;
+    }
+
+    public String getNom() {
         return nom;
     }
     public String getDesc(){

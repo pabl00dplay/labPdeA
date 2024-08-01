@@ -3,6 +3,8 @@
   <persistence-unit name="PAplicaciones" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>main.java.logica.Actividad</class>
+    <class>main.java.logica.Categoria</class>
+    <class>main.java.logica.Compra</class>
     <class>main.java.logica.Departamento</class>
     <class>main.java.logica.Inscripcion</class>
     <class>main.java.logica.Paquete</class>

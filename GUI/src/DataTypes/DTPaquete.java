@@ -16,7 +16,7 @@ public class DTPaquete {
     private Integer Pvalidez;
     private float descuento;
     private Date fAlta;
-    
+    private boolean comprado;
     public DTPaquete(String n, String d, float de, Integer v, Date f){
         this.nom=n;
         this.desc=d;
@@ -25,8 +25,16 @@ public class DTPaquete {
         this.fAlta=f;
     }
     
+    public boolean isComprado(){
+        return comprado;
+    }
+
     //getters
-    public String getNom(){
+    public void setComprado(boolean comprado) {
+        this.comprado = comprado;
+    }
+
+    public String getNom() {
         return nom;
     }
     public String getDesc(){

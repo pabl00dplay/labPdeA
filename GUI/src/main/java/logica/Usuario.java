@@ -42,7 +42,8 @@ public class Usuario implements Serializable{
     private Integer esTurista;//0=proveedor 1=turista 2=visitante 
     private String pass;
     private String img;
-    
+    @OneToMany
+    private List<Compra> compras=null;
     
     public Usuario() {
     }
@@ -75,20 +76,6 @@ public class Usuario implements Serializable{
         this.img=img;
     
     }
-    //Visitante
-    public Usuario(String nick, String nom, String ape, String mail,Date fnac,String pass,String img){ 
-        this.nick=nick;
-        this.nom=nom;
-        this.ape=ape;
-        this.mail=mail;
-        this.fnac=fnac;
-        this.pass=pass;
-        this.img=img;
-        this.esTurista=2;
-        this.pass=pass;
-        this.img=img;
-    };
-
     public String getPass() {
         return pass;
     }
@@ -128,6 +115,7 @@ public class Usuario implements Serializable{
         }else if(esTurista == 1){//Turista
             this.nick=dt.getNick();
             this.nom=dt.getNom();
+            this.ape=dt.getApe();
             this.mail=dt.getMail();
             this.fnac=dt.getFnac();
             this.nac=dt.getNacionalidad();
@@ -145,7 +133,7 @@ public class Usuario implements Serializable{
             this.img=dt.getImg();
         }
     };
-
+    
     public void setIns(ArrayList<Inscripcion> ins) {
         this.ins = ins;
     }
@@ -194,7 +182,9 @@ public class Usuario implements Serializable{
     public int getEsTurista() {
         return esTurista;
     }
-
+    public List<Compra> getCompras() {
+        return compras;
+    }
     public void setNick(String nick) {
         this.nick = nick;
     }
@@ -245,6 +235,10 @@ public class Usuario implements Serializable{
         this.ins = ins;
     }
 
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
+    }
+    
 
     
     

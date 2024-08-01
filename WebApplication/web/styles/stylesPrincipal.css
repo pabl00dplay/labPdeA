@@ -1,0 +1,80 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.header-rectangle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #00bfff; /* Cambiado a color celeste */
+    color: white;
+}
+
+.header-rectangle h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    border: 2px solid white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.search-bar button img {
+    width: 16px;
+    height: 16px;
+}
+
+.links-container {
+    display: flex;
+    justify-content: flex-end; /* Alinea al centro por defecto */
+}
+
+@media (max-width: 500px) {
+    .links-container{
+        justify-content: flex-start; /* Alinea al comienzo (izquierda) */
+    }
+}
+.links-container a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+#separador {
+    color: white;
+    font-size: 16px;
+}
+
+.links-container a:hover {
+    text-decoration: underline;
+}
