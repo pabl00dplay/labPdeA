@@ -48,6 +48,7 @@
             if (session != null) {
                 username = (String) session.getAttribute("username");
                 foto = (String) session.getAttribute("foto");
+                //cambios en header
             }
          %>
 
