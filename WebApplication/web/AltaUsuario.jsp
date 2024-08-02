@@ -90,10 +90,12 @@
     </script>
     <button type="submit" >Registrarse</button>
 </form> 
-<b><% String res=(String)request.getSession().getAttribute("mostrar");
+<b><%
+    //comentario para probar que se puede hacer merge con el main
+    String res=(String)request.getSession().getAttribute("mostrar");
     if (res==null){
         res="";
-        //rdto es un comentario para probar merge
+      
     }
     
     %>
