@@ -93,6 +93,7 @@
 <b><% String res=(String)request.getSession().getAttribute("mostrar");
     if (res==null){
         res="";
+        //rdto es un comentario para probar merge
     }
     
     %>
