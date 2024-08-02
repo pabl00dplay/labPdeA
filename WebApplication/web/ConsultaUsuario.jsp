@@ -29,6 +29,7 @@
         </form>
         <div class="box">
             <%   
+                //probando comitear desde github
             List<Usuario> Lusuarios = (List) request.getSession().getAttribute("listausuarios");
            if(Lusuarios!=null){
             %><p><b>NickName:</b></p>  
