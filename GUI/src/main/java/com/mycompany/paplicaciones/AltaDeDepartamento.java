@@ -56,7 +56,6 @@ public class AltaDeDepartamento extends javax.swing.JPanel {
         jLabel4.setText("URL");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 296, -1, 30));
 
-        jTextFieldnombre.setText(" ");
         jTextFieldnombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldnombreActionPerformed(evt);
@@ -64,7 +63,6 @@ public class AltaDeDepartamento extends javax.swing.JPanel {
         });
         add(jTextFieldnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 480, -1));
 
-        jTextFieldURL.setText(" ");
         jTextFieldURL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldURLActionPerformed(evt);

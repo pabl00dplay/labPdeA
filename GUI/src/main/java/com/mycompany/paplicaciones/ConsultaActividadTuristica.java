@@ -45,7 +45,6 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jTextFieldNombre = new javax.swing.JTextField();
-        jTextFieldDescripcion = new javax.swing.JTextField();
         jTextFieldDuracion = new javax.swing.JTextField();
         jTextFieldCosto = new javax.swing.JTextField();
         jTextFieldCiudad = new javax.swing.JTextField();
@@ -56,6 +55,8 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         jLabel18 = new javax.swing.JLabel();
         jComboBoxPaquetes = new javax.swing.JComboBox<>();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextFieldDescripcion = new javax.swing.JTextArea();
 
         setEnabled(false);
         setPreferredSize(new java.awt.Dimension(620, 590));
@@ -117,14 +118,6 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         });
         add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 174, -1));
 
-        jTextFieldDescripcion.setEnabled(false);
-        jTextFieldDescripcion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldDescripcionActionPerformed(evt);
-            }
-        });
-        add(jTextFieldDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 174, 115));
-
         jTextFieldDuracion.setEnabled(false);
         add(jTextFieldDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 171, -1));
 
@@ -170,16 +163,22 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         add(jComboBoxPaquetes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 270, -1));
         add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 580, 170, -1));
 
+        jTextFieldDescripcion.setEditable(false);
+        jTextFieldDescripcion.setColumns(20);
+        jTextFieldDescripcion.setLineWrap(true);
+        jTextFieldDescripcion.setRows(5);
+        jTextFieldDescripcion.setWrapStyleWord(true);
+        jTextFieldDescripcion.setEnabled(false);
+        jScrollPane1.setViewportView(jTextFieldDescripcion);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 370, -1));
+
         getAccessibleContext().setAccessibleDescription("");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCiudadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCiudadActionPerformed
-
-    private void jTextFieldDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDescripcionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldDescripcionActionPerformed
 
     private void jTextFieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreActionPerformed
         // TODO add your handling code here:
@@ -195,7 +194,6 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
         modelActividades.addElement(defaultActividadString);
         for(int i=0;i<listaActividades.size();i++){
             
-            JOptionPane.showMessageDialog(null, listaActividades.get(i).getNombre());
             
                 modelActividades.addElement(listaActividades.get(i).getNombre());
             
@@ -272,9 +270,10 @@ public class ConsultaActividadTuristica extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextFieldCiudad;
     private javax.swing.JTextField jTextFieldCosto;
-    private javax.swing.JTextField jTextFieldDescripcion;
+    private javax.swing.JTextArea jTextFieldDescripcion;
     private javax.swing.JTextField jTextFieldDuracion;
     private javax.swing.JTextField jTextFieldNombre;
     // End of variables declaration//GEN-END:variables

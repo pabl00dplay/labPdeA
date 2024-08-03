@@ -1,0 +1,148 @@
+body{
+      width: 100%;
+      height: 800px;
+      background-image: url('./imagenes/a.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+}
+.selected {
+            background-color: #d3d3ff;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    
+}
+ li {
+    cursor: pointer;
+    padding: 8px;
+}
+li:hover {
+            background-color: #f0f0f0;
+}
+
+.rectangulo{
+  border: 2px solid black;
+  padding: 0px;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  float: top;
+  top: -20px; 
+  position: relative;
+  background-image: url('./imagenes/a.jpg');
+  overflow-y: auto;
+  z-index: 1; /* Asegura que el contenedor tenga un nivel de apilamiento */
+  
+}
+.rectangulo1 {
+  border: 2px solid black;
+  padding: 0px;
+  width: 200px;
+  height: 50px;
+  margin: 10px;
+  float: top;
+  top: -20px; 
+  position: relative;
+  background-image: url('./imagenes/a.jpg');
+  overflow-y: auto;
+  z-index: 1; /* Asegura que el contenedor tenga un nivel de apilamiento */
+  
+}         
+            
+#depto{
+    display: flex;
+            align-items: center;
+            height: 50px;
+            float: top;
+            position: relative; /* Esto hace que el div esté fijo en la pantalla */
+            top: 0px; /* Ajusta según sea necesario */
+            margin: 10px;
+            width: 200px;
+            border-left:2px solid black;
+            border-right:2px solid black;
+            border-top: 2px solid black;
+            background-image: url('./imagenes/a.jpg');
+}
+#cat {
+   display: flex;
+            align-items: center;
+            height: 50px;
+            float: top;
+            position: relative; /* Esto hace que el div esté fijo en la pantalla */
+            top: 0px; /* Ajusta según sea necesario */
+            margin: 10px;
+            width: 200px;
+            border-left:2px solid black;
+            border-right:2px solid black;
+            border-top: 2px solid black;
+            background-image: url('./imagenes/a.jpg');
+}
+
+
+h2 {   padding-top: 0px;
+      margin-top: 0px;
+    width: 200px; 
+            background-color: lightgray;
+        }
+.box{
+    width: 200px;
+    height: 800px;
+    background-image: url('./imagenes/a.jpg');
+    margin: 5px;
+    float :left;
+}
+.box1{
+    width: 1790px;
+    height:800px;
+    background-image: url('./imagenes/a.jpg');
+    margin: 5px;
+    float :left;
+    list-style-type: none;
+    padding-left: 10px;
+    justify-content: flex-end;
+} 
+.box2{
+    width: 800px;
+    height:800px;
+    background-image: url('./imagenes/a.jpg');
+    margin: 5px;
+    float :left;
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+
+#perf {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    float: top;
+    position: relative; /* Esto hace que el div esté fijo en la pantalla */
+    top: 0px; /* Ajusta según sea necesario */
+    margin: 10px;
+    width: 200px;
+    border-left:2px solid black;
+    border-right:2px solid black;
+    border-top: 2px solid black;
+    background-image: url('./imagenes/a.jpg');
+}
+
+#icon-boton {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 10px; /* Ajusta el espacio entre el texto y la imagen si es necesario */
+    cursor: pointer;
+    margin-top: 50px;
+}
+#btnsal {
+    width: 20px; /* Ajusta el tamaño de la imagen si es necesario */
+    height: 20px;
+}
+h2 {
+    margin: 0; /* Elimina el margen del h2 para una mejor alineación */
+}
+
