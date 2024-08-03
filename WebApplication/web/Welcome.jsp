@@ -7,6 +7,7 @@
         return;
     }
     String username = (String) session.getAttribute("username");
+    /*esta es una nueva clase*/
 %>
 <!DOCTYPE html>
 <html>
