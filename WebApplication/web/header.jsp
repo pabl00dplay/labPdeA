@@ -48,7 +48,7 @@
             if (session != null) {
                 username = (String) session.getAttribute("username");
                 foto = (String) session.getAttribute("foto");
-                //cambios en header
+                //cambios en el header para probar merge desde github
             }
          %>
 
